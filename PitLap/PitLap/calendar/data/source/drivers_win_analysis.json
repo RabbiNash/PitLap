@@ -1,0 +1,159 @@
+{
+
+"drivers" : [
+    {
+        "position": 1,
+        "name": "Max Verstappen",
+        "current_points": 331,
+        "theoretical_max_points": 409,
+        "can_win": "Yes"
+    },
+    {
+        "position": 2,
+        "name": "Lando Norris",
+        "current_points": 279,
+        "theoretical_max_points": 357,
+        "can_win": "Yes"
+    },
+    {
+        "position": 3,
+        "name": "Charles Leclerc",
+        "current_points": 245,
+        "theoretical_max_points": 323,
+        "can_win": "No"
+    },
+    {
+        "position": 4,
+        "name": "Oscar Piastri",
+        "current_points": 237,
+        "theoretical_max_points": 315,
+        "can_win": "No"
+    },
+    {
+        "position": 5,
+        "name": "Carlos Sainz",
+        "current_points": 190,
+        "theoretical_max_points": 268,
+        "can_win": "No"
+    },
+    {
+        "position": 6,
+        "name": "Lewis Hamilton",
+        "current_points": 174,
+        "theoretical_max_points": 252,
+        "can_win": "No"
+    },
+    {
+        "position": 7,
+        "name": "George Russell",
+        "current_points": 155,
+        "theoretical_max_points": 233,
+        "can_win": "No"
+    },
+    {
+        "position": 8,
+        "name": "Sergio P\u00e9rez",
+        "current_points": 144,
+        "theoretical_max_points": 222,
+        "can_win": "No"
+    },
+    {
+        "position": 9,
+        "name": "Fernando Alonso",
+        "current_points": 62,
+        "theoretical_max_points": 140,
+        "can_win": "No"
+    },
+    {
+        "position": 10,
+        "name": "Nico H\u00fclkenberg",
+        "current_points": 24,
+        "theoretical_max_points": 102,
+        "can_win": "No"
+    },
+    {
+        "position": 11,
+        "name": "Lance Stroll",
+        "current_points": 24,
+        "theoretical_max_points": 102,
+        "can_win": "No"
+    },
+    {
+        "position": 12,
+        "name": "Yuki Tsunoda",
+        "current_points": 22,
+        "theoretical_max_points": 100,
+        "can_win": "No"
+    },
+    {
+        "position": 13,
+        "name": "Alexander Albon",
+        "current_points": 12,
+        "theoretical_max_points": 90,
+        "can_win": "No"
+    },
+    {
+        "position": 14,
+        "name": "Daniel Ricciardo",
+        "current_points": 12,
+        "theoretical_max_points": 90,
+        "can_win": "No"
+    },
+    {
+        "position": 15,
+        "name": "Pierre Gasly",
+        "current_points": 8,
+        "theoretical_max_points": 86,
+        "can_win": "No"
+    },
+    {
+        "position": 16,
+        "name": "Oliver Bearman",
+        "current_points": 7,
+        "theoretical_max_points": 85,
+        "can_win": "No"
+    },
+    {
+        "position": 17,
+        "name": "Kevin Magnussen",
+        "current_points": 6,
+        "theoretical_max_points": 84,
+        "can_win": "No"
+    },
+    {
+        "position": 18,
+        "name": "Esteban Ocon",
+        "current_points": 5,
+        "theoretical_max_points": 83,
+        "can_win": "No"
+    },
+    {
+        "position": 19,
+        "name": "Franco Colapinto",
+        "current_points": 4,
+        "theoretical_max_points": 82,
+        "can_win": "No"
+    },
+    {
+        "position": 20,
+        "name": "Guanyu Zhou",
+        "current_points": 0,
+        "theoretical_max_points": 78,
+        "can_win": "No"
+    },
+    {
+        "position": 21,
+        "name": "Logan Sargeant",
+        "current_points": 0,
+        "theoretical_max_points": 78,
+        "can_win": "No"
+    },
+    {
+        "position": 22,
+        "name": "Valtteri Bottas",
+        "current_points": 0,
+        "theoretical_max_points": 78,
+        "can_win": "No"
+    }
+]
+}
