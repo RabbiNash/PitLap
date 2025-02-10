@@ -23,10 +23,15 @@ struct SessionItemView: View {
                     .frame(maxWidth: 120, alignment: .leading)
 
                 Spacer()
+                
+                if isPastEvent(sessionTime: sessionTime) {
+                    Text("View Results")
+                } else {
+                    Text(Date.getHumanisedDate(dateString: sessionTime) ?? " ")
+                        .lineLimit(2)
+                }
 
-                Text(Date.getHumanisedDate(dateString: sessionTime) ?? " ")
-                    .lineLimit(2)
-
+               
             }
             .frame(alignment: .leading)
             .padding(.top, 8)
@@ -34,5 +39,10 @@ struct SessionItemView: View {
 
             Divider()
         }
+    }
+    
+    private func isPastEvent(sessionTime: String) -> Bool {
+        let currentDate = Date()
+        return Date.getDateFromString(dateString: sessionTime) ?? Date() < currentDate
     }
 }

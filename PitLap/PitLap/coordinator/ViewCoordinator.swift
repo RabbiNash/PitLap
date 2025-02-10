@@ -16,19 +16,21 @@ struct ViewCoordinator: View {
     @State private var themeKey = UUID()
 
     var body: some View {
-        Group {
-            if viewModel.isDataLoaded {
-                ContentView()
-            } else {
-                SplashView()
+        ZStack {
+            Group {
+                if viewModel.isDataLoaded {
+                    ContentView()
+                } else {
+                    SplashView()
+                }
             }
-        }
-        .id(themeKey)
-        .onChange(of: selectedTeam, { _, _ in
-            themeKey = UUID()
-        })
-        .task {
-            await viewModel.checkDataLoaded()
+            .id(themeKey)
+            .onChange(of: selectedTeam, { _, _ in
+                themeKey = UUID()
+            })
+            .task {
+                await viewModel.checkDataLoaded()
+            }
         }
     }
 }

@@ -8,9 +8,12 @@
 import Foundation
 import FeedKit
 
-enum FeedSource: String {
+enum FeedSource: String, CaseIterable {
     case bbc = "https://feeds.bbci.co.uk/sport/formula1/rss.xml"
     case autosport = "https://www.autosport.com/rss/f1/news/"
+    case gbblog = "https://www.gpblog.com/en/rss/index.xml"
+    case motosportcom = "https://www.motorsport.com/rss/f1/news/"
+    case racefans = "https://www.racefans.net/feed/"
 }
 
 protocol RSSFeedDataLogicType {

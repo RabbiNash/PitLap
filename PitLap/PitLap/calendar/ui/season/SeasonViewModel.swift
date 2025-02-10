@@ -8,9 +8,12 @@
 import Foundation
 import PersistenceManager
 
+@MainActor
 final class SeasonViewModel: ObservableObject {
     private let dataLogic: SeasonDataLogicType
 
+    @Published var nextSession: RaceWeekendEntity? = nil
+    
     @Published var seasonCalendar: [RaceWeekendEntity] = []
 
     init(dataLogic: SeasonDataLogicType) {
@@ -32,6 +35,14 @@ final class SeasonViewModel: ObservableObject {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.seasonCalendar = self.dataLogic.getSeasonCalendar(for: year)
+            if let session = getNextEvent(from: seasonCalendar) {
+                self.nextSession = session
+            }
         }
+    }
+    
+    private func getNextEvent(from races: [RaceWeekendEntity]) -> RaceWeekendEntity? {
+        let currentDate = Date()
+        return races.first(where: { Date.getDateFromString(dateString: $0.session1DateUTC) ?? Date() > currentDate })
     }
 }

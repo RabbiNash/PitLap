@@ -12,9 +12,11 @@ import Kingfisher
 struct ArticleView: View {
     @Environment(\.openURL) var openURL
     private let feed: RSSFeedItem
+    private let channelTitle: String
 
-    init(feed: RSSFeedItem) {
+    init(feed: RSSFeedItem, channelTitle: String) {
         self.feed = feed
+        self.channelTitle = channelTitle
     }
 
     var body: some View {
@@ -27,7 +29,7 @@ struct ArticleView: View {
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .clipped()
                         .overlay(
-                            RoundedRectangle(cornerRadius: 24)
+                            RoundedRectangle(cornerRadius: 0)
                                 .fill(.black.gradient.opacity(0.6))
                         )
 
@@ -43,7 +45,7 @@ struct ArticleView: View {
 
                         HStack {
                             Image(systemName: "link")
-                            Text("Autosport.com")
+                            Text(channelTitle)
                         }
                         .foregroundColor(.white)
                         .onTapGesture {
@@ -54,7 +56,6 @@ struct ArticleView: View {
                     .padding(.horizontal, 16)
                     .frame(width: geometry.size.width, height: geometry.size.height, alignment: .bottom)
                 }
-                .clipShape(RoundedRectangle(cornerRadius: 24))
             }
             .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height / 2)
 
@@ -86,5 +87,5 @@ struct ArticleView: View {
 }
 
 #Preview {
-    ArticleView(feed: .init())
+    ArticleView(feed: .init(), channelTitle: "")
 }
