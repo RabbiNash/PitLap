@@ -134,6 +134,8 @@ public enum Session5: String, Codable {
 
 public enum EventFormatModel: String, Codable {
     case conventional = "conventional"
+    case sprint = "Sprint"
     case sprintQualifying = "sprint_qualifying"
     case testing = "testing"
+    
 }

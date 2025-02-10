@@ -22,7 +22,9 @@ struct TriviaView: View {
 
                         Spacer()
 
-                        Image(systemName: "questionmark.circle")
+                        Image(systemName: "gear.circle.fill")
+                            .resizable()
+                            .foregroundStyle(ThemeManager.shared.selectedTeamColor)                     .frame(width: 32, height: 32)
                             .onTapGesture {
                                 showSettings = true
                             }
@@ -34,7 +36,7 @@ struct TriviaView: View {
                             NavigationLink(destination: DriverAnalysisView()) {
                                 TriviaCard(
                                     level: "Analysis",
-                                    icon: "flag.pattern.checkered",
+                                    icon: "flag.checkered",
                                     iconColor: ThemeManager.shared.selectedTeamColor,
                                     title: "Who still has a chance?",
                                     subtitle: "Find out if your favorite driver can still win the championship",
@@ -73,7 +75,7 @@ struct TriviaView: View {
                             NavigationLink(destination: DriverAnalysisView()) {
                                 TriviaCard(
                                     level: "Analysis",
-                                    icon: "flag.pattern.checkered",
+                                    icon: "flag.checkered",
                                     iconColor: ThemeManager.shared.selectedTeamColor,
                                     title: "Who still has a chance?",
                                     subtitle: "Find out if your favorite driver can still win the championship",
@@ -112,7 +114,7 @@ struct TriviaView: View {
                             NavigationLink(destination: DriverAnalysisView()) {
                                 TriviaCard(
                                     level: "Analysis",
-                                    icon: "flag.pattern.checkered",
+                                    icon: "flag.checkered",
                                     iconColor: ThemeManager.shared.selectedTeamColor,
                                     title: "Who still has a chance?",
                                     subtitle: "Find out if your favorite driver can still win the championship",

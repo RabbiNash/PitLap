@@ -27,7 +27,7 @@ struct SeasonView: View {
         ScrollView(showsIndicators: false) {
             LazyVStack(alignment: .leading) {
                 HStack {
-                    if let raceWeekend = viewModel.seasonCalendar.first {
+                    if let raceWeekend = viewModel.nextSession {
                         RaceWeekendHeaderView(weekend: raceWeekend)
                     }
                 }

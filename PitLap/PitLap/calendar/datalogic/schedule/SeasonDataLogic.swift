@@ -46,7 +46,7 @@ final class SeasonDataLogic: SeasonDataLogicType {
 
     func isDataLoaded() async -> Bool {
         let predicate = #Predicate<RaceWeekendEntity> { $0.round == 1 }
-        return persistenceDataManager.fetchItem(predicate: predicate, sortDescriptors: [SortDescriptor(\.round)]) != nil
+        return persistenceDataManager.fetchItem(predicate: predicate) != nil
     }
 
     func loadSeasons(completion: @escaping (Bool) -> Void) async {

@@ -103,7 +103,6 @@
 		FF9A51142D4CED52001F1697 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FF9A51132D4CED52001F1697 /* Kingfisher */; };
 		FF9A51162D4CF088001F1697 /* ArticleFeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A51152D4CF088001F1697 /* ArticleFeedItemView.swift */; };
 		FF9A51182D4D05AA001F1697 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A51172D4D05AA001F1697 /* ArticleView.swift */; };
-		FFBA36E92D4D318E002D3245 /* IndeterminateProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBA36E82D4D318E002D3245 /* IndeterminateProgressView.swift */; };
 		FFBA36EA2D4D318E002D3245 /* IndeterminateProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBA36E82D4D318E002D3245 /* IndeterminateProgressView.swift */; };
 /* End PBXBuildFile section */
 
@@ -894,7 +893,6 @@
 				FF9799CA2D35E94D00CCF203 /* Extension.swift in Sources */,
 				FF9799C92D35E93900CCF203 /* RaceWeekendModel.swift in Sources */,
 				FF9799C62D35E90E00CCF203 /* Extensions.swift in Sources */,
-				FFBA36E92D4D318E002D3245 /* IndeterminateProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

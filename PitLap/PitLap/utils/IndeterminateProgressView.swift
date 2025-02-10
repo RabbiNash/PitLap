@@ -24,7 +24,7 @@ struct IndeterminateProgressView: View {
     private var progress: some View {
         GeometryReader { (geometry: GeometryProxy) in
             Capsule()
-                .foregroundColor(.accentColor)
+                .foregroundColor(ThemeManager.shared.selectedTeamColor)
                 .frame(width: progressWidth(in: geometry))
                 .offset(offset(in: geometry))
                 .onAppear {

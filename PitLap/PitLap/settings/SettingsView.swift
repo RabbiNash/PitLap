@@ -9,24 +9,30 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.redBull.rawValue
+    @AppStorage("newsSource") private var newsSource: String = FeedSource.autosport.rawValue
 
     var body: some View {
-        VStack {
-            Text("Choose Your F1 Team")
-                .font(.headline)
-
-            Picker("Team", selection: $selectedTeam) {
-                ForEach(F1Team.allCases, id: \.self) { team in
-                    Text(team.rawValue.capitalized).tag(team.rawValue)
+        NavigationStack {
+            List {
+                Picker("Team", selection: $selectedTeam) {
+                    ForEach(F1Team.allCases, id: \.self) { team in
+                        Text(team.rawValue.capitalized).tag(team.rawValue)
+                    }
                 }
-            }
-            .pickerStyle(.wheel)
-
-            Text("Current Team: \(selectedTeam.capitalized)")
-                .padding()
-                .foregroundColor(ThemeManager.shared.selectedTeamColor)
+                .pickerStyle(.navigationLink)
+                
+                Picker("News Source", selection: $newsSource) {
+                    ForEach(FeedSource.allCases, id: \.self) { source in
+                        Text(source.rawValue.capitalized).tag(source.rawValue)
+                    }
+                }
+                .pickerStyle(.navigationLink)
+            }.listStyle(.inset)
+            .padding()
+            .navigationTitle("Preferences")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
+        
     }
 }
 

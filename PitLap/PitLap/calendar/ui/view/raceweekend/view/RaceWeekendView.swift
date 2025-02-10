@@ -34,12 +34,18 @@ struct RaceWeekendView: View {
                             ThemeManager.shared.selectedTeamColor.frame(height: 6)
                                 .offset(y: 24)
                         )
+                    
 
                     sessionTimes
 
                 }.padding(24)
             }
         }
+    }
+    
+    private func getNextEvent(from races: [RaceWeekendEntity]) -> RaceWeekendEntity? {
+        let currentDate = Date()
+        return races.first(where: { Date.getDateFromString(dateString: $0.session1DateUTC) ?? Date() > currentDate })
     }
 
     @ViewBuilder

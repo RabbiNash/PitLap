@@ -10,6 +10,7 @@ import Kingfisher
 
 struct ArticleFeedView: View {
     @StateObject private var viewModel = ArticleFeedViewModel()
+    @AppStorage("newsSource") private var newsSource: String = FeedSource.autosport.rawValue
 
     var body: some View {
         ZStack {
@@ -22,7 +23,7 @@ struct ArticleFeedView: View {
                 ScrollView {
                     TabView {
                         ForEach(viewModel.feedChannel?.items ?? [], id: \.guid) { item in
-                            ArticleView(feed: item)
+                            ArticleView(feed: item, channelTitle: viewModel.feedChannel?.title ?? "")
                         }
                     }.frame(
                         width: UIScreen.main.bounds.width,
@@ -34,7 +35,7 @@ struct ArticleFeedView: View {
             }
         }.onAppear {
             Task {
-                await viewModel.getFeed(from: .autosport)
+                await viewModel.getFeed(from: FeedSource(rawValue: newsSource) ?? .autosport)
             }
         }
     }

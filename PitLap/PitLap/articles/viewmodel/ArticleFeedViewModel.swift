@@ -7,6 +7,7 @@
 
 import Foundation
 import FeedKit
+import SwiftUI
 
 @MainActor
 final class ArticleFeedViewModel: ObservableObject {
