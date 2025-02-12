@@ -4,17 +4,11 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Audiowide-Regular.ttf</string>
+		<string>NotoSans-VariableFont_wdth,wght.ttf</string>
 		<string>f1-regular.ttf</string>
 		<string>f1-numbers-regular.ttf</string>
 		<string>f1-bold.ttf</string>
-		<string>TitilliumWeb-Black.ttf</string>
-		<string>TitilliumWeb-Bold.ttf</string>
-		<string>TitilliumWeb-ExtraLight.ttf</string>
-		<string>TitilliumWeb-ExtraLightItalic.ttf</string>
-		<string>TitilliumWeb-Regular.ttf</string>
-		<string>TitilliumWeb-Light.ttf</string>
-		<string>TitilliumWeb-Black.ttf</string>
-		<string>TitilliumWeb-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>

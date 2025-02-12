@@ -25,7 +25,7 @@ struct ContentView: View {
                             }
                         }
 
-                    DriverStandingsView()
+                    StandingsView()
                         .tag(BottomNavTab.standings)
 
                     ArticleFeedView()

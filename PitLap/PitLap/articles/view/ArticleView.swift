@@ -35,7 +35,7 @@ struct ArticleView: View {
 
                     VStack(alignment: .leading) {
                         Text(feed.title ?? "")
-                            .font(.custom("Formula1", size: 24))
+                            .font(.custom("Audiowide",size: 24))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
 

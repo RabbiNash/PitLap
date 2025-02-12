@@ -3,12 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF52D13F2D3ED7D600DF2573 /* 2025.json in Resources */ = {isa = PBXBuildFile; fileRef = FF52D13D2D3ED7D600DF2573 /* 2025.json */; };
-		FF52D1402D3ED7D600DF2573 /* 2024.json in Resources */ = {isa = PBXBuildFile; fileRef = FF52D13E2D3ED7D600DF2573 /* 2024.json */; };
+		865618FB2D5C184800567D38 /* PitlapPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618F92D5C184700567D38 /* PitlapPicker.swift */; };
+		865618FE2D5C1B9700567D38 /* StandingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618FD2D5C1B9700567D38 /* StandingPickerView.swift */; };
+		86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */; };
+		86F1B8062D5CC7D400AF923D /* StandingRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */; };
+		86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8072D5CCB5500AF923D /* StandingRow.swift */; };
+		86F1B8252D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86F1B8242D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf */; };
+		86F1B8262D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86F1B8242D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf */; };
+		86F1B82B2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86F1B82A2D5CDE6100AF923D /* Audiowide-Regular.ttf */; };
+		86F1B82C2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86F1B82A2D5CDE6100AF923D /* Audiowide-Regular.ttf */; };
 		FF52D1412D3ED7DE00DF2573 /* 2024.json in Resources */ = {isa = PBXBuildFile; fileRef = FF52D13E2D3ED7D600DF2573 /* 2024.json */; };
 		FF52D1422D3ED7E000DF2573 /* 2025.json in Resources */ = {isa = PBXBuildFile; fileRef = FF52D13D2D3ED7D600DF2573 /* 2025.json */; };
 		FF52D1462D3EDDF500DF2573 /* SeasonTabOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1452D3EDDF500DF2573 /* SeasonTabOption.swift */; };
@@ -19,11 +26,9 @@
 		FF52D1562D3F0E1600DF2573 /* BottomNavTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1552D3F0E1600DF2573 /* BottomNavTabBar.swift */; };
 		FF52D1592D3F121200DF2573 /* HideTabBarRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1582D3F121200DF2573 /* HideTabBarRepresentable.swift */; };
 		FF52D15B2D3F264900DF2573 /* DriverStandingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D15A2D3F264900DF2573 /* DriverStandingModel.swift */; };
-		FF52D1632D3F293A00DF2573 /* DriverStandingEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1622D3F293A00DF2573 /* DriverStandingEntityMapper.swift */; };
 		FF52D1652D3F2B0100DF2573 /* StandingsDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1642D3F2B0100DF2573 /* StandingsDataLogic.swift */; };
-		FF52D1672D3F2EE600DF2573 /* f1_standings_2024.json in Resources */ = {isa = PBXBuildFile; fileRef = FF52D1662D3F2EE600DF2573 /* f1_standings_2024.json */; };
-		FF52D16A2D3F2F8F00DF2573 /* DriverStandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1692D3F2F8F00DF2573 /* DriverStandingsView.swift */; };
-		FF52D16C2D3F2FA400DF2573 /* DriverStandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D16B2D3F2FA400DF2573 /* DriverStandingsViewModel.swift */; };
+		FF52D16A2D3F2F8F00DF2573 /* StandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1692D3F2F8F00DF2573 /* StandingsView.swift */; };
+		FF52D16C2D3F2FA400DF2573 /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D16B2D3F2FA400DF2573 /* StandingsViewModel.swift */; };
 		FF52D1702D3FB99000DF2573 /* DriverAnalysisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D16F2D3FB99000DF2573 /* DriverAnalysisModel.swift */; };
 		FF52D1752D3FB9F400DF2573 /* DriverAnalysisDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1742D3FB9F400DF2573 /* DriverAnalysisDataLogic.swift */; };
 		FF52D17A2D3FBBC300DF2573 /* DriverAnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1792D3FBBC300DF2573 /* DriverAnalysisViewModel.swift */; };
@@ -71,28 +76,6 @@
 		FF9A50D42D4B8FBA001F1697 /* f1-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50CE2D4B8FBA001F1697 /* f1-bold.ttf */; };
 		FF9A50D52D4B8FBA001F1697 /* f1-numbers-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50CF2D4B8FBA001F1697 /* f1-numbers-regular.ttf */; };
 		FF9A50D62D4B8FBA001F1697 /* f1-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50D02D4B8FBA001F1697 /* f1-regular.ttf */; };
-		FF9A50E32D4BAD0D001F1697 /* TitilliumWeb-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50E12D4BAD0D001F1697 /* TitilliumWeb-SemiBold.ttf */; };
-		FF9A50E42D4BAD0D001F1697 /* TitilliumWeb-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DF2D4BAD0D001F1697 /* TitilliumWeb-LightItalic.ttf */; };
-		FF9A50E52D4BAD0D001F1697 /* TitilliumWeb-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50E22D4BAD0D001F1697 /* TitilliumWeb-SemiBoldItalic.ttf */; };
-		FF9A50E62D4BAD0D001F1697 /* TitilliumWeb-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50D92D4BAD0D001F1697 /* TitilliumWeb-Bold.ttf */; };
-		FF9A50E72D4BAD0D001F1697 /* TitilliumWeb-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DD2D4BAD0D001F1697 /* TitilliumWeb-Italic.ttf */; };
-		FF9A50E82D4BAD0D001F1697 /* TitilliumWeb-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DC2D4BAD0D001F1697 /* TitilliumWeb-ExtraLightItalic.ttf */; };
-		FF9A50E92D4BAD0D001F1697 /* TitilliumWeb-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DA2D4BAD0D001F1697 /* TitilliumWeb-BoldItalic.ttf */; };
-		FF9A50EA2D4BAD0D001F1697 /* TitilliumWeb-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DE2D4BAD0D001F1697 /* TitilliumWeb-Light.ttf */; };
-		FF9A50EB2D4BAD0D001F1697 /* TitilliumWeb-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DB2D4BAD0D001F1697 /* TitilliumWeb-ExtraLight.ttf */; };
-		FF9A50EC2D4BAD0D001F1697 /* TitilliumWeb-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50E02D4BAD0D001F1697 /* TitilliumWeb-Regular.ttf */; };
-		FF9A50ED2D4BAD0D001F1697 /* TitilliumWeb-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50D82D4BAD0D001F1697 /* TitilliumWeb-Black.ttf */; };
-		FF9A50EE2D4BAD0D001F1697 /* TitilliumWeb-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50E12D4BAD0D001F1697 /* TitilliumWeb-SemiBold.ttf */; };
-		FF9A50EF2D4BAD0D001F1697 /* TitilliumWeb-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DF2D4BAD0D001F1697 /* TitilliumWeb-LightItalic.ttf */; };
-		FF9A50F02D4BAD0D001F1697 /* TitilliumWeb-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50E22D4BAD0D001F1697 /* TitilliumWeb-SemiBoldItalic.ttf */; };
-		FF9A50F12D4BAD0D001F1697 /* TitilliumWeb-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50D92D4BAD0D001F1697 /* TitilliumWeb-Bold.ttf */; };
-		FF9A50F22D4BAD0D001F1697 /* TitilliumWeb-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DD2D4BAD0D001F1697 /* TitilliumWeb-Italic.ttf */; };
-		FF9A50F32D4BAD0D001F1697 /* TitilliumWeb-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DC2D4BAD0D001F1697 /* TitilliumWeb-ExtraLightItalic.ttf */; };
-		FF9A50F42D4BAD0D001F1697 /* TitilliumWeb-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DA2D4BAD0D001F1697 /* TitilliumWeb-BoldItalic.ttf */; };
-		FF9A50F52D4BAD0D001F1697 /* TitilliumWeb-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DE2D4BAD0D001F1697 /* TitilliumWeb-Light.ttf */; };
-		FF9A50F62D4BAD0D001F1697 /* TitilliumWeb-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50DB2D4BAD0D001F1697 /* TitilliumWeb-ExtraLight.ttf */; };
-		FF9A50F72D4BAD0D001F1697 /* TitilliumWeb-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50E02D4BAD0D001F1697 /* TitilliumWeb-Regular.ttf */; };
-		FF9A50F82D4BAD0D001F1697 /* TitilliumWeb-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50D82D4BAD0D001F1697 /* TitilliumWeb-Black.ttf */; };
 		FF9A50FF2D4BE486001F1697 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A50FE2D4BE486001F1697 /* SettingsView.swift */; };
 		FF9A51022D4BE73D001F1697 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A51012D4BE73D001F1697 /* ThemeManager.swift */; };
 		FF9A51052D4CE32A001F1697 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF9A51042D4CE32A001F1697 /* FeedKit */; };
@@ -138,6 +121,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		865618F92D5C184700567D38 /* PitlapPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitlapPicker.swift; sourceTree = "<group>"; };
+		865618FD2D5C1B9700567D38 /* StandingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingPickerView.swift; sourceTree = "<group>"; };
+		86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorStandingModel.swift; sourceTree = "<group>"; };
+		86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRowModel.swift; sourceTree = "<group>"; };
+		86F1B8072D5CCB5500AF923D /* StandingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRow.swift; sourceTree = "<group>"; };
+		86F1B8242D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
+		86F1B82A2D5CDE6100AF923D /* Audiowide-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audiowide-Regular.ttf"; sourceTree = "<group>"; };
 		FF52D13D2D3ED7D600DF2573 /* 2025.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2025.json; sourceTree = "<group>"; };
 		FF52D13E2D3ED7D600DF2573 /* 2024.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2024.json; sourceTree = "<group>"; };
 		FF52D1452D3EDDF500DF2573 /* SeasonTabOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTabOption.swift; sourceTree = "<group>"; };
@@ -148,11 +138,10 @@
 		FF52D1552D3F0E1600DF2573 /* BottomNavTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavTabBar.swift; sourceTree = "<group>"; };
 		FF52D1582D3F121200DF2573 /* HideTabBarRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTabBarRepresentable.swift; sourceTree = "<group>"; };
 		FF52D15A2D3F264900DF2573 /* DriverStandingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingModel.swift; sourceTree = "<group>"; };
-		FF52D1622D3F293A00DF2573 /* DriverStandingEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingEntityMapper.swift; sourceTree = "<group>"; };
 		FF52D1642D3F2B0100DF2573 /* StandingsDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsDataLogic.swift; sourceTree = "<group>"; };
 		FF52D1662D3F2EE600DF2573 /* f1_standings_2024.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = f1_standings_2024.json; sourceTree = "<group>"; };
-		FF52D1692D3F2F8F00DF2573 /* DriverStandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingsView.swift; sourceTree = "<group>"; };
-		FF52D16B2D3F2FA400DF2573 /* DriverStandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingsViewModel.swift; sourceTree = "<group>"; };
+		FF52D1692D3F2F8F00DF2573 /* StandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsView.swift; sourceTree = "<group>"; };
+		FF52D16B2D3F2FA400DF2573 /* StandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
 		FF52D16F2D3FB99000DF2573 /* DriverAnalysisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnalysisModel.swift; sourceTree = "<group>"; };
 		FF52D1742D3FB9F400DF2573 /* DriverAnalysisDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnalysisDataLogic.swift; sourceTree = "<group>"; };
 		FF52D1792D3FBBC300DF2573 /* DriverAnalysisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnalysisViewModel.swift; sourceTree = "<group>"; };
@@ -196,17 +185,6 @@
 		FF9A50CE2D4B8FBA001F1697 /* f1-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "f1-bold.ttf"; sourceTree = "<group>"; };
 		FF9A50CF2D4B8FBA001F1697 /* f1-numbers-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "f1-numbers-regular.ttf"; sourceTree = "<group>"; };
 		FF9A50D02D4B8FBA001F1697 /* f1-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "f1-regular.ttf"; sourceTree = "<group>"; };
-		FF9A50D82D4BAD0D001F1697 /* TitilliumWeb-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Black.ttf"; sourceTree = "<group>"; };
-		FF9A50D92D4BAD0D001F1697 /* TitilliumWeb-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Bold.ttf"; sourceTree = "<group>"; };
-		FF9A50DA2D4BAD0D001F1697 /* TitilliumWeb-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-BoldItalic.ttf"; sourceTree = "<group>"; };
-		FF9A50DB2D4BAD0D001F1697 /* TitilliumWeb-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-ExtraLight.ttf"; sourceTree = "<group>"; };
-		FF9A50DC2D4BAD0D001F1697 /* TitilliumWeb-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		FF9A50DD2D4BAD0D001F1697 /* TitilliumWeb-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Italic.ttf"; sourceTree = "<group>"; };
-		FF9A50DE2D4BAD0D001F1697 /* TitilliumWeb-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Light.ttf"; sourceTree = "<group>"; };
-		FF9A50DF2D4BAD0D001F1697 /* TitilliumWeb-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-LightItalic.ttf"; sourceTree = "<group>"; };
-		FF9A50E02D4BAD0D001F1697 /* TitilliumWeb-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Regular.ttf"; sourceTree = "<group>"; };
-		FF9A50E12D4BAD0D001F1697 /* TitilliumWeb-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-SemiBold.ttf"; sourceTree = "<group>"; };
-		FF9A50E22D4BAD0D001F1697 /* TitilliumWeb-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		FF9A50FE2D4BE486001F1697 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FF9A51012D4BE73D001F1697 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		FF9A510B2D4CE58E001F1697 /* ArticleFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFeedViewModel.swift; sourceTree = "<group>"; };
@@ -216,6 +194,10 @@
 		FF9A51172D4D05AA001F1697 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		FFBA36E82D4D318E002D3245 /* IndeterminateProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		865618F12D5A9CF600567D38 /* api */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = api; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FF75D3472D232BD700160331 /* Frameworks */ = {
@@ -242,6 +224,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86F1B8032D5CC7AA00AF923D /* data */ = {
+			isa = PBXGroup;
+			children = (
+				FF52D15A2D3F264900DF2573 /* DriverStandingModel.swift */,
+				86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		86F1B8042D5CC7B400AF923D /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		FF52D1432D3EDD8500DF2573 /* home */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,7 +311,8 @@
 		FF52D15D2D3F26FC00DF2573 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				FF52D15A2D3F264900DF2573 /* DriverStandingModel.swift */,
+				86F1B8042D5CC7B400AF923D /* ui */,
+				86F1B8032D5CC7AA00AF923D /* data */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -412,6 +412,7 @@
 		FF75D34C2D232BD700160331 /* PitLap */ = {
 			isa = PBXGroup;
 			children = (
+				865618F12D5A9CF600567D38 /* api */,
 				FF9A51082D4CE53E001F1697 /* articles */,
 				FF9A50FD2D4BE462001F1697 /* settings */,
 				FF9A50CD2D4B8CF2001F1697 /* Info.plist */,
@@ -538,6 +539,7 @@
 			children = (
 				FF75D3792D233FF900160331 /* Extension.swift */,
 				FFBA36E82D4D318E002D3245 /* IndeterminateProgressView.swift */,
+				865618F92D5C184700567D38 /* PitlapPicker.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -575,7 +577,6 @@
 			isa = PBXGroup;
 			children = (
 				FF78AFB22D3AE99900BDD4F7 /* SeasonEntityMapper.swift */,
-				FF52D1622D3F293A00DF2573 /* DriverStandingEntityMapper.swift */,
 			);
 			path = mapper;
 			sourceTree = "<group>";
@@ -612,17 +613,8 @@
 		FF9A50CA2D4B8CB7001F1697 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				FF9A50D82D4BAD0D001F1697 /* TitilliumWeb-Black.ttf */,
-				FF9A50D92D4BAD0D001F1697 /* TitilliumWeb-Bold.ttf */,
-				FF9A50DA2D4BAD0D001F1697 /* TitilliumWeb-BoldItalic.ttf */,
-				FF9A50DB2D4BAD0D001F1697 /* TitilliumWeb-ExtraLight.ttf */,
-				FF9A50DC2D4BAD0D001F1697 /* TitilliumWeb-ExtraLightItalic.ttf */,
-				FF9A50DD2D4BAD0D001F1697 /* TitilliumWeb-Italic.ttf */,
-				FF9A50DE2D4BAD0D001F1697 /* TitilliumWeb-Light.ttf */,
-				FF9A50DF2D4BAD0D001F1697 /* TitilliumWeb-LightItalic.ttf */,
-				FF9A50E02D4BAD0D001F1697 /* TitilliumWeb-Regular.ttf */,
-				FF9A50E12D4BAD0D001F1697 /* TitilliumWeb-SemiBold.ttf */,
-				FF9A50E22D4BAD0D001F1697 /* TitilliumWeb-SemiBoldItalic.ttf */,
+				86F1B82A2D5CDE6100AF923D /* Audiowide-Regular.ttf */,
+				86F1B8242D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf */,
 				FF9A50CE2D4B8FBA001F1697 /* f1-bold.ttf */,
 				FF9A50CF2D4B8FBA001F1697 /* f1-numbers-regular.ttf */,
 				FF9A50D02D4B8FBA001F1697 /* f1-regular.ttf */,
@@ -634,8 +626,10 @@
 		FF9A50D72D4BA705001F1697 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				FF52D1692D3F2F8F00DF2573 /* DriverStandingsView.swift */,
-				FF52D16B2D3F2FA400DF2573 /* DriverStandingsViewModel.swift */,
+				86F1B8072D5CCB5500AF923D /* StandingRow.swift */,
+				865618FD2D5C1B9700567D38 /* StandingPickerView.swift */,
+				FF52D1692D3F2F8F00DF2573 /* StandingsView.swift */,
+				FF52D16B2D3F2FA400DF2573 /* StandingsViewModel.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -711,6 +705,9 @@
 				FF9A50C62D499D27001F1697 /* PBXTargetDependency */,
 				FF9A50C92D499D3B001F1697 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				865618F12D5A9CF600567D38 /* api */,
+			);
 			name = PitLap;
 			productName = "Box Box";
 			productReference = FF75D34A2D232BD700160331 /* PitLap.app */;
@@ -780,27 +777,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86F1B8262D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf in Resources */,
 				FF9A50CC2D4B8CBA001F1697 /* f1.ttf in Resources */,
-				FF52D1672D3F2EE600DF2573 /* f1_standings_2024.json in Resources */,
-				FF52D13F2D3ED7D600DF2573 /* 2025.json in Resources */,
 				FF75D3552D232BDA00160331 /* Preview Assets.xcassets in Resources */,
 				FF75D3522D232BDA00160331 /* Assets.xcassets in Resources */,
-				FF9A50E32D4BAD0D001F1697 /* TitilliumWeb-SemiBold.ttf in Resources */,
-				FF9A50E42D4BAD0D001F1697 /* TitilliumWeb-LightItalic.ttf in Resources */,
-				FF9A50E52D4BAD0D001F1697 /* TitilliumWeb-SemiBoldItalic.ttf in Resources */,
-				FF9A50E62D4BAD0D001F1697 /* TitilliumWeb-Bold.ttf in Resources */,
-				FF9A50E72D4BAD0D001F1697 /* TitilliumWeb-Italic.ttf in Resources */,
-				FF9A50E82D4BAD0D001F1697 /* TitilliumWeb-ExtraLightItalic.ttf in Resources */,
-				FF9A50E92D4BAD0D001F1697 /* TitilliumWeb-BoldItalic.ttf in Resources */,
-				FF9A50EA2D4BAD0D001F1697 /* TitilliumWeb-Light.ttf in Resources */,
-				FF9A50EB2D4BAD0D001F1697 /* TitilliumWeb-ExtraLight.ttf in Resources */,
-				FF9A50EC2D4BAD0D001F1697 /* TitilliumWeb-Regular.ttf in Resources */,
-				FF9A50ED2D4BAD0D001F1697 /* TitilliumWeb-Black.ttf in Resources */,
 				FF9A50D42D4B8FBA001F1697 /* f1-bold.ttf in Resources */,
 				FF9A50D52D4B8FBA001F1697 /* f1-numbers-regular.ttf in Resources */,
 				FF9A50D62D4B8FBA001F1697 /* f1-regular.ttf in Resources */,
 				FF52D17F2D3FC3DE00DF2573 /* drivers_win_analysis.json in Resources */,
-				FF52D1402D3ED7D600DF2573 /* 2024.json in Resources */,
+				86F1B82B2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,18 +797,9 @@
 				FF9A50D12D4B8FBA001F1697 /* f1-bold.ttf in Resources */,
 				FF9A50D22D4B8FBA001F1697 /* f1-numbers-regular.ttf in Resources */,
 				FF9A50D32D4B8FBA001F1697 /* f1-regular.ttf in Resources */,
+				86F1B82C2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */,
 				FF52D1412D3ED7DE00DF2573 /* 2024.json in Resources */,
-				FF9A50EE2D4BAD0D001F1697 /* TitilliumWeb-SemiBold.ttf in Resources */,
-				FF9A50EF2D4BAD0D001F1697 /* TitilliumWeb-LightItalic.ttf in Resources */,
-				FF9A50F02D4BAD0D001F1697 /* TitilliumWeb-SemiBoldItalic.ttf in Resources */,
-				FF9A50F12D4BAD0D001F1697 /* TitilliumWeb-Bold.ttf in Resources */,
-				FF9A50F22D4BAD0D001F1697 /* TitilliumWeb-Italic.ttf in Resources */,
-				FF9A50F32D4BAD0D001F1697 /* TitilliumWeb-ExtraLightItalic.ttf in Resources */,
-				FF9A50F42D4BAD0D001F1697 /* TitilliumWeb-BoldItalic.ttf in Resources */,
-				FF9A50F52D4BAD0D001F1697 /* TitilliumWeb-Light.ttf in Resources */,
-				FF9A50F62D4BAD0D001F1697 /* TitilliumWeb-ExtraLight.ttf in Resources */,
-				FF9A50F72D4BAD0D001F1697 /* TitilliumWeb-Regular.ttf in Resources */,
-				FF9A50F82D4BAD0D001F1697 /* TitilliumWeb-Black.ttf in Resources */,
+				86F1B8252D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf in Resources */,
 				FF9799BD2D35DFBD00CCF203 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -837,6 +813,7 @@
 			files = (
 				FF52D1462D3EDDF500DF2573 /* SeasonTabOption.swift in Sources */,
 				FF9A51022D4BE73D001F1697 /* ThemeManager.swift in Sources */,
+				86F1B8062D5CC7D400AF923D /* StandingRowModel.swift in Sources */,
 				FF75D37C2D2344F400160331 /* RaceWeekendHeaderView.swift in Sources */,
 				FF75D3502D232BD700160331 /* ContentView.swift in Sources */,
 				FF75D3752D233B3800160331 /* RaceWeekendListItemView.swift in Sources */,
@@ -845,12 +822,13 @@
 				FF75D3692D232EB000160331 /* SeasonDataLogic.swift in Sources */,
 				FF52D1542D3F0D8F00DF2573 /* BottomNavTab.swift in Sources */,
 				FF9A510E2D4CE7CB001F1697 /* ArticleFeedView.swift in Sources */,
-				FF52D1632D3F293A00DF2573 /* DriverStandingEntityMapper.swift in Sources */,
 				FF75D3872D23668900160331 /* HeadingView.swift in Sources */,
 				FF9A50C22D499620001F1697 /* DriverStandingEntity.swift in Sources */,
 				FF75D3622D232D5200160331 /* RaceWeekendModel.swift in Sources */,
 				FF52D1812D3FE7D500DF2573 /* LeadChangeView.swift in Sources */,
-				FF52D16C2D3F2FA400DF2573 /* DriverStandingsViewModel.swift in Sources */,
+				FF52D16C2D3F2FA400DF2573 /* StandingsViewModel.swift in Sources */,
+				865618FE2D5C1B9700567D38 /* StandingPickerView.swift in Sources */,
+				86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */,
 				FF9A51162D4CF088001F1697 /* ArticleFeedItemView.swift in Sources */,
 				FF75D34E2D232BD700160331 /* PitLap.swift in Sources */,
 				FF75D3722D23328D00160331 /* SeasonView.swift in Sources */,
@@ -864,12 +842,14 @@
 				FF52D17D2D3FBF0000DF2573 /* DriverAnalysisView.swift in Sources */,
 				FF52D14F2D3F053900DF2573 /* SplashViewModel.swift in Sources */,
 				FF78AFB32D3AE99900BDD4F7 /* SeasonEntityMapper.swift in Sources */,
+				86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */,
+				865618FB2D5C184800567D38 /* PitlapPicker.swift in Sources */,
 				FF52D17A2D3FBBC300DF2573 /* DriverAnalysisViewModel.swift in Sources */,
 				FFBA36EA2D4D318E002D3245 /* IndeterminateProgressView.swift in Sources */,
 				FF9A510C2D4CE58E001F1697 /* ArticleFeedViewModel.swift in Sources */,
 				FF9A51112D4CEA09001F1697 /* RSSFeedDataLogic.swift in Sources */,
 				FF52D1652D3F2B0100DF2573 /* StandingsDataLogic.swift in Sources */,
-				FF52D16A2D3F2F8F00DF2573 /* DriverStandingsView.swift in Sources */,
+				FF52D16A2D3F2F8F00DF2573 /* StandingsView.swift in Sources */,
 				FF52D1702D3FB99000DF2573 /* DriverAnalysisModel.swift in Sources */,
 				FF52D1752D3FB9F400DF2573 /* DriverAnalysisDataLogic.swift in Sources */,
 				FF75D37A2D233FF900160331 /* Extension.swift in Sources */,

@@ -18,17 +18,20 @@ protocol SeasonDataLogicType {
 final class SeasonDataLogic: SeasonDataLogicType {
     private let bundle: Bundle
     private let mapper: SeasonEntityMapper
+    private let apiService: ApiService
 
     private let persistenceDataManager: PersistenceDataManager<RaceWeekendEntity>
 
     init(
         bundle: Bundle = Bundle.main,
         mapper: SeasonEntityMapper = SeasonEntityMapper(),
+        apiService: ApiService = ApiServiceImpl.shared,
         persistenceDataManager: PersistenceDataManager<RaceWeekendEntity>
     ) {
         self.persistenceDataManager = persistenceDataManager
         self.mapper = mapper
         self.bundle = bundle
+        self.apiService = apiService
     }
 
     func fetchRaceWeekend(forRound round: Int) -> RaceWeekendEntity? {
@@ -51,10 +54,8 @@ final class SeasonDataLogic: SeasonDataLogicType {
 
     func loadSeasons(completion: @escaping (Bool) -> Void) async {
         do {
-            let season: SeasonModel = try await bundle.decode("2025.json")
-            let previousSeason: SeasonModel = try await bundle.decode("2024.json")
-            saveRaceWeekends(items: previousSeason.races, completion: {_ in })
-            saveRaceWeekends(items: season.races, completion: completion)
+            let races = try await apiService.fetchSchedule()
+            saveRaceWeekends(items: races, completion: completion)
         } catch {
             print("Error loading season calendar: \(error.localizedDescription)")
         }

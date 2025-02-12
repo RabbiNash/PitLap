@@ -33,11 +33,11 @@ struct SeasonView: View {
                 }
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
 
-                CustomPicker(selectedOption: $selectedTab)
+                SeasonPicker(selectedOption: $selectedTab)
                     .padding()
 
                 Text("Calendar")
-                    .font(.custom("Formula1",size: 28))
+                    .font(.custom("Audiowide",size: 28))
                     .fontWeight(.bold)
                     .padding(.horizontal, 16)
 
@@ -78,8 +78,7 @@ struct SeasonView: View {
     SeasonView()
 }
 
-
-struct CustomPicker: View {
+struct SeasonPicker: View {
     @Binding var selectedOption: SeasonTabOption
     var options: [SeasonTabOption] = SeasonTabOption.allCases
 

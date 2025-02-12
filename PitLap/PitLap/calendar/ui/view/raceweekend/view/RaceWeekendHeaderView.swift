@@ -31,25 +31,24 @@ struct RaceWeekendHeaderView: View {
 
             VStack(alignment: .leading) {
                 (Text("Round ") + Text("\(weekend.round)"))
-//                    .font(.custom("Formula1",size: 16))
+                    .font(.custom("Noto Sans",size: 20))
                     .foregroundStyle(.white)
                     .fontWeight(.semibold)
 
                 Text(weekend.officialEventName)
-                    .font(.custom("Formula1",size: 30))
-
-//                                    .font(.title)
+                    .font(.custom("Audiowide",size: 32))
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
 
                 Text(weekend.country)
-//                    .font(.custom("Formula1",size: 20))
-                    .font(.title2)
-                    .fontWeight(.semibold)
+                    .font(.custom("Noto Sans",size: 20))
+                    .fontWeight(.regular)
                     .foregroundStyle(.white)
 
                 Text(Date.getHumanisedDate(dateString: weekend.session1DateUTC) ?? " ")
-//                    .font(.custom("Formula1",size: 16))
+                    .font(.custom("Noto Sans",size: 20))
+                    .fontWeight(.regular)
+                
                     .foregroundStyle(.white)
             }
             .padding()
