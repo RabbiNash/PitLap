@@ -9,26 +9,29 @@ import Foundation
 
 protocol StandingsDataLogicType {
     func getDriverStandings() async -> [DriverStandingModel]
+    func getConstructorStandings() async -> [ConstructorStandingModel]
 }
 
 final class StandingsDataLogic: StandingsDataLogicType {
-    private let mapper: DriverStandingEntityMapper
-    private let bundle: Bundle
+    private let apiService: ApiService
     
-    init(
-        bundle: Bundle = Bundle.main,
-        mapper: DriverStandingEntityMapper = DriverStandingEntityMapper()
-    ) {
-        self.bundle = bundle
-        self.mapper = mapper
+    init(apiService: ApiService = ApiServiceImpl.shared) {
+        self.apiService = apiService
     }
     
     func getDriverStandings() async -> [DriverStandingModel] {
+        await fetchStandings { [self] in try await apiService.fetchDriverStandings() }
+    }
+    
+    func getConstructorStandings() async -> [ConstructorStandingModel] {
+        await fetchStandings { [self] in try await apiService.fetchConstructorStandings() }
+    }
+    
+    private func fetchStandings<T>(operation: @escaping () async throws -> [T]) async -> [T] {
         do {
-            let standings: StandingModel = try await Bundle.main.decode("f1_standings_2024.json")
-            return standings.standingsTable
+            return try await operation()
         } catch {
-            print("Error loading season calendar: \(error.localizedDescription)")
+            print("Error loading standings: \(error.localizedDescription)")
             return []
         }
     }

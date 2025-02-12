@@ -17,19 +17,19 @@ struct PitLapApp: App {
     var body: some Scene {
         WindowGroup {
             ViewCoordinator()
-                .environment(\.font, Font.custom("Titillium Web", size: 14))
+                .environment(\.font, Font.custom("Noto Sans", size: 16))
                 .preferredColorScheme(.light)
                 .applyAccentColor()
         }.modelContainer(for: [RaceWeekendEntity.self, RaceResultEntity.self])
     }
 
-//    init(){
-//        for family in UIFont.familyNames {
-//             print(family)
-//
-//             for names in UIFont.fontNames(forFamilyName: family){
-//             print("== \(names)")
-//             }
-//        }
-//    }
+    init(){
+        for family in UIFont.familyNames {
+             print(family)
+
+             for names in UIFont.fontNames(forFamilyName: family){
+             print("== \(names)")
+             }
+        }
+    }
 }

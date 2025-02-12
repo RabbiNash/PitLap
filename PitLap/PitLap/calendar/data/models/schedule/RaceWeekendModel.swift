@@ -47,15 +47,15 @@ struct RaceWeekendModel: Codable {
     let country, officialEventName, eventName: String
     let eventFormat: EventFormatModel
     let session1: Session1
-    let session1DateUTC: String
+    let session1DateUTC: String?
     let session2: Session2
-    let session2DateUTC: String
+    let session2DateUTC: String?
     let session3: Session3
-    let session3DateUTC: String
+    let session3DateUTC: String?
     let session4: Session4
-    let session4DateUTC: String
+    let session4DateUTC: String?
     let session5: Session5
-    let session5DateUTC: String
+    let session5DateUTC: String?
     let year: String
     let results: [RaceResultModel]
 
@@ -81,7 +81,7 @@ struct RaceWeekendModel: Codable {
 
     enum CodingKeys: String, CodingKey {
         case round, country, officialEventName, eventName, eventFormat, session1
-        case session1DateUTC = "Session1DateUtc"
+        case session1DateUTC = "session1DateUtc"
         case session2
         case session2DateUTC = "session2DateUtc"
         case session3

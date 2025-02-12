@@ -1,0 +1,76 @@
+//
+//  ApiService.swift
+//  PitLap
+//
+//  Created by Tinashe Makuti on 10/02/2025.
+//
+
+import Foundation
+
+// MARK: - API Service Protocol
+protocol ApiService {
+    func fetchSchedule() async throws -> [RaceWeekendModel]
+    func fetchConstructorStandings() async throws -> [ConstructorStandingModel]
+    func fetchDriverStandings() async throws -> [DriverStandingModel]
+    func fetchDriverTheoreticalStandings() async throws -> [DriverAnalysisModel]
+}
+
+final class ApiServiceImpl: ApiService {
+    
+    static let shared = ApiServiceImpl()
+    
+    private let baseURL = "http://192.168.1.47:3000"
+
+    private func fetchData<T: Codable>(endpoint: String) async throws -> T {
+        guard let url = URL(string: "\(baseURL)\(endpoint)") else {
+            throw APIError.invalidURL
+        }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            throw APIError.invalidResponse
+        }
+        
+        do {
+            let decodedResponse = try JSONDecoder().decode(ApiResponse<T>.self, from: data)
+            return decodedResponse.data
+        } catch {
+            throw APIError.decodingFailed(error)
+        }
+    }
+
+    func fetchSchedule() async throws -> [RaceWeekendModel] {
+        return try await fetchData(endpoint: "/schedule")
+    }
+    
+    func fetchDriverStandings() async throws -> [DriverStandingModel] {
+        return try await fetchData(endpoint: "/standings/driver")
+    }
+    
+    func fetchConstructorStandings() async throws -> [ConstructorStandingModel] {
+        return try await fetchData(endpoint: "/standings/constructor")
+    }
+    
+    func fetchDriverTheoreticalStandings() async throws -> [DriverAnalysisModel] {
+        return try await fetchData(endpoint: "/standings/driver/theoretical")
+    }
+}
+
+// MARK: - API Errors
+enum APIError: Error, LocalizedError {
+    case invalidURL
+    case invalidResponse
+    case decodingFailed(Error)
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidURL:
+            return "Invalid URL."
+        case .invalidResponse:
+            return "Invalid response from server."
+        case .decodingFailed(let error):
+            return "Decoding failed: \(error.localizedDescription)"
+        }
+    }
+}

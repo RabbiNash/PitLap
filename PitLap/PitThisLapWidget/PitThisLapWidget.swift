@@ -154,10 +154,6 @@ struct RectangularWidgetView: View {
                 }
             }
             .padding(8)
-//            .background(
-//                RoundedRectangle(cornerRadius: 8)
-//                    .stroke(.primary, lineWidth: 1)
-//            )
 
             Spacer()
 
@@ -169,15 +165,8 @@ struct RectangularWidgetView: View {
 
     private func getNextEvent(from races: [RaceWeekendEntity]) -> RaceWeekendEntity? {
         let currentDate = Date()
-        return races.first(where: { Date.getDateFromString(dateString: $0.session1DateUTC) ?? Date() > currentDate })
+        return races.first(where: { Date.getDateFromString(dateString: $0.session2DateUTC) ?? Date() > currentDate })
     }
-
-//        .first { race in
-//            guard let raceDate = Date.getDateFromString(dateString: race.sessions.gp) else {
-//                return false
-//            }
-//            return raceDate > currentDate
-//        }
 }
 
 /// Widget view for `accessoryCircular`

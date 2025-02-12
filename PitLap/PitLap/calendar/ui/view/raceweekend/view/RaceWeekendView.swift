@@ -25,7 +25,7 @@ struct RaceWeekendView: View {
                     RaceWeekendHeaderView(weekend: weekend)
 
                     Text(weekend.eventName)
-                        .font(.custom("Formula1",size: 24))
+                        .font(.custom("Audiowide",size: 24))
                         .fontWeight(.bold)
                         .multilineTextAlignment(.leading)
                         .padding(.vertical, 8)

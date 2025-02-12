@@ -14,18 +14,16 @@ struct DriverAnalysisView: View {
         List(viewModel.driverAnalysis, id: \ .position) { driver in
             VStack(alignment: .leading, spacing: 8) {
                 Text("\(driver.position). \(driver.name)")
-                    .font(.headline)
+                    .fontWeight(.bold)
 
                 HStack {
                     Text("Current Points: \(driver.currentPoints)")
                     Spacer()
                     Text("Max Points: \(driver.theoreticalMaxPoints)")
                 }
-                .font(.subheadline)
                 .foregroundColor(.gray)
 
                 Text("Can Win: \(driver.canWin)")
-                    .font(.footnote)
                     .foregroundColor(driver.canWin == "Yes" ? .green : .red)
             }
             .padding(.vertical, 8)
