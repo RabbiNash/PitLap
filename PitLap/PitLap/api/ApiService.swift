@@ -22,7 +22,7 @@ final class ApiServiceImpl: ApiService {
     
     static let shared = ApiServiceImpl()
     
-    private let baseURL = "http://192.168.1.47:3000"
+    private let baseURL = "https://pitlap.eu"
 
     private func fetchData<T: Codable>(route: APIRoute) async throws -> T {
         guard let url = URL(string: "\(baseURL)\(route.path)") else {
