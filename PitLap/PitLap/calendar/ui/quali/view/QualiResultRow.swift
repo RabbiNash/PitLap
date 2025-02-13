@@ -76,7 +76,7 @@ struct QualiResultRow: View {
                 .fontWeight(.light))
                 .foregroundStyle(.white)
                 .font(.custom("Noto Sans", size: 12))
-                
+
         }
         .frame(maxWidth: .infinity)
     }
