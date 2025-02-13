@@ -39,6 +39,4 @@ final class SummariesDataLogic: SummariesDataLogicType {
         
         return nil
     }
-    
-    
 }

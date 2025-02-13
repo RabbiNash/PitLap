@@ -11,13 +11,13 @@ import PersistenceManager
 struct RaceWeekendView: View {
     private let weekend: RaceWeekendEntity
     
-    @StateObject private var viewModel: SummariesViewModel
+    @StateObject private var viewModel: RaceWeekendViewModel
     @Namespace private var namespace
     
     @State var activeSheet: SessionType?
     @State var showSheet: Bool = false
 
-    init(weekend: RaceWeekendEntity, viewModel: SummariesViewModel = SummariesViewModel()) {
+    init(weekend: RaceWeekendEntity, viewModel: RaceWeekendViewModel = RaceWeekendViewModel()) {
         self.weekend = weekend
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -100,7 +100,9 @@ struct RaceWeekendView: View {
         switch sessionType {
         case .session5:
             RaceResultView(results: weekend.results)
-        case .session1, .session2, .session3, .session4:
+        case .session4:
+            QualiResultView(year: Int(weekend.year) ?? 2024, round: weekend.round)
+        case .session1, .session2, .session3:
             Text("Coming Soon")
         }
     }

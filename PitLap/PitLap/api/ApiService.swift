@@ -15,12 +15,14 @@ protocol ApiService {
     func fetchDriverTheoreticalStandings() async throws -> [DriverAnalysisModel]
     func fetchRaceSummary(round: Int, year: Int) async throws -> RaceSummaryModel
     func fetchTrackSummary(trackName: String) async throws -> TrackSummaryModel
+    func fetchQualiResults(year: Int, round: Int) async throws -> QualiResults
 }
 
 final class ApiServiceImpl: ApiService {
+    
     static let shared = ApiServiceImpl()
     
-    private let baseURL = "https://pitlap.eu"
+    private let baseURL = "http://192.168.1.47:3000"
 
     private func fetchData<T: Codable>(route: APIRoute) async throws -> T {
         guard let url = URL(string: "\(baseURL)\(route.path)") else {
@@ -63,6 +65,10 @@ final class ApiServiceImpl: ApiService {
 
     func fetchTrackSummary(trackName: String) async throws -> TrackSummaryModel {
         return try await fetchData(route: .trackSummary(trackName: trackName))
+    }
+    
+    func fetchQualiResults(year: Int, round: Int) async throws -> QualiResults {
+        return try await fetchData(route: .qualiResults(year: year, round: round))
     }
 }
 

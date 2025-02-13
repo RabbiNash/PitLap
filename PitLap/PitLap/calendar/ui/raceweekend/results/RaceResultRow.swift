@@ -54,5 +54,3 @@ struct RaceResultRow: View {
         }.padding(.vertical, 8)
     }
 }
-
-

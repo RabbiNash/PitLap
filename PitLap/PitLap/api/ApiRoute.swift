@@ -14,6 +14,7 @@ enum APIRoute {
     case driverTheoreticalStandings
     case raceSummary(year: Int, round: Int)
     case trackSummary(trackName: String)
+    case qualiResults(year: Int, round: Int)
     
     var path: String {
         switch self {
@@ -29,6 +30,8 @@ enum APIRoute {
             return "/summary/race/\(year)/\(round)"
         case .trackSummary(let trackName):
             return "/summary/track/\(trackName)"
+        case .qualiResults(let year, let round):
+            return "/quali/convectional/\(year)/\(round)"
         }
     }
 }

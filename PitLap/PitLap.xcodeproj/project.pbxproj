@@ -19,6 +19,14 @@
 		86645A252D5E0BC1004BAB44 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 86645A162D5E0BC1004BAB44 /* 4.png */; };
 		86645A262D5E0BC1004BAB44 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 86645A1D2D5E0BC1004BAB44 /* 11.png */; };
 		86645A272D5E0BC1004BAB44 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 86645A1B2D5E0BC1004BAB44 /* 9.png */; };
+		86645A2A2D5E287C004BAB44 /* QualiResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645A292D5E287C004BAB44 /* QualiResultModel.swift */; };
+		86645A2B2D5E287C004BAB44 /* QualiResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645A292D5E287C004BAB44 /* QualiResultModel.swift */; };
+		86645A2D2D5E28FB004BAB44 /* QualiResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645A2C2D5E28F2004BAB44 /* QualiResults.swift */; };
+		86645A2E2D5E28FB004BAB44 /* QualiResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645A2C2D5E28F2004BAB44 /* QualiResults.swift */; };
+		86645A312D5E29F7004BAB44 /* QualiDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645A302D5E29F2004BAB44 /* QualiDataLogic.swift */; };
+		86645A362D5E2BD9004BAB44 /* QualiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645A352D5E2BD9004BAB44 /* QualiViewModel.swift */; };
+		86645A382D5E2D63004BAB44 /* QualiResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645A372D5E2D63004BAB44 /* QualiResultRow.swift */; };
+		86645A3A2D5E2F3E004BAB44 /* QualiResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645A392D5E2F3E004BAB44 /* QualiResultView.swift */; };
 		86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */; };
 		86F1B8062D5CC7D400AF923D /* StandingRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */; };
 		86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8072D5CCB5500AF923D /* StandingRow.swift */; };
@@ -31,7 +39,7 @@
 		86F1B83C2D5D0FB300AF923D /* TrackSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B83B2D5D0FB300AF923D /* TrackSummaryModel.swift */; };
 		86F1B83D2D5D0FB300AF923D /* TrackSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B83B2D5D0FB300AF923D /* TrackSummaryModel.swift */; };
 		86F1B8402D5D112200AF923D /* SummariesDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B83F2D5D111500AF923D /* SummariesDataLogic.swift */; };
-		86F1B8422D5D137100AF923D /* SummariesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8412D5D136900AF923D /* SummariesViewModel.swift */; };
+		86F1B8422D5D137100AF923D /* RaceWeekendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8412D5D136900AF923D /* RaceWeekendViewModel.swift */; };
 		86F1B8442D5D284D00AF923D /* ColorSchemeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8432D5D284A00AF923D /* ColorSchemeModifier.swift */; };
 		86F1B8472D5D297100AF923D /* RaceResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8462D5D295900AF923D /* RaceResultRow.swift */; };
 		86F1B8492D5D2A9600AF923D /* RaceResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8482D5D2A9600AF923D /* RaceResultView.swift */; };
@@ -151,6 +159,12 @@
 		86645A1B2D5E0BC1004BAB44 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		86645A1C2D5E0BC1004BAB44 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		86645A1D2D5E0BC1004BAB44 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
+		86645A292D5E287C004BAB44 /* QualiResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualiResultModel.swift; sourceTree = "<group>"; };
+		86645A2C2D5E28F2004BAB44 /* QualiResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualiResults.swift; sourceTree = "<group>"; };
+		86645A302D5E29F2004BAB44 /* QualiDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualiDataLogic.swift; sourceTree = "<group>"; };
+		86645A352D5E2BD9004BAB44 /* QualiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualiViewModel.swift; sourceTree = "<group>"; };
+		86645A372D5E2D63004BAB44 /* QualiResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualiResultRow.swift; sourceTree = "<group>"; };
+		86645A392D5E2F3E004BAB44 /* QualiResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualiResultView.swift; sourceTree = "<group>"; };
 		86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorStandingModel.swift; sourceTree = "<group>"; };
 		86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRowModel.swift; sourceTree = "<group>"; };
 		86F1B8072D5CCB5500AF923D /* StandingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRow.swift; sourceTree = "<group>"; };
@@ -159,7 +173,7 @@
 		86F1B8382D5D0F5B00AF923D /* RaceSummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceSummaryModel.swift; sourceTree = "<group>"; };
 		86F1B83B2D5D0FB300AF923D /* TrackSummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSummaryModel.swift; sourceTree = "<group>"; };
 		86F1B83F2D5D111500AF923D /* SummariesDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummariesDataLogic.swift; sourceTree = "<group>"; };
-		86F1B8412D5D136900AF923D /* SummariesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummariesViewModel.swift; sourceTree = "<group>"; };
+		86F1B8412D5D136900AF923D /* RaceWeekendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceWeekendViewModel.swift; sourceTree = "<group>"; };
 		86F1B8432D5D284A00AF923D /* ColorSchemeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeModifier.swift; sourceTree = "<group>"; };
 		86F1B8462D5D295900AF923D /* RaceResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultRow.swift; sourceTree = "<group>"; };
 		86F1B8482D5D2A9600AF923D /* RaceResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultView.swift; sourceTree = "<group>"; };
@@ -273,6 +287,49 @@
 				86645A1D2D5E0BC1004BAB44 /* 11.png */,
 			);
 			path = icons;
+			sourceTree = "<group>";
+		};
+		86645A282D5E2843004BAB44 /* quali */ = {
+			isa = PBXGroup;
+			children = (
+				86645A2C2D5E28F2004BAB44 /* QualiResults.swift */,
+				86645A292D5E287C004BAB44 /* QualiResultModel.swift */,
+			);
+			path = quali;
+			sourceTree = "<group>";
+		};
+		86645A2F2D5E29EB004BAB44 /* quali */ = {
+			isa = PBXGroup;
+			children = (
+				86645A342D5E2B85004BAB44 /* view */,
+				86645A332D5E2B7C004BAB44 /* viewmodel */,
+			);
+			path = quali;
+			sourceTree = "<group>";
+		};
+		86645A322D5E29FA004BAB44 /* quali */ = {
+			isa = PBXGroup;
+			children = (
+				86645A302D5E29F2004BAB44 /* QualiDataLogic.swift */,
+			);
+			path = quali;
+			sourceTree = "<group>";
+		};
+		86645A332D5E2B7C004BAB44 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				86645A352D5E2BD9004BAB44 /* QualiViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		86645A342D5E2B85004BAB44 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				86645A372D5E2D63004BAB44 /* QualiResultRow.swift */,
+				86645A392D5E2F3E004BAB44 /* QualiResultView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		86F1B8032D5CC7AA00AF923D /* data */ = {
@@ -526,6 +583,10 @@
 		FF75D35E2D232CAF00160331 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				86645A2F2D5E29EB004BAB44 /* quali */,
+				FF75D3732D233B2400160331 /* raceweekend */,
+				FF75D36A2D2330FA00160331 /* summary */,
+				FF75D3812D23614F00160331 /* season */,
 				FF75D36B2D23310100160331 /* view */,
 			);
 			path = ui;
@@ -545,6 +606,7 @@
 		FF75D3602D232D4500160331 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				86645A282D5E2843004BAB44 /* quali */,
 				86F1B8372D5D0F4700AF923D /* summaries */,
 				FF52D15C2D3F26E500DF2573 /* schedule */,
 			);
@@ -572,6 +634,7 @@
 		FF75D3672D232E6400160331 /* datalogic */ = {
 			isa = PBXGroup;
 			children = (
+				86645A322D5E29FA004BAB44 /* quali */,
 				86F1B83E2D5D110900AF923D /* summary */,
 				FF52D1722D3FB9C200DF2573 /* schedule */,
 			);
@@ -581,7 +644,7 @@
 		FF75D36A2D2330FA00160331 /* summary */ = {
 			isa = PBXGroup;
 			children = (
-				86F1B8412D5D136900AF923D /* SummariesViewModel.swift */,
+				86F1B8412D5D136900AF923D /* RaceWeekendViewModel.swift */,
 			);
 			path = summary;
 			sourceTree = "<group>";
@@ -589,10 +652,6 @@
 		FF75D36B2D23310100160331 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				86F1B8452D5D295300AF923D /* results */,
-				FF75D3812D23614F00160331 /* season */,
-				FF75D36A2D2330FA00160331 /* summary */,
-				FF75D3732D233B2400160331 /* raceweekend */,
 				FF75D3862D23668900160331 /* HeadingView.swift */,
 			);
 			path = view;
@@ -601,6 +660,7 @@
 		FF75D3732D233B2400160331 /* raceweekend */ = {
 			isa = PBXGroup;
 			children = (
+				86F1B8452D5D295300AF923D /* results */,
 				FF75D37E2D23479100160331 /* viewmodel */,
 				FF75D37D2D23478300160331 /* view */,
 			);
@@ -918,19 +978,22 @@
 				86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */,
 				FF9A51162D4CF088001F1697 /* ArticleFeedItemView.swift in Sources */,
 				FF75D34E2D232BD700160331 /* PitLap.swift in Sources */,
+				86645A362D5E2BD9004BAB44 /* QualiViewModel.swift in Sources */,
 				FF75D3722D23328D00160331 /* SeasonView.swift in Sources */,
-				86F1B8422D5D137100AF923D /* SummariesViewModel.swift in Sources */,
+				86F1B8422D5D137100AF923D /* RaceWeekendViewModel.swift in Sources */,
 				FF9A51182D4D05AA001F1697 /* ArticleView.swift in Sources */,
 				FF52D1562D3F0E1600DF2573 /* BottomNavTabBar.swift in Sources */,
 				86F1B83D2D5D0FB300AF923D /* TrackSummaryModel.swift in Sources */,
 				FF52D15B2D3F264900DF2573 /* DriverStandingModel.swift in Sources */,
 				FF52D1592D3F121200DF2573 /* HideTabBarRepresentable.swift in Sources */,
+				86645A312D5E29F7004BAB44 /* QualiDataLogic.swift in Sources */,
 				FF52D14D2D3F04D100DF2573 /* ViewCoordinator.swift in Sources */,
 				FF75D3802D2347AE00160331 /* RaceWeekendHeaderViewModel.swift in Sources */,
 				FF9A50FF2D4BE486001F1697 /* SettingsView.swift in Sources */,
 				FF52D17D2D3FBF0000DF2573 /* DriverAnalysisView.swift in Sources */,
 				FF52D14F2D3F053900DF2573 /* SplashViewModel.swift in Sources */,
 				FF78AFB32D3AE99900BDD4F7 /* SeasonEntityMapper.swift in Sources */,
+				86645A382D5E2D63004BAB44 /* QualiResultRow.swift in Sources */,
 				86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */,
 				865618FB2D5C184800567D38 /* PitlapPicker.swift in Sources */,
 				FF52D17A2D3FBBC300DF2573 /* DriverAnalysisViewModel.swift in Sources */,
@@ -939,14 +1002,17 @@
 				FF9A51112D4CEA09001F1697 /* RSSFeedDataLogic.swift in Sources */,
 				FF52D1652D3F2B0100DF2573 /* StandingsDataLogic.swift in Sources */,
 				FF52D16A2D3F2F8F00DF2573 /* StandingsView.swift in Sources */,
+				86645A2D2D5E28FB004BAB44 /* QualiResults.swift in Sources */,
 				FF52D1702D3FB99000DF2573 /* DriverAnalysisModel.swift in Sources */,
 				FF52D1752D3FB9F400DF2573 /* DriverAnalysisDataLogic.swift in Sources */,
 				FF75D37A2D233FF900160331 /* Extension.swift in Sources */,
+				86645A3A2D5E2F3E004BAB44 /* QualiResultView.swift in Sources */,
 				86F1B8392D5D0F5B00AF923D /* RaceSummaryModel.swift in Sources */,
 				FF52D14A2D3EFFD200DF2573 /* SplashView.swift in Sources */,
 				FF52D1832D40026F00DF2573 /* TriviaView.swift in Sources */,
 				86F1B8402D5D112200AF923D /* SummariesDataLogic.swift in Sources */,
 				FF75D3772D233B5000160331 /* RaceWeekendView.swift in Sources */,
+				86645A2B2D5E287C004BAB44 /* QualiResultModel.swift in Sources */,
 				FF75D3652D232DE100160331 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -958,12 +1024,14 @@
 				FF78AFB42D3AE99900BDD4F7 /* SeasonEntityMapper.swift in Sources */,
 				FF9799B72D35DFAF00CCF203 /* PitThisLapWidgetBundle.swift in Sources */,
 				86F1B83C2D5D0FB300AF923D /* TrackSummaryModel.swift in Sources */,
+				86645A2E2D5E28FB004BAB44 /* QualiResults.swift in Sources */,
 				FF9A50C32D499620001F1697 /* DriverStandingEntity.swift in Sources */,
 				FF9799B92D35DFAF00CCF203 /* PitThisLapWidget.swift in Sources */,
 				FF9799BB2D35DFAF00CCF203 /* AppIntent.swift in Sources */,
 				FF9799CA2D35E94D00CCF203 /* Extension.swift in Sources */,
 				FF9799C92D35E93900CCF203 /* RaceWeekendModel.swift in Sources */,
 				FF9799C62D35E90E00CCF203 /* Extensions.swift in Sources */,
+				86645A2A2D5E287C004BAB44 /* QualiResultModel.swift in Sources */,
 				86F1B83A2D5D0F5B00AF923D /* RaceSummaryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

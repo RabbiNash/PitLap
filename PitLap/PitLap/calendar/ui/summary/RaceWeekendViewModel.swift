@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SummariesViewModel: ObservableObject {
+final class RaceWeekendViewModel: ObservableObject {
     private let dataLogic: SummariesDataLogicType
     
     @Published var trackSummary: TrackSummaryModel? = nil
