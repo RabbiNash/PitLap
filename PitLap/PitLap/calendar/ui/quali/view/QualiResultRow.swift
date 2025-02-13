@@ -22,26 +22,31 @@ struct QualiResultRow: View {
             Divider()
             qualifyingTimesSection
             Divider()
-        }.padding(.vertical, 8)
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 10)
     }
     
     private var driverInfoSection: some View {
         HStack {
             Text("\(rowModel.position)")
+                .foregroundStyle(.white)
                 .frame(width: 30)
                 .font(.custom("Noto Sans", size: 16))
             
             KFImage(URL(string: rowModel.headshotUrl))
                 .resizable()
-                .cacheMemoryOnly()
+                .cacheOriginalImage(true)
                 .roundCorner(radius: .widthFraction(0.2), roundingCorners: .all)
                 .serialize(as: .PNG)
                 .frame(width: 48, height: 48)
             
             VStack(alignment: .leading) {
                 Text(rowModel.fullName)
+                    .foregroundStyle(.white)
                     .fontWeight(.bold)
                 Text(rowModel.teamName)
+                    .foregroundStyle(.white)
             }
             
             Spacer()
@@ -60,14 +65,16 @@ struct QualiResultRow: View {
         HStack {
             Image(systemName: "timer")
                 .resizable()
+                .foregroundStyle(.white)
                 .frame(width: 12, height: 12)
             
-            Text("\(session)- ")
-                .font(.custom("Noto Sans", size: 12))
+            (Text("\(session)- ")
                 .fontWeight(.semibold)
             + Text(time ?? " ")
+                .fontWeight(.light))
+                .foregroundStyle(.white)
                 .font(.custom("Noto Sans", size: 12))
-                .fontWeight(.light)
+                
         }
         .frame(maxWidth: .infinity)
     }
