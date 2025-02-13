@@ -13,6 +13,9 @@ protocol ApiService {
     func fetchConstructorStandings() async throws -> [ConstructorStandingModel]
     func fetchDriverStandings() async throws -> [DriverStandingModel]
     func fetchDriverTheoreticalStandings() async throws -> [DriverAnalysisModel]
+    func fetchRaceSummary(round: Int, year: Int) async throws -> RaceSummaryModel
+    func fetchTrackSummary(trackName: String) async throws -> TrackSummaryModel
+    func fetchQualiResults(year: Int, round: Int) async throws -> QualiResults
 }
 
 final class ApiServiceImpl: ApiService {
@@ -21,8 +24,8 @@ final class ApiServiceImpl: ApiService {
     
     private let baseURL = "http://192.168.1.47:3000"
 
-    private func fetchData<T: Codable>(endpoint: String) async throws -> T {
-        guard let url = URL(string: "\(baseURL)\(endpoint)") else {
+    private func fetchData<T: Codable>(route: APIRoute) async throws -> T {
+        guard let url = URL(string: "\(baseURL)\(route.path)") else {
             throw APIError.invalidURL
         }
         
@@ -41,19 +44,31 @@ final class ApiServiceImpl: ApiService {
     }
 
     func fetchSchedule() async throws -> [RaceWeekendModel] {
-        return try await fetchData(endpoint: "/schedule")
+        return try await fetchData(route: .schedule)
     }
-    
+
     func fetchDriverStandings() async throws -> [DriverStandingModel] {
-        return try await fetchData(endpoint: "/standings/driver")
+        return try await fetchData(route: .driverStandings)
     }
-    
+
     func fetchConstructorStandings() async throws -> [ConstructorStandingModel] {
-        return try await fetchData(endpoint: "/standings/constructor")
+        return try await fetchData(route: .constructorStandings)
+    }
+
+    func fetchDriverTheoreticalStandings() async throws -> [DriverAnalysisModel] {
+        return try await fetchData(route: .driverTheoreticalStandings)
+    }
+
+    func fetchRaceSummary(round: Int, year: Int) async throws -> RaceSummaryModel {
+        return try await fetchData(route: .raceSummary(year: year, round: round))
+    }
+
+    func fetchTrackSummary(trackName: String) async throws -> TrackSummaryModel {
+        return try await fetchData(route: .trackSummary(trackName: trackName))
     }
     
-    func fetchDriverTheoreticalStandings() async throws -> [DriverAnalysisModel] {
-        return try await fetchData(endpoint: "/standings/driver/theoretical")
+    func fetchQualiResults(year: Int, round: Int) async throws -> QualiResults {
+        return try await fetchData(route: .qualiResults(year: year, round: round))
     }
 }
 

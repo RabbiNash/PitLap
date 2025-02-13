@@ -14,6 +14,21 @@ enum FeedSource: String, CaseIterable {
     case gbblog = "https://www.gpblog.com/en/rss/index.xml"
     case motosportcom = "https://www.motorsport.com/rss/f1/news/"
     case racefans = "https://www.racefans.net/feed/"
+    
+    var title: String {
+        switch self {
+        case .bbc:
+            "BBC"
+        case .autosport:
+            "Autosport"
+        case .gbblog:
+            "GPBlog"
+        case .motosportcom:
+            "Motosport.com"
+        case .racefans:
+            "Racefans"
+        }
+    }
 }
 
 protocol RSSFeedDataLogicType {

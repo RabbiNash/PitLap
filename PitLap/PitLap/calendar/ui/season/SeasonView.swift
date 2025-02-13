@@ -28,7 +28,9 @@ struct SeasonView: View {
             LazyVStack(alignment: .leading) {
                 HStack {
                     if let raceWeekend = viewModel.nextSession {
-                        RaceWeekendHeaderView(weekend: raceWeekend)
+                        NavigationLink(destination: RaceWeekendView(weekend: raceWeekend)) {
+                            RaceWeekendHeaderView(weekend: raceWeekend)
+                        }.buttonStyle(PlainButtonStyle())
                     }
                 }
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)

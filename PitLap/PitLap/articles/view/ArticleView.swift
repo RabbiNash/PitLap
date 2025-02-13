@@ -62,12 +62,12 @@ struct ArticleView: View {
             let truncatedDescription = truncateAfterEllipsis(feed.description?.replacingOccurrences(of: "<br>", with: "\n\n")  ?? "")
 
             Text(truncatedDescription)
-                .font(.custom("Titillium Web", size: 16))
+                .font(.custom("Noto Sans", size: 16))
                 .padding(.top, 8)
                 .padding(.horizontal, 16)
 
             Text("Read more...")
-                .font(.custom("Titillium Web", size: 16))
+                .font(.custom("Noto Sans", size: 16))
                 .foregroundColor(.accentColor)
                 .padding(.top, 8)
                 .padding(.horizontal, 16)

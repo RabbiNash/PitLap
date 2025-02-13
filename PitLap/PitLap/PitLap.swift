@@ -18,18 +18,8 @@ struct PitLapApp: App {
         WindowGroup {
             ViewCoordinator()
                 .environment(\.font, Font.custom("Noto Sans", size: 16))
-                .preferredColorScheme(.light)
+                .modifier(ColorSchemeModifier())
                 .applyAccentColor()
         }.modelContainer(for: [RaceWeekendEntity.self, RaceResultEntity.self])
-    }
-
-    init(){
-        for family in UIFont.familyNames {
-             print(family)
-
-             for names in UIFont.fontNames(forFamilyName: family){
-             print("== \(names)")
-             }
-        }
     }
 }

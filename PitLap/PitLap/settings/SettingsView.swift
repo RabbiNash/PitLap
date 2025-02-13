@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.redBull.rawValue
     @AppStorage("newsSource") private var newsSource: String = FeedSource.autosport.rawValue
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -23,38 +24,76 @@ struct SettingsView: View {
                 
                 Picker("News Source", selection: $newsSource) {
                     ForEach(FeedSource.allCases, id: \.self) { source in
-                        Text(source.rawValue.capitalized).tag(source.rawValue)
+                        Text(source.title).tag(source.rawValue)
                     }
                 }
                 .pickerStyle(.navigationLink)
-            }.listStyle(.inset)
+                
+                Toggle("Enable Dark Mode", isOn: $isDarkMode)
+            }
+            .onChange(of: selectedTeam, { _, newValue in
+                if let iconName = F1Team(rawValue: newValue)?.iconName {
+                    UIApplication.shared.setAlternateIconName(iconName) { error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else {
+                            print("Success!")
+                        }
+                    }
+                }
+            })
+            .listStyle(.inset)
             .padding()
             .navigationTitle("Preferences")
             .navigationBarTitleDisplayMode(.inline)
         }
-        
     }
 }
 
 enum F1Team: String, CaseIterable {
-    case redBull, mercedes, ferrari, mclaren, astonMartin, alpine, williams, rb, sauber, haas
+    case redBull, mercedes, ferrari, mclaren, astonMartin, alpine, williams, rb, kick, haas
 
+    // got these here https://www.reddit.com/r/formula1/comments/1avhmjb/f1_2024_hex_codes/?rdt=52441
     var color: Color {
+            switch self {
+            case .mercedes: return Color(red: 39/255, green: 244/255, blue: 210/255)
+            case .redBull: return Color(red: 54/255, green: 113/255, blue: 198/255)
+            case .ferrari: return Color(red: 232/255, green: 0/255, blue: 45/255)
+            case .mclaren: return Color(red: 255/255, green: 128/255, blue: 0/255)
+            case .alpine: return Color(red: 255/255, green: 135/255, blue: 188/255)
+            case .rb: return Color(red: 102/255, green: 146/255, blue: 255/255)
+            case .astonMartin: return Color(red: 34/255, green: 153/255, blue: 113/255)
+            case .williams: return Color(red: 100/255, green: 196/255, blue: 255/255)
+            case .kick: return Color(red: 82/255, green: 226/255, blue: 82/255)
+            case .haas: return Color(red: 182/255, green: 186/255, blue: 189/255)
+            }
+        }
+    
+    var iconName: String {
         switch self {
-        case .redBull: return Color(red: 30/255, green: 65/255, blue: 255/255) // Dark Blue
-        case .mercedes: return Color(red: 0/255, green: 210/255, blue: 190/255) // Teal
-        case .ferrari: return Color(red: 220/255, green: 0/255, blue: 0/255) // Red
-        case .mclaren: return Color(red: 255/255, green: 135/255, blue: 0/255) // Papaya Orange
-        case .astonMartin: return Color(red: 0/255, green: 111/255, blue: 98/255) // British Racing Green
-        case .alpine: return Color(red: 0/255, green: 144/255, blue: 255/255) // Blue
-        case .williams: return Color(red: 0/255, green: 82/255, blue: 159/255) // Dark Blue
-        case .rb: return Color(red: 76/255, green: 0/255, blue: 130/255) // Purple
-        case .sauber: return Color(red: 140/255, green: 0/255, blue: 20/255) // Dark Red
-        case .haas: return Color(red: 191/255, green: 191/255, blue: 191/255) // Grey
+        case .redBull:
+            return "Redbull-Icon"
+        case .mercedes:
+            return "Mercedes-Icon"
+        case .ferrari:
+            return "Ferrari-Icon"
+        case .mclaren:
+            return "McLaren-Icon"
+        case .astonMartin:
+            return "Aston-Icon"
+        case .alpine:
+            return "Alpine-Icon"
+        case .williams:
+            return "Williams-Icon"
+        case .rb:
+            return "RB-Icon"
+        case .kick:
+            return "Kick-Icon"
+        case .haas:
+            return "Haas-Icon"
         }
     }
 }
-
 
 #Preview {
     SettingsView()
