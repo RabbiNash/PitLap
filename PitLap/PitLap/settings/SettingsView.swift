@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.redBull.rawValue
     @AppStorage("newsSource") private var newsSource: String = FeedSource.autosport.rawValue
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -23,16 +24,17 @@ struct SettingsView: View {
                 
                 Picker("News Source", selection: $newsSource) {
                     ForEach(FeedSource.allCases, id: \.self) { source in
-                        Text(source.rawValue.capitalized).tag(source.rawValue)
+                        Text(source.title).tag(source.rawValue)
                     }
                 }
                 .pickerStyle(.navigationLink)
+                
+                Toggle("Enable Dark Mode", isOn: $isDarkMode)
             }.listStyle(.inset)
             .padding()
             .navigationTitle("Preferences")
             .navigationBarTitleDisplayMode(.inline)
         }
-        
     }
 }
 

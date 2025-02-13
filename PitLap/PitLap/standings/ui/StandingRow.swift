@@ -20,7 +20,7 @@ struct StandingRow: View {
             HStack {
                 Text(rowModel.position)
                     .frame(width: 30)
-                    .font(.custom("Formula1",size: 16))
+                    .font(.custom("Noto Sans",size: 16))
 
 
                 VStack(alignment: .leading) {

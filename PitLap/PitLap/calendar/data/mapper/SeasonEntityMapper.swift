@@ -28,7 +28,7 @@ class SeasonEntityMapper {
             session5: weekend.session5,
             session5DateUTC: weekend.session5DateUTC ?? "",
             year: weekend.year,
-            results: weekend.results.map(mapToResultEntity)
+            results: weekend.results.sorted { $0.position < $1.position }.map(mapToResultEntity)
         )
 
     }

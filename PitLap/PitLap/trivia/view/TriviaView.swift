@@ -68,22 +68,22 @@ struct TriviaCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(level)
-                .font(.custom("Titillium Web", size: 12))
+                .font(.custom("Noto Sans", size: 12))
                 .foregroundColor(.gray)
 
             Image(systemName: icon)
-                .font(.custom("Titillium Web", size: 18))
+                .font(.custom("Noto Sans", size: 18))
                 .foregroundColor(iconColor)
                 .padding(12)
                 .background(iconColor.opacity(0.1))
                 .clipShape(Circle())
 
             Text(title)
-                .font(.custom("Titillium Web", size: 16))
+                .font(.custom("Noto Sans", size: 16))
                 .fontWeight(.semibold)
 
             Text(subtitle)
-                .font(.custom("Titillium Web", size: 14))
+                .font(.custom("Noto Sans", size: 14))
                 .foregroundColor(.gray)
 
             Rectangle()
