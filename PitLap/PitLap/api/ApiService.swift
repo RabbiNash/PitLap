@@ -16,10 +16,10 @@ protocol ApiService {
     func fetchRaceSummary(round: Int, year: Int) async throws -> RaceSummaryModel
     func fetchTrackSummary(trackName: String) async throws -> TrackSummaryModel
     func fetchQualiResults(year: Int, round: Int) async throws -> QualiResults
+    func fetchPracticeLaps(year: Int, round: Int, sessionName: String) async throws -> PracticeLapsModel
 }
 
 final class ApiServiceImpl: ApiService {
-    
     static let shared = ApiServiceImpl()
     
     private let baseURL = "https://pitlap.eu"
@@ -69,6 +69,10 @@ final class ApiServiceImpl: ApiService {
     
     func fetchQualiResults(year: Int, round: Int) async throws -> QualiResults {
         return try await fetchData(route: .qualiResults(year: year, round: round))
+    }
+    
+    func fetchPracticeLaps(year: Int, round: Int, sessionName: String) async throws -> PracticeLapsModel {
+        return try await fetchData(route: .laps(year: year, round: round, sessionName: sessionName))
     }
 }
 

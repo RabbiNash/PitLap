@@ -20,12 +20,13 @@ struct RaceResultRow: View {
         VStack {
             HStack {
                 Text("\(rowModel.position)")
+                    .foregroundStyle(.white)
                     .frame(width: 30)
                     .font(.custom("Noto Sans",size: 16))
                 
                 KFImage(URL(string: rowModel.headshotURL))
                     .resizable()
-                    .cacheMemoryOnly()
+                    .cacheOriginalImage(true)
                     .roundCorner(
                         radius: .widthFraction(0.2),
                         roundingCorners: [.all]
@@ -35,9 +36,11 @@ struct RaceResultRow: View {
                 
                 VStack(alignment: .leading) {
                     Text(rowModel.fullName)
+                        .foregroundStyle(.white)
                         .fontWeight(.bold)
                     
                     Text(rowModel.broadcastName)
+                        .foregroundStyle(.white)
                 }
                 
                 Spacer()
@@ -45,12 +48,12 @@ struct RaceResultRow: View {
                 VStack(alignment: .trailing) {
                     Text("\(rowModel.points) pts")
                         .fontWeight(.bold)
+                        .foregroundStyle(.white)
                     Text("\(rowModel.status)")
-                        .foregroundColor(.secondary)
+                        .foregroundStyle(.white)
                 }
             }
-            
-            Divider()
-        }.padding(.vertical, 8)
+        }
+        .padding(.all, 24)
     }
 }

@@ -102,7 +102,9 @@ struct RaceWeekendView: View {
             RaceResultView(results: weekend.results)
         case .session4:
             QualiResultView(year: Int(weekend.year) ?? 2024, round: weekend.round)
-        case .session1, .session2, .session3:
+        case .session1:
+            PracticeView(year: Int(weekend.year) ?? 2024, round: weekend.round, sessionName: weekend.session1.rawValue)
+        case .session2, .session3:
             Text("Coming Soon")
         }
     }
