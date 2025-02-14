@@ -1,0 +1,24 @@
+{
+  "originHash" : "d8864dbf2c413bc196a35916eece79b03e59a51ea5ddf626b3acc71a1d934c14",
+  "pins" : [
+    {
+      "identity" : "feedkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nmdias/FeedKit.git",
+      "state" : {
+        "revision" : "ff1053af50541619acfd05d74752253823f24dda",
+        "version" : "10.0.0-rc.2"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "fa3609d1975791c0a6e6f75a56dc20a957967769",
+        "version" : "8.1.4"
+      }
+    }
+  ],
+  "version" : 3
+}
