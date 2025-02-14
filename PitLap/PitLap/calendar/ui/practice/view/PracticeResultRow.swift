@@ -1,18 +1,20 @@
 //
-//  QualiResultRow.swift
+//  PracticeResultRow.swift
 //  PitLap
 //
 //  Created by Tinashe Makuti on 13/02/2025.
 //
 
 import SwiftUI
+
+import SwiftUI
 import PersistenceManager
 import Kingfisher
 
-struct QualiResultRow: View {
-    private let rowModel: QualiResultModel
+struct PracticeResultRow: View {
+    private let rowModel: GroupedLapModel
     
-    init(rowModel: QualiResultModel) {
+    init(rowModel: GroupedLapModel) {
         self.rowModel = rowModel
     }
     
@@ -21,9 +23,10 @@ struct QualiResultRow: View {
             driverInfoSection
             Divider()
                 .overlay(Color.white.opacity(0.5))
-            qualifyingTimesSection
+            timesSection
             Divider()
                 .overlay(Color.white.opacity(0.5))
+
         }
         .padding(.horizontal)
         .padding(.vertical, 10)
@@ -31,11 +34,6 @@ struct QualiResultRow: View {
     
     private var driverInfoSection: some View {
         HStack {
-            Text("\(rowModel.position)")
-                .foregroundStyle(.white)
-                .frame(width: 30)
-                .font(.custom("Noto Sans", size: 16))
-            
             KFImage(URL(string: rowModel.headshotUrl))
                 .resizable()
                 .cacheOriginalImage(true)
@@ -43,37 +41,29 @@ struct QualiResultRow: View {
                 .serialize(as: .PNG)
                 .frame(width: 48, height: 48)
             
-            VStack(alignment: .leading) {
                 Text(rowModel.fullName)
                     .foregroundStyle(.white)
                     .fontWeight(.bold)
-                Text(rowModel.teamName)
-                    .foregroundStyle(.white)
-            }
             
             Spacer()
         }
     }
     
-    private var qualifyingTimesSection: some View {
+    private var timesSection: some View {
         HStack {
-            qualifyingTimeView(session: "Q1", time: rowModel.q1)
-            qualifyingTimeView(session: "Q2", time: rowModel.q2)
-            qualifyingTimeView(session: "Q3", time: rowModel.q3)
+            practiceTimeView(time: rowModel.bestLapTime)
         }
     }
     
-    private func qualifyingTimeView(session: String, time: String?) -> some View {
+    private func practiceTimeView(time: String?) -> some View {
         HStack {
             Image(systemName: "timer")
                 .resizable()
                 .foregroundStyle(.white)
                 .frame(width: 12, height: 12)
             
-            (Text("\(session)- ")
-                .fontWeight(.semibold)
-            + Text(time ?? " ")
-                .fontWeight(.light))
+            Text(time ?? " ")
+                .fontWeight(.regular)
                 .foregroundStyle(.white)
                 .font(.custom("Noto Sans", size: 12))
                 
