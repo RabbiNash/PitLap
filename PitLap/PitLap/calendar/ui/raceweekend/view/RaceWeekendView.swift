@@ -104,8 +104,18 @@ struct RaceWeekendView: View {
             QualiResultView(year: Int(weekend.year) ?? 2024, round: weekend.round)
         case .session1:
             PracticeView(year: Int(weekend.year) ?? 2024, round: weekend.round, sessionName: weekend.session1.rawValue)
-        case .session2, .session3:
-            Text("Coming Soon")
+        case .session2:
+            if weekend.session2 == Session2.practice2 {
+                PracticeView(year: Int(weekend.year) ?? 2024, round: weekend.round, sessionName: weekend.session2.rawValue)
+            } else {
+                Text("Coming Soon")
+            }
+        case .session3:
+            if weekend.session3 == Session3.practice3 {
+                PracticeView(year: Int(weekend.year) ?? 2024, round: weekend.round, sessionName: weekend.session3.rawValue)
+            } else {
+                Text("Coming Soon")
+            }
         }
     }
 

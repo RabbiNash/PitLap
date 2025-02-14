@@ -11,39 +11,53 @@ struct SettingsView: View {
     @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.redBull.rawValue
     @AppStorage("newsSource") private var newsSource: String = FeedSource.autosport.rawValue
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    
+    var appVersion: String {
+          Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
+      }
+
+      var appBuild: String {
+          Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "RC"
+      }
 
     var body: some View {
         NavigationStack {
-            List {
-                Picker("Team", selection: $selectedTeam) {
-                    ForEach(F1Team.allCases, id: \.self) { team in
-                        Text(team.rawValue.capitalized).tag(team.rawValue)
-                    }
-                }
-                .pickerStyle(.navigationLink)
-                
-                Picker("News Source", selection: $newsSource) {
-                    ForEach(FeedSource.allCases, id: \.self) { source in
-                        Text(source.title).tag(source.rawValue)
-                    }
-                }
-                .pickerStyle(.navigationLink)
-                
-                Toggle("Enable Dark Mode", isOn: $isDarkMode)
-            }
-            .onChange(of: selectedTeam, { _, newValue in
-                if let iconName = F1Team(rawValue: newValue)?.iconName {
-                    UIApplication.shared.setAlternateIconName(iconName) { error in
-                        if let error = error {
-                            print(error.localizedDescription)
-                        } else {
-                            print("Success!")
+            VStack {
+                List {
+                    Picker("Team", selection: $selectedTeam) {
+                        ForEach(F1Team.allCases, id: \.self) { team in
+                            Text(team.rawValue.capitalized).tag(team.rawValue)
                         }
                     }
+                    .pickerStyle(.navigationLink)
+                    
+                    Picker("News Source", selection: $newsSource) {
+                        ForEach(FeedSource.allCases, id: \.self) { source in
+                            Text(source.title).tag(source.rawValue)
+                        }
+                    }
+                    .pickerStyle(.navigationLink)
+                    
+                    Toggle("Enable Dark Mode", isOn: $isDarkMode)
                 }
-            })
-            .listStyle(.inset)
-            .padding()
+                .onChange(of: selectedTeam, { _, newValue in
+                    if let iconName = F1Team(rawValue: newValue)?.iconName {
+                        UIApplication.shared.setAlternateIconName(iconName) { error in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            } else {
+                                print("Success!")
+                            }
+                        }
+                    }
+                })
+                .listStyle(.inset)
+                .padding()
+                
+                Text("Version: \(appVersion) (\(appBuild))")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+            }
             .navigationTitle("Preferences")
             .navigationBarTitleDisplayMode(.inline)
         }
