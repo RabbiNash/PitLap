@@ -13,17 +13,19 @@ protocol DriverAnalysisLogicType {
 
 final class DriverAnalysisDataLogic: DriverAnalysisLogicType {
     private let bundle: Bundle
+    private let apiService: ApiService
 
-    init(bundle: Bundle = Bundle.main) {
+    init(bundle: Bundle = Bundle.main, apiService: ApiService = ApiServiceImpl.shared) {
         self.bundle = bundle
+        self.apiService = apiService
     }
 
     func getDriverAnalysis() async -> [DriverAnalysisModel] {
         do {
-            let drivers: DriversWinModel = try await Bundle.main.decode("drivers_win_analysis.json")
-            return drivers.drivers
+            let drivers = try await apiService.fetchDriverTheoreticalStandings()
+            return drivers
         } catch {
-            print("Error loading season calendar: \(error.localizedDescription)")
+            print("Error loading driver analysis calendar: \(error.localizedDescription)")
             return []
         }
     }

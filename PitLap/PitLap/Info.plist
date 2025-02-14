@@ -2,32 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Audiowide-Regular.ttf</string>
-		<string>NotoSans-VariableFont_wdth,wght.ttf</string>
-		<string>f1-regular.ttf</string>
-		<string>f1-numbers-regular.ttf</string>
-		<string>f1-bold.ttf</string>
-	</array>
 	<key>CFBundleIcons</key>
 	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>2</string>
-			</array>
-			<key>UIPrerenderedIcon</key>
-			<false/>
-		</dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>Ferrari-Icon</key>
+			<key>Alpine-Icon</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>2</string>
+					<string>7</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
@@ -41,65 +24,11 @@
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
-			<key>Mercedes-Icon</key>
+			<key>Ferrari-Icon</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>4</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Redbull-Icon</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>5</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>McLaren-Icon</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>6</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Alpine-Icon</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>7</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>RB-Icon</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>8</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Williams-Icon</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>9</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Kick-Icon</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>10</string>
+					<string>2</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
@@ -113,7 +42,78 @@
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
+			<key>Kick-Icon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>10</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>McLaren-Icon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>6</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Mercedes-Icon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>4</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>RB-Icon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>8</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Redbull-Icon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>5</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Williams-Icon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>9</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+		</dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>2</string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<false/>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Audiowide-Regular.ttf</string>
+		<string>NotoSans-VariableFont_wdth,wght.ttf</string>
+		<string>f1-regular.ttf</string>
+		<string>f1-numbers-regular.ttf</string>
+		<string>f1-bold.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -55,8 +55,6 @@
 		86F1B8442D5D284D00AF923D /* ColorSchemeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8432D5D284A00AF923D /* ColorSchemeModifier.swift */; };
 		86F1B8472D5D297100AF923D /* RaceResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8462D5D295900AF923D /* RaceResultRow.swift */; };
 		86F1B8492D5D2A9600AF923D /* RaceResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8482D5D2A9600AF923D /* RaceResultView.swift */; };
-		FF52D1412D3ED7DE00DF2573 /* 2024.json in Resources */ = {isa = PBXBuildFile; fileRef = FF52D13E2D3ED7D600DF2573 /* 2024.json */; };
-		FF52D1422D3ED7E000DF2573 /* 2025.json in Resources */ = {isa = PBXBuildFile; fileRef = FF52D13D2D3ED7D600DF2573 /* 2025.json */; };
 		FF52D1462D3EDDF500DF2573 /* SeasonTabOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1452D3EDDF500DF2573 /* SeasonTabOption.swift */; };
 		FF52D14A2D3EFFD200DF2573 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1492D3EFFD200DF2573 /* SplashView.swift */; };
 		FF52D14D2D3F04D100DF2573 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D14C2D3F04D100DF2573 /* ViewCoordinator.swift */; };
@@ -72,7 +70,6 @@
 		FF52D1752D3FB9F400DF2573 /* DriverAnalysisDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1742D3FB9F400DF2573 /* DriverAnalysisDataLogic.swift */; };
 		FF52D17A2D3FBBC300DF2573 /* DriverAnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1792D3FBBC300DF2573 /* DriverAnalysisViewModel.swift */; };
 		FF52D17D2D3FBF0000DF2573 /* DriverAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D17C2D3FBF0000DF2573 /* DriverAnalysisView.swift */; };
-		FF52D17F2D3FC3DE00DF2573 /* drivers_win_analysis.json in Resources */ = {isa = PBXBuildFile; fileRef = FF52D17E2D3FC3DE00DF2573 /* drivers_win_analysis.json */; };
 		FF52D1812D3FE7D500DF2573 /* LeadChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1802D3FE7D500DF2573 /* LeadChangeView.swift */; };
 		FF52D1832D40026F00DF2573 /* TriviaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1822D40026F00DF2573 /* TriviaView.swift */; };
 		FF75D34E2D232BD700160331 /* PitLap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75D34D2D232BD700160331 /* PitLap.swift */; };
@@ -198,8 +195,6 @@
 		86F1B8432D5D284A00AF923D /* ColorSchemeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeModifier.swift; sourceTree = "<group>"; };
 		86F1B8462D5D295900AF923D /* RaceResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultRow.swift; sourceTree = "<group>"; };
 		86F1B8482D5D2A9600AF923D /* RaceResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultView.swift; sourceTree = "<group>"; };
-		FF52D13D2D3ED7D600DF2573 /* 2025.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2025.json; sourceTree = "<group>"; };
-		FF52D13E2D3ED7D600DF2573 /* 2024.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2024.json; sourceTree = "<group>"; };
 		FF52D1452D3EDDF500DF2573 /* SeasonTabOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTabOption.swift; sourceTree = "<group>"; };
 		FF52D1492D3EFFD200DF2573 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		FF52D14C2D3F04D100DF2573 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
@@ -209,14 +204,12 @@
 		FF52D1582D3F121200DF2573 /* HideTabBarRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTabBarRepresentable.swift; sourceTree = "<group>"; };
 		FF52D15A2D3F264900DF2573 /* DriverStandingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingModel.swift; sourceTree = "<group>"; };
 		FF52D1642D3F2B0100DF2573 /* StandingsDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsDataLogic.swift; sourceTree = "<group>"; };
-		FF52D1662D3F2EE600DF2573 /* f1_standings_2024.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = f1_standings_2024.json; sourceTree = "<group>"; };
 		FF52D1692D3F2F8F00DF2573 /* StandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsView.swift; sourceTree = "<group>"; };
 		FF52D16B2D3F2FA400DF2573 /* StandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
 		FF52D16F2D3FB99000DF2573 /* DriverAnalysisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnalysisModel.swift; sourceTree = "<group>"; };
 		FF52D1742D3FB9F400DF2573 /* DriverAnalysisDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnalysisDataLogic.swift; sourceTree = "<group>"; };
 		FF52D1792D3FBBC300DF2573 /* DriverAnalysisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnalysisViewModel.swift; sourceTree = "<group>"; };
 		FF52D17C2D3FBF0000DF2573 /* DriverAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnalysisView.swift; sourceTree = "<group>"; };
-		FF52D17E2D3FC3DE00DF2573 /* drivers_win_analysis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drivers_win_analysis.json; sourceTree = "<group>"; };
 		FF52D1802D3FE7D500DF2573 /* LeadChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadChangeView.swift; sourceTree = "<group>"; };
 		FF52D1822D40026F00DF2573 /* TriviaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaView.swift; sourceTree = "<group>"; };
 		FF75D34A2D232BD700160331 /* PitLap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitLap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -648,7 +641,6 @@
 			children = (
 				FF75D3632D232DCE00160331 /* extensions */,
 				FF75D3602D232D4500160331 /* models */,
-				FF75D35F2D232CF900160331 /* source */,
 				FF9A50C12D499620001F1697 /* standings */,
 			);
 			path = data;
@@ -665,17 +657,6 @@
 				FF75D36B2D23310100160331 /* view */,
 			);
 			path = ui;
-			sourceTree = "<group>";
-		};
-		FF75D35F2D232CF900160331 /* source */ = {
-			isa = PBXGroup;
-			children = (
-				FF52D17E2D3FC3DE00DF2573 /* drivers_win_analysis.json */,
-				FF52D1662D3F2EE600DF2573 /* f1_standings_2024.json */,
-				FF52D13E2D3ED7D600DF2573 /* 2024.json */,
-				FF52D13D2D3ED7D600DF2573 /* 2025.json */,
-			);
-			path = source;
 			sourceTree = "<group>";
 		};
 		FF75D3602D232D4500160331 /* models */ = {
@@ -998,7 +979,6 @@
 				FF9A50D42D4B8FBA001F1697 /* f1-bold.ttf in Resources */,
 				FF9A50D52D4B8FBA001F1697 /* f1-numbers-regular.ttf in Resources */,
 				FF9A50D62D4B8FBA001F1697 /* f1-regular.ttf in Resources */,
-				FF52D17F2D3FC3DE00DF2573 /* drivers_win_analysis.json in Resources */,
 				86F1B82B2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1007,12 +987,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF52D1422D3ED7E000DF2573 /* 2025.json in Resources */,
 				FF9A50D12D4B8FBA001F1697 /* f1-bold.ttf in Resources */,
 				FF9A50D22D4B8FBA001F1697 /* f1-numbers-regular.ttf in Resources */,
 				FF9A50D32D4B8FBA001F1697 /* f1-regular.ttf in Resources */,
 				86F1B82C2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */,
-				FF52D1412D3ED7DE00DF2573 /* 2024.json in Resources */,
 				86F1B8252D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf in Resources */,
 				FF9799BD2D35DFBD00CCF203 /* Assets.xcassets in Resources */,
 			);
@@ -1267,6 +1245,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PitLap/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PItlap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1278,7 +1258,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.nashe.pitlap;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1296,10 +1276,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PitLap/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6HY2T876CG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PitLap/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PItlap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1311,7 +1293,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.nashe.pitlap;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1339,7 +1321,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.nashe.pitlap.PitThisLapWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios.PitThisLapWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1366,7 +1348,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.nashe.box.Box-Box.PitThisLapWidget";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios.PitThisLapWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
