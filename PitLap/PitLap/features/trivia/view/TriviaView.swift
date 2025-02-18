@@ -51,6 +51,8 @@ struct TriviaView: View {
                     }
                 }.sheet(isPresented: $showSettings) {
                     SettingsView()
+                        .presentationDetents([.fraction(0.9)])
+                        .presentationBackgroundInteraction(.enabled)
                 }
             }
         }

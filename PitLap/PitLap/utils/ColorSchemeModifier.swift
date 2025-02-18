@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ColorSchemeModifier: ViewModifier {
-    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = true
     
     func body(content: Content) -> some View {
         content

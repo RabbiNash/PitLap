@@ -27,7 +27,7 @@ struct ArticleFeedView: View {
                         }
                     }.frame(
                         width: UIScreen.main.bounds.width,
-                        height: UIScreen.main.bounds.height
+                        height: UIScreen.main.bounds.height * 0.92
                     ).tabViewStyle(.page)
                 }
                 .overlay(progressView, alignment: .top)

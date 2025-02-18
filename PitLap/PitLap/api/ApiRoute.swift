@@ -16,6 +16,7 @@ enum APIRoute {
     case trackSummary(trackName: String)
     case qualiResults(year: Int, round: Int)
     case laps(year: Int, round: Int, sessionName: String)
+    case weatherSummary(year: Int, round: Int)
     
     var path: String {
         switch self {
@@ -35,6 +36,8 @@ enum APIRoute {
             return "/quali/convectional/\(year)/\(round)"
         case .laps(let year, let round, let sessionName):
             return "/practice/\(year)/\(round)/\(sessionName)"
+        case .weatherSummary(let year, let round):
+            return "/weather/\(year)/\(round)/R"
         }
     }
 }

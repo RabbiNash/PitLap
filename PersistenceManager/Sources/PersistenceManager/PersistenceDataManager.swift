@@ -8,7 +8,24 @@
 import Foundation
 import SwiftData
 
-public final class PersistenceDataManager<T: PersistentModel> {
+import Foundation
+import SwiftData
+
+public protocol PersistenceDataManagerType {
+    associatedtype T: PersistentModel
+    
+    static func shared() -> Self
+    
+    func loadAll() -> [T]
+    func fetchItems(predicate: Predicate<T>?, sortDescriptors: [SortDescriptor<T>]) -> [T]
+    func fetchItem(predicate: Predicate<T>?, sortDescriptors: [SortDescriptor<T>]) -> T?
+    func saveItem(_ item: T, completion: ((Bool) -> Void)?)
+    func saveItems(_ items: [T], completion: @escaping (Bool) -> Void)
+    func deleteItem(_ item: T, completion: @escaping (Bool) -> Void) async
+    func saveIfNotExist(_ item: T, predicate: Predicate<T>?)
+}
+
+public final class PersistenceDataManager<T: PersistentModel>: @preconcurrency PersistenceDataManagerType {
     private let modelContainer: ModelContainer?
     private let modelContext: ModelContext?
     
