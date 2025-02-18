@@ -6,108 +6,110 @@
 //
 
 import SwiftUI
+import PersistenceManager
+import SwiftData
 
 struct SettingsView: View {
-    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.redBull.rawValue
-    @AppStorage("newsSource") private var newsSource: String = FeedSource.autosport.rawValue
-    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    @StateObject private var viewModel = SettingsViewModel()
     
-    var appVersion: String {
-          Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
-      }
-
-      var appBuild: String {
-          Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "RC"
-      }
-
+    @Query(filter: #Predicate<RaceWeekendEntity> { weekend in
+        weekend.year == "2025"
+    }, sort: \RaceWeekendEntity.round)
+    var model: [RaceWeekendEntity]
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationStack {
             VStack {
                 List {
-                    Picker("Team", selection: $selectedTeam) {
+                    Picker("Team", selection: $viewModel.team) {
                         ForEach(F1Team.allCases, id: \.self) { team in
-                            Text(team.rawValue.capitalized).tag(team.rawValue)
+                            Text(team.rawValue.capitalized)
+                                .tag(team.rawValue)
                         }
                     }
                     .pickerStyle(.navigationLink)
                     
-                    Picker("News Source", selection: $newsSource) {
+                    Picker("News Source", selection: $viewModel.source) {
                         ForEach(FeedSource.allCases, id: \.self) { source in
-                            Text(source.title).tag(source.rawValue)
+                            Text(source.title)
+                                .tag(source.rawValue)
                         }
                     }
                     .pickerStyle(.navigationLink)
                     
-                    Toggle("Enable Dark Mode", isOn: $isDarkMode)
-                }
-                .onChange(of: selectedTeam, { _, newValue in
-                    if let iconName = F1Team(rawValue: newValue)?.iconName {
-                        UIApplication.shared.setAlternateIconName(iconName) { error in
-                            if let error = error {
-                                print(error.localizedDescription)
-                            } else {
-                                print("Success!")
+                    Toggle("Enable Dark Mode", isOn: $viewModel.darkMode)
+                    
+                    Section("Notifications") {
+                        Toggle("Enable Notifications", isOn: $viewModel.notifications)
+                    }
+                    
+                    if viewModel.notifications {
+                        Section("Notifications - Time Before Event Trigger") {
+                            NavigationLink(destination: MultiSelectionPickerView(allItems: viewModel.availableTimes, selectedItems: $viewModel.userSelectedTimes)) {
+                                HStack {
+                                    Text("Trigger Time")
+                                    Spacer()
+                                    Text(viewModel.userSelectedTimes.map { $0.title }.joined(separator: " - "))
+                                        .fontWeight(.bold)
+                                }
+                            }
+                        }
+                        
+                        if !viewModel.userSelectedTimes.isEmpty {
+                            NavigationLink(destination: MultiSelectionPickerView(allItems: viewModel.allEvents, selectedItems: $viewModel.userSelectedEvents)) {
+                                HStack {
+                                    Text("Notification Events")
+                                    Spacer()
+                                    Text(viewModel.userSelectedEvents.map { $0.title }.joined(separator: " - "))
+                                        .fontWeight(.bold)
+                                }
                             }
                         }
                     }
-                })
+                }
                 .listStyle(.inset)
                 .padding()
+                .onChange(of: viewModel.notifications, { _, isEnabled in
+                    if !isEnabled {
+                        viewModel.clearPendingNotifications()
+                    }
+                })
                 
-                Text("Version: \(appVersion) (\(appBuild))")
-                                .font(.caption)
-                                .foregroundColor(.gray)
+                Button {
+                    viewModel.didTapConfirm(raceWeekends: model)
+                    dismiss()
+                } label : {
+                    Text("Confirm")
+                }
+                .padding()
+                .buttonStyle(PrimaryButtonStyle())
+                
+                Text("Version: \(viewModel.appVersion) (\(viewModel.appBuild))")
+                    .font(.caption)
+                    .foregroundColor(.gray)
             }
             .navigationTitle("Preferences")
             .navigationBarTitleDisplayMode(.inline)
-        }
-    }
-}
-
-enum F1Team: String, CaseIterable {
-    case redBull, mercedes, ferrari, mclaren, astonMartin, alpine, williams, rb, kick, haas
-
-    // got these here https://www.reddit.com/r/formula1/comments/1avhmjb/f1_2024_hex_codes/?rdt=52441
-    var color: Color {
-            switch self {
-            case .mercedes: return Color(red: 39/255, green: 244/255, blue: 210/255)
-            case .redBull: return Color(red: 54/255, green: 113/255, blue: 198/255)
-            case .ferrari: return Color(red: 232/255, green: 0/255, blue: 45/255)
-            case .mclaren: return Color(red: 255/255, green: 128/255, blue: 0/255)
-            case .alpine: return Color(red: 255/255, green: 135/255, blue: 188/255)
-            case .rb: return Color(red: 102/255, green: 146/255, blue: 255/255)
-            case .astonMartin: return Color(red: 34/255, green: 153/255, blue: 113/255)
-            case .williams: return Color(red: 100/255, green: 196/255, blue: 255/255)
-            case .kick: return Color(red: 82/255, green: 226/255, blue: 82/255)
-            case .haas: return Color(red: 182/255, green: 186/255, blue: 189/255)
+            .onAppear {
+                requestNotificationPermission()
             }
         }
+    }
     
-    var iconName: String {
-        switch self {
-        case .redBull:
-            return "Redbull-Icon"
-        case .mercedes:
-            return "Mercedes-Icon"
-        case .ferrari:
-            return "Ferrari-Icon"
-        case .mclaren:
-            return "McLaren-Icon"
-        case .astonMartin:
-            return "Aston-Icon"
-        case .alpine:
-            return "Alpine-Icon"
-        case .williams:
-            return "Williams-Icon"
-        case .rb:
-            return "RB-Icon"
-        case .kick:
-            return "Kick-Icon"
-        case .haas:
-            return "Haas-Icon"
+    func requestNotificationPermission() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                print("Permission granted")
+            } else {
+                print("Permission denied")
+            }
         }
     }
 }
+
 
 #Preview {
     SettingsView()
