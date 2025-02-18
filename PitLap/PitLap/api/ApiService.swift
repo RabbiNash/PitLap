@@ -17,6 +17,7 @@ protocol ApiService {
     func fetchTrackSummary(trackName: String) async throws -> TrackSummaryModel
     func fetchQualiResults(year: Int, round: Int) async throws -> QualiResults
     func fetchPracticeLaps(year: Int, round: Int, sessionName: String) async throws -> PracticeLapsModel
+    func fetchWeatherSummary(year: Int, round: Int) async throws -> WeatherModel?
 }
 
 final class ApiServiceImpl: ApiService {
@@ -73,6 +74,10 @@ final class ApiServiceImpl: ApiService {
     
     func fetchPracticeLaps(year: Int, round: Int, sessionName: String) async throws -> PracticeLapsModel {
         return try await fetchData(route: .laps(year: year, round: round, sessionName: sessionName))
+    }
+    
+    func fetchWeatherSummary(year: Int, round: Int) async throws -> WeatherModel? {
+        return try await fetchData(route: .weatherSummary(year: year, round: round))
     }
 }
 

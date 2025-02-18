@@ -48,6 +48,10 @@
 		86645ABA2D648F23004BAB44 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AB92D648F23004BAB44 /* SettingsViewModel.swift */; };
 		86645ABC2D648FF8004BAB44 /* NotificationSessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645ABB2D648FF8004BAB44 /* NotificationSessionType.swift */; };
 		86645ABF2D64951F004BAB44 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645ABE2D64951F004BAB44 /* PrimaryButtonStyle.swift */; };
+		86645ACF2D64D56C004BAB44 /* SessionWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645ACE2D64D56A004BAB44 /* SessionWeatherView.swift */; };
+		86645AD22D652106004BAB44 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AD12D652106004BAB44 /* WeatherModel.swift */; };
+		86645AD52D652233004BAB44 /* WeatherDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AD42D652233004BAB44 /* WeatherDataLogic.swift */; };
+		86645AD82D6522F8004BAB44 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AD72D6522F8004BAB44 /* WeatherViewModel.swift */; };
 		86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */; };
 		86F1B8062D5CC7D400AF923D /* StandingRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */; };
 		86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8072D5CCB5500AF923D /* StandingRow.swift */; };
@@ -209,6 +213,10 @@
 		86645AB92D648F23004BAB44 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		86645ABB2D648FF8004BAB44 /* NotificationSessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSessionType.swift; sourceTree = "<group>"; };
 		86645ABE2D64951F004BAB44 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		86645ACE2D64D56A004BAB44 /* SessionWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionWeatherView.swift; sourceTree = "<group>"; };
+		86645AD12D652106004BAB44 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		86645AD42D652233004BAB44 /* WeatherDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataLogic.swift; sourceTree = "<group>"; };
+		86645AD72D6522F8004BAB44 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorStandingModel.swift; sourceTree = "<group>"; };
 		86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRowModel.swift; sourceTree = "<group>"; };
 		86F1B8072D5CCB5500AF923D /* StandingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRow.swift; sourceTree = "<group>"; };
@@ -477,6 +485,55 @@
 			path = designsystem;
 			sourceTree = "<group>";
 		};
+		86645ACC2D64D53B004BAB44 /* features */ = {
+			isa = PBXGroup;
+			children = (
+				86645ACD2D64D55B004BAB44 /* weather */,
+				86645A932D6421FF004BAB44 /* notifications */,
+				FF9A51082D4CE53E001F1697 /* articles */,
+				FF9A50FD2D4BE462001F1697 /* settings */,
+				FF52D16D2D3FB96200DF2573 /* trivia */,
+				FF52D1682D3F2F5500DF2573 /* standings */,
+				FF75D3662D232E1400160331 /* calendar */,
+			);
+			path = features;
+			sourceTree = "<group>";
+		};
+		86645ACD2D64D55B004BAB44 /* weather */ = {
+			isa = PBXGroup;
+			children = (
+				86645AD62D6522E3004BAB44 /* viewmodel */,
+				86645AD32D65220B004BAB44 /* datalogic */,
+				86645AD02D6520F2004BAB44 /* model */,
+				86645ACE2D64D56A004BAB44 /* SessionWeatherView.swift */,
+			);
+			path = weather;
+			sourceTree = "<group>";
+		};
+		86645AD02D6520F2004BAB44 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				86645AD12D652106004BAB44 /* WeatherModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		86645AD32D65220B004BAB44 /* datalogic */ = {
+			isa = PBXGroup;
+			children = (
+				86645AD42D652233004BAB44 /* WeatherDataLogic.swift */,
+			);
+			path = datalogic;
+			sourceTree = "<group>";
+		};
+		86645AD62D6522E3004BAB44 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				86645AD72D6522F8004BAB44 /* WeatherViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
 		86F1B8032D5CC7AA00AF923D /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,23 +742,18 @@
 		FF75D34C2D232BD700160331 /* PitLap */ = {
 			isa = PBXGroup;
 			children = (
+				86645ACC2D64D53B004BAB44 /* features */,
 				86645ABD2D64951A004BAB44 /* designsystem */,
 				86645AB52D648ED0004BAB44 /* services */,
-				86645A932D6421FF004BAB44 /* notifications */,
 				86645A132D5E0BA5004BAB44 /* icons */,
 				865618F12D5A9CF600567D38 /* api */,
-				FF9A51082D4CE53E001F1697 /* articles */,
-				FF9A50FD2D4BE462001F1697 /* settings */,
 				FF9A50CD2D4B8CF2001F1697 /* Info.plist */,
 				FF9A50CA2D4B8CB7001F1697 /* fonts */,
 				FF9A50B82D498484001F1697 /* PitLapDebug.entitlements */,
 				FF52D14B2D3F04C200DF2573 /* coordinator */,
 				FF75D3782D233FEE00160331 /* utils */,
-				FF52D16D2D3FB96200DF2573 /* trivia */,
 				FF52D1502D3F0D4100DF2573 /* splash */,
-				FF52D1682D3F2F5500DF2573 /* standings */,
 				FF52D1522D3F0D7700DF2573 /* tab */,
-				FF75D3662D232E1400160331 /* calendar */,
 				FF75D34D2D232BD700160331 /* PitLap.swift */,
 				FF75D34F2D232BD700160331 /* ContentView.swift */,
 				FF75D3512D232BDA00160331 /* Assets.xcassets */,
@@ -1147,6 +1199,7 @@
 				FF52D1542D3F0D8F00DF2573 /* BottomNavTab.swift in Sources */,
 				FF9A510E2D4CE7CB001F1697 /* ArticleFeedView.swift in Sources */,
 				86F1B8472D5D297100AF923D /* RaceResultRow.swift in Sources */,
+				86645AD22D652106004BAB44 /* WeatherModel.swift in Sources */,
 				FF75D3872D23668900160331 /* HeadingView.swift in Sources */,
 				FF9A50C22D499620001F1697 /* DriverStandingEntity.swift in Sources */,
 				FF75D3622D232D5200160331 /* RaceWeekendModel.swift in Sources */,
@@ -1155,6 +1208,7 @@
 				865618FE2D5C1B9700567D38 /* StandingPickerView.swift in Sources */,
 				86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */,
 				FF9A51162D4CF088001F1697 /* ArticleFeedItemView.swift in Sources */,
+				86645AD52D652233004BAB44 /* WeatherDataLogic.swift in Sources */,
 				FF75D34E2D232BD700160331 /* PitLap.swift in Sources */,
 				86645AB72D648EE3004BAB44 /* AppIconService.swift in Sources */,
 				86645A472D5EABED004BAB44 /* LapDataMapper.swift in Sources */,
@@ -1184,6 +1238,7 @@
 				86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */,
 				865618FB2D5C184800567D38 /* PitlapPicker.swift in Sources */,
 				86645ABC2D648FF8004BAB44 /* NotificationSessionType.swift in Sources */,
+				86645ACF2D64D56C004BAB44 /* SessionWeatherView.swift in Sources */,
 				FF52D17A2D3FBBC300DF2573 /* DriverAnalysisViewModel.swift in Sources */,
 				86645A572D5EB4BA004BAB44 /* LapTimesByCompoundView.swift in Sources */,
 				FFBA36EA2D4D318E002D3245 /* IndeterminateProgressView.swift in Sources */,
@@ -1197,6 +1252,7 @@
 				FF52D1702D3FB99000DF2573 /* DriverAnalysisModel.swift in Sources */,
 				FF52D1752D3FB9F400DF2573 /* DriverAnalysisDataLogic.swift in Sources */,
 				86645A4F2D5EADAF004BAB44 /* PracticeViewModel.swift in Sources */,
+				86645AD82D6522F8004BAB44 /* WeatherViewModel.swift in Sources */,
 				FF75D37A2D233FF900160331 /* Extension.swift in Sources */,
 				86645A3A2D5E2F3E004BAB44 /* QualiResultView.swift in Sources */,
 				86F1B8392D5D0F5B00AF923D /* RaceSummaryModel.swift in Sources */,
@@ -1418,7 +1474,7 @@
 				CODE_SIGN_ENTITLEMENTS = PitLap/PitLapDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"PitLap/Preview Content\"";
 				DEVELOPMENT_TEAM = 6HY2T876CG;
 				ENABLE_PREVIEWS = YES;
@@ -1436,7 +1492,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1453,7 +1509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"PitLap/Preview Content\"";
 				DEVELOPMENT_TEAM = 6HY2T876CG;
 				ENABLE_PREVIEWS = YES;
@@ -1471,7 +1527,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -23,25 +23,36 @@ struct RaceWeekendView: View {
     }
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 20) {
-                RaceWeekendHeaderView(weekend: weekend)
-                eventNameView
-                sessionTimesView
-                
-                Group {
-                    raceSummaryView
-                    trackFactsView
-                    Spacer()
-                }.padding(.bottom, 24)
+        NavigationStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 20) {
+                    RaceWeekendHeaderView(weekend: weekend)
+                    if !isPastEvent(sessionTime: weekend.session5DateUTC) {
+                        HStack {
+                            Spacer()
+                            NavigationLink(destination: SessionWeatherView(round: weekend.round, year: Int(weekend.year) ?? 0)) {
+                                Text("Session Weather")
+                                    .foregroundStyle(ThemeManager.shared.selectedTeamColor)
+                            }.buttonStyle(.plain)
+                        }
+                    }
+                    eventNameView
+                    sessionTimesView
+                    
+                    Group {
+                        raceSummaryView
+                        trackFactsView
+                        Spacer()
+                    }.padding(.bottom, 24)
+                }
+                .sheet(item: $activeSheet) { sessionType in
+                    sheetContent(for: sessionType)
+                        .presentationBackgroundInteraction(.disabled)
+                        .presentationDetents([.medium, .large])
+                }
+                .padding(24)
+                .overlay(progressView, alignment: .top)
             }
-            .sheet(item: $activeSheet) { sessionType in
-                sheetContent(for: sessionType)
-                    .presentationBackgroundInteraction(.disabled)
-                    .presentationDetents([.medium, .large])
-            }
-            .padding(24)
-            .overlay(progressView, alignment: .top)
         }
         .onAppear(perform: loadData)
     }
