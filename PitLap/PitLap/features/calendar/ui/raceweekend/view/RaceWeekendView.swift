@@ -74,16 +74,18 @@ struct RaceWeekendView: View {
     private var sessionTimesView: some View {
         ForEach(SessionType.allCases, id: \.self) { sessionType in
             if let sessionTime = weekend.sessionTime(for: sessionType) {
-                SessionItemView(sessionName: weekend.sessionName(for: sessionType), sessionTime: sessionTime)
-                    .onTapGesture {
-                        if isPastEvent(sessionTime: weekend.session1DateUTC) {
-                            activeSheet = sessionType
+                if weekend.sessionName(for: sessionType) != "None" {
+                    SessionItemView(sessionName: weekend.sessionName(for: sessionType), sessionTime: sessionTime)
+                        .onTapGesture {
+                            if isPastEvent(sessionTime: weekend.session1DateUTC) {
+                                activeSheet = sessionType
+                            }
                         }
-                    }
+                }
             }
         }
     }
-
+    
     @ViewBuilder
     private var raceSummaryView: some View {
         if let raceSummary = viewModel.raceSummary {

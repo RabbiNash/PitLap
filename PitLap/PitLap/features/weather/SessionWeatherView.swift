@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SessionWeatherView: View {
     @StateObject private var viewModel: WeatherViewModel
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    
     private let round: Int
     private let year: Int
 
@@ -36,6 +38,7 @@ struct SessionWeatherView: View {
                     
                     Text(viewModel.weather?.aiSummary ?? "")
                         .font(.custom("Audiowide", size: 64))
+                        .minimumScaleFactor(0.5)
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
                     
@@ -59,7 +62,7 @@ struct SessionWeatherView: View {
                                 .foregroundStyle(.white)
                                 .padding(4)
                             
-                            Text("\(Int(weather.temperature ?? 0))°C")
+                            Text("\(Int(weather.temperature))°C")
                                 .font(.custom("Noto Sans", size: 32))
                                 .fontWeight(.bold)
                                 .foregroundStyle(.white)
@@ -76,7 +79,7 @@ struct SessionWeatherView: View {
                                 .foregroundStyle(.white)
                                 .padding(4)
                             
-                            Text("\(Int(weather.precipitation ?? 0)) mm")
+                            Text("\(Int(weather.precipitation)) mm")
                                 .font(.custom("Noto Sans", size: 32))
                                 .fontWeight(.bold)
                                 .foregroundStyle(.white)
@@ -91,6 +94,7 @@ struct SessionWeatherView: View {
                     .padding(24)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background {
+                        let startColor = isDarkMode ? Color.black : Color.white
                         if #available(iOS 18.0, *) {
                             TimelineView(.animation) { timeline in
                                 let x = (sin(timeline.date.timeIntervalSince1970) + 1) / 2
@@ -102,14 +106,15 @@ struct SessionWeatherView: View {
                                         [0, 1], [0.5, 1], [1, 1]
                                     ],
                                     colors: [
-                                        ThemeManager.shared.selectedTeamColor,
-                                        .gray,
-                                        ThemeManager.shared.selectedTeamColor,
-                                        ThemeManager.shared.selectedTeamColor,
-                                        .gray,
+                                        startColor,
+                                        ThemeManager.shared.selectedTeamColor.opacity(0.5),
                                         ThemeManager.shared.selectedTeamColor,
                                         ThemeManager.shared.selectedTeamColor,
-                                        .gray,
+                                        ThemeManager.shared.selectedTeamColor.opacity(0.5),
+                                        ThemeManager.shared.selectedTeamColor,
+                                        ThemeManager.shared.selectedTeamColor,
+                                        ThemeManager.shared.selectedTeamColor.opacity(0.5),
+                                        ThemeManager.shared.selectedTeamColor,
                                         ThemeManager.shared.selectedTeamColor
                                     ]
                                 )
