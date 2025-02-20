@@ -107,6 +107,8 @@
 			<false/>
 		</dict>
 	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Audiowide-Regular.ttf</string>
