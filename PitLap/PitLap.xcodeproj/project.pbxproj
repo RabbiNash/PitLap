@@ -52,6 +52,14 @@
 		86645AD22D652106004BAB44 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AD12D652106004BAB44 /* WeatherModel.swift */; };
 		86645AD52D652233004BAB44 /* WeatherDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AD42D652233004BAB44 /* WeatherDataLogic.swift */; };
 		86645AD82D6522F8004BAB44 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AD72D6522F8004BAB44 /* WeatherViewModel.swift */; };
+		86645ADB2D695C33004BAB44 /* YoutubeVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645ADA2D695C33004BAB44 /* YoutubeVideoModel.swift */; };
+		86645ADF2D695DA0004BAB44 /* YoutubeDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645ADE2D695DA0004BAB44 /* YoutubeDataLogic.swift */; };
+		86645AE22D695E86004BAB44 /* YoutubeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AE12D695E86004BAB44 /* YoutubeViewModel.swift */; };
+		86645AE52D695F6F004BAB44 /* VideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AE42D695F6F004BAB44 /* VideoItem.swift */; };
+		86645AE72D696138004BAB44 /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AE62D696138004BAB44 /* VideoListView.swift */; };
+		86645AE92D6965B4004BAB44 /* F1YoutubeChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AE82D6965B4004BAB44 /* F1YoutubeChannels.swift */; };
+		86645AEC2D6967D1004BAB44 /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AEB2D6967D1004BAB44 /* YouTubePlayerView.swift */; };
+		86645AEF2D69686A004BAB44 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AEE2D69686A004BAB44 /* VideoPlayerView.swift */; };
 		86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */; };
 		86F1B8062D5CC7D400AF923D /* StandingRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */; };
 		86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8072D5CCB5500AF923D /* StandingRow.swift */; };
@@ -217,6 +225,14 @@
 		86645AD12D652106004BAB44 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		86645AD42D652233004BAB44 /* WeatherDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataLogic.swift; sourceTree = "<group>"; };
 		86645AD72D6522F8004BAB44 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		86645ADA2D695C33004BAB44 /* YoutubeVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoModel.swift; sourceTree = "<group>"; };
+		86645ADE2D695DA0004BAB44 /* YoutubeDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeDataLogic.swift; sourceTree = "<group>"; };
+		86645AE12D695E86004BAB44 /* YoutubeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewModel.swift; sourceTree = "<group>"; };
+		86645AE42D695F6F004BAB44 /* VideoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItem.swift; sourceTree = "<group>"; };
+		86645AE62D696138004BAB44 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
+		86645AE82D6965B4004BAB44 /* F1YoutubeChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1YoutubeChannels.swift; sourceTree = "<group>"; };
+		86645AEB2D6967D1004BAB44 /* YouTubePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
+		86645AEE2D69686A004BAB44 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorStandingModel.swift; sourceTree = "<group>"; };
 		86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRowModel.swift; sourceTree = "<group>"; };
 		86F1B8072D5CCB5500AF923D /* StandingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRow.swift; sourceTree = "<group>"; };
@@ -488,6 +504,7 @@
 		86645ACC2D64D53B004BAB44 /* features */ = {
 			isa = PBXGroup;
 			children = (
+				86645AD92D695C24004BAB44 /* youtube */,
 				86645ACD2D64D55B004BAB44 /* weather */,
 				86645A932D6421FF004BAB44 /* notifications */,
 				FF9A51082D4CE53E001F1697 /* articles */,
@@ -532,6 +549,69 @@
 				86645AD72D6522F8004BAB44 /* WeatherViewModel.swift */,
 			);
 			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		86645AD92D695C24004BAB44 /* youtube */ = {
+			isa = PBXGroup;
+			children = (
+				86645AE32D695F4D004BAB44 /* view */,
+				86645AE02D695E6D004BAB44 /* viewmodel */,
+				86645ADD2D695D8B004BAB44 /* datalogic */,
+				86645ADC2D695D84004BAB44 /* model */,
+			);
+			path = youtube;
+			sourceTree = "<group>";
+		};
+		86645ADC2D695D84004BAB44 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				86645AE82D6965B4004BAB44 /* F1YoutubeChannels.swift */,
+				86645ADA2D695C33004BAB44 /* YoutubeVideoModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		86645ADD2D695D8B004BAB44 /* datalogic */ = {
+			isa = PBXGroup;
+			children = (
+				86645ADE2D695DA0004BAB44 /* YoutubeDataLogic.swift */,
+			);
+			path = datalogic;
+			sourceTree = "<group>";
+		};
+		86645AE02D695E6D004BAB44 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				86645AE12D695E86004BAB44 /* YoutubeViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		86645AE32D695F4D004BAB44 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				86645AED2D696854004BAB44 /* video */,
+				86645AEA2D6967CE004BAB44 /* player */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		86645AEA2D6967CE004BAB44 /* player */ = {
+			isa = PBXGroup;
+			children = (
+				86645AEB2D6967D1004BAB44 /* YouTubePlayerView.swift */,
+			);
+			path = player;
+			sourceTree = "<group>";
+		};
+		86645AED2D696854004BAB44 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				86645AEE2D69686A004BAB44 /* VideoPlayerView.swift */,
+				86645AE42D695F6F004BAB44 /* VideoItem.swift */,
+				86645AE62D696138004BAB44 /* VideoListView.swift */,
+			);
+			path = video;
 			sourceTree = "<group>";
 		};
 		86F1B8032D5CC7AA00AF923D /* data */ = {
@@ -1182,6 +1262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86645AE52D695F6F004BAB44 /* VideoItem.swift in Sources */,
 				FF52D1462D3EDDF500DF2573 /* SeasonTabOption.swift in Sources */,
 				FF9A51022D4BE73D001F1697 /* ThemeManager.swift in Sources */,
 				86F1B8442D5D284D00AF923D /* ColorSchemeModifier.swift in Sources */,
@@ -1201,11 +1282,13 @@
 				86F1B8472D5D297100AF923D /* RaceResultRow.swift in Sources */,
 				86645AD22D652106004BAB44 /* WeatherModel.swift in Sources */,
 				FF75D3872D23668900160331 /* HeadingView.swift in Sources */,
+				86645AE72D696138004BAB44 /* VideoListView.swift in Sources */,
 				FF9A50C22D499620001F1697 /* DriverStandingEntity.swift in Sources */,
 				FF75D3622D232D5200160331 /* RaceWeekendModel.swift in Sources */,
 				FF52D1812D3FE7D500DF2573 /* LeadChangeView.swift in Sources */,
 				FF52D16C2D3F2FA400DF2573 /* StandingsViewModel.swift in Sources */,
 				865618FE2D5C1B9700567D38 /* StandingPickerView.swift in Sources */,
+				86645AE92D6965B4004BAB44 /* F1YoutubeChannels.swift in Sources */,
 				86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */,
 				FF9A51162D4CF088001F1697 /* ArticleFeedItemView.swift in Sources */,
 				86645AD52D652233004BAB44 /* WeatherDataLogic.swift in Sources */,
@@ -1217,6 +1300,7 @@
 				86645A952D642221004BAB44 /* NotificationManager.swift in Sources */,
 				86645A972D6427BC004BAB44 /* NotificationPayload.swift in Sources */,
 				86F1B8422D5D137100AF923D /* RaceWeekendViewModel.swift in Sources */,
+				86645AE22D695E86004BAB44 /* YoutubeViewModel.swift in Sources */,
 				FF9A51182D4D05AA001F1697 /* ArticleView.swift in Sources */,
 				FF52D1562D3F0E1600DF2573 /* BottomNavTabBar.swift in Sources */,
 				86F1B83D2D5D0FB300AF923D /* TrackSummaryModel.swift in Sources */,
@@ -1224,6 +1308,7 @@
 				86645A412D5EA742004BAB44 /* PracticeLapsModel.swift in Sources */,
 				FF52D1592D3F121200DF2573 /* HideTabBarRepresentable.swift in Sources */,
 				86645A312D5E29F7004BAB44 /* QualiDataLogic.swift in Sources */,
+				86645ADB2D695C33004BAB44 /* YoutubeVideoModel.swift in Sources */,
 				FF52D14D2D3F04D100DF2573 /* ViewCoordinator.swift in Sources */,
 				86645A552D5EAE89004BAB44 /* PracticeResultRow.swift in Sources */,
 				FF75D3802D2347AE00160331 /* RaceWeekendHeaderViewModel.swift in Sources */,
@@ -1241,11 +1326,14 @@
 				86645ACF2D64D56C004BAB44 /* SessionWeatherView.swift in Sources */,
 				FF52D17A2D3FBBC300DF2573 /* DriverAnalysisViewModel.swift in Sources */,
 				86645A572D5EB4BA004BAB44 /* LapTimesByCompoundView.swift in Sources */,
+				86645AEC2D6967D1004BAB44 /* YouTubePlayerView.swift in Sources */,
 				FFBA36EA2D4D318E002D3245 /* IndeterminateProgressView.swift in Sources */,
 				FF9A510C2D4CE58E001F1697 /* ArticleFeedViewModel.swift in Sources */,
 				FF9A51112D4CEA09001F1697 /* RSSFeedDataLogic.swift in Sources */,
+				86645AEF2D69686A004BAB44 /* VideoPlayerView.swift in Sources */,
 				86645A532D5EAE23004BAB44 /* PracticeView.swift in Sources */,
 				FF52D1652D3F2B0100DF2573 /* StandingsDataLogic.swift in Sources */,
+				86645ADF2D695DA0004BAB44 /* YoutubeDataLogic.swift in Sources */,
 				FF52D16A2D3F2F8F00DF2573 /* StandingsView.swift in Sources */,
 				86645A2D2D5E28FB004BAB44 /* QualiResults.swift in Sources */,
 				86645AB12D6435AC004BAB44 /* NotificationTriggerEvent.swift in Sources */,

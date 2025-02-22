@@ -30,7 +30,10 @@ struct ContentView: View {
 
                     ArticleFeedView()
                         .tag(BottomNavTab.news)
-
+                    
+                    VideoListView()
+                        .tag(BottomNavTab.videos)
+                    
                     TriviaView()
                         .tag(BottomNavTab.trivia)
                 }

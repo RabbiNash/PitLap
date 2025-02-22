@@ -11,6 +11,7 @@ enum BottomNavTab: String, CaseIterable {
     case seasons = "Seasons"
     case standings = "Standings"
     case news = "News"
+    case videos = "Videos"
     case trivia = "Trivia"
 
     var title: String {
@@ -21,6 +22,8 @@ enum BottomNavTab: String, CaseIterable {
             return "Standings"
         case .trivia:
             return "Trivia"
+        case .videos:
+            return "Videos"
         case .news:
             return "News"
         }
@@ -36,6 +39,8 @@ enum BottomNavTab: String, CaseIterable {
             return "questionmark.circle"
         case .news:
             return "newspaper"
+        case .videos:
+            return "video"
         }
     }
 }

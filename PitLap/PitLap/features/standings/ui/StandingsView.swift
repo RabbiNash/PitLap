@@ -27,7 +27,6 @@ struct StandingsView: View {
                 StandingPickerView(selectedOption: $selectedTab, options: StandingOption.allCases)
                 standingsList
             }
-            .padding(24)
             .overlay(progressView, alignment: .top)
         }
         .onChange(of: selectedTab) { _, newValue in fetchStandings(for: newValue) }
