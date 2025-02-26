@@ -40,6 +40,37 @@ enum NotificationTriggerEvent: String, CaseIterable, Codable, MultiSelectionType
     }
 }
 
+enum NotificationTopic: String, CaseIterable, Codable, MultiSelectionType {
+    typealias T = Void
+
+    var id: Self { self }
+    
+    case practice
+    case qualifying
+    case sprintQualifying
+    case sprint
+    case race
+
+    var title: String {
+        switch self {
+        case .practice:
+            "Practice"
+        case .qualifying:
+            "Qualifying"
+        case .sprintQualifying:
+            "Sprint Qualifying"
+        case .sprint:
+            "Sprint"
+        case .race:
+            "Race"
+        }
+    }
+    
+    var extraData: Void {
+        ()
+    }
+}
+
 protocol MultiSelectionType: Identifiable, Hashable {
     associatedtype T
     

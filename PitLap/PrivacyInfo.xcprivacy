@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dict>
+    <key>NSPrivacyAccessedAPICategories</key>
+    <array>
+        <dict>
+            <key>NSPrivacyAccessedAPICategory</key>
+            <string>Analytics</string>
+            <key>NSPrivacyAccessedAPIType</key>
+            <string>Required</string>
+        </dict>
+        <dict>
+            <key>NSPrivacyAccessedAPICategory</key>
+            <string>Diagnostics</string>
+            <key>NSPrivacyAccessedAPIType</key>
+            <string>Required</string>
+        </dict>
+    </array>
+</dict>
