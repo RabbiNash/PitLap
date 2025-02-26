@@ -61,13 +61,13 @@ struct SeasonView: View {
                 }
             }
         }
-        .padding(16)
+        .padding(24)
     }
 
     @ViewBuilder
     private var seasonView: some View {
         VStack {
-            ForEach(viewModel.seasonCalendar.dropFirst(), id: \.self) { raceWeekend in
+            ForEach(viewModel.seasonCalendar, id: \.self) { raceWeekend in
                 NavigationLink(destination: RaceWeekendView(weekend: raceWeekend)) {
                     RaceWeekendListItemView(weekend: raceWeekend)
                 }.buttonStyle(PlainButtonStyle())

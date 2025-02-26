@@ -18,6 +18,7 @@ struct StandingsView: View {
     var body: some View {
         NavigationStack {
             content
+                .padding(24)
         }
     }
 

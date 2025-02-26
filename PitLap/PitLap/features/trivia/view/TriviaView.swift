@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import SafariServices
 
 struct TriviaView: View {
 
     @State private var showSettings: Bool = false
+    @State private var showWebView: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -44,8 +46,16 @@ struct TriviaView: View {
                                 )
                             }.buttonStyle(.plain)
 
-                           
-
+                            TriviaCard(
+                                level: "Analysis",
+                                icon: "chart.line.uptrend.xyaxis",
+                                iconColor: ThemeManager.shared.selectedTeamColor,
+                                title: "Play with telemetry data",
+                                subtitle: "Do you fancy playing with telemetry data, creating lap charts etc? F1 Tempo can help",
+                                progressColor: ThemeManager.shared.selectedTeamColor
+                            ).onTapGesture {
+                                showWebView = true
+                            }
                         }
                         .padding(.horizontal)
                     }
@@ -53,6 +63,10 @@ struct TriviaView: View {
                     SettingsView()
                         .presentationDetents([.fraction(0.9)])
                         .presentationBackgroundInteraction(.enabled)
+                }.fullScreenCover(isPresented: $showWebView) {
+                    SafariView(url: URL(string: "https://f1-tempo.com")!) {
+                        showWebView = false
+                    }
                 }
             }
         }

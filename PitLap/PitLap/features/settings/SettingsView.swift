@@ -67,6 +67,15 @@ struct SettingsView: View {
                                 }
                             }
                         }
+                        
+                        NavigationLink(destination: MultiSelectionPickerView(allItems: NotificationTopic.allCases, selectedItems: $viewModel.notificationTopics)) {
+                            HStack {
+                                Text("Realtime Notification Topics")
+                                Spacer()
+                                Text(viewModel.notificationTopics.map { $0.title }.joined(separator: " - "))
+                                    .fontWeight(.bold)
+                            }
+                        }
                     }
                 }
                 .listStyle(.inset)

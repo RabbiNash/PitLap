@@ -60,6 +60,18 @@
 		86645AE92D6965B4004BAB44 /* F1YoutubeChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AE82D6965B4004BAB44 /* F1YoutubeChannels.swift */; };
 		86645AEC2D6967D1004BAB44 /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AEB2D6967D1004BAB44 /* YouTubePlayerView.swift */; };
 		86645AEF2D69686A004BAB44 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AEE2D69686A004BAB44 /* VideoPlayerView.swift */; };
+		86645B182D6BCD97004BAB44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86645B172D6BCD97004BAB44 /* GoogleService-Info.plist */; };
+		86645B192D6BCD97004BAB44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86645B172D6BCD97004BAB44 /* GoogleService-Info.plist */; };
+		86645B1C2D6BCDFE004BAB44 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 86645B1B2D6BCDFE004BAB44 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		86645B1E2D6BCDFE004BAB44 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 86645B1D2D6BCDFE004BAB44 /* FirebaseCore */; };
+		86645B202D6BCDFE004BAB44 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 86645B1F2D6BCDFE004BAB44 /* FirebaseCrashlytics */; };
+		86645B222D6BCDFE004BAB44 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 86645B212D6BCDFE004BAB44 /* FirebaseMessaging */; };
+		86645B262D6BCE3E004BAB44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645B252D6BCE3E004BAB44 /* AppDelegate.swift */; };
+		86645B282D6BCF17004BAB44 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 86645B272D6BCF10004BAB44 /* PrivacyInfo.xcprivacy */; };
+		86645B292D6BCF17004BAB44 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 86645B272D6BCF10004BAB44 /* PrivacyInfo.xcprivacy */; };
+		86645B302D6BDE6F004BAB44 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645B2F2D6BDE6F004BAB44 /* FirebaseService.swift */; };
+		86645B352D6BDEB5004BAB44 /* NotificationPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645B342D6BDEB5004BAB44 /* NotificationPreferences.swift */; };
+		86645B3B2D6F92B6004BAB44 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645B3A2D6F92B6004BAB44 /* SafariView.swift */; };
 		86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */; };
 		86F1B8062D5CC7D400AF923D /* StandingRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */; };
 		86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8072D5CCB5500AF923D /* StandingRow.swift */; };
@@ -233,6 +245,13 @@
 		86645AE82D6965B4004BAB44 /* F1YoutubeChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1YoutubeChannels.swift; sourceTree = "<group>"; };
 		86645AEB2D6967D1004BAB44 /* YouTubePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
 		86645AEE2D69686A004BAB44 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		86645B172D6BCD97004BAB44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		86645B252D6BCE3E004BAB44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		86645B272D6BCF10004BAB44 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		86645B2A2D6BD056004BAB44 /* PitLap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PitLap.entitlements; sourceTree = "<group>"; };
+		86645B2F2D6BDE6F004BAB44 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		86645B342D6BDEB5004BAB44 /* NotificationPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPreferences.swift; sourceTree = "<group>"; };
+		86645B3A2D6F92B6004BAB44 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorStandingModel.swift; sourceTree = "<group>"; };
 		86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRowModel.swift; sourceTree = "<group>"; };
 		86F1B8072D5CCB5500AF923D /* StandingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRow.swift; sourceTree = "<group>"; };
@@ -324,9 +343,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86645B222D6BCDFE004BAB44 /* FirebaseMessaging in Frameworks */,
 				FF9A51142D4CED52001F1697 /* Kingfisher in Frameworks */,
+				86645B1C2D6BCDFE004BAB44 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				FF9A50BD2D499282001F1697 /* PersistenceManager in Frameworks */,
+				86645B202D6BCDFE004BAB44 /* FirebaseCrashlytics in Frameworks */,
 				FF9A51072D4CE32A001F1697 /* XMLKit in Frameworks */,
+				86645B1E2D6BCDFE004BAB44 /* FirebaseCore in Frameworks */,
 				FF9A51052D4CE32A001F1697 /* FeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +484,7 @@
 		86645A932D6421FF004BAB44 /* notifications */ = {
 			isa = PBXGroup;
 			children = (
+				86645B2C2D6BDE43004BAB44 /* service */,
 				86645AAF2D643594004BAB44 /* model */,
 				86645A942D642221004BAB44 /* NotificationManager.swift */,
 			);
@@ -470,6 +494,7 @@
 		86645AAF2D643594004BAB44 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				86645B342D6BDEB5004BAB44 /* NotificationPreferences.swift */,
 				86645A962D6427BC004BAB44 /* NotificationPayload.swift */,
 				86645AB02D6435AC004BAB44 /* NotificationTriggerEvent.swift */,
 				86645ABB2D648FF8004BAB44 /* NotificationSessionType.swift */,
@@ -504,9 +529,10 @@
 		86645ACC2D64D53B004BAB44 /* features */ = {
 			isa = PBXGroup;
 			children = (
+				86645A932D6421FF004BAB44 /* notifications */,
 				86645AD92D695C24004BAB44 /* youtube */,
 				86645ACD2D64D55B004BAB44 /* weather */,
-				86645A932D6421FF004BAB44 /* notifications */,
+				86645B2B2D6BDE30004BAB44 /* New Group */,
 				FF9A51082D4CE53E001F1697 /* articles */,
 				FF9A50FD2D4BE462001F1697 /* settings */,
 				FF52D16D2D3FB96200DF2573 /* trivia */,
@@ -612,6 +638,36 @@
 				86645AE62D696138004BAB44 /* VideoListView.swift */,
 			);
 			path = video;
+			sourceTree = "<group>";
+		};
+		86645B242D6BCE2C004BAB44 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				86645B252D6BCE3E004BAB44 /* AppDelegate.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		86645B2B2D6BDE30004BAB44 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		86645B2C2D6BDE43004BAB44 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				86645B2F2D6BDE6F004BAB44 /* FirebaseService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		86645B332D6BDEB4004BAB44 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		86F1B8032D5CC7AA00AF923D /* data */ = {
@@ -799,6 +855,8 @@
 		FF75D3412D232BD700160331 = {
 			isa = PBXGroup;
 			children = (
+				86645B272D6BCF10004BAB44 /* PrivacyInfo.xcprivacy */,
+				86645B172D6BCD97004BAB44 /* GoogleService-Info.plist */,
 				FF9A50BA2D4991A8001F1697 /* PersistenceManager */,
 				FF9A50B92D4984A0001F1697 /* PitThisLapWidgetExtensionDebug.entitlements */,
 				FF75D34C2D232BD700160331 /* PitLap */,
@@ -822,6 +880,8 @@
 		FF75D34C2D232BD700160331 /* PitLap */ = {
 			isa = PBXGroup;
 			children = (
+				86645B2A2D6BD056004BAB44 /* PitLap.entitlements */,
+				86645B242D6BCE2C004BAB44 /* app */,
 				86645ACC2D64D53B004BAB44 /* features */,
 				86645ABD2D64951A004BAB44 /* designsystem */,
 				86645AB52D648ED0004BAB44 /* services */,
@@ -943,6 +1003,7 @@
 		FF75D3782D233FEE00160331 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				86645B3A2D6F92B6004BAB44 /* SafariView.swift */,
 				86F1B8432D5D284A00AF923D /* ColorSchemeModifier.swift */,
 				FF75D3792D233FF900160331 /* Extension.swift */,
 				FFBA36E82D4D318E002D3245 /* IndeterminateProgressView.swift */,
@@ -1037,6 +1098,7 @@
 		FF9A50FD2D4BE462001F1697 /* settings */ = {
 			isa = PBXGroup;
 			children = (
+				86645B332D6BDEB4004BAB44 /* model */,
 				86645AB22D648E08004BAB44 /* enums */,
 				FF9A51002D4BE726001F1697 /* theme */,
 				FF9A50FE2D4BE486001F1697 /* SettingsView.swift */,
@@ -1190,6 +1252,7 @@
 				FF9A50BB2D499282001F1697 /* XCLocalSwiftPackageReference "../PersistenceManager" */,
 				FF9A51032D4CE32A001F1697 /* XCRemoteSwiftPackageReference "FeedKit" */,
 				FF9A51122D4CED52001F1697 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FF75D34B2D232BD700160331 /* Products */;
 			projectDirPath = "";
@@ -1230,7 +1293,9 @@
 				FF75D3522D232BDA00160331 /* Assets.xcassets in Resources */,
 				FF9A50D42D4B8FBA001F1697 /* f1-bold.ttf in Resources */,
 				FF9A50D52D4B8FBA001F1697 /* f1-numbers-regular.ttf in Resources */,
+				86645B192D6BCD97004BAB44 /* GoogleService-Info.plist in Resources */,
 				FF9A50D62D4B8FBA001F1697 /* f1-regular.ttf in Resources */,
+				86645B292D6BCF17004BAB44 /* PrivacyInfo.xcprivacy in Resources */,
 				86F1B82B2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1245,6 +1310,8 @@
 				86F1B82C2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */,
 				86F1B8252D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf in Resources */,
 				FF9799BD2D35DFBD00CCF203 /* Assets.xcassets in Resources */,
+				86645B282D6BCF17004BAB44 /* PrivacyInfo.xcprivacy in Resources */,
+				86645B182D6BCD97004BAB44 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1274,6 +1341,7 @@
 				FF75D3502D232BD700160331 /* ContentView.swift in Sources */,
 				FF75D3752D233B3800160331 /* RaceWeekendListItemView.swift in Sources */,
 				FF75D36D2D23311D00160331 /* SeasonViewModel.swift in Sources */,
+				86645B302D6BDE6F004BAB44 /* FirebaseService.swift in Sources */,
 				86F1B8492D5D2A9600AF923D /* RaceResultView.swift in Sources */,
 				FF75D3892D236D4200160331 /* SessionItemView.swift in Sources */,
 				FF75D3692D232EB000160331 /* SeasonDataLogic.swift in Sources */,
@@ -1289,6 +1357,7 @@
 				FF52D16C2D3F2FA400DF2573 /* StandingsViewModel.swift in Sources */,
 				865618FE2D5C1B9700567D38 /* StandingPickerView.swift in Sources */,
 				86645AE92D6965B4004BAB44 /* F1YoutubeChannels.swift in Sources */,
+				86645B3B2D6F92B6004BAB44 /* SafariView.swift in Sources */,
 				86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */,
 				FF9A51162D4CF088001F1697 /* ArticleFeedItemView.swift in Sources */,
 				86645AD52D652233004BAB44 /* WeatherDataLogic.swift in Sources */,
@@ -1333,6 +1402,7 @@
 				86645AEF2D69686A004BAB44 /* VideoPlayerView.swift in Sources */,
 				86645A532D5EAE23004BAB44 /* PracticeView.swift in Sources */,
 				FF52D1652D3F2B0100DF2573 /* StandingsDataLogic.swift in Sources */,
+				86645B352D6BDEB5004BAB44 /* NotificationPreferences.swift in Sources */,
 				86645ADF2D695DA0004BAB44 /* YoutubeDataLogic.swift in Sources */,
 				FF52D16A2D3F2F8F00DF2573 /* StandingsView.swift in Sources */,
 				86645A2D2D5E28FB004BAB44 /* QualiResults.swift in Sources */,
@@ -1343,6 +1413,7 @@
 				86645AD82D6522F8004BAB44 /* WeatherViewModel.swift in Sources */,
 				FF75D37A2D233FF900160331 /* Extension.swift in Sources */,
 				86645A3A2D5E2F3E004BAB44 /* QualiResultView.swift in Sources */,
+				86645B262D6BCE3E004BAB44 /* AppDelegate.swift in Sources */,
 				86F1B8392D5D0F5B00AF923D /* RaceSummaryModel.swift in Sources */,
 				FF52D14A2D3EFFD200DF2573 /* SplashView.swift in Sources */,
 				FF52D1832D40026F00DF2573 /* TriviaView.swift in Sources */,
@@ -1595,6 +1666,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PitLap/PitLap.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
@@ -1643,7 +1715,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios.PitThisLapWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1670,7 +1742,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios.PitThisLapWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1729,6 +1801,14 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.1;
+			};
+		};
 		FF9A51032D4CE32A001F1697 /* XCRemoteSwiftPackageReference "FeedKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nmdias/FeedKit.git";
@@ -1748,6 +1828,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		86645B1B2D6BCDFE004BAB44 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		86645B1D2D6BCDFE004BAB44 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		86645B1F2D6BCDFE004BAB44 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		86645B212D6BCDFE004BAB44 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
 		FF9A50BC2D499282001F1697 /* PersistenceManager */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PersistenceManager;

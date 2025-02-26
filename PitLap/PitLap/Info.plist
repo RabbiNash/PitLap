@@ -117,5 +117,9 @@
 		<string>f1-numbers-regular.ttf</string>
 		<string>f1-bold.ttf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>

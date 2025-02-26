@@ -42,7 +42,15 @@ final class SeasonViewModel: ObservableObject {
     }
     
     private func getNextEvent(from races: [RaceWeekendEntity]) -> RaceWeekendEntity? {
+        return races.first(where: { isNextEvent(race: $0) })
+    }
+    
+    private func isNextEvent(race: RaceWeekendEntity) -> Bool {
         let currentDate = Date()
-        return races.first(where: { Date.getDateFromString(dateString: $0.session1DateUTC) ?? Date() > currentDate })
+        if race.eventFormat == .conventional {
+            return Date.getDateFromString(dateString: race.session5DateUTC) ?? Date() > currentDate
+        } else {
+            return Date.getDateFromString(dateString: race.session3DateUTC) ?? Date() > currentDate
+        }
     }
 }

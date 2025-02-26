@@ -13,6 +13,8 @@ import PersistenceManager
 struct PitLapApp: App {
 
     @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.astonMartin.rawValue
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
