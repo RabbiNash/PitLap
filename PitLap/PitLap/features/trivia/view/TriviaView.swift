@@ -9,7 +9,6 @@ import SwiftUI
 import SafariServices
 
 struct TriviaView: View {
-
     @State private var showSettings: Bool = false
     @State private var showWebView: Bool = false
 
@@ -17,58 +16,95 @@ struct TriviaView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
-                    HStack {
-                        Text("Trivia")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-
-                        Spacer()
-
-                        Image(systemName: "gear.circle.fill")
-                            .resizable()
-                            .foregroundStyle(ThemeManager.shared.selectedTeamColor)                     .frame(width: 32, height: 32)
-                            .onTapGesture {
-                                showSettings = true
-                            }
-                    }
-                    .padding(.horizontal)
-
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 16) {
-                            NavigationLink(destination: DriverAnalysisView()) {
-                                TriviaCard(
-                                    level: "Analysis",
-                                    icon: "flag.checkered",
-                                    iconColor: ThemeManager.shared.selectedTeamColor,
-                                    title: "Who still has a chance?",
-                                    subtitle: "Find out if your favorite driver can still win the championship",
-                                    progressColor: ThemeManager.shared.selectedTeamColor
-                                )
-                            }.buttonStyle(.plain)
-
-                            TriviaCard(
-                                level: "Analysis",
-                                icon: "chart.line.uptrend.xyaxis",
-                                iconColor: ThemeManager.shared.selectedTeamColor,
-                                title: "Play with telemetry data",
-                                subtitle: "Do you fancy playing with telemetry data, creating lap charts etc? F1 Tempo can help",
-                                progressColor: ThemeManager.shared.selectedTeamColor
-                            ).onTapGesture {
-                                showWebView = true
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                }.sheet(isPresented: $showSettings) {
-                    SettingsView()
-                        .presentationDetents([.fraction(0.9)])
-                        .presentationBackgroundInteraction(.enabled)
-                }.fullScreenCover(isPresented: $showWebView) {
-                    SafariView(url: URL(string: "https://f1-tempo.com")!) {
-                        showWebView = false
-                    }
+                    headerView
+                    analysisCards
+                    starLightsCard
                 }
             }
+        }
+        .sheet(isPresented: $showSettings) {
+            settingsView
+        }
+        .fullScreenCover(isPresented: $showWebView) {
+            safariView
+        }
+    }
+
+    var headerView: some View {
+        HStack {
+            Text("Trivia")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+
+            Spacer()
+
+            Image(systemName: "gear.circle.fill")
+                .resizable()
+                .foregroundStyle(ThemeManager.shared.selectedTeamColor)
+                .frame(width: 32, height: 32)
+                .onTapGesture {
+                    showSettings = true
+                }
+        }
+        .padding(.horizontal)
+    }
+
+    var analysisCards: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 16) {
+                NavigationLink(destination: DriverAnalysisView()) {
+                    TriviaCard(
+                        level: "Analysis",
+                        icon: "flag.checkered",
+                        iconColor: ThemeManager.shared.selectedTeamColor,
+                        title: "Who still has a chance?",
+                        subtitle: "Find out if your favorite driver can still win the championship",
+                        progressColor: ThemeManager.shared.selectedTeamColor
+                    )
+                }.buttonStyle(.plain)
+
+                TriviaCard(
+                    level: "Analysis",
+                    icon: "chart.line.uptrend.xyaxis",
+                    iconColor: ThemeManager.shared.selectedTeamColor,
+                    title: "Play with telemetry data",
+                    subtitle: "Do you fancy playing with telemetry data, creating lap charts etc? F1 Tempo can help",
+                    progressColor: ThemeManager.shared.selectedTeamColor
+                ).onTapGesture {
+                    showWebView = true
+                }
+            }
+            .padding(.horizontal)
+        }
+    }
+
+    var starLightsCard: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 16) {
+                NavigationLink(destination: StarLightsView()) {
+                    TriviaCard(
+                        level: "Analysis",
+                        icon: "chart.line.uptrend.xyaxis",
+                        iconColor: ThemeManager.shared.selectedTeamColor,
+                        title: "StarLights",
+                        subtitle: "Do you fancy experiencing Formula 1 in Your Menu Bar? Click to explore star lights",
+                        progressColor: ThemeManager.shared.selectedTeamColor
+                    )
+                }.buttonStyle(.plain)
+            }
+            .padding(.horizontal)
+        }
+    }
+
+    var settingsView: some View {
+        SettingsView()
+            .presentationDetents([.fraction(0.9)])
+            .presentationBackgroundInteraction(.enabled)
+    }
+
+    var safariView: some View {
+        SafariView(url: URL(string: "https://f1-tempo.com")!) {
+            showWebView = false
         }
     }
 }

@@ -10,10 +10,7 @@ import SwiftData
 import PersistenceManager
 
 @main
-struct PitLapApp: App {
-
-    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.astonMartin.rawValue
-    
+struct PitLapApp: App {    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {

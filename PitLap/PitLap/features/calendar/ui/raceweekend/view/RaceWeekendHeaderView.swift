@@ -13,7 +13,7 @@ struct RaceWeekendHeaderView: View {
 
     @StateObject private var viewModel: RaceWeekendHeaderViewModel
 
-    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.redBull.rawValue
+    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.ferrari.rawValue
 
     init(
         weekend: RaceWeekendEntity,
