@@ -10,13 +10,15 @@ import PersistenceManager
 import FirebaseMessaging
 
 final class SettingsViewModel: ObservableObject {
-    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.redBull.rawValue
+    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.ferrari.rawValue
     @AppStorage("newsSource") private var newsSource: String = FeedSource.autosport.rawValue
     @AppStorage("isDarkMode") private var isDarkMode = true
     @AppStorage("enableNotifications") private var enableNotifications = false
     @AppStorage("selectedNotificationTimes") private var selectedNotificationTimes: [NotificationTriggerEvent] = []
     @AppStorage("selectedNotificationEvents") private var selectedNotificationEvents: [NotificationSessionType] = []
     @AppStorage("selectedNotificationTopics") private var selectedNotificationTopics: [NotificationTopic] = []
+    
+    @AppStorage("onboardingCompleted") private var onboardingCompleted: Bool = false
 
     @Published var userSelectedTimes: [NotificationTriggerEvent] = []
     @Published var userSelectedEvents: [NotificationSessionType] = []
@@ -64,6 +66,7 @@ final class SettingsViewModel: ObservableObject {
         scheduleNotifications(raceWeekends: raceWeekends)
         updateAppIconIfNeeded()
         subscribeToTopics()
+        completeOnboarding()
         
         selectedTeam = team
         newsSource = source
@@ -131,5 +134,12 @@ extension SettingsViewModel {
             }
         }()
         return dateString.flatMap(Date.getDateFromString)
+    }
+}
+
+extension SettingsViewModel {
+    func completeOnboarding() {
+        onboardingCompleted = true
+        selectedTeam = team
     }
 }

@@ -25,21 +25,23 @@ final class SeasonViewModel: ObservableObject {
             await dataLogic.loadSeasons { [weak self] isLoaded in
                 guard let self = self else { return }
                 DispatchQueue.main.async {
-                    self.loadSeasonCalendar(year: "2025")
+                    self.loadSeasonCalendar(year: "2025", showPastEvents: false)
                 }
             }
         }
     }
 
-    func loadSeasonCalendar(year: String) {
+    func loadSeasonCalendar(year: String, showPastEvents: Bool = false) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.seasonCalendar = self.dataLogic.getSeasonCalendar(for: year)
-            if let session = getNextEvent(from: seasonCalendar) {
-                self.nextSession = session
-            }
+            
+            let calendar = self.dataLogic.getSeasonCalendar(for: year)
+            self.seasonCalendar = showPastEvents ? calendar : calendar.filter { self.isNextEvent(race: $0) }
+            
+            self.nextSession = getNextEvent(from: self.seasonCalendar)
         }
     }
+
     
     private func getNextEvent(from races: [RaceWeekendEntity]) -> RaceWeekendEntity? {
         return races.first(where: { isNextEvent(race: $0) })

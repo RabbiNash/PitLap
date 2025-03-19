@@ -11,7 +11,7 @@ import SwiftUI
 class ThemeManager: ObservableObject {
     static let shared = ThemeManager()
 
-    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.redBull.rawValue
+    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.ferrari.rawValue
 
     var selectedTeamColor: Color {
         F1Team(rawValue: selectedTeam)?.color ?? .blue

@@ -25,10 +25,11 @@ struct ArticleFeedView: View {
                         ForEach(viewModel.feedChannel?.items ?? [], id: \.guid) { item in
                             ArticleView(feed: item, channelTitle: viewModel.feedChannel?.title ?? "")
                         }
-                    }.frame(
+                    }
+                    .frame(
                         width: UIScreen.main.bounds.width,
                         height: UIScreen.main.bounds.height * 0.92
-                    ).tabViewStyle(.page)
+                    ).tabViewStyle(.page(indexDisplayMode: .never))
                 }
                 .overlay(progressView, alignment: .top)
                 .edgesIgnoringSafeArea(.all)
