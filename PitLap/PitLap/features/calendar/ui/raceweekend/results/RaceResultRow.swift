@@ -10,9 +10,9 @@ import PersistenceManager
 import Kingfisher
 
 struct RaceResultRow: View {
-    private let rowModel: RaceResultEntity
+    private let rowModel: RaceResultModel
     
-    init(rowModel: RaceResultEntity) {
+    init(rowModel: RaceResultModel) {
         self.rowModel = rowModel
     }
     

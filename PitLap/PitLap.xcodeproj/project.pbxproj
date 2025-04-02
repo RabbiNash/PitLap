@@ -75,6 +75,13 @@
 		86645B302D6BDE6F004BAB44 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645B2F2D6BDE6F004BAB44 /* FirebaseService.swift */; };
 		86645B352D6BDEB5004BAB44 /* NotificationPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645B342D6BDEB5004BAB44 /* NotificationPreferences.swift */; };
 		86645B3B2D6F92B6004BAB44 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645B3A2D6F92B6004BAB44 /* SafariView.swift */; };
+		8683B5892D95AE12000AD7BA /* RaceInfoDataLogicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5882D95AE12000AD7BA /* RaceInfoDataLogicType.swift */; };
+		8683B58B2D95AEA3000AD7BA /* RaceResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B58A2D95AEA3000AD7BA /* RaceResultViewModel.swift */; };
+		8683B5992D9BF6B9000AD7BA /* RaceTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5982D9BF6B9000AD7BA /* RaceTrack.swift */; };
+		8683B59A2D9BF6B9000AD7BA /* RaceTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5982D9BF6B9000AD7BA /* RaceTrack.swift */; };
+		8683B59D2D9C3E2F000AD7BA /* StartLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B59C2D9C3E2F000AD7BA /* StartLightView.swift */; };
+		8683B59F2D9C3F95000AD7BA /* RaceReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */; };
+		8683B5A12D9D3D28000AD7BA /* RaceReactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */; };
 		86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */; };
 		86F1B8062D5CC7D400AF923D /* StandingRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */; };
 		86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8072D5CCB5500AF923D /* StandingRow.swift */; };
@@ -258,6 +265,12 @@
 		86645B2F2D6BDE6F004BAB44 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		86645B342D6BDEB5004BAB44 /* NotificationPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPreferences.swift; sourceTree = "<group>"; };
 		86645B3A2D6F92B6004BAB44 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		8683B5882D95AE12000AD7BA /* RaceInfoDataLogicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceInfoDataLogicType.swift; sourceTree = "<group>"; };
+		8683B58A2D95AEA3000AD7BA /* RaceResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultViewModel.swift; sourceTree = "<group>"; };
+		8683B5982D9BF6B9000AD7BA /* RaceTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceTrack.swift; sourceTree = "<group>"; };
+		8683B59C2D9C3E2F000AD7BA /* StartLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLightView.swift; sourceTree = "<group>"; };
+		8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionView.swift; sourceTree = "<group>"; };
+		8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionViewModel.swift; sourceTree = "<group>"; };
 		86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorStandingModel.swift; sourceTree = "<group>"; };
 		86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRowModel.swift; sourceTree = "<group>"; };
 		86F1B8072D5CCB5500AF923D /* StandingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRow.swift; sourceTree = "<group>"; };
@@ -693,6 +706,31 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		8683B5832D95ACC4000AD7BA /* race */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = race;
+			sourceTree = "<group>";
+		};
+		8683B5872D95ADF4000AD7BA /* race */ = {
+			isa = PBXGroup;
+			children = (
+				8683B5882D95AE12000AD7BA /* RaceInfoDataLogicType.swift */,
+			);
+			path = race;
+			sourceTree = "<group>";
+		};
+		8683B59B2D9C3E2C000AD7BA /* games */ = {
+			isa = PBXGroup;
+			children = (
+				8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */,
+				8683B59C2D9C3E2F000AD7BA /* StartLightView.swift */,
+				8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */,
+			);
+			path = games;
+			sourceTree = "<group>";
+		};
 		86F1B8032D5CC7AA00AF923D /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,6 +770,7 @@
 			children = (
 				86F1B8462D5D295900AF923D /* RaceResultRow.swift */,
 				86F1B8482D5D2A9600AF923D /* RaceResultView.swift */,
+				8683B58A2D95AEA3000AD7BA /* RaceResultViewModel.swift */,
 			);
 			path = results;
 			sourceTree = "<group>";
@@ -817,6 +856,7 @@
 		FF52D16D2D3FB96200DF2573 /* trivia */ = {
 			isa = PBXGroup;
 			children = (
+				8683B59B2D9C3E2C000AD7BA /* games */,
 				FF52D16E2D3FB98000DF2573 /* models */,
 				FF52D1732D3FB9CF00DF2573 /* datalogic */,
 				FF52D17B2D3FBEED00DF2573 /* view */,
@@ -960,6 +1000,8 @@
 		FF75D3602D232D4500160331 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				8683B5982D9BF6B9000AD7BA /* RaceTrack.swift */,
+				8683B5832D95ACC4000AD7BA /* race */,
 				86645A3B2D5EA64C004BAB44 /* practice */,
 				86645A282D5E2843004BAB44 /* quali */,
 				86F1B8372D5D0F4700AF923D /* summaries */,
@@ -990,6 +1032,7 @@
 		FF75D3672D232E6400160331 /* datalogic */ = {
 			isa = PBXGroup;
 			children = (
+				8683B5872D95ADF4000AD7BA /* race */,
 				86645A422D5EA882004BAB44 /* laps */,
 				86645A322D5E29FA004BAB44 /* quali */,
 				86F1B83E2D5D110900AF923D /* summary */,
@@ -1374,6 +1417,7 @@
 				FF52D1542D3F0D8F00DF2573 /* BottomNavTab.swift in Sources */,
 				FF9A510E2D4CE7CB001F1697 /* ArticleFeedView.swift in Sources */,
 				86F1B8472D5D297100AF923D /* RaceResultRow.swift in Sources */,
+				8683B59F2D9C3F95000AD7BA /* RaceReactionView.swift in Sources */,
 				86645AD22D652106004BAB44 /* WeatherModel.swift in Sources */,
 				FF75D3872D23668900160331 /* HeadingView.swift in Sources */,
 				86645AE72D696138004BAB44 /* VideoListView.swift in Sources */,
@@ -1422,6 +1466,7 @@
 				86645ACF2D64D56C004BAB44 /* SessionWeatherView.swift in Sources */,
 				FF52D17A2D3FBBC300DF2573 /* DriverAnalysisViewModel.swift in Sources */,
 				86645A572D5EB4BA004BAB44 /* LapTimesByCompoundView.swift in Sources */,
+				8683B5892D95AE12000AD7BA /* RaceInfoDataLogicType.swift in Sources */,
 				86645AEC2D6967D1004BAB44 /* YouTubePlayerView.swift in Sources */,
 				FFBA36EA2D4D318E002D3245 /* IndeterminateProgressView.swift in Sources */,
 				FF9A510C2D4CE58E001F1697 /* ArticleFeedViewModel.swift in Sources */,
@@ -1430,11 +1475,14 @@
 				86645A532D5EAE23004BAB44 /* PracticeView.swift in Sources */,
 				FF52D1652D3F2B0100DF2573 /* StandingsDataLogic.swift in Sources */,
 				86645B352D6BDEB5004BAB44 /* NotificationPreferences.swift in Sources */,
+				8683B5A12D9D3D28000AD7BA /* RaceReactionViewModel.swift in Sources */,
+				8683B58B2D95AEA3000AD7BA /* RaceResultViewModel.swift in Sources */,
 				86645ADF2D695DA0004BAB44 /* YoutubeDataLogic.swift in Sources */,
 				FF52D16A2D3F2F8F00DF2573 /* StandingsView.swift in Sources */,
 				86645A2D2D5E28FB004BAB44 /* QualiResults.swift in Sources */,
 				86645AB12D6435AC004BAB44 /* NotificationTriggerEvent.swift in Sources */,
 				FF52D1702D3FB99000DF2573 /* DriverAnalysisModel.swift in Sources */,
+				8683B59D2D9C3E2F000AD7BA /* StartLightView.swift in Sources */,
 				FF52D1752D3FB9F400DF2573 /* DriverAnalysisDataLogic.swift in Sources */,
 				86645A4F2D5EADAF004BAB44 /* PracticeViewModel.swift in Sources */,
 				86645AD82D6522F8004BAB44 /* WeatherViewModel.swift in Sources */,
@@ -1445,6 +1493,7 @@
 				FF52D14A2D3EFFD200DF2573 /* SplashView.swift in Sources */,
 				FF52D1832D40026F00DF2573 /* TriviaView.swift in Sources */,
 				86F1B8402D5D112200AF923D /* SummariesDataLogic.swift in Sources */,
+				8683B59A2D9BF6B9000AD7BA /* RaceTrack.swift in Sources */,
 				FF75D3772D233B5000160331 /* RaceWeekendView.swift in Sources */,
 				86645A2B2D5E287C004BAB44 /* QualiResultModel.swift in Sources */,
 				86645A492D5EAC65004BAB44 /* GroupLapModel.swift in Sources */,
@@ -1467,6 +1516,7 @@
 				FF9799B92D35DFAF00CCF203 /* PitThisLapWidget.swift in Sources */,
 				FF9799BB2D35DFAF00CCF203 /* AppIntent.swift in Sources */,
 				FF9799CA2D35E94D00CCF203 /* Extension.swift in Sources */,
+				8683B5992D9BF6B9000AD7BA /* RaceTrack.swift in Sources */,
 				FF9799C92D35E93900CCF203 /* RaceWeekendModel.swift in Sources */,
 				FF9799C62D35E90E00CCF203 /* Extensions.swift in Sources */,
 				86645A4A2D5EAC65004BAB44 /* GroupLapModel.swift in Sources */,

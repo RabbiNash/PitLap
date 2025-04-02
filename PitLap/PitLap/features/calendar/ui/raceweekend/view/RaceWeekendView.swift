@@ -110,25 +110,24 @@ struct RaceWeekendView: View {
     
     @ViewBuilder
     private func sheetContent(for sessionType: SessionType) -> some View {
-        switch sessionType {
-        case .session5:
-            RaceResultView(results: weekend.results)
-        case .session4:
-            QualiResultView(year: Int(weekend.year) ?? 2024, round: weekend.round)
-        case .session1:
-            PracticeView(year: Int(weekend.year) ?? 2024, round: weekend.round, sessionName: weekend.session1.rawValue)
-        case .session2:
-            if weekend.session2 == Session2.practice2 {
-                PracticeView(year: Int(weekend.year) ?? 2024, round: weekend.round, sessionName: weekend.session2.rawValue)
-            } else {
+        if let year = Int(weekend.year) {
+            let round = weekend.round
+            
+            switch sessionType {
+            case .session5:
+                RaceResultView(year: year, round: round)
+            case .session4:
+                QualiResultView(year: year, round: round)
+            case .session1:
+                PracticeView(year: year, round: round, sessionName: weekend.session1.rawValue)
+            case .session2 where weekend.session2 == .practice2,
+                 .session3 where weekend.session3 == .practice3:
+                PracticeView(year: year, round: round, sessionName: sessionType == .session2 ? weekend.session2.rawValue : weekend.session3.rawValue)
+            default:
                 Text("Coming Soon")
             }
-        case .session3:
-            if weekend.session3 == Session3.practice3 {
-                PracticeView(year: Int(weekend.year) ?? 2024, round: weekend.round, sessionName: weekend.session3.rawValue)
-            } else {
-                Text("Coming Soon")
-            }
+        } else {
+            Text("Invalid Year")
         }
     }
 

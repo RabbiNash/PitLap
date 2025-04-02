@@ -33,6 +33,9 @@ struct StandingRow: View {
                     } else {
                         Text(rowModel.constructorName)
                             .fontWeight(.bold)
+                        
+                        Text(rowModel.constructorName)
+                            .foregroundColor(.secondary)
                     }
                 }
 

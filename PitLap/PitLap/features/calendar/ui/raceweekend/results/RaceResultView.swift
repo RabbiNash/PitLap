@@ -10,12 +10,21 @@ import SwiftUI
 import PersistenceManager
 
 struct RaceResultView: View {
-    private let results: [RaceResultEntity]
+    @StateObject private var viewModel: RaceResultViewModel
     
-    init(results: [RaceResultEntity]) {
-        self.results = results.sorted { $0.position < $1.position }
+    private let year: Int
+    private let round: Int
+    
+    init(
+        viewModel: RaceResultViewModel = RaceResultViewModel(),
+        year: Int,
+        round: Int
+    ) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+        self.year = year
+        self.round = round
     }
-    
+
     var body: some View {
         NavigationStack {
             content
@@ -30,11 +39,13 @@ struct RaceResultView: View {
                 resultList
             }
             .padding(24)
+        }.onAppear {
+            viewModel.viewDidAppear(year: year, round: round)
         }
     }
     
     private var resultList: some View {
-        ForEach(results, id: \.driver) { row in
+        ForEach(viewModel.results, id: \.driver) { row in
             RaceResultRow(rowModel: row)
                 .background(
                     RoundedRectangle(cornerRadius: 24)
