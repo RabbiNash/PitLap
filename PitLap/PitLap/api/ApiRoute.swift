@@ -18,6 +18,7 @@ enum APIRoute {
     case laps(year: Int, round: Int, sessionName: String)
     case weatherSummary(year: Int, round: Int)
     case youtubeVideos(channelTitle: String)
+    case raceResult(year: Int, round: Int)
     
     var path: String {
         switch self {
@@ -39,8 +40,10 @@ enum APIRoute {
             return "/practice/\(year)/\(round)/\(sessionName)"
         case .weatherSummary(let year, let round):
             return "/weather/\(year)/\(round)/R"
-        case .youtubeVideos(let channelTitle):
-            return "/youtube/\(channelTitle)"
+        case .youtubeVideos(let channel):
+            return "/youtube/\(channel)"
+        case .raceResult(let year, let round):
+            return "/race/\(year)/\(round)"
         }
     }
 }

@@ -91,6 +91,17 @@ struct TriviaView: View {
                         progressColor: ThemeManager.shared.selectedTeamColor
                     )
                 }.buttonStyle(.plain)
+                
+                NavigationLink(destination: RaceReactionView()) {
+                    TriviaCard(
+                        level: "Game",
+                        icon: "flag.checkered",
+                        iconColor: ThemeManager.shared.selectedTeamColor,
+                        title: "Be an F1 Driver",
+                        subtitle: "How quick are your reactions? Do you think you can beat the fastest F1 reaction time by Valterri Bottas of 0.04s",
+                        progressColor: ThemeManager.shared.selectedTeamColor
+                    )
+                }.buttonStyle(.plain)
             }
             .padding(.horizontal)
         }

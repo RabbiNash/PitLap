@@ -18,20 +18,19 @@ struct RaceWeekendListItemView: View {
 
     var body: some View {
 
-            HStack {
+        HStack(spacing: 16) {
                 Text(Date.getDayOnly(dateString: weekend.session1DateUTC) ?? " ")
-//                    .font(.headline)
                     .lineLimit(2)
                     .multilineTextAlignment(.center)
-                    .frame(maxWidth: 64)
-
+                    .frame(width: 32)
+                                          
                 VStack(alignment: .leading) {
                     Text(weekend.officialEventName)
-//                        .font(.headline)
+                        .lineLimit(3)
 
                     Text(weekend.country)
-//                        .font(.subheadline)
-                        .fontWeight(.medium)
+                        .font(.custom("Noto Sans", size: 16))
+                        .fontWeight(.semibold)
                         .foregroundStyle(ThemeManager.shared.selectedTeamColor)
 
                     HStack {
@@ -56,9 +55,15 @@ struct RaceWeekendListItemView: View {
                         }
                     }
                 }
-
+                
                 Spacer()
+                
+                if let track = RaceTrack.fromEventName(weekend.eventName) {
+                    Image(track.rawValue)
+                        .resizable()
+                        .frame(width: 64, height: 64)
+                }
             }
-            .padding(.vertical, 12)
+        .padding(.vertical, 12)
     }
 }
