@@ -13,7 +13,7 @@ struct RaceWeekendHeaderView: View {
 
     @StateObject private var viewModel: RaceWeekendHeaderViewModel
 
-    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.redBull.rawValue
+    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.ferrari.rawValue
 
     init(
         weekend: RaceWeekendEntity,
@@ -26,7 +26,7 @@ struct RaceWeekendHeaderView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
-                .fill((F1Team(rawValue: selectedTeam)?.color ?? .blue).gradient)
+                .fill(ThemeManager.shared.selectedTeamColor.gradient)
                 .shadow(radius: 8)
 
             VStack(alignment: .leading) {
@@ -36,20 +36,31 @@ struct RaceWeekendHeaderView: View {
                     .fontWeight(.semibold)
 
                 Text(weekend.officialEventName)
-                    .font(.custom("Audiowide",size: 32))
+                    .font(.custom("Audiowide",size: 28))
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
 
-                Text(weekend.country)
-                    .font(.custom("Noto Sans",size: 20))
-                    .fontWeight(.regular)
-                    .foregroundStyle(.white)
-
-                Text(Date.getHumanisedDate(dateString: weekend.session1DateUTC) ?? " ")
-                    .font(.custom("Noto Sans",size: 20))
-                    .fontWeight(.regular)
-                
-                    .foregroundStyle(.white)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(weekend.country)
+                            .font(.custom("Noto Sans",size: 20))
+                            .fontWeight(.regular)
+                            .foregroundStyle(.white)
+                        
+                        Text(Date.getHumanisedDate(dateString: weekend.session1DateUTC) ?? " ")
+                            .font(.custom("Noto Sans",size: 20))
+                            .fontWeight(.regular)
+                            .foregroundStyle(.white)
+                    }
+                    
+                    Spacer()
+                    
+                    if let track = RaceTrack.fromEventName(weekend.eventName) {
+                        Image(track.rawValue)
+                            .resizable()
+                            .frame(width: 48, height: 48)
+                    }
+                }
             }
             .padding()
         }

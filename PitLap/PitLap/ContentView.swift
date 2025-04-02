@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Observation
 
 struct ContentView: View {
     @State private var activeTab: BottomNavTab = .seasons
     @State private var isTabBarHidden: Bool = false
+    @StateObject private var viewModel: ViewModel = ViewModel()
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -23,6 +25,9 @@ struct ContentView: View {
                                     isTabBarHidden = true
                                 }
                             }
+                        }.sheet(isPresented: $viewModel.showOnboarding) {
+                            OnboardingView()
+                                .interactiveDismissDisabled()
                         }
 
                     StandingsView()
@@ -41,6 +46,29 @@ struct ContentView: View {
 
             BottomNavTabBar(activeTab: $activeTab)
         }
+    }
+}
+
+extension ContentView {
+    final class ViewModel: ObservableObject {
+        
+        @AppStorage("onboardingCompleted")
+        private var onboardingCompleted: Bool = false
+        
+        @Published var showOnboarding: Bool = false
+        
+        init() {
+            checkOnboardingStatus()
+        }
+        
+        var shouldShowOnboarding: Bool {
+            !onboardingCompleted
+        }
+        
+        func checkOnboardingStatus() {
+            showOnboarding = !onboardingCompleted
+        }
+           
     }
 }
 

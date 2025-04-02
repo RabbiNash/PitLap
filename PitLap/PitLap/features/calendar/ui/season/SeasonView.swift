@@ -12,8 +12,8 @@ import WidgetKit
 struct SeasonView: View {
     @StateObject private var viewModel = SeasonViewModel(dataLogic: SeasonDataLogic(persistenceDataManager: .shared()))
 
-    @State var selectedTab: SeasonTabOption = .first
-
+    @State private var showOldRacesSheet: Bool = false
+    
     var body: some View {
         NavigationStack {
             currentSeasonView
@@ -35,30 +35,33 @@ struct SeasonView: View {
                 }
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
 
-                SeasonPicker(selectedOption: $selectedTab)
-                    .padding()
-
-                Text("Calendar")
-                    .font(.custom("Audiowide",size: 28))
-                    .fontWeight(.bold)
-                    .padding(.horizontal, 16)
+                HStack {
+                    Text("Calendar")
+                        .font(.custom("Audiowide",size: 28))
+                        .fontWeight(.bold)
+                        .padding(.horizontal, 16)
+                    
+                    Spacer()
+                    
+                    Text("View Past Events")
+                        .foregroundStyle(ThemeManager.shared.selectedTeamColor.gradient)
+                        .onTapGesture {
+                            showOldRacesSheet = true
+                        }
+                }
+                .frame(alignment: .center)
+                .padding(.top)
 
                 Divider()
 
-                Group {
-                    switch selectedTab {
-                    case .first:
-                        seasonView
-                            .onAppear {
-                                viewModel.loadSeasonCalendar(year: "2025")
-                            }
-                    case .second:
-                        seasonView
-                            .onAppear {
-                                viewModel.loadSeasonCalendar(year: "2024")
-                            }
+                seasonView
+                    .onAppear {
+                        viewModel.loadSeasonCalendar(year: "2025")
                     }
-                }
+            }.sheet(isPresented: $showOldRacesSheet) {
+                OldRacesView()
+                    .presentationDetents([.fraction(0.7), .large])
+                    .presentationBackgroundInteraction(.disabled)
             }
         }
         .padding(24)

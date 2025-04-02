@@ -11,7 +11,7 @@ import PersistenceManager
 struct ViewCoordinator: View {
     @StateObject private var viewModel = SplashViewModel(dataLogic: SeasonDataLogic(persistenceDataManager: .shared()))
 
-    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.redBull.rawValue
+    @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.ferrari.rawValue
 
     @State private var themeKey = UUID()
 
