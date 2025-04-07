@@ -32,28 +32,6 @@ struct RaceWeekendListItemView: View {
                         .font(.custom("Noto Sans", size: 16))
                         .fontWeight(.semibold)
                         .foregroundStyle(ThemeManager.shared.selectedTeamColor)
-
-                    HStack {
-                        ForEach(weekend.results.sorted { $0.position < $1.position }.prefix(3)) { result in
-                            HStack(spacing: 0) {
-                                Text("\(result.position) -")
-                                    .font(.caption)
-                                    .fontWeight(.bold)
-                                    .lineLimit(1)
-                                    .frame(maxWidth: 24)
-                                    .foregroundStyle(Color(hex: "#\(result.teamColor))"))
-
-                                Text(result.driver)
-                                    .font(.caption)
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(Color(hex: "#\(result.teamColor))"))
-
-                                Spacer()
-                            }
-                            .padding(.top, 4)
-                            .frame(maxWidth: .infinity)
-                        }
-                    }
                 }
                 
                 Spacer()

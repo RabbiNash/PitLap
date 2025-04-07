@@ -45,7 +45,7 @@ struct RaceResultView: View {
     }
     
     private var resultList: some View {
-        ForEach(viewModel.results, id: \.driver) { row in
+        ForEach(viewModel.results, id: \.position) { row in
             RaceResultRow(rowModel: row)
                 .background(
                     RoundedRectangle(cornerRadius: 24)

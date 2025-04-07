@@ -27,7 +27,6 @@ public final class RaceWeekendEntity: Identifiable {
     public var session5: Session5
     public var session5DateUTC: String
     public var year: String
-    public var results: [RaceResultEntity] = []
     public var key: String
 
     public init(
@@ -47,8 +46,7 @@ public final class RaceWeekendEntity: Identifiable {
         session4DateUTC: String,
         session5: Session5,
         session5DateUTC: String,
-        year: String,
-        results: [RaceResultEntity] = []
+        year: String
     ) {
         self.uuid = uuid
         self.round = round
@@ -67,44 +65,7 @@ public final class RaceWeekendEntity: Identifiable {
         self.session5 = session5
         self.session5DateUTC = session5DateUTC
         self.year = year
-        self.results = results
         self.key = "\(round)-\(year)"
-    }
-}
-
-// MARK: - RaceResultModel
-@Model
-public final class RaceResultEntity {
-    public var position: Int
-    public var driver: String
-    public var headshotURL: String
-    public var points: Int
-    public var status: String
-    public var gridPosition: Int
-    public var teamColor: String
-    public var broadcastName: String
-    public var fullName: String
-
-    public init(
-        position: Int,
-        driver: String,
-        headshotURL: String,
-        points: Int,
-        status: String,
-        gridPosition: Int,
-        teamColor: String,
-        broadcastName: String,
-        fullName: String
-    ) {
-        self.position = position
-        self.driver = driver
-        self.headshotURL = headshotURL
-        self.points = points
-        self.status = status
-        self.gridPosition = gridPosition
-        self.teamColor = teamColor
-        self.broadcastName = broadcastName
-        self.fullName = fullName
     }
 }
 

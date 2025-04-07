@@ -10,6 +10,8 @@
 		861745BB2D7F3936008171A0 /* StarLightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861745BA2D7F3936008171A0 /* StarLightsView.swift */; };
 		861745BE2D8AC6BA008171A0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861745BD2D8AC6BA008171A0 /* OnboardingView.swift */; };
 		861745C32D8B1325008171A0 /* OldRacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861745C22D8B1325008171A0 /* OldRacesView.swift */; };
+		863EE6DC2DA41CFE00D58493 /* RaceResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863EE6DB2DA41CFE00D58493 /* RaceResultModel.swift */; };
+		863EE6DD2DA41CFE00D58493 /* RaceResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863EE6DB2DA41CFE00D58493 /* RaceResultModel.swift */; };
 		865618FB2D5C184800567D38 /* PitlapPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618F92D5C184700567D38 /* PitlapPicker.swift */; };
 		865618FE2D5C1B9700567D38 /* StandingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618FD2D5C1B9700567D38 /* StandingPickerView.swift */; };
 		86645A1E2D5E0BC1004BAB44 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 86645A1C2D5E0BC1004BAB44 /* 10.png */; };
@@ -82,6 +84,7 @@
 		8683B59D2D9C3E2F000AD7BA /* StartLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B59C2D9C3E2F000AD7BA /* StartLightView.swift */; };
 		8683B59F2D9C3F95000AD7BA /* RaceReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */; };
 		8683B5A12D9D3D28000AD7BA /* RaceReactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */; };
+		8683B5E12D9E9F64000AD7BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5E02D9E9F64000AD7BA /* HomeView.swift */; };
 		86F1B8022D5CC58900AF923D /* ConstructorStandingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */; };
 		86F1B8062D5CC7D400AF923D /* StandingRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */; };
 		86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8072D5CCB5500AF923D /* StandingRow.swift */; };
@@ -209,6 +212,7 @@
 		861745BA2D7F3936008171A0 /* StarLightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarLightsView.swift; sourceTree = "<group>"; };
 		861745BD2D8AC6BA008171A0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		861745C22D8B1325008171A0 /* OldRacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldRacesView.swift; sourceTree = "<group>"; };
+		863EE6DB2DA41CFE00D58493 /* RaceResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultModel.swift; sourceTree = "<group>"; };
 		865618F92D5C184700567D38 /* PitlapPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitlapPicker.swift; sourceTree = "<group>"; };
 		865618FD2D5C1B9700567D38 /* StandingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingPickerView.swift; sourceTree = "<group>"; };
 		86645A142D5E0BC1004BAB44 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 		8683B59C2D9C3E2F000AD7BA /* StartLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLightView.swift; sourceTree = "<group>"; };
 		8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionView.swift; sourceTree = "<group>"; };
 		8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionViewModel.swift; sourceTree = "<group>"; };
+		8683B5E02D9E9F64000AD7BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		86F1B8012D5CC58900AF923D /* ConstructorStandingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorStandingModel.swift; sourceTree = "<group>"; };
 		86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRowModel.swift; sourceTree = "<group>"; };
 		86F1B8072D5CCB5500AF923D /* StandingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRow.swift; sourceTree = "<group>"; };
@@ -572,6 +577,7 @@
 		86645ACC2D64D53B004BAB44 /* features */ = {
 			isa = PBXGroup;
 			children = (
+				8683B5DE2D9E9F1D000AD7BA /* home */,
 				861745BC2D8AC68D008171A0 /* onboarding */,
 				86645A932D6421FF004BAB44 /* notifications */,
 				86645AD92D695C24004BAB44 /* youtube */,
@@ -709,6 +715,7 @@
 		8683B5832D95ACC4000AD7BA /* race */ = {
 			isa = PBXGroup;
 			children = (
+				863EE6DB2DA41CFE00D58493 /* RaceResultModel.swift */,
 			);
 			path = race;
 			sourceTree = "<group>";
@@ -729,6 +736,14 @@
 				8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */,
 			);
 			path = games;
+			sourceTree = "<group>";
+		};
+		8683B5DE2D9E9F1D000AD7BA /* home */ = {
+			isa = PBXGroup;
+			children = (
+				8683B5E02D9E9F64000AD7BA /* HomeView.swift */,
+			);
+			path = home;
 			sourceTree = "<group>";
 		};
 		86F1B8032D5CC7AA00AF923D /* data */ = {
@@ -1415,6 +1430,7 @@
 				FF75D3892D236D4200160331 /* SessionItemView.swift in Sources */,
 				FF75D3692D232EB000160331 /* SeasonDataLogic.swift in Sources */,
 				FF52D1542D3F0D8F00DF2573 /* BottomNavTab.swift in Sources */,
+				863EE6DC2DA41CFE00D58493 /* RaceResultModel.swift in Sources */,
 				FF9A510E2D4CE7CB001F1697 /* ArticleFeedView.swift in Sources */,
 				86F1B8472D5D297100AF923D /* RaceResultRow.swift in Sources */,
 				8683B59F2D9C3F95000AD7BA /* RaceReactionView.swift in Sources */,
@@ -1495,6 +1511,7 @@
 				86F1B8402D5D112200AF923D /* SummariesDataLogic.swift in Sources */,
 				8683B59A2D9BF6B9000AD7BA /* RaceTrack.swift in Sources */,
 				FF75D3772D233B5000160331 /* RaceWeekendView.swift in Sources */,
+				8683B5E12D9E9F64000AD7BA /* HomeView.swift in Sources */,
 				86645A2B2D5E287C004BAB44 /* QualiResultModel.swift in Sources */,
 				86645A492D5EAC65004BAB44 /* GroupLapModel.swift in Sources */,
 				FF75D3652D232DE100160331 /* Extensions.swift in Sources */,
@@ -1512,6 +1529,7 @@
 				86645A3E2D5EA661004BAB44 /* LapModel.swift in Sources */,
 				86F1B83C2D5D0FB300AF923D /* TrackSummaryModel.swift in Sources */,
 				86645A2E2D5E28FB004BAB44 /* QualiResults.swift in Sources */,
+				863EE6DD2DA41CFE00D58493 /* RaceResultModel.swift in Sources */,
 				FF9A50C32D499620001F1697 /* DriverStandingEntity.swift in Sources */,
 				FF9799B92D35DFAF00CCF203 /* PitThisLapWidget.swift in Sources */,
 				FF9799BB2D35DFAF00CCF203 /* AppIntent.swift in Sources */,

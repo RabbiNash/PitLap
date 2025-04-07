@@ -39,7 +39,7 @@ struct RaceResultRow: View {
                         .foregroundStyle(.white)
                         .fontWeight(.bold)
                     
-                    Text(rowModel.broadcastName)
+                    Text(rowModel.teamName)
                         .foregroundStyle(.white)
                 }
                 
@@ -48,8 +48,6 @@ struct RaceResultRow: View {
                 VStack(alignment: .trailing) {
                     Text("\(rowModel.points) pts")
                         .fontWeight(.bold)
-                        .foregroundStyle(.white)
-                    Text("\(rowModel.status)")
                         .foregroundStyle(.white)
                 }
             }

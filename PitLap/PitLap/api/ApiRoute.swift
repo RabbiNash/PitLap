@@ -43,7 +43,7 @@ enum APIRoute {
         case .youtubeVideos(let channel):
             return "/youtube/\(channel)"
         case .raceResult(let year, let round):
-            return "/race/\(year)/\(round)"
+            return "/race/result/convectional/\(year)/\(round)"
         }
     }
 }
