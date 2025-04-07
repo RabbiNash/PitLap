@@ -19,7 +19,7 @@ protocol ApiService {
     func fetchPracticeLaps(year: Int, round: Int, sessionName: String) async throws -> PracticeLapsModel
     func fetchWeatherSummary(year: Int, round: Int) async throws -> WeatherModel?
     func fetchYoutubeVideos(channelTitle: String) async throws -> [YoutubeVideoModel]
-    func fetchRaceResult(year: Int, round: Int) async throws -> [RaceResultModel]
+    func fetchRaceResult(year: Int, round: Int) async throws -> RaceResults
 }
 
 final class ApiServiceImpl: ApiService {
@@ -86,7 +86,7 @@ final class ApiServiceImpl: ApiService {
         return try await fetchData(route: .youtubeVideos(channelTitle: channelTitle))
     }
     
-    func fetchRaceResult(year: Int, round: Int) async throws -> [RaceResultModel] {
+    func fetchRaceResult(year: Int, round: Int) async throws -> RaceResults {
         return try await fetchData(route: .raceResult(year: year, round: round))
     }
 }

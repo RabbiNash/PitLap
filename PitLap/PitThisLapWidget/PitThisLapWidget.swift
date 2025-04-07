@@ -66,7 +66,7 @@ struct PitThisLapWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             PitThisLapWidgetEntryView(entry: entry)
-                .modelContainer(for: [RaceWeekendEntity.self, RaceResultEntity.self])      .containerBackground(.fill.tertiary, for: .widget)
+                .modelContainer(for: [RaceWeekendEntity.self])      .containerBackground(.fill.tertiary, for: .widget)
         }
         .supportedFamilies([
             .systemSmall,

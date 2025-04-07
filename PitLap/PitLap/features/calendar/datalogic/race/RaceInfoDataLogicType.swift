@@ -20,7 +20,7 @@ final class RaceInfoDataLogic: RaceInfoDataLogicType {
     
     func getResults(year: Int, round: Int) async -> [RaceResultModel] {
         do {
-            return try await apiService.fetchRaceResult(year: year, round: round)
+            return try await apiService.fetchRaceResult(year: year, round: round).results
         } catch {
             print("Error loading race summary \(error.localizedDescription)")
         }

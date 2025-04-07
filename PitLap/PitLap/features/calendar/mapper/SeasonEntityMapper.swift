@@ -27,22 +27,7 @@ class SeasonEntityMapper {
             session4DateUTC: weekend.session4DateUTC ?? "",
             session5: weekend.session5,
             session5DateUTC: weekend.session5DateUTC ?? "",
-            year: weekend.year,
-            results: weekend.results.sorted { $0.position < $1.position }.map(mapToResultEntity)
+            year: weekend.year
         )
-
-    }
-
-    private func mapToResultEntity(_ result: RaceResultModel) -> RaceResultEntity {
-        return RaceResultEntity(
-            position: result.position,
-            driver: result.driver,
-            headshotURL: result.headshotURL,
-            points: result.points,
-            status: result.status,
-            gridPosition: result.gridPosition,
-            teamColor: result.teamColor,
-            broadcastName: result.broadcastName,
-            fullName: result.fullName)
     }
 }

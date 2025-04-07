@@ -98,16 +98,16 @@ struct RaceWeekendModel: Codable {
 // MARK: - Result
 struct RaceResultModel: Codable {
     let position: Int
-    let driver: String
+    let classifiedPosition: String
     let headshotURL: String
     let points: Int
-    let status: String
     let gridPosition: Int
-    let teamColor, broadcastName, fullName: String
+    let fullName: String
+    let teamName: String
 
     enum CodingKeys: String, CodingKey {
-        case position, driver
-        case headshotURL = "headshotUrl"
-        case points, status, gridPosition, teamColor, broadcastName, fullName
+        case position
+        case headshotURL = "headshotURL"
+        case points, gridPosition, fullName, classifiedPosition, teamName
     }
 }
