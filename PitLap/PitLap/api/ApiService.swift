@@ -27,17 +27,34 @@ final class ApiServiceImpl: ApiService {
     
     private let baseURL = "https://pitlap.eu"
 
+    private let cachedSession: URLSession = {
+        let cache = URLCache(
+            memoryCapacity: 50 * 1024 * 1024,
+            diskCapacity: 100 * 1024 * 1024,
+            diskPath: "urlCache"
+        )
+
+        let config = URLSessionConfiguration.default
+        config.urlCache = cache
+        config.requestCachePolicy = .useProtocolCachePolicy
+
+        return URLSession(configuration: config)
+    }()
+
     private func fetchData<T: Codable>(route: APIRoute) async throws -> T {
         guard let url = URL(string: "\(baseURL)\(route.path)") else {
             throw APIError.invalidURL
         }
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
+
+        var request = URLRequest(url: url)
+        request.cachePolicy = .useProtocolCachePolicy
+
+        let (data, response) = try await cachedSession.data(for: request)
+
         guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
             throw APIError.invalidResponse
         }
-        
+
         do {
             let decodedResponse = try JSONDecoder().decode(ApiResponse<T>.self, from: data)
             return decodedResponse.data

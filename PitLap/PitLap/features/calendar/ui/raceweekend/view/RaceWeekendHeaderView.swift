@@ -1,6 +1,6 @@
 //
 //  RaceWeekendHeaderView.swift
-//  Box Box
+//  Pit Lap
 //
 //  Created by Tinashe MAKUTI on 30/12/2024.
 //
@@ -25,9 +25,30 @@ struct RaceWeekendHeaderView: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 16)
-                .fill(ThemeManager.shared.selectedTeamColor.gradient)
-                .shadow(radius: 8)
+            if #available(iOS 18.0, *) {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(
+                        MeshGradient(
+                            width: 3,
+                            height: 3,
+                            points: [
+                                [0.0, 0.0], [0.5, 0.0], [1.0, 0.0],
+                                [0.0, 0.5], [0.8, 0.2], [1.0, 0.5],
+                                [0.0, 1.0], [0.5, 1.0], [1.0, 1.0]
+                            ], colors: [
+                                ThemeManager.shared.selectedTeamColor, F1Team.haas.color, ThemeManager.shared.selectedTeamColor, ThemeManager.shared.selectedTeamColor,ThemeManager.shared.selectedTeamColor, F1Team.haas.color,
+                                ThemeManager.shared.selectedTeamColor, F1Team.haas.color, ThemeManager.shared.selectedTeamColor,
+                                F1Team.mercedes.color, F1Team.haas.color, F1Team.haas.color,
+                                ThemeManager.shared.selectedTeamColor, F1Team.ferrari.color, ThemeManager.shared.selectedTeamColor, ThemeManager.shared.selectedTeamColor
+                            ])
+                    )
+                    .shadow(radius: 8)
+            } else {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(ThemeManager.shared.selectedTeamColor.gradient)
+                    .shadow(radius: 8)
+                
+            }
 
             VStack(alignment: .leading) {
                 (Text("Round ") + Text("\(weekend.round)"))

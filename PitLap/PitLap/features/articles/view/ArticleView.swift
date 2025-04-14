@@ -10,7 +10,6 @@ import FeedKit
 import Kingfisher
 
 struct ArticleView: View {
-    @Environment(\.openURL) var openURL
     private let feed: RSSFeedItem
     private let channelTitle: String
 
@@ -20,72 +19,97 @@ struct ArticleView: View {
     }
 
     var body: some View {
-        VStack {
-            GeometryReader { geometry in
-                ZStack {
-                    KFImage(URL(string: feed.enclosure?.attributes?.url ?? feed.media?.thumbnails?.first?.attributes?.url ?? ""))
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .clipped()
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 0)
-                                .fill(.black.gradient.opacity(0.6))
-                        )
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                headerImage
+                    .frame(height: UIScreen.main.bounds.height / 2)
+                    .clipped()
 
-                    VStack(alignment: .leading) {
-                        Text(feed.title ?? "")
-                            .font(.custom("Audiowide",size: 24))
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
+                articleMeta
 
-                        Text(Date.getHumanisedShortDateWithTime(date: feed.pubDate ?? .init()))
-                            .foregroundColor(.white)
-                            .padding(.top, 2)
+                Text(truncatedDescription)
+                    .font(.custom("Noto Sans", size: 16))
+                    .padding(.horizontal)
 
-                        HStack {
-                            Image(systemName: "link")
-                            Text(channelTitle)
-                        }
-                        .foregroundColor(.white)
-                        .onTapGesture {
-                            openURL(URL(string: feed.link ?? "")!)
-                        }
-                    }
-                    .padding(.bottom, 16)
-                    .padding(.horizontal, 16)
-                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: .bottom)
-                }
+                readMoreLink
+                    .padding(.bottom, 32)
+
+                Spacer()
             }
-            .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height / 2)
+        }
+        .ignoresSafeArea(edges: .top)
+    }
 
-            let truncatedDescription = truncateAfterEllipsis(feed.description?.replacingOccurrences(of: "<br>", with: "\n\n")  ?? "")
+    // MARK: - Subviews
 
-            Text(truncatedDescription)
-                .font(.custom("Noto Sans", size: 16))
-                .padding(.top, 8)
-                .padding(.horizontal, 16)
+    private var headerImage: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .bottomLeading) {
+                KFImage(headerImageURL)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .overlay(Color.black.opacity(0.5))
+                
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(feed.title ?? "No Title")
+                        .font(.custom("Audiowide", size: 24))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.leading)
 
-            Text("Read more...")
-                .font(.custom("Noto Sans", size: 16))
-                .foregroundColor(.accentColor)
-                .padding(.top, 8)
-                .padding(.horizontal, 16)
-                .onTapGesture {
-                    openURL(URL(string: feed.link ?? "")!)
+                    Text(Date.getHumanisedShortDateWithTime(date: feed.pubDate ?? Date()))
+                        .foregroundColor(.white.opacity(0.85))
+                        .font(.caption)
+
+                    NavigationLink(destination: SafariView(url: articleURL)) {
+                        Label(channelTitle, systemImage: "link")
+                            .foregroundColor(.white)
+                            .font(.caption)
+                    }
                 }
-
-            Spacer()
+                .padding()
+            }
         }
     }
 
-    private func truncateAfterEllipsis(_ input: String) -> String {
-        guard let range = input.range(of: "...") else { return input }
-        return String(input[input.startIndex..<range.upperBound])
+    private var articleMeta: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Divider().padding(.horizontal)
+
+            if let description = feed.description?.replacingOccurrences(of: "<br>", with: "\n\n") {
+                Text(description)
+                    .font(.custom("Noto Sans", size: 16))
+                    .padding(.horizontal)
+            }
+        }
     }
 
-}
+    private var readMoreLink: some View {
+        NavigationLink(destination: SafariView(url: articleURL)) {
+            Text("Read more...")
+                .font(.custom("Noto Sans", size: 16))
+                .foregroundColor(.accentColor)
+                .padding(.horizontal)
+        }
+    }
 
-#Preview {
-    ArticleView(feed: .init(), channelTitle: "")
+    // MARK: - Helpers
+
+    private var articleURL: URL {
+        URL(string: feed.link ?? "https://formula1.com")!
+    }
+
+    private var headerImageURL: URL? {
+        URL(string: feed.enclosure?.attributes?.url
+             ?? feed.media?.thumbnails?.first?.attributes?.url
+             ?? "")
+    }
+
+    private var truncatedDescription: String {
+        guard let description = feed.description else { return "" }
+        let cleaned = description.replacingOccurrences(of: "<br>", with: "\n\n")
+        guard let range = cleaned.range(of: "...") else { return cleaned }
+        return String(cleaned[..<range.upperBound])
+    }
 }

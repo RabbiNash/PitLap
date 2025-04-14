@@ -17,6 +17,7 @@ struct TriviaView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     headerView
+                    contentCards
                     analysisCards
                     starLightsCard
                 }
@@ -91,6 +92,24 @@ struct TriviaView: View {
                         progressColor: ThemeManager.shared.selectedTeamColor
                     )
                 }.buttonStyle(.plain)
+            }
+            .padding(.horizontal)
+        }
+    }
+    
+    var contentCards: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 16) {
+                NavigationLink(destination: VideoListView()) {
+                    TriviaCard(
+                        level: "News",
+                        icon: "video",
+                        iconColor: ThemeManager.shared.selectedTeamColor,
+                        title: "Videos",
+                        subtitle: "Keep in touch with all your favourite Youtube Video creators, get all the news and analysis here",
+                        progressColor: ThemeManager.shared.selectedTeamColor
+                    )
+                }.buttonStyle(.plain)
                 
                 NavigationLink(destination: RaceReactionView()) {
                     TriviaCard(
@@ -106,6 +125,7 @@ struct TriviaView: View {
             .padding(.horizontal)
         }
     }
+
 
     var settingsView: some View {
         SettingsView()

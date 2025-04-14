@@ -79,10 +79,6 @@ struct SeasonView: View {
     }
 }
 
-#Preview {
-    SeasonView()
-}
-
 struct SeasonPicker: View {
     @Binding var selectedOption: SeasonTabOption
     var options: [SeasonTabOption] = SeasonTabOption.allCases
@@ -115,3 +111,8 @@ struct SeasonPicker: View {
         .shadow(color: .gray.opacity(0.2), radius: 4, x: 0, y: 2)
     }
 }
+
+#Preview {
+    SeasonView()
+}
+

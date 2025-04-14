@@ -36,7 +36,7 @@ final class SeasonViewModel: ObservableObject {
             guard let self = self else { return }
             
             let calendar = self.dataLogic.getSeasonCalendar(for: year)
-            self.seasonCalendar = showPastEvents ? calendar : calendar.filter { self.isNextEvent(race: $0) }
+            self.seasonCalendar = showPastEvents ? calendar.filter { !self.isNextEvent(race: $0) }.reversed() : calendar.filter { self.isNextEvent(race: $0) }
             
             self.nextSession = getNextEvent(from: self.seasonCalendar)
         }

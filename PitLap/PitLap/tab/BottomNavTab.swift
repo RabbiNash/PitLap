@@ -8,10 +8,9 @@
 import Foundation
 
 enum BottomNavTab: String, CaseIterable {
+    case home = "Home"
     case seasons = "Seasons"
     case standings = "Standings"
-    case news = "News"
-    case videos = "Videos"
     case trivia = "Trivia"
 
     var title: String {
@@ -22,10 +21,8 @@ enum BottomNavTab: String, CaseIterable {
             return "Standings"
         case .trivia:
             return "Trivia"
-        case .videos:
-            return "Videos"
-        case .news:
-            return "News"
+        case .home:
+            return "Home"
         }
     }
 
@@ -37,10 +34,8 @@ enum BottomNavTab: String, CaseIterable {
             return "chart.bar.xaxis"
         case .trivia:
             return "questionmark.circle"
-        case .news:
-            return "newspaper"
-        case .videos:
-            return "video"
+        case .home:
+            return "house"
         }
     }
 }

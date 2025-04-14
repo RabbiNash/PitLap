@@ -21,16 +21,14 @@ struct VideoItem: View {
                 .resizable()
                 .cacheMemoryOnly()
                 .serialize(as: .PNG)
+                .cornerRadius(8)
                 .frame(maxWidth: .infinity)
                 .scaledToFit()
             
             Text(video.title)
                 .font(.custom("Audiowide",size: 18))
                 .fontWeight(.bold)
-            
-            Text(video.description)
-                .padding(.top, 2)
-                .lineLimit(5)
+                .lineLimit(3)
             
         }.padding(.vertical)
     }
