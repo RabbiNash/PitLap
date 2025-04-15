@@ -9,23 +9,21 @@ import Foundation
 
 @MainActor
 final class SplashViewModel: ObservableObject {
-    private let dataLogic: SeasonDataLogicType
+    private let dataLogic: RaceCalendarDataLogicType
     @Published var isDataLoaded: Bool = false
-    
-    init(dataLogic: SeasonDataLogicType) {
+
+    init(dataLogic: RaceCalendarDataLogicType = RaceCalendarDataLogic()) {
         self.dataLogic = dataLogic
     }
-    
+
     func checkDataLoaded() async {
-        isDataLoaded = await dataLogic.isDataLoaded()
-        
-        if !isDataLoaded {
-            await dataLogic.loadSeasons { [weak self] isLoaded in
-                Task { @MainActor in
-                    guard let self = self else { return }
-                    self.isDataLoaded = isLoaded
-                }
-            }
+        if await dataLogic.isDataLoaded() {
+            isDataLoaded = true
+            return
         }
+        
+        let currentYear = Calendar.current.component(.year, from: Date())
+        let calendar = await dataLogic.getRaceCalendar(for: currentYear)
+        isDataLoaded = !calendar.isEmpty
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PitlapKit
 
 struct PracticeView: View {
     @StateObject var viewModel: PracticeViewModel

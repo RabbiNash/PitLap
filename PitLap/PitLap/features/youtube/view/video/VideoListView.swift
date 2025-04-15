@@ -25,7 +25,7 @@ struct VideoListView: View {
                             }
                         }
                     }.frame(maxWidth: .infinity, alignment: .trailing)
-                    ForEach(viewModel.videos, id: \.resourceID.videoID) { video in
+                    ForEach(viewModel.videos, id: \.videoId) { video in
                         NavigationLink(destination: VideoPlayerDescriptionView(video: video)) {
                             VideoItem(video: video)
                                 .transition(.opacity.combined(with: .move(edge: .leading)))

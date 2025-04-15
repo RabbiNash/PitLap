@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct QualiResultView: View {
-    @StateObject var viewModel: QualiViewModel
+struct QualifyingResultView: View {
+    @StateObject var viewModel: QualifyingViewModel
     
     private let year: Int
     private let round: Int
     
-    init(viewModel: QualiViewModel = QualiViewModel(), year: Int, round: Int) {
+    init(viewModel: QualifyingViewModel = QualifyingViewModel(), year: Int, round: Int) {
         self._viewModel = StateObject(wrappedValue: viewModel)
         self.year = year
         self.round = round
@@ -44,7 +44,7 @@ struct QualiResultView: View {
     
     private var resultList: some View {
         ForEach(viewModel.results, id: \.position) { row in
-            QualiResultRow(rowModel: row)
+            QualifyingResultRow(rowModel: row)
                 .background(
                     RoundedRectangle(cornerRadius: 24)
                         .fill(ThemeManager.shared.selectedTeamColor)

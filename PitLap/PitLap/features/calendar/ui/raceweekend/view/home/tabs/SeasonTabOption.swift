@@ -8,13 +8,13 @@
 import Foundation
 
 enum SeasonTabOption: String, CaseIterable {
-    case first
-    case second
+    case current
+    case previous
 
     var title: String {
         switch self {
-        case .first: return "2025"
-        case .second: return "2024"
+        case .current: return "2025"
+        case .previous: return "2024"
         }
     }
 }

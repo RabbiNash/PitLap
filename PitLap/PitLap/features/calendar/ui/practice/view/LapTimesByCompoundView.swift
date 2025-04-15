@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PitlapKit
 
 struct LapTimesByCompoundView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false

@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
-import PersistenceManager
+import PitlapKit
 
 struct RaceWeekendView: View {
-    private let weekend: RaceWeekendEntity
+    private let event: EventScheduleModel
     
     @StateObject private var viewModel: RaceWeekendViewModel
     @Namespace private var namespace
@@ -17,8 +17,8 @@ struct RaceWeekendView: View {
     @State var activeSheet: SessionType?
     @State var showSheet: Bool = false
 
-    init(weekend: RaceWeekendEntity, viewModel: RaceWeekendViewModel = RaceWeekendViewModel()) {
-        self.weekend = weekend
+    init(event: EventScheduleModel, viewModel: RaceWeekendViewModel = RaceWeekendViewModel()) {
+        self.event = event
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
 
@@ -26,11 +26,11 @@ struct RaceWeekendView: View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 20) {
-                    RaceWeekendHeaderView(weekend: weekend)
-                    if !isPastEvent(sessionTime: weekend.session5DateUTC) {
+                    RaceWeekendHeaderView(event: event)
+                    if !isPastEvent(sessionTime: event.session5DateUTC ?? "") {
                         HStack {
                             Spacer()
-                            NavigationLink(destination: SessionWeatherView(round: weekend.round, year: Int(weekend.year) ?? 0)) {
+                            NavigationLink(destination: SessionWeatherView(round: Int(event.round), year: Int(event.year) ?? 0)) {
                                 Text("Session Weather")
                                     .foregroundStyle(ThemeManager.shared.selectedTeamColor)
                             }.buttonStyle(.plain)
@@ -58,7 +58,7 @@ struct RaceWeekendView: View {
     }
 
     private var eventNameView: some View {
-        Text(weekend.eventName)
+        Text(event.eventName)
             .font(.custom("Audiowide", size: 24))
             .fontWeight(.bold)
             .multilineTextAlignment(.leading)
@@ -73,11 +73,11 @@ struct RaceWeekendView: View {
 
     private var sessionTimesView: some View {
         ForEach(SessionType.allCases, id: \.self) { sessionType in
-            if let sessionTime = weekend.sessionTime(for: sessionType) {
-                if weekend.sessionName(for: sessionType) != "None" {
-                    SessionItemView(sessionName: weekend.sessionName(for: sessionType), sessionTime: sessionTime)
+            if let sessionTime = event.sessionTime(for: sessionType) {
+                if event.sessionName(for: sessionType) != "None" {
+                    SessionItemView(sessionName: event.sessionName(for: sessionType), sessionTime: sessionTime)
                         .onTapGesture {
-                            if isPastEvent(sessionTime: weekend.session1DateUTC) {
+                            if isPastEvent(sessionTime: event.session1DateUTC ?? "") {
                                 activeSheet = sessionType
                             }
                         }
@@ -110,19 +110,19 @@ struct RaceWeekendView: View {
     
     @ViewBuilder
     private func sheetContent(for sessionType: SessionType) -> some View {
-        if let year = Int(weekend.year) {
-            let round = weekend.round
+        if let year = Int(event.year) {
+            let round = event.round
             
             switch sessionType {
             case .session5:
-                RaceResultView(year: year, round: round)
+                RaceResultView(year: year, round: Int(round))
             case .session4:
-                QualiResultView(year: year, round: round)
+                QualifyingResultView(year: year, round: Int(round))
             case .session1:
-                PracticeView(year: year, round: round, sessionName: weekend.session1.rawValue)
-            case .session2 where weekend.session2 == .practice2,
-                 .session3 where weekend.session3 == .practice3:
-                PracticeView(year: year, round: round, sessionName: sessionType == .session2 ? weekend.session2.rawValue : weekend.session3.rawValue)
+                PracticeView(year: year, round: Int(round), sessionName: event.session1)
+            case .session2 where event.session2 == "Practice 2",
+                 .session3 where event.session3 == "Practice 3":
+                PracticeView(year: year, round: Int(round), sessionName: sessionType == .session2 ? event.session2 : event.session3)
             default:
                 Text("Coming Soon")
             }
@@ -132,7 +132,8 @@ struct RaceWeekendView: View {
     }
 
     private func loadData() {
-        viewModel.viewDidAppear(round: weekend.round, year: Int(weekend.year) ?? 2024, trackName: weekend.eventName)
+        let currentYear = Calendar.current.component(.year, from: Date())
+        viewModel.viewDidAppear(round: Int(event.round), year: Int(event.year) ?? currentYear, trackName: event.eventName)
     }
     
     private func isPastEvent(sessionTime: String) -> Bool {
@@ -172,7 +173,7 @@ enum SessionType: String, CaseIterable, Identifiable {
     }
 }
 
-extension RaceWeekendEntity {
+extension EventScheduleModel {
     func sessionTime(for type: SessionType) -> String? {
         switch type {
         case .session1: return session1DateUTC
@@ -185,11 +186,11 @@ extension RaceWeekendEntity {
     
     func sessionName(for type: SessionType) -> String {
         switch type {
-        case .session1: return session1.rawValue
-        case .session2: return session2.rawValue
-        case .session3: return session3.rawValue
-        case .session4: return session4.rawValue
-        case .session5: return session5.rawValue
+        case .session1: return session1
+        case .session2: return session2
+        case .session3: return session3
+        case .session4: return session4
+        case .session5: return session5
         }
     }
 }

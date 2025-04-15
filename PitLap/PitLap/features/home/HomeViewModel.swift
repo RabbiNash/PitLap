@@ -8,6 +8,7 @@
 import Foundation
 import FeedKit
 import SwiftUI
+import PitlapKit
 
 @MainActor
 final class HomeViewModel: ObservableObject {
@@ -48,19 +49,17 @@ final class HomeViewModel: ObservableObject {
         fetchStatus = .fetching
         
         async let _autosportFeed = feedDataLogic.getRSSFeed(from: FeedSource(rawValue: newsSource) ?? .autosport)
-        async let _officialF1Videos = youtubeDataLogic.getVideos(title: F1YoutubeChannels.formula1.rawValue)
         async let _p1Videos = youtubeDataLogic.getVideos(title: F1YoutubeChannels.p1.rawValue)
         async let _peter = youtubeDataLogic.getVideos(title: F1YoutubeChannels.peter.rawValue)
         async let _kym = youtubeDataLogic.getVideos(title: F1YoutubeChannels.kym.rawValue)
 
         autosportFeed = await _autosportFeed
        
-        let officialF1Videos = (await _officialF1Videos).prefix(5)
         let p1Videos = (await _p1Videos).prefix(5)
         let peterVideos = (await _peter).prefix(5)
         let kymVideos = (await _kym).prefix(5)
 
-        videos = (officialF1Videos + p1Videos + peterVideos + kymVideos).shuffled()
+        videos = (p1Videos + peterVideos + kymVideos).shuffled()
         
         fetchStatus = .success
     }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PitlapKit
 
 final class StandingsViewModel: ObservableObject {
     private let dataLogic: StandingsDataLogicType

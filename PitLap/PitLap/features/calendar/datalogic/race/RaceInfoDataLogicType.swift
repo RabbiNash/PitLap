@@ -6,21 +6,22 @@
 //
 
 import Foundation
+import PitlapKit
 
 protocol RaceInfoDataLogicType {
     func getResults(year: Int, round: Int) async -> [RaceResultModel]
 }
 
 final class RaceInfoDataLogic: RaceInfoDataLogicType {
-    private let apiService: ApiService
+    private let service: PitlapService
     
-    init(apiService: ApiService = ApiServiceImpl.shared) {
-        self.apiService = apiService
+    init(service: PitlapService = Pitlap.shared.getService()) {
+        self.service = service
     }
     
     func getResults(year: Int, round: Int) async -> [RaceResultModel] {
         do {
-            return try await apiService.fetchRaceResult(year: year, round: round).results
+            return try await service.getRaceResults(year: year.asInt32, round: round.asInt32)
         } catch {
             print("Error loading race summary \(error.localizedDescription)")
         }

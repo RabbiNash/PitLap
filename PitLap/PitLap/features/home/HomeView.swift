@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FeedKit
+import PitlapKit
 
 struct HomeView: View {
     @StateObject private var viewModel: HomeViewModel = HomeViewModel()
@@ -65,7 +66,7 @@ struct HomeView: View {
                     .padding(.leading, 16)
                 
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 2)) {
-                    ForEach(viewModel.videos, id: \.id) { item in
+                    ForEach(viewModel.videos, id: \.videoId) { item in
                         NavigationLink(destination: VideoPlayerDescriptionView(video: item)) {
                             VideoItem(video: item)
                         }.buttonStyle(.plain)

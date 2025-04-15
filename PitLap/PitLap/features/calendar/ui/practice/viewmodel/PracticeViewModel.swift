@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import PitlapKit
 
 final class PracticeViewModel: ObservableObject {
     private let dataLogic: LapsDataLogicType

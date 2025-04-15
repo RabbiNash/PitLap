@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PitlapKit
 
 protocol StandingsDataLogicType {
     func getDriverStandings() async -> [DriverStandingModel]
@@ -13,18 +14,18 @@ protocol StandingsDataLogicType {
 }
 
 final class StandingsDataLogic: StandingsDataLogicType {
-    private let apiService: ApiService
+    private let service: PitlapService
     
-    init(apiService: ApiService = ApiServiceImpl.shared) {
-        self.apiService = apiService
+    init(service: PitlapService = Pitlap.shared.getService()) {
+        self.service = service
     }
     
     func getDriverStandings() async -> [DriverStandingModel] {
-        await fetchStandings { [self] in try await apiService.fetchDriverStandings() }
+        await fetchStandings { [self] in try await service.getDriverStandings() }
     }
     
     func getConstructorStandings() async -> [ConstructorStandingModel] {
-        await fetchStandings { [self] in try await apiService.fetchConstructorStandings() }
+        await fetchStandings { [self] in try await service.getConstructorStandings() }
     }
     
     private func fetchStandings<T>(operation: @escaping () async throws -> [T]) async -> [T] {

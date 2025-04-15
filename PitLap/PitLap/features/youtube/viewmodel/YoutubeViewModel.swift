@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PitlapKit
 
 final class YoutubeViewModel: ObservableObject {
     private let dataLogic: YoutubeDataLogicType

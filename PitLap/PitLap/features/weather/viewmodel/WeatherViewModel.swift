@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PitlapKit
 
 final class WeatherViewModel: ObservableObject {
     private let dataLogic: WeatherDataLogicType

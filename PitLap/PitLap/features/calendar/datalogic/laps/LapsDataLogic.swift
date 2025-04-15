@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PitlapKit
 
 protocol LapsDataLogicType {
     func getLaps(year: Int, round: Int, sessionName: String) async -> [GroupedLapModel]
@@ -13,18 +14,15 @@ protocol LapsDataLogicType {
 
 final class LapsDataLogic: LapsDataLogicType {
 
-    private let mapper: LapDataMapperType
-    private let apiService: ApiService
+    private let service: PitlapService
     
-    init(mapper: LapDataMapperType = LapDataMapper(), apiService: ApiService = ApiServiceImpl.shared) {
-        self.mapper = mapper
-        self.apiService = apiService
+    init(service: PitlapService = Pitlap.shared.getService()) {
+        self.service = service
     }
     
     func getLaps(year: Int, round: Int, sessionName: String) async -> [GroupedLapModel] {
         do {
-            let laps = try await apiService.fetchPracticeLaps(year: year, round: round, sessionName: sessionName).laps
-            return mapper.mapToGroupedLapModels(laps: laps)
+            return try await service.getPracticeLaps(year: year.asInt32, round: round.asInt32, sessionName: sessionName)
         } catch {
             print("Error loading laps summary \(error.localizedDescription)")
         }

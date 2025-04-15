@@ -6,21 +6,22 @@
 //
 
 import Foundation
+import PitlapKit
 
 protocol YoutubeDataLogicType {
     func getVideos(title: String) async -> [YoutubeVideoModel]
 }
 
 final class YoutubeDataLogic: YoutubeDataLogicType {
-    private let apiService: ApiService
+    private let service: PitlapService
     
-    init(apiService: ApiService = ApiServiceImpl.shared) {
-        self.apiService = apiService
+    init(service: PitlapService = Pitlap.shared.getService()) {
+        self.service = service
     }
     
     func getVideos(title: String) async -> [YoutubeVideoModel] {
         do {
-            return try await apiService.fetchYoutubeVideos(channelTitle: title)
+            return try await service.getYTVideos(channelName: title)
         } catch {
             print("Error loading videos summary \(error.localizedDescription)")
         }

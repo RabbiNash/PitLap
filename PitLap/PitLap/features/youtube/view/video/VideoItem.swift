@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import PitlapKit
 
 struct VideoItem: View {
     private let video: YoutubeVideoModel
@@ -17,7 +18,7 @@ struct VideoItem: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            KFImage(URL(string: video.thumbnails.maxres?.url ?? video.thumbnails.high.url))
+            KFImage(URL(string: video.thumbnailUrl ?? ""))
                 .resizable()
                 .cacheMemoryOnly()
                 .serialize(as: .PNG)

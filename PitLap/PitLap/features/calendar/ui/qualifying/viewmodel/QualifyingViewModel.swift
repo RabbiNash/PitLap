@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import PitlapKit
 
-final class QualiViewModel: ObservableObject {
-    private let dataLogic: QualiDataLogicType
+final class QualifyingViewModel: ObservableObject {
+    private let dataLogic: QualifyingDataLogicType
     
     @Published var isLoading: Bool = false
-    @Published var results: [QualiResultModel] = []
+    @Published var results: [QualifyingResultModel] = []
 
-    init(dataLogic: QualiDataLogicType = QualiDataLogic()) {
+    init(dataLogic: QualifyingDataLogicType = QualifyingDataLogic()) {
         self.dataLogic = dataLogic
     }
 

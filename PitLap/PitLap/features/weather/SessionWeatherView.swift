@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PitlapKit
 
 struct SessionWeatherView: View {
     @StateObject private var viewModel: WeatherViewModel
@@ -36,7 +37,7 @@ struct SessionWeatherView: View {
                     
                     Spacer()
                     
-                    Text(viewModel.weather?.aiSummary ?? "")
+                    Text(viewModel.weather?.summary ?? "")
                         .font(.custom("Audiowide", size: 64))
                         .minimumScaleFactor(0.5)
                         .fontWeight(.bold)

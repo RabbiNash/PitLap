@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PersistenceManager
+import PitlapKit
 import Kingfisher
 
 struct RaceResultRow: View {

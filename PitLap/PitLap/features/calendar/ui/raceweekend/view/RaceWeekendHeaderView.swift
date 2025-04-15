@@ -7,20 +7,14 @@
 
 import SwiftUI
 import PersistenceManager
+import PitlapKit
 
 struct RaceWeekendHeaderView: View {
-    private let weekend: RaceWeekendEntity
-
-    @StateObject private var viewModel: RaceWeekendHeaderViewModel
-
     @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.ferrari.rawValue
+    private let event: EventScheduleModel
 
-    init(
-        weekend: RaceWeekendEntity,
-        viewModel: RaceWeekendHeaderViewModel = RaceWeekendHeaderViewModel()
-    ) {
-        self.weekend = weekend
-        self._viewModel = StateObject(wrappedValue: viewModel)
+    init(event: EventScheduleModel) {
+        self.event = event
     }
 
     var body: some View {
@@ -51,24 +45,24 @@ struct RaceWeekendHeaderView: View {
             }
 
             VStack(alignment: .leading) {
-                (Text("Round ") + Text("\(weekend.round)"))
+                (Text("Round ") + Text("\(event.round)"))
                     .font(.custom("Noto Sans",size: 20))
                     .foregroundStyle(.white)
                     .fontWeight(.semibold)
 
-                Text(weekend.officialEventName)
+                Text(event.officialEventName)
                     .font(.custom("Audiowide",size: 28))
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
 
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(weekend.country)
+                        Text(event.country)
                             .font(.custom("Noto Sans",size: 20))
                             .fontWeight(.regular)
                             .foregroundStyle(.white)
                         
-                        Text(Date.getHumanisedDate(dateString: weekend.session1DateUTC) ?? " ")
+                        Text(Date.getHumanisedDate(dateString: event.session1DateUTC ?? " ") ?? " ")
                             .font(.custom("Noto Sans",size: 20))
                             .fontWeight(.regular)
                             .foregroundStyle(.white)
@@ -76,7 +70,7 @@ struct RaceWeekendHeaderView: View {
                     
                     Spacer()
                     
-                    if let track = RaceTrack.fromEventName(weekend.eventName) {
+                    if let track = RaceTrack.fromEventName(event.eventName) {
                         Image(track.rawValue)
                             .resizable()
                             .frame(width: 48, height: 48)
@@ -84,52 +78,6 @@ struct RaceWeekendHeaderView: View {
                 }
             }
             .padding()
-        }
-        .onAppear {
-            viewModel.startCountdown(targetDate: Date.getDateFromString(dateString: weekend.session5DateUTC))
-        }
-    }
-
-    @ViewBuilder
-    private var countdown: some View {
-        HStack {
-            VStack(alignment: .center) {
-                Text(viewModel.days)
-                    .font(.title)
-                    .foregroundStyle(.red)
-                Text("Days")
-                    .font(.caption)
-            }
-
-            Spacer()
-
-            VStack(alignment: .center) {
-                Text(viewModel.hours)
-                    .font(.title)
-                    .foregroundStyle(ThemeManager.shared.selectedTeamColor)
-                Text("Hours")
-                    .font(.caption)
-            }
-
-            Spacer()
-
-            VStack(alignment: .center) {
-                Text(viewModel.minutes)
-                    .font(.title)
-                    .foregroundStyle(ThemeManager.shared.selectedTeamColor)
-                Text("Minutes")
-                    .font(.caption)
-            }
-
-            Spacer()
-
-            VStack(alignment: .center) {
-                Text(viewModel.seconds)
-                    .font(.title)
-                    .foregroundStyle(.green)
-                Text("Seconds")
-                    .font(.caption)
-            }
         }
     }
 }

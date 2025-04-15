@@ -9,7 +9,7 @@ import SwiftUI
 import PersistenceManager
 
 struct ViewCoordinator: View {
-    @StateObject private var viewModel = SplashViewModel(dataLogic: SeasonDataLogic(persistenceDataManager: .shared()))
+    @StateObject private var viewModel = SplashViewModel()
 
     @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.ferrari.rawValue
 

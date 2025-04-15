@@ -6,21 +6,22 @@
 //
 
 import Foundation
+import PitlapKit
 
 protocol WeatherDataLogicType {
     func getWeather(year: Int, round: Int) async -> WeatherModel?
 }
 
 final class WeatherDataLogic: WeatherDataLogicType {
-    private let apiService: ApiService
+    private let service: PitlapService
     
-    init(apiService: ApiService = ApiServiceImpl.shared) {
-        self.apiService = apiService
+    init(service: PitlapService = Pitlap.shared.getService()) {
+        self.service = service
     }
     
     func getWeather(year: Int, round: Int) async -> WeatherModel? {
         do {
-            return try await apiService.fetchWeatherSummary(year: year, round: round)
+            return try await service.getWeather(year: year.asInt32, round: round.asInt32)
         } catch {
             print("Error loading laps summary \(error.localizedDescription)")
         }

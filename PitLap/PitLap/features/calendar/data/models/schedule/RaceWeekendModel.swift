@@ -57,9 +57,8 @@ struct RaceWeekendModel: Codable {
     let session5: Session5
     let session5DateUTC: String?
     let year: String
-    let results: [RaceResultModel]
 
-    init(round: Int, country: String, officialEventName: String, eventName: String, eventFormat: EventFormatModel, session1: Session1, session1DateUTC: String, session2: Session2, session2DateUTC: String, session3: Session3, session3DateUTC: String, session4: Session4, session4DateUTC: String, session5: Session5, session5DateUTC: String, year: String, results: [RaceResultModel]) {
+    init(round: Int, country: String, officialEventName: String, eventName: String, eventFormat: EventFormatModel, session1: Session1, session1DateUTC: String, session2: Session2, session2DateUTC: String, session3: Session3, session3DateUTC: String, session4: Session4, session4DateUTC: String, session5: Session5, session5DateUTC: String, year: String) {
         self.round = round
         self.country = country
         self.officialEventName = officialEventName
@@ -76,7 +75,6 @@ struct RaceWeekendModel: Codable {
         self.session5 = session5
         self.session5DateUTC = session5DateUTC
         self.year = year
-        self.results = results
     }
 
     enum CodingKeys: String, CodingKey {
@@ -90,24 +88,6 @@ struct RaceWeekendModel: Codable {
         case session4DateUTC = "session4DateUtc"
         case session5
         case session5DateUTC = "session5DateUtc"
-        case results
         case year
-    }
-}
-
-// MARK: - Result
-struct RaceResultModel: Codable {
-    let position: Int
-    let classifiedPosition: String
-    let headshotURL: String
-    let points: Int
-    let gridPosition: Int
-    let fullName: String
-    let teamName: String
-
-    enum CodingKeys: String, CodingKey {
-        case position
-        case headshotURL = "headshotURL"
-        case points, gridPosition, fullName, classifiedPosition, teamName
     }
 }

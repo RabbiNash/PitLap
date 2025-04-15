@@ -8,8 +8,8 @@
 import SwiftUI
 
 import SwiftUI
-import PersistenceManager
 import Kingfisher
+import PitlapKit
 
 struct PracticeResultRow: View {
     private let rowModel: GroupedLapModel

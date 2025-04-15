@@ -18,8 +18,8 @@ struct TriviaView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     header
                     cardSection(items: contentCards)
-                    cardSection(items: analysisCards)
                     cardSection(items: starLightsCards)
+                    cardSection(items: analysisCards)
                 }
                 .padding(.bottom, 32)
             }
@@ -94,15 +94,7 @@ struct TriviaView: View {
         }
 
         private var analysisCards: [TriviaCardItem] {
-            [
-                .init(
-                    level: "Analysis",
-                    icon: "flag.checkered",
-                    title: "Who still has a chance?",
-                    subtitle: "Find out if your favourite driver can still win the championship.",
-                    destination: AnyView(DriverAnalysisView())
-                ),
-                .init(
+            [    .init(
                     level: "Analysis",
                     icon: "chart.line.uptrend.xyaxis",
                     title: "Play with telemetry data",

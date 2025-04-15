@@ -30,7 +30,7 @@ struct ContentView: View {
                                 .interactiveDismissDisabled()
                         }
                     
-                    SeasonView()
+                    RaceCalendarView()
                         .tag(BottomNavTab.seasons)
                     
 

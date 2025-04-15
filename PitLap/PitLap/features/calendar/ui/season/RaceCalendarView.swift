@@ -1,19 +1,21 @@
 //
 //  SeasonCalendarView.swift
-//  Box Box
+//  Pitlap
 //
 //  Created by Tinashe MAKUTI on 30/12/2024.
 //
 
 import SwiftUI
-import SwiftData
 import WidgetKit
 
-struct SeasonView: View {
-    @StateObject private var viewModel = SeasonViewModel(dataLogic: SeasonDataLogic(persistenceDataManager: .shared()))
-
+struct RaceCalendarView: View {
+    @StateObject private var viewModel: RaceCalendarViewModel
     @State private var showOldRacesSheet: Bool = false
     
+    init(viewModel: RaceCalendarViewModel = RaceCalendarViewModel()) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
+
     var body: some View {
         NavigationStack {
             currentSeasonView
@@ -27,9 +29,9 @@ struct SeasonView: View {
         ScrollView(showsIndicators: false) {
             LazyVStack(alignment: .leading) {
                 HStack {
-                    if let raceWeekend = viewModel.nextSession {
-                        NavigationLink(destination: RaceWeekendView(weekend: raceWeekend)) {
-                            RaceWeekendHeaderView(weekend: raceWeekend)
+                    if let event = viewModel.nextSession {
+                        NavigationLink(destination: RaceWeekendView(event: event)) {
+                            RaceWeekendHeaderView(event: event)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -56,7 +58,7 @@ struct SeasonView: View {
 
                 seasonView
                     .onAppear {
-                        viewModel.loadSeasonCalendar(year: "2025")
+                        viewModel.loadSeasonCalendar(year: viewModel.currentYear)
                     }
             }.sheet(isPresented: $showOldRacesSheet) {
                 OldRacesView()
@@ -70,9 +72,9 @@ struct SeasonView: View {
     @ViewBuilder
     private var seasonView: some View {
         VStack {
-            ForEach(viewModel.seasonCalendar, id: \.self) { raceWeekend in
-                NavigationLink(destination: RaceWeekendView(weekend: raceWeekend)) {
-                    RaceWeekendListItemView(weekend: raceWeekend)
+            ForEach(viewModel.seasonCalendar, id: \.self) { event in
+                NavigationLink(destination: RaceWeekendView(event: event)) {
+                    RaceWeekendListItemView(event: event)
                 }.buttonStyle(PlainButtonStyle())
             }
         }
@@ -113,6 +115,6 @@ struct SeasonPicker: View {
 }
 
 #Preview {
-    SeasonView()
+    RaceCalendarView()
 }
 

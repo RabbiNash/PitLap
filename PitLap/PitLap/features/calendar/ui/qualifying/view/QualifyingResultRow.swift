@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-import PersistenceManager
 import Kingfisher
+import PitlapKit
 
-struct QualiResultRow: View {
-    private let rowModel: QualiResultModel
+struct QualifyingResultRow: View {
+    private let rowModel: QualifyingResultModel
     
-    init(rowModel: QualiResultModel) {
+    init(rowModel: QualifyingResultModel) {
         self.rowModel = rowModel
     }
     

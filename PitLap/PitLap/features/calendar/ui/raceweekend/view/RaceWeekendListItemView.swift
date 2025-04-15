@@ -6,29 +6,29 @@
 //
 
 import SwiftUI
-import PersistenceManager
+import PitlapKit
 
 struct RaceWeekendListItemView: View {
 
-    private let weekend: RaceWeekendEntity
-
-    init(weekend: RaceWeekendEntity) {
-        self.weekend = weekend
+    private let event: EventScheduleModel
+    
+    init(event: EventScheduleModel) {
+        self.event = event
     }
 
     var body: some View {
 
         HStack(spacing: 16) {
-                Text(Date.getDayOnly(dateString: weekend.session1DateUTC) ?? " ")
+            Text(Date.getDayOnly(dateString: event.session1DateUTC ?? "") ?? " ")
                     .lineLimit(2)
                     .multilineTextAlignment(.center)
                     .frame(width: 32)
                                           
                 VStack(alignment: .leading) {
-                    Text(weekend.officialEventName)
+                    Text(event.officialEventName)
                         .lineLimit(3)
 
-                    Text(weekend.country)
+                    Text(event.country)
                         .font(.custom("Noto Sans", size: 16))
                         .fontWeight(.semibold)
                         .foregroundStyle(ThemeManager.shared.selectedTeamColor)
@@ -36,7 +36,7 @@ struct RaceWeekendListItemView: View {
                 
                 Spacer()
                 
-                if let track = RaceTrack.fromEventName(weekend.eventName) {
+                if let track = RaceTrack.fromEventName(event.eventName) {
                     Image(track.rawValue)
                         .resizable()
                         .frame(width: 64, height: 64)

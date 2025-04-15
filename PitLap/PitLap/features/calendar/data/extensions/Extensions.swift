@@ -29,3 +29,7 @@ extension Bundle {
         }
     }
 }
+
+extension Int {
+    var asInt32: Int32 { Int32(self) }
+}

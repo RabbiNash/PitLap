@@ -1,5 +1,5 @@
 {
-  "originHash" : "c304b665ba1b1bce5cd25945fcad4e846cdf4485f3724d991a6d63b445711ac2",
+  "originHash" : "ff50c25b48afa7fd591d46973546c5e3fdfd5df8abec66263a23fd62684da203",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -116,6 +116,15 @@
       "state" : {
         "revision" : "b7e1104502eca3a213b46303391ca4d3bc8ddec1",
         "version" : "2.30910.0"
+      }
+    },
+    {
+      "identity" : "pitlapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RabbiNash/PitlapKit",
+      "state" : {
+        "revision" : "f350718f688fb8638fa393311f22258b613d6adf",
+        "version" : "0.1.2"
       }
     },
     {

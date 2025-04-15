@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PitlapKit
 
 struct VideoPlayerDescriptionView: View {
     private let video: YoutubeVideoModel
@@ -17,7 +18,7 @@ struct VideoPlayerDescriptionView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                PlayerView(videoId: video.resourceID.videoID)
+                PlayerView(videoId: video.videoId)
                     .frame(height: 300)
                     .cornerRadius(8)
 

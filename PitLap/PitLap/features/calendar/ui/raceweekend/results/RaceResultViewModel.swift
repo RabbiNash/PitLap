@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PitlapKit
 
 final class RaceResultViewModel: ObservableObject {
     private let dataLogic: RaceInfoDataLogicType
