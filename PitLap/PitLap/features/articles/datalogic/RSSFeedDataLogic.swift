@@ -14,6 +14,7 @@ enum FeedSource: String, CaseIterable {
     case gbblog = "https://www.gpblog.com/en/rss/index.xml"
     case motosportcom = "https://www.motorsport.com/rss/f1/news/"
     case racefans = "https://www.racefans.net/feed/"
+    case fia = "https://www.fia.com/rss/news"
     
     var title: String {
         switch self {
@@ -27,6 +28,8 @@ enum FeedSource: String, CaseIterable {
             "Motosport.com"
         case .racefans:
             "Racefans"
+        case .fia:
+            "FIA"
         }
     }
 }

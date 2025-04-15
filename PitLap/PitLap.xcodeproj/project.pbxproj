@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860B18882DADE5FF00104413 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B18872DADE5FF00104413 /* RatingManager.swift */; };
+		860B188A2DADE85C00104413 /* TriviaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B18892DADE85C00104413 /* TriviaCard.swift */; };
 		861745BB2D7F3936008171A0 /* StarLightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861745BA2D7F3936008171A0 /* StarLightsView.swift */; };
 		861745BE2D8AC6BA008171A0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861745BD2D8AC6BA008171A0 /* OnboardingView.swift */; };
 		861745C32D8B1325008171A0 /* OldRacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861745C22D8B1325008171A0 /* OldRacesView.swift */; };
@@ -210,6 +212,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		860B18872DADE5FF00104413 /* RatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingManager.swift; sourceTree = "<group>"; };
+		860B18892DADE85C00104413 /* TriviaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaCard.swift; sourceTree = "<group>"; };
 		861745BA2D7F3936008171A0 /* StarLightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarLightsView.swift; sourceTree = "<group>"; };
 		861745BD2D8AC6BA008171A0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		861745C22D8B1325008171A0 /* OldRacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldRacesView.swift; sourceTree = "<group>"; };
@@ -927,6 +931,7 @@
 		FF52D17B2D3FBEED00DF2573 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				860B18892DADE85C00104413 /* TriviaCard.swift */,
 				861745B92D7F3916008171A0 /* starlights */,
 				FF52D17C2D3FBF0000DF2573 /* DriverAnalysisView.swift */,
 				FF52D1802D3FE7D500DF2573 /* LeadChangeView.swift */,
@@ -1089,6 +1094,7 @@
 		FF75D3782D233FEE00160331 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				860B18872DADE5FF00104413 /* RatingManager.swift */,
 				86645B3A2D6F92B6004BAB44 /* SafariView.swift */,
 				86F1B8432D5D284A00AF923D /* ColorSchemeModifier.swift */,
 				FF75D3792D233FF900160331 /* Extension.swift */,
@@ -1415,6 +1421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860B188A2DADE85C00104413 /* TriviaCard.swift in Sources */,
 				86645AE52D695F6F004BAB44 /* VideoItem.swift in Sources */,
 				861745C32D8B1325008171A0 /* OldRacesView.swift in Sources */,
 				FF52D1462D3EDDF500DF2573 /* SeasonTabOption.swift in Sources */,
@@ -1497,6 +1504,7 @@
 				8683B5A12D9D3D28000AD7BA /* RaceReactionViewModel.swift in Sources */,
 				8683B58B2D95AEA3000AD7BA /* RaceResultViewModel.swift in Sources */,
 				86645ADF2D695DA0004BAB44 /* YoutubeDataLogic.swift in Sources */,
+				860B18882DADE5FF00104413 /* RatingManager.swift in Sources */,
 				FF52D16A2D3F2F8F00DF2573 /* StandingsView.swift in Sources */,
 				86645A2D2D5E28FB004BAB44 /* QualiResults.swift in Sources */,
 				86645AB12D6435AC004BAB44 /* NotificationTriggerEvent.swift in Sources */,

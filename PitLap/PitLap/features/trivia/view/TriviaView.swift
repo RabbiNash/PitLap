@@ -9,29 +9,36 @@ import SwiftUI
 import SafariServices
 
 struct TriviaView: View {
-    @State private var showSettings: Bool = false
-    @State private var showWebView: Bool = false
+    @State private var showSettings = false
+    @State private var showWebView = false
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
-                    headerView
-                    contentCards
-                    analysisCards
-                    starLightsCard
+                    header
+                    cardSection(items: contentCards)
+                    cardSection(items: analysisCards)
+                    cardSection(items: starLightsCards)
                 }
+                .padding(.bottom, 32)
             }
+            .navigationTitle("")
+            .navigationBarHidden(true)
         }
         .sheet(isPresented: $showSettings) {
-            settingsView
+            SettingsView()
+                .presentationDetents([.fraction(0.9)])
+                .presentationBackgroundInteraction(.enabled)
         }
         .fullScreenCover(isPresented: $showWebView) {
-            safariView
+            SafariView(url: URL(string: "https://f1-tempo.com")!) {
+                showWebView = false
+            }
         }
     }
 
-    var headerView: some View {
+    private var header: some View {
         HStack {
             Text("Trivia")
                 .font(.largeTitle)
@@ -50,146 +57,127 @@ struct TriviaView: View {
         .padding(.horizontal)
     }
 
-    var analysisCards: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 16) {
-                NavigationLink(destination: DriverAnalysisView()) {
-                    TriviaCard(
-                        level: "Analysis",
-                        icon: "flag.checkered",
-                        iconColor: ThemeManager.shared.selectedTeamColor,
-                        title: "Who still has a chance?",
-                        subtitle: "Find out if your favorite driver can still win the championship",
-                        progressColor: ThemeManager.shared.selectedTeamColor
-                    )
-                }.buttonStyle(.plain)
-
-                TriviaCard(
-                    level: "Analysis",
-                    icon: "chart.line.uptrend.xyaxis",
-                    iconColor: ThemeManager.shared.selectedTeamColor,
-                    title: "Play with telemetry data",
-                    subtitle: "Do you fancy playing with telemetry data, creating lap charts etc? F1 Tempo can help",
-                    progressColor: ThemeManager.shared.selectedTeamColor
-                ).onTapGesture {
-                    showWebView = true
+    private func cardSection(items: [TriviaCardItem]) -> some View {
+        HorizontalCardScroll {
+            ForEach(items) { item in
+                if let destination = item.destination {
+                    NavigationLink(destination: destination) {
+                        makeTriviaCard(from: item)
+                    }.buttonStyle(.plain)
+                } else {
+                    makeTriviaCard(from: item)
+                        .onTapGesture {
+                            item.action?()
+                        }
                 }
             }
-            .padding(.horizontal)
         }
     }
 
-    var starLightsCard: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 16) {
-                NavigationLink(destination: StarLightsView()) {
-                    TriviaCard(
-                        level: "Analysis",
-                        icon: "chart.line.uptrend.xyaxis",
-                        iconColor: ThemeManager.shared.selectedTeamColor,
-                        title: "StarLights",
-                        subtitle: "Do you fancy experiencing Formula 1 in Your Menu Bar? Click to explore star lights",
-                        progressColor: ThemeManager.shared.selectedTeamColor
+    private var contentCards: [TriviaCardItem] {
+            [
+                .init(
+                    level: "News",
+                    icon: "video",
+                    title: "Videos",
+                    subtitle: "Keep in touch with all your favourite YouTube video creators. Get all the news and analysis here.",
+                    destination: AnyView(VideoListView())
+                ),
+                .init(
+                    level: "Game",
+                    icon: "flag.checkered",
+                    title: "Be an F1 Driver",
+                    subtitle: "How quick are your reactions? Do you think you can beat the fastest F1 reaction time by Valtteri Bottas of 0.04s?",
+                    destination: AnyView(RaceReactionView())
+                )
+            ]
+        }
+
+        private var analysisCards: [TriviaCardItem] {
+            [
+                .init(
+                    level: "Analysis",
+                    icon: "flag.checkered",
+                    title: "Who still has a chance?",
+                    subtitle: "Find out if your favourite driver can still win the championship.",
+                    destination: AnyView(DriverAnalysisView())
+                ),
+                .init(
+                    level: "Analysis",
+                    icon: "chart.line.uptrend.xyaxis",
+                    title: "Play with telemetry data",
+                    subtitle: "Do you fancy playing with telemetry data, creating lap charts, etc.? F1 Tempo can help.",
+                    action: { showWebView = true }
+                )
+            ]
+        }
+
+        private var starLightsCards: [TriviaCardItem] {
+            [
+                .init(
+                    level: "Analysis",
+                    icon: "chart.line.uptrend.xyaxis",
+                    title: "StarLights",
+                    subtitle: "Do you fancy experiencing Formula 1 in your menu bar? Click to explore StarLights.",
+                    destination: AnyView(StarLightsView())
+                ),
+                .init(
+                    level: "Analysis",
+                    icon: "chart.line.uptrend.xyaxis",
+                    title: "Check FIA Documents",
+                    subtitle: "Are you curious about something, maybe a penalty applied by the FIA or official race classifications? Be sure to check FIA documents here.",
+                    destination: AnyView(
+                        SafariView(
+                            url: URL(string: "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2025-2071")!
+                        )
                     )
-                }.buttonStyle(.plain)
-            }
-            .padding(.horizontal)
+                )
+            ]
         }
-    }
-    
-    var contentCards: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 16) {
-                NavigationLink(destination: VideoListView()) {
-                    TriviaCard(
-                        level: "News",
-                        icon: "video",
-                        iconColor: ThemeManager.shared.selectedTeamColor,
-                        title: "Videos",
-                        subtitle: "Keep in touch with all your favourite Youtube Video creators, get all the news and analysis here",
-                        progressColor: ThemeManager.shared.selectedTeamColor
-                    )
-                }.buttonStyle(.plain)
-                
-                NavigationLink(destination: RaceReactionView()) {
-                    TriviaCard(
-                        level: "Game",
-                        icon: "flag.checkered",
-                        iconColor: ThemeManager.shared.selectedTeamColor,
-                        title: "Be an F1 Driver",
-                        subtitle: "How quick are your reactions? Do you think you can beat the fastest F1 reaction time by Valterri Bottas of 0.04s",
-                        progressColor: ThemeManager.shared.selectedTeamColor
-                    )
-                }.buttonStyle(.plain)
-            }
-            .padding(.horizontal)
-        }
-    }
 
-
-    var settingsView: some View {
-        SettingsView()
-            .presentationDetents([.fraction(0.9)])
-            .presentationBackgroundInteraction(.enabled)
-    }
-
-    var safariView: some View {
-        SafariView(url: URL(string: "https://f1-tempo.com")!) {
-            showWebView = false
-        }
+    private func makeTriviaCard(from item: TriviaCardItem) -> some View {
+        TriviaCard(
+            level: item.level,
+            icon: item.icon,
+            iconColor: ThemeManager.shared.selectedTeamColor,
+            title: item.title,
+            subtitle: item.subtitle,
+            progressColor: ThemeManager.shared.selectedTeamColor
+        )
     }
 }
 
-struct TriviaCard: View {
+struct TriviaCardItem: Identifiable {
+    let id = UUID()
     let level: String
     let icon: String
-    let iconColor: Color
     let title: String
     let subtitle: String
-    let progressColor: Color
+    let destination: AnyView?
+    let action: (() -> Void)?
+
+    init(level: String, icon: String, title: String, subtitle: String, destination: AnyView? = nil, action: (() -> Void)? = nil) {
+        self.level = level
+        self.icon = icon
+        self.title = title
+        self.subtitle = subtitle
+        self.destination = destination
+        self.action = action
+    }
+}
+
+private struct HorizontalCardScroll<Content: View>: View {
+    @ViewBuilder var content: Content
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(level)
-                .font(.custom("Noto Sans", size: 12))
-                .foregroundColor(.gray)
-
-            Image(systemName: icon)
-                .font(.custom("Noto Sans", size: 18))
-                .foregroundColor(iconColor)
-                .padding(12)
-                .background(iconColor.opacity(0.1))
-                .clipShape(Circle())
-
-            Text(title)
-                .font(.custom("Noto Sans", size: 16))
-                .fontWeight(.semibold)
-
-            Text(subtitle)
-                .font(.custom("Noto Sans", size: 14))
-                .foregroundColor(.gray)
-
-            Rectangle()
-                .frame(height: 4)
-                .foregroundColor(progressColor)
-                .cornerRadius(2)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 16) {
+                content
+            }
+            .padding(.horizontal)
         }
-        .padding()
-        .frame(width: 180)
-        .background(Color(.systemGray6))
-        .cornerRadius(16)
     }
 }
-
-struct ProgressCircle: View {
-    var body: some View {
-        Circle()
-            .trim(from: 0, to: 0.7)
-            .stroke(ThemeManager.shared.selectedTeamColor, lineWidth: 8)
-            .rotationEffect(.degrees(-90))
-    }
-}
-
 
 #Preview {
     TriviaView()

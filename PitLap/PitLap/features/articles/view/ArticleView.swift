@@ -35,6 +35,10 @@ struct ArticleView: View {
                     .padding(.bottom, 32)
 
                 Spacer()
+            }.onAppear {
+                Task {
+                    RatingManager.shared.requestAppStoreRating()
+                }
             }
         }
         .ignoresSafeArea(edges: .top)

@@ -98,6 +98,11 @@ struct SettingsView: View {
                 Text("Version: \(viewModel.appVersion) (\(viewModel.appBuild))")
                     .font(.caption)
                     .foregroundColor(.gray)
+                
+                Text("This app is not affiliated with the FIA or with Formula 1, or any other news source and teams mentioned in anywhere in the app")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .padding()
             }
             .navigationTitle("Preferences")
             .navigationBarTitleDisplayMode(.inline)
