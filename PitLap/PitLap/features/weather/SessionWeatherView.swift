@@ -60,10 +60,11 @@ struct SessionWeatherView: View {
                             Image(systemName: "thermometer.sun")
                                 .resizable()
                                 .frame(width: 32, height: 32)
+                                .scaledToFit()
                                 .foregroundStyle(.white)
                                 .padding(4)
                             
-                            Text("\(Int(weather.temperature))°C")
+                            Text("\(weather.temperature)°C")
                                 .font(.custom("Noto Sans", size: 32))
                                 .fontWeight(.bold)
                                 .foregroundStyle(.white)
@@ -80,7 +81,7 @@ struct SessionWeatherView: View {
                                 .foregroundStyle(.white)
                                 .padding(4)
                             
-                            Text("\(Int(weather.precipitation)) mm")
+                            Text("\(weather.precipitation) mm")
                                 .font(.custom("Noto Sans", size: 32))
                                 .fontWeight(.bold)
                                 .foregroundStyle(.white)

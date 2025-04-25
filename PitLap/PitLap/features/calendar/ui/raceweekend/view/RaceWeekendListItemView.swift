@@ -29,7 +29,7 @@ struct RaceWeekendListItemView: View {
                         .lineLimit(3)
 
                     Text(event.country)
-                        .font(.custom("Noto Sans", size: 16))
+                        .styleAsBodyLarge()
                         .fontWeight(.semibold)
                         .foregroundStyle(ThemeManager.shared.selectedTeamColor)
                 }

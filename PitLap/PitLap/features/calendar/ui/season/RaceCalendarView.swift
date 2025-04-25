@@ -66,6 +66,9 @@ struct RaceCalendarView: View {
                     .presentationBackgroundInteraction(.disabled)
             }
         }
+        .refreshable {
+            viewModel.refresh(forceRefresh: true)
+        }
         .padding(24)
     }
 

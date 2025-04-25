@@ -28,7 +28,7 @@ struct VideoPlayerDescriptionView: View {
                     .bold()
                     .padding(.top, 10)
 
-                Text(video.description)
+                Text(video.description_)
                     .foregroundColor(.secondary)
                     .padding(.top, 5)
             }

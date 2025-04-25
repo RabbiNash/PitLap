@@ -113,9 +113,6 @@
 	<array>
 		<string>Audiowide-Regular.ttf</string>
 		<string>NotoSans-VariableFont_wdth,wght.ttf</string>
-		<string>f1-regular.ttf</string>
-		<string>f1-numbers-regular.ttf</string>
-		<string>f1-bold.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

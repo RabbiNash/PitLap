@@ -23,18 +23,19 @@ struct StandingsView: View {
     }
 
     private var content: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 16) {
                 StandingPickerView(selectedOption: $selectedTab, options: StandingOption.allCases)
                 standingsList
             }
             .overlay(progressView, alignment: .top)
         }
+        .refreshable {
+            fetchStandings(for: selectedTab, forceRefresh: true)
+        }
         .onChange(of: selectedTab) { _, newValue in fetchStandings(for: newValue) }
-        .onAppear {
-            Task { @MainActor in
-                await viewModel.getDriverStandings()
-            }
+        .task {
+            fetchStandings(for: selectedTab)
         }
     }
 
@@ -51,13 +52,13 @@ struct StandingsView: View {
         }
     }
 
-    private func fetchStandings(for option: StandingOption) {
+    private func fetchStandings(for option: StandingOption, forceRefresh: Bool = false) {
         Task { @MainActor in
             switch option {
             case .constructors:
-                await viewModel.getConstructorStandings()
+                await viewModel.getConstructorStandings(forceRefresh: forceRefresh)
             case .drivers:
-                await viewModel.getDriverStandings()
+                await viewModel.getDriverStandings(forceRefresh: forceRefresh)
             }
         }
     }

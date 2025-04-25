@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import PersistenceManager
 
 struct RaceResultView: View {
     @StateObject private var viewModel: RaceResultViewModel

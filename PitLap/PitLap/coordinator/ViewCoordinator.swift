@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import PersistenceManager
 
 struct ViewCoordinator: View {
     @StateObject private var viewModel = SplashViewModel()

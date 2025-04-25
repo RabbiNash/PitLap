@@ -1,5 +1,5 @@
 {
-  "originHash" : "ff50c25b48afa7fd591d46973546c5e3fdfd5df8abec66263a23fd62684da203",
+  "originHash" : "93ddf1d108e6fd3301e2c558aaa9f4885376b43554b4aa2bb35d64e1468c0e35",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -17,15 +17,6 @@
       "state" : {
         "revision" : "61b85103a1aeed8218f17c794687781505fbbef5",
         "version" : "11.2.0"
-      }
-    },
-    {
-      "identity" : "feedkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/nmdias/FeedKit.git",
-      "state" : {
-        "revision" : "ff1053af50541619acfd05d74752253823f24dda",
-        "version" : "10.0.0-rc.2"
       }
     },
     {
@@ -123,8 +114,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RabbiNash/PitlapKit",
       "state" : {
-        "revision" : "f350718f688fb8638fa393311f22258b613d6adf",
-        "version" : "0.1.2"
+        "revision" : "aff41ae5bee8d7da700aaf307cb515421a64d37c",
+        "version" : "0.2.6"
       }
     },
     {

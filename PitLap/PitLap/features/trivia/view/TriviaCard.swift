@@ -29,7 +29,7 @@ struct TriviaCard: View {
                 .clipShape(Circle())
 
             Text(title)
-                .font(.custom("Noto Sans", size: 16))
+                .styleAsBodyLarge()
                 .fontWeight(.semibold)
 
             Text(subtitle)

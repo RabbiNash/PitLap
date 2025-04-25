@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import PersistenceManager
 
 enum NotificationSessionType: String, CaseIterable, Identifiable, Codable, MultiSelectionType {
     typealias T = Void

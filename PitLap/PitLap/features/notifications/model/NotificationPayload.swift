@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import PersistenceManager
 
 struct NotificationPayload {
     let eventDates: [NotificationSessionType: [String: Date?]]

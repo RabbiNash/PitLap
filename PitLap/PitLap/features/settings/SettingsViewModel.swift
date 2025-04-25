@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PersistenceManager
+import PitlapKit
 import FirebaseMessaging
 
 final class SettingsViewModel: ObservableObject {
@@ -34,11 +34,13 @@ final class SettingsViewModel: ObservableObject {
     private let appIconService: AppIconServiceType
     private let notificationManager: NotificationManagerType
     private let firebaseService: FirebaseServiceType
+    private let scheduleDataLogic: RaceCalendarDataLogicType
 
     init(
         appIconService: AppIconServiceType = AppIconService(),
         notificationManager: NotificationManagerType = NotificationManager(),
-        firebaseService: FirebaseServiceType = FirebaseService()
+        firebaseService: FirebaseServiceType = FirebaseService(),
+        scheduleDataLogic: RaceCalendarDataLogicType = RaceCalendarDataLogic()
     ) {
         self.appIconService = appIconService
         self.notificationManager = notificationManager
@@ -52,6 +54,7 @@ final class SettingsViewModel: ObservableObject {
             _selectedNotificationTopics.wrappedValue
         )
         self.firebaseService = firebaseService
+        self.scheduleDataLogic = scheduleDataLogic
     }
 
     var appVersion: String {
@@ -62,8 +65,8 @@ final class SettingsViewModel: ObservableObject {
         Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "RC"
     }
 
-    func didTapConfirm(raceWeekends: [RaceWeekendEntity]) {
-        scheduleNotifications(raceWeekends: raceWeekends)
+    func didTapConfirm() {
+//        scheduleNotifications()
         updateAppIconIfNeeded()
         subscribeToTopics()
         completeOnboarding()
@@ -95,23 +98,25 @@ final class SettingsViewModel: ObservableObject {
     }
     
     //MARK: Notifications
-    private func scheduleNotifications(raceWeekends: [RaceWeekendEntity]) {
-        clearPendingNotifications()
-        let selectedSessionAndTime = userSelectedEvents.reduce(into: [:]) {
-            $0[$1] = userSelectedTimes.map(\.extraData)
-        }
-
-        let eventDates = userSelectedEvents.reduce(into: [:]) { dict, event in
-            dict[event] = raceWeekends.reduce(into: [:]) { dates, weekend in
-                dates[weekend.eventName] = sessionDate(for: event, in: weekend)
-            }
-        }
-
-        notificationManager.scheduleNotifications(for: .init(
-            eventDates: eventDates,
-            selectedSessionAndTime: selectedSessionAndTime
-        ))
-    }
+//    private func scheduleNotifications() {
+//        clearPendingNotifications()
+//        let selectedSessionAndTime = userSelectedEvents.reduce(into: [:]) {
+//            $0[$1] = userSelectedTimes.map(\.extraData)
+//        }
+//        
+//        let events = scheduleDataLogic.getRaceCalendar(for: 2025)
+//
+//        let eventDates = userSelectedEvents.reduce(into: [:]) { dict, event in
+//            dict[event] = raceWeekends.reduce(into: [:]) { dates, weekend in
+//                dates[weekend.eventName] = sessionDate(for: event, in: weekend)
+//            }
+//        }
+//
+//        notificationManager.scheduleNotifications(for: .init(
+//            eventDates: eventDates,
+//            selectedSessionAndTime: selectedSessionAndTime
+//        ))
+//    }
     
     func clearPendingNotifications() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
@@ -119,8 +124,8 @@ final class SettingsViewModel: ObservableObject {
 }
 
 extension SettingsViewModel {
-    private func sessionDate(for event: NotificationSessionType, in weekend: RaceWeekendEntity) -> Date? {
-        let isSprint = weekend.eventFormat != .conventional
+    private func sessionDate(for event: NotificationSessionType, in weekend: EventScheduleModel) -> Date? {
+        let isSprint = weekend.eventFormat != "conventional"
         let dateString: String? = {
             switch (event, isSprint) {
             case (.session1, _): return weekend.session1DateUTC

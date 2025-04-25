@@ -6,23 +6,21 @@
 //
 
 import SwiftUI
-import FeedKit
 import Kingfisher
+import PitlapKit
 
 struct ArticleFeedItemView: View {
     private let feed: RSSFeedItem
-    private let channel: RSSFeedChannel
     private let width: CGFloat = UIScreen.main.bounds.width - 32
 
-    init(feed: RSSFeedItem, channel: RSSFeedChannel) {
+    init(feed: RSSFeedItem) {
         self.feed = feed
-        self.channel = channel
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             ZStack(alignment: .bottomLeading) {
-                KFImage(URL(string: feed.enclosure?.attributes?.url ?? feed.media?.thumbnails?.first?.attributes?.url ?? ""))
+                KFImage(URL(string: feed.imageUrl ?? ""))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: width, height: UIScreen.main.bounds.height / 2)
@@ -34,7 +32,7 @@ struct ArticleFeedItemView: View {
                     )
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(feed.title ?? "")
+                    Text(feed.title)
                         .font(.custom("Audiowide", size: 20))
                         .foregroundColor(.white)
                         .fontWeight(.bold)
@@ -42,14 +40,14 @@ struct ArticleFeedItemView: View {
 
                         HStack {
                             Image(systemName: "link")
-                            Text(channel.title ?? "")
+                            Text(feed.channelTitle)
                                 .lineLimit(1)
                                 .font(.custom("Noto Sans", size: 12))
 
                         }
                         .foregroundColor(.white)
                         
-                        Text(Date.getHumanisedShortDateWithTime(date: feed.pubDate ?? .init()))
+                    Text(feed.pubDate)
                             .foregroundColor(.white)
                             .font(.custom("Noto Sans", size: 12))
 

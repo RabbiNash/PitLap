@@ -6,16 +6,14 @@
 //
 
 import SwiftUI
-import FeedKit
 import Kingfisher
+import PitlapKit
 
 struct ArticleView: View {
     private let feed: RSSFeedItem
-    private let channelTitle: String
 
-    init(feed: RSSFeedItem, channelTitle: String) {
+    init(feed: RSSFeedItem) {
         self.feed = feed
-        self.channelTitle = channelTitle
     }
 
     var body: some View {
@@ -26,10 +24,6 @@ struct ArticleView: View {
                     .clipped()
 
                 articleMeta
-
-                Text(truncatedDescription)
-                    .font(.custom("Noto Sans", size: 16))
-                    .padding(.horizontal)
 
                 readMoreLink
                     .padding(.bottom, 32)
@@ -56,18 +50,18 @@ struct ArticleView: View {
                     .overlay(Color.black.opacity(0.5))
                 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(feed.title ?? "No Title")
+                    Text(feed.title)
                         .font(.custom("Audiowide", size: 24))
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .multilineTextAlignment(.leading)
 
-                    Text(Date.getHumanisedShortDateWithTime(date: feed.pubDate ?? Date()))
+                    Text(feed.pubDate)
                         .foregroundColor(.white.opacity(0.85))
                         .font(.caption)
 
                     NavigationLink(destination: SafariView(url: articleURL)) {
-                        Label(channelTitle, systemImage: "link")
+                        Label(feed.channelTitle, systemImage: "link")
                             .foregroundColor(.white)
                             .font(.caption)
                     }
@@ -81,18 +75,16 @@ struct ArticleView: View {
         VStack(alignment: .leading, spacing: 8) {
             Divider().padding(.horizontal)
 
-            if let description = feed.description?.replacingOccurrences(of: "<br>", with: "\n\n") {
-                Text(description)
-                    .font(.custom("Noto Sans", size: 16))
-                    .padding(.horizontal)
-            }
+            Text(feed.description_)
+                .styleAsBodyLarge()
+                .padding(.horizontal)
         }
     }
 
     private var readMoreLink: some View {
         NavigationLink(destination: SafariView(url: articleURL)) {
             Text("Read more...")
-                .font(.custom("Noto Sans", size: 16))
+                .styleAsBodyLarge()
                 .foregroundColor(.accentColor)
                 .padding(.horizontal)
         }
@@ -101,19 +93,10 @@ struct ArticleView: View {
     // MARK: - Helpers
 
     private var articleURL: URL {
-        URL(string: feed.link ?? "https://formula1.com")!
+        URL(string: feed.link)!
     }
 
     private var headerImageURL: URL? {
-        URL(string: feed.enclosure?.attributes?.url
-             ?? feed.media?.thumbnails?.first?.attributes?.url
-             ?? "")
-    }
-
-    private var truncatedDescription: String {
-        guard let description = feed.description else { return "" }
-        let cleaned = description.replacingOccurrences(of: "<br>", with: "\n\n")
-        guard let range = cleaned.range(of: "...") else { return cleaned }
-        return String(cleaned[..<range.upperBound])
+        URL(string: feed.imageUrl ?? "")
     }
 }

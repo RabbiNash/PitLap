@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftData
-import PersistenceManager
 
 @main
 struct PitLapApp: App {    
@@ -19,6 +18,6 @@ struct PitLapApp: App {
                 .environment(\.font, Font.custom("Noto Sans", size: 16))
                 .modifier(ColorSchemeModifier())
                 .applyAccentColor()
-        }.modelContainer(for: [RaceWeekendEntity.self])
+        }
     }
 }

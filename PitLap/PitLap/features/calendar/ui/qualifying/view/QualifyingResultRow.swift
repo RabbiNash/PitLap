@@ -32,9 +32,9 @@ struct QualifyingResultRow: View {
     private var driverInfoSection: some View {
         HStack {
             Text("\(rowModel.position)")
+                .styleAsBodyLarge()
                 .foregroundStyle(.white)
                 .frame(width: 30)
-                .font(.custom("Noto Sans", size: 16))
             
             KFImage(URL(string: rowModel.headshotUrl))
                 .resizable()

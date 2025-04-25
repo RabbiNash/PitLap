@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import FeedKit
 import SwiftUI
 import PitlapKit
 
@@ -29,10 +28,7 @@ final class HomeViewModel: ObservableObject {
     private(set) var fetchStatus: FetchStatus = .nonStarted
     
     @Published var leadDriver: DriverStandingModel?
-    @Published var autosportFeed: RSSFeedChannel?
-    @Published var motorsportFeed: RSSFeedChannel?
-    @Published var gpBlogsportFeed: RSSFeedChannel?
-    @Published var raceFansFeed: RSSFeedChannel?
+    @Published var feed: [RSSFeedItem] = []
     @Published var videos: [YoutubeVideoModel] = []
 
     init(
@@ -45,21 +41,14 @@ final class HomeViewModel: ObservableObject {
         self.youtubeDataLogic = youtubeDataLogic
     }
 
-    func fetchHomePage() async {
+    func fetchHomePage(forceRefresh: Bool = false) async {
         fetchStatus = .fetching
         
-        async let _autosportFeed = feedDataLogic.getRSSFeed(from: FeedSource(rawValue: newsSource) ?? .autosport)
-        async let _p1Videos = youtubeDataLogic.getVideos(title: F1YoutubeChannels.p1.rawValue)
-        async let _peter = youtubeDataLogic.getVideos(title: F1YoutubeChannels.peter.rawValue)
-        async let _kym = youtubeDataLogic.getVideos(title: F1YoutubeChannels.kym.rawValue)
+        async let _autosportFeed = feedDataLogic.getArticlesFeed(from: FeedSource(rawValue: newsSource) ?? .autosport, forceRefresh: forceRefresh)
+        async let _videos = youtubeDataLogic.getRankedVideos(forceRefresh: forceRefresh)
 
-        autosportFeed = await _autosportFeed
-       
-        let p1Videos = (await _p1Videos).prefix(5)
-        let peterVideos = (await _peter).prefix(5)
-        let kymVideos = (await _kym).prefix(5)
-
-        videos = (p1Videos + peterVideos + kymVideos).shuffled()
+        feed = await _autosportFeed
+        videos = await _videos
         
         fetchStatus = .success
     }

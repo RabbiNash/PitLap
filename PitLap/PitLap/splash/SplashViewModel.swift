@@ -23,7 +23,7 @@ final class SplashViewModel: ObservableObject {
         }
         
         let currentYear = Calendar.current.component(.year, from: Date())
-        let calendar = await dataLogic.getRaceCalendar(for: currentYear)
+        let calendar = await dataLogic.getRaceCalendar(for: currentYear, forceRefresh: false)
         isDataLoaded = !calendar.isEmpty
     }
 }

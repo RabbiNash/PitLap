@@ -9,8 +9,8 @@ import Foundation
 import PitlapKit
 
 protocol StandingsDataLogicType {
-    func getDriverStandings() async -> [DriverStandingModel]
-    func getConstructorStandings() async -> [ConstructorStandingModel]
+    func getDriverStandings(forceRefresh: Bool) async -> [DriverStandingModel]
+    func getConstructorStandings(forceRefresh: Bool) async -> [ConstructorStandingModel]
 }
 
 final class StandingsDataLogic: StandingsDataLogicType {
@@ -20,12 +20,12 @@ final class StandingsDataLogic: StandingsDataLogicType {
         self.service = service
     }
     
-    func getDriverStandings() async -> [DriverStandingModel] {
-        await fetchStandings { [self] in try await service.getDriverStandings() }
+    func getDriverStandings(forceRefresh: Bool) async -> [DriverStandingModel] {
+        await fetchStandings { [self] in try await service.getDriverStandings(forceRefresh: forceRefresh) }
     }
     
-    func getConstructorStandings() async -> [ConstructorStandingModel] {
-        await fetchStandings { [self] in try await service.getConstructorStandings() }
+    func getConstructorStandings(forceRefresh: Bool) async -> [ConstructorStandingModel] {
+        await fetchStandings { [self] in try await service.getConstructorStandings(forceRefresh: forceRefresh) }
     }
     
     private func fetchStandings<T>(operation: @escaping () async throws -> [T]) async -> [T] {

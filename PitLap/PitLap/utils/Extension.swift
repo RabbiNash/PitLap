@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import PitlapKit
 
 extension Date {
     static func getHumanisedDate(dateString: String) -> String? {
@@ -167,5 +168,41 @@ extension Array: @retroactive RawRepresentable where Element: Codable {
             return "[]"
         }
         return result
+    }
+}
+
+extension View {
+    func customFont(name: String, size: CGFloat, weight: Font.Weight) -> some View {
+        self.font(.custom(name, size: size).weight(weight))
+    }
+}
+
+enum SessionType: String, CaseIterable, Identifiable {
+    case session1, session2, session3, session4, session5
+    
+    var id: Int {
+        hashValue
+    }
+}
+
+extension EventScheduleModel {
+    func sessionTime(for type: SessionType) -> String? {
+        switch type {
+        case .session1: return session1DateUTC
+        case .session2: return session2DateUTC
+        case .session3: return session3DateUTC
+        case .session4: return session4DateUTC
+        case .session5: return session5DateUTC
+        }
+    }
+    
+    func sessionName(for type: SessionType) -> String {
+        switch type {
+        case .session1: return session1
+        case .session2: return session2
+        case .session3: return session3
+        case .session4: return session4
+        case .session5: return session5
+        }
     }
 }

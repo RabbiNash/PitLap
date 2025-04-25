@@ -18,12 +18,12 @@ final class StandingsViewModel: ObservableObject {
         self.dataLogic = dataLogic
     }
     
-    func getDriverStandings() async {
-        await fetchStandings { [self] in await dataLogic.getDriverStandings().map { StandingRowModel(from: $0) } }
+    func getDriverStandings(forceRefresh: Bool) async {
+        await fetchStandings { [self] in await dataLogic.getDriverStandings(forceRefresh: forceRefresh).map { StandingRowModel(from: $0) } }
     }
     
-    func getConstructorStandings() async {
-        await fetchStandings { [self] in await dataLogic.getConstructorStandings().map { StandingRowModel(from: $0) } }
+    func getConstructorStandings(forceRefresh: Bool) async {
+        await fetchStandings { [self] in await dataLogic.getConstructorStandings(forceRefresh: forceRefresh).map { StandingRowModel(from: $0) } }
     }
     
     @MainActor

@@ -6,12 +6,12 @@
 //
 
 import Foundation
-import FeedKit
 import SwiftUI
+import PitlapKit
 
-@MainActor
+
 final class ArticleFeedViewModel: ObservableObject {
-    @Published var feedChannel: RSSFeedChannel? = .init()
+    @Published var articles: [RSSFeedItem] = []
     @Published var isLoading: Bool = false
     @Published var state: ViewState = .loading
 
@@ -21,16 +21,17 @@ final class ArticleFeedViewModel: ObservableObject {
         self.feedDataLogic = feedDataLogic
     }
 
-    func getFeed(from source: FeedSource) async {
+    @MainActor
+    func getFeed(from source: FeedSource, forceRefresh: Bool = false) async {
         isLoading = true
-        feedChannel = await feedDataLogic.getRSSFeed(from: source)
-        state = feedChannel != nil ? .success(feedChannel!) : .error
+        articles = await feedDataLogic.getArticlesFeed(from: source, forceRefresh: forceRefresh)
+        state = !articles.isEmpty ? .success(articles) : .error
         isLoading = false
     }
 
     enum ViewState {
         case loading
-        case success(RSSFeedChannel)
+        case success([RSSFeedItem])
         case error
     }
 }

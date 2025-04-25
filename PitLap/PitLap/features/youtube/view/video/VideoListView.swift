@@ -35,7 +35,10 @@ struct VideoListView: View {
                 .animation(.smooth, value: viewModel.videos)
                 .padding(.horizontal)
                 .overlay(progressView, alignment: .top)
-            }.onChange(of: viewModel.selectedChannel, { _ , channel in
+            }.refreshable {
+                viewModel.fetchVideos(title: viewModel.selectedChannel.rawValue, forceRefresh: true)
+            }
+            .onChange(of: viewModel.selectedChannel, { _ , channel in
                 withAnimation {
                     viewModel.fetchVideos(title: channel.rawValue)
                 }

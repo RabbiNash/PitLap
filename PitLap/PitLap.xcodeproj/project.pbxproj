@@ -10,10 +10,18 @@
 		860B18882DADE5FF00104413 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B18872DADE5FF00104413 /* RatingManager.swift */; };
 		860B188A2DADE85C00104413 /* TriviaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B18892DADE85C00104413 /* TriviaCard.swift */; };
 		860B18C62DAE904800104413 /* RaceSummaryDataLogicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B18C52DAE904800104413 /* RaceSummaryDataLogicType.swift */; };
-		860B18ED2DAE9CFC00104413 /* PitlapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 860B18EC2DAE9CFC00104413 /* PitlapKit */; };
 		861745BB2D7F3936008171A0 /* StarLightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861745BA2D7F3936008171A0 /* StarLightsView.swift */; };
 		861745BE2D8AC6BA008171A0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861745BD2D8AC6BA008171A0 /* OnboardingView.swift */; };
 		861745C32D8B1325008171A0 /* OldRacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861745C22D8B1325008171A0 /* OldRacesView.swift */; };
+		862752CC2DBA800C0078ECA0 /* WeatherEntryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862752CB2DBA800C0078ECA0 /* WeatherEntryCard.swift */; };
+		864F8EC82DB7E53600D2542E /* LargeScheduleEventWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F8EC72DB7E53600D2542E /* LargeScheduleEventWidget.swift */; };
+		864F8ECB2DB7E6B300D2542E /* ScheduleWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F8ECA2DB7E6B300D2542E /* ScheduleWidgetEntry.swift */; };
+		864F8ECC2DB7E7C300D2542E /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A51012D4BE73D001F1697 /* ThemeManager.swift */; };
+		864F8ECD2DB7E7DD00D2542E /* F1Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645AB32D648E24004BAB44 /* F1Team.swift */; };
+		864F8ED22DB7F44900D2542E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF75D3512D232BDA00160331 /* Assets.xcassets */; };
+		864F8ED42DB7FB2200D2542E /* MediumScheduleEventWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F8ED32DB7FB2200D2542E /* MediumScheduleEventWidget.swift */; };
+		864F8ED62DB7FBDC00D2542E /* EventSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F8ED52DB7FBDC00D2542E /* EventSession.swift */; };
+		864F8ED82DB7FEF900D2542E /* ScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F8ED72DB7FEF900D2542E /* ScheduleHeaderView.swift */; };
 		865618FB2D5C184800567D38 /* PitlapPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618F92D5C184700567D38 /* PitlapPicker.swift */; };
 		865618FE2D5C1B9700567D38 /* StandingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618FD2D5C1B9700567D38 /* StandingPickerView.swift */; };
 		8657214F2DA5205300AB15E9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657214E2DA5205300AB15E9 /* HomeViewModel.swift */; };
@@ -83,7 +91,10 @@
 		8683B59F2D9C3F95000AD7BA /* RaceReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */; };
 		8683B5A12D9D3D28000AD7BA /* RaceReactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */; };
 		8683B5E12D9E9F64000AD7BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5E02D9E9F64000AD7BA /* HomeView.swift */; };
-		86A9F0DA2DAEB376006BE8A9 /* PitlapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 86A9F0D92DAEB376006BE8A9 /* PitlapKit */; };
+		86A173E92DBA9649005D2E6B /* PitlapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 86A173E82DBA9649005D2E6B /* PitlapKit */; };
+		86A173EB2DBA9670005D2E6B /* PitlapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 86A173EA2DBA9670005D2E6B /* PitlapKit */; };
+		86CDDBCE2DBA8DF40090452C /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CDDBCD2DBA8DF40090452C /* Typography.swift */; };
+		86CDDBCF2DBA8DF40090452C /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CDDBCD2DBA8DF40090452C /* Typography.swift */; };
 		86F1B8062D5CC7D400AF923D /* StandingRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */; };
 		86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8072D5CCB5500AF923D /* StandingRow.swift */; };
 		86F1B8252D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86F1B8242D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf */; };
@@ -113,7 +124,6 @@
 		FF75D3502D232BD700160331 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75D34F2D232BD700160331 /* ContentView.swift */; };
 		FF75D3522D232BDA00160331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF75D3512D232BDA00160331 /* Assets.xcassets */; };
 		FF75D3552D232BDA00160331 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF75D3542D232BDA00160331 /* Preview Assets.xcassets */; };
-		FF75D3622D232D5200160331 /* RaceWeekendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75D3612D232D5200160331 /* RaceWeekendModel.swift */; };
 		FF75D3652D232DE100160331 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75D3642D232DE100160331 /* Extensions.swift */; };
 		FF75D3692D232EB000160331 /* RaceCalendarDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75D3682D232EB000160331 /* RaceCalendarDataLogic.swift */; };
 		FF75D36D2D23311D00160331 /* RaceCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75D36C2D23311D00160331 /* RaceCalendarViewModel.swift */; };
@@ -127,28 +137,15 @@
 		FF9799B22D35DFAF00CCF203 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF9799B12D35DFAF00CCF203 /* WidgetKit.framework */; };
 		FF9799B42D35DFAF00CCF203 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF9799B32D35DFAF00CCF203 /* SwiftUI.framework */; };
 		FF9799B72D35DFAF00CCF203 /* PitThisLapWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9799B62D35DFAF00CCF203 /* PitThisLapWidgetBundle.swift */; };
-		FF9799B92D35DFAF00CCF203 /* PitThisLapWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9799B82D35DFAF00CCF203 /* PitThisLapWidget.swift */; };
+		FF9799B92D35DFAF00CCF203 /* ScheduleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9799B82D35DFAF00CCF203 /* ScheduleWidget.swift */; };
 		FF9799BB2D35DFAF00CCF203 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9799BA2D35DFAF00CCF203 /* AppIntent.swift */; };
-		FF9799BD2D35DFBD00CCF203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9799BC2D35DFBD00CCF203 /* Assets.xcassets */; };
 		FF9799C62D35E90E00CCF203 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75D3642D232DE100160331 /* Extensions.swift */; };
-		FF9799C92D35E93900CCF203 /* RaceWeekendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75D3612D232D5200160331 /* RaceWeekendModel.swift */; };
 		FF9799CA2D35E94D00CCF203 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF75D3792D233FF900160331 /* Extension.swift */; };
-		FF9A50BD2D499282001F1697 /* PersistenceManager in Frameworks */ = {isa = PBXBuildFile; productRef = FF9A50BC2D499282001F1697 /* PersistenceManager */; };
-		FF9A50BF2D4992DC001F1697 /* PersistenceManager in Frameworks */ = {isa = PBXBuildFile; productRef = FF9A50BE2D4992DC001F1697 /* PersistenceManager */; };
 		FF9A50C22D499620001F1697 /* DriverStandingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A50C02D499620001F1697 /* DriverStandingEntity.swift */; };
 		FF9A50C32D499620001F1697 /* DriverStandingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A50C02D499620001F1697 /* DriverStandingEntity.swift */; };
 		FF9A50C42D499D27001F1697 /* PitLapWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FF9799AF2D35DFAF00CCF203 /* PitLapWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FF9A50CC2D4B8CBA001F1697 /* f1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50CB2D4B8CBA001F1697 /* f1.ttf */; };
-		FF9A50D12D4B8FBA001F1697 /* f1-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50CE2D4B8FBA001F1697 /* f1-bold.ttf */; };
-		FF9A50D22D4B8FBA001F1697 /* f1-numbers-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50CF2D4B8FBA001F1697 /* f1-numbers-regular.ttf */; };
-		FF9A50D32D4B8FBA001F1697 /* f1-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50D02D4B8FBA001F1697 /* f1-regular.ttf */; };
-		FF9A50D42D4B8FBA001F1697 /* f1-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50CE2D4B8FBA001F1697 /* f1-bold.ttf */; };
-		FF9A50D52D4B8FBA001F1697 /* f1-numbers-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50CF2D4B8FBA001F1697 /* f1-numbers-regular.ttf */; };
-		FF9A50D62D4B8FBA001F1697 /* f1-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A50D02D4B8FBA001F1697 /* f1-regular.ttf */; };
 		FF9A50FF2D4BE486001F1697 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A50FE2D4BE486001F1697 /* SettingsView.swift */; };
 		FF9A51022D4BE73D001F1697 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A51012D4BE73D001F1697 /* ThemeManager.swift */; };
-		FF9A51052D4CE32A001F1697 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF9A51042D4CE32A001F1697 /* FeedKit */; };
-		FF9A51072D4CE32A001F1697 /* XMLKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF9A51062D4CE32A001F1697 /* XMLKit */; };
 		FF9A510C2D4CE58E001F1697 /* ArticleFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A510B2D4CE58E001F1697 /* ArticleFeedViewModel.swift */; };
 		FF9A510E2D4CE7CB001F1697 /* ArticleFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A510D2D4CE7CB001F1697 /* ArticleFeedView.swift */; };
 		FF9A51112D4CEA09001F1697 /* RSSFeedDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A51102D4CEA09001F1697 /* RSSFeedDataLogic.swift */; };
@@ -203,6 +200,12 @@
 		861745BA2D7F3936008171A0 /* StarLightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarLightsView.swift; sourceTree = "<group>"; };
 		861745BD2D8AC6BA008171A0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		861745C22D8B1325008171A0 /* OldRacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldRacesView.swift; sourceTree = "<group>"; };
+		862752CB2DBA800C0078ECA0 /* WeatherEntryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEntryCard.swift; sourceTree = "<group>"; };
+		864F8EC72DB7E53600D2542E /* LargeScheduleEventWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeScheduleEventWidget.swift; sourceTree = "<group>"; };
+		864F8ECA2DB7E6B300D2542E /* ScheduleWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWidgetEntry.swift; sourceTree = "<group>"; };
+		864F8ED32DB7FB2200D2542E /* MediumScheduleEventWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumScheduleEventWidget.swift; sourceTree = "<group>"; };
+		864F8ED52DB7FBDC00D2542E /* EventSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSession.swift; sourceTree = "<group>"; };
+		864F8ED72DB7FEF900D2542E /* ScheduleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHeaderView.swift; sourceTree = "<group>"; };
 		865618F92D5C184700567D38 /* PitlapPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitlapPicker.swift; sourceTree = "<group>"; };
 		865618FD2D5C1B9700567D38 /* StandingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingPickerView.swift; sourceTree = "<group>"; };
 		8657214E2DA5205300AB15E9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 		8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionView.swift; sourceTree = "<group>"; };
 		8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionViewModel.swift; sourceTree = "<group>"; };
 		8683B5E02D9E9F64000AD7BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		86CDDBCD2DBA8DF40090452C /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRowModel.swift; sourceTree = "<group>"; };
 		86F1B8072D5CCB5500AF923D /* StandingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRow.swift; sourceTree = "<group>"; };
 		86F1B8242D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
@@ -291,7 +295,6 @@
 		FF75D34F2D232BD700160331 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF75D3512D232BDA00160331 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF75D3542D232BDA00160331 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FF75D3612D232D5200160331 /* RaceWeekendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceWeekendModel.swift; sourceTree = "<group>"; };
 		FF75D3642D232DE100160331 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FF75D3682D232EB000160331 /* RaceCalendarDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCalendarDataLogic.swift; sourceTree = "<group>"; };
 		FF75D36C2D23311D00160331 /* RaceCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCalendarViewModel.swift; sourceTree = "<group>"; };
@@ -306,19 +309,14 @@
 		FF9799B12D35DFAF00CCF203 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		FF9799B32D35DFAF00CCF203 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		FF9799B62D35DFAF00CCF203 /* PitThisLapWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitThisLapWidgetBundle.swift; sourceTree = "<group>"; };
-		FF9799B82D35DFAF00CCF203 /* PitThisLapWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitThisLapWidget.swift; sourceTree = "<group>"; };
+		FF9799B82D35DFAF00CCF203 /* ScheduleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWidget.swift; sourceTree = "<group>"; };
 		FF9799BA2D35DFAF00CCF203 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		FF9799BC2D35DFBD00CCF203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF9799BE2D35DFBD00CCF203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF9A50B82D498484001F1697 /* PitLapDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PitLapDebug.entitlements; sourceTree = "<group>"; };
 		FF9A50B92D4984A0001F1697 /* PitThisLapWidgetExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PitThisLapWidgetExtensionDebug.entitlements; sourceTree = "<group>"; };
-		FF9A50BA2D4991A8001F1697 /* PersistenceManager */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PersistenceManager; path = ../PersistenceManager; sourceTree = SOURCE_ROOT; };
 		FF9A50C02D499620001F1697 /* DriverStandingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingEntity.swift; sourceTree = "<group>"; };
-		FF9A50CB2D4B8CBA001F1697 /* f1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = f1.ttf; sourceTree = "<group>"; };
 		FF9A50CD2D4B8CF2001F1697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		FF9A50CE2D4B8FBA001F1697 /* f1-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "f1-bold.ttf"; sourceTree = "<group>"; };
-		FF9A50CF2D4B8FBA001F1697 /* f1-numbers-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "f1-numbers-regular.ttf"; sourceTree = "<group>"; };
-		FF9A50D02D4B8FBA001F1697 /* f1-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "f1-regular.ttf"; sourceTree = "<group>"; };
 		FF9A50FE2D4BE486001F1697 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FF9A51012D4BE73D001F1697 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		FF9A510B2D4CE58E001F1697 /* ArticleFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFeedViewModel.swift; sourceTree = "<group>"; };
@@ -346,15 +344,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				86645B222D6BCDFE004BAB44 /* FirebaseMessaging in Frameworks */,
-				86A9F0DA2DAEB376006BE8A9 /* PitlapKit in Frameworks */,
 				FF9A51142D4CED52001F1697 /* Kingfisher in Frameworks */,
 				86645B1C2D6BCDFE004BAB44 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
-				860B18ED2DAE9CFC00104413 /* PitlapKit in Frameworks */,
-				FF9A50BD2D499282001F1697 /* PersistenceManager in Frameworks */,
+				86A173E92DBA9649005D2E6B /* PitlapKit in Frameworks */,
 				86645B202D6BCDFE004BAB44 /* FirebaseCrashlytics in Frameworks */,
-				FF9A51072D4CE32A001F1697 /* XMLKit in Frameworks */,
 				86645B1E2D6BCDFE004BAB44 /* FirebaseCore in Frameworks */,
-				FF9A51052D4CE32A001F1697 /* FeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +356,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF9A50BF2D4992DC001F1697 /* PersistenceManager in Frameworks */,
+				86A173EB2DBA9670005D2E6B /* PitlapKit in Frameworks */,
 				FF9799B42D35DFAF00CCF203 /* SwiftUI.framework in Frameworks */,
 				FF9799B22D35DFAF00CCF203 /* WidgetKit.framework in Frameworks */,
 			);
@@ -395,6 +389,50 @@
 			path = past;
 			sourceTree = "<group>";
 		};
+		864F8EC42DB7E4D000D2542E /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		864F8EC92DB7E6A300D2542E /* widgets */ = {
+			isa = PBXGroup;
+			children = (
+				864F8ECE2DB7E87E00D2542E /* schedule */,
+			);
+			path = widgets;
+			sourceTree = "<group>";
+		};
+		864F8ECE2DB7E87E00D2542E /* schedule */ = {
+			isa = PBXGroup;
+			children = (
+				864F8ED02DB7E89F00D2542E /* view */,
+				864F8ECF2DB7E88B00D2542E /* entry */,
+				FF9799B82D35DFAF00CCF203 /* ScheduleWidget.swift */,
+			);
+			path = schedule;
+			sourceTree = "<group>";
+		};
+		864F8ECF2DB7E88B00D2542E /* entry */ = {
+			isa = PBXGroup;
+			children = (
+				864F8ECA2DB7E6B300D2542E /* ScheduleWidgetEntry.swift */,
+			);
+			path = entry;
+			sourceTree = "<group>";
+		};
+		864F8ED02DB7E89F00D2542E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				864F8ED52DB7FBDC00D2542E /* EventSession.swift */,
+				864F8EC72DB7E53600D2542E /* LargeScheduleEventWidget.swift */,
+				864F8ED32DB7FB2200D2542E /* MediumScheduleEventWidget.swift */,
+				864F8ED72DB7FEF900D2542E /* ScheduleHeaderView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		86645A132D5E0BA5004BAB44 /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,13 +450,13 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
-		86645A282D5E2843004BAB44 /* quali */ = {
+		86645A282D5E2843004BAB44 /* qualifying */ = {
 			isa = PBXGroup;
 			children = (
 				86645A2C2D5E28F2004BAB44 /* QualiResults.swift */,
 				86645A292D5E287C004BAB44 /* QualiResultModel.swift */,
 			);
-			path = quali;
+			path = qualifying;
 			sourceTree = "<group>";
 		};
 		86645A2F2D5E29EB004BAB44 /* qualifying */ = {
@@ -540,6 +578,7 @@
 			isa = PBXGroup;
 			children = (
 				86645ABE2D64951F004BAB44 /* PrimaryButtonStyle.swift */,
+				86CDDBCD2DBA8DF40090452C /* Typography.swift */,
 			);
 			path = designsystem;
 			sourceTree = "<group>";
@@ -564,6 +603,7 @@
 		86645ACD2D64D55B004BAB44 /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				862752CB2DBA800C0078ECA0 /* WeatherEntryCard.swift */,
 				86645AD62D6522E3004BAB44 /* viewmodel */,
 				86645AD32D65220B004BAB44 /* datalogic */,
 				86645ACE2D64D56A004BAB44 /* SessionWeatherView.swift */,
@@ -776,14 +816,6 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
-		FF52D15C2D3F26E500DF2573 /* schedule */ = {
-			isa = PBXGroup;
-			children = (
-				FF75D3612D232D5200160331 /* RaceWeekendModel.swift */,
-			);
-			path = schedule;
-			sourceTree = "<group>";
-		};
 		FF52D15D2D3F26FC00DF2573 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -870,7 +902,6 @@
 			children = (
 				86645B272D6BCF10004BAB44 /* PrivacyInfo.xcprivacy */,
 				86645B172D6BCD97004BAB44 /* GoogleService-Info.plist */,
-				FF9A50BA2D4991A8001F1697 /* PersistenceManager */,
 				FF9A50B92D4984A0001F1697 /* PitThisLapWidgetExtensionDebug.entitlements */,
 				FF75D34C2D232BD700160331 /* PitLap */,
 				FF9799B52D35DFAF00CCF203 /* PitThisLapWidget */,
@@ -949,8 +980,7 @@
 			children = (
 				8683B5982D9BF6B9000AD7BA /* RaceTrack.swift */,
 				86645A3B2D5EA64C004BAB44 /* practice */,
-				86645A282D5E2843004BAB44 /* quali */,
-				FF52D15C2D3F26E500DF2573 /* schedule */,
+				86645A282D5E2843004BAB44 /* qualifying */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1059,8 +1089,9 @@
 		FF9799B52D35DFAF00CCF203 /* PitThisLapWidget */ = {
 			isa = PBXGroup;
 			children = (
+				864F8EC92DB7E6A300D2542E /* widgets */,
+				864F8EC42DB7E4D000D2542E /* views */,
 				FF9799B62D35DFAF00CCF203 /* PitThisLapWidgetBundle.swift */,
-				FF9799B82D35DFAF00CCF203 /* PitThisLapWidget.swift */,
 				FF9799BA2D35DFAF00CCF203 /* AppIntent.swift */,
 				FF9799BC2D35DFBD00CCF203 /* Assets.xcassets */,
 				FF9799BE2D35DFBD00CCF203 /* Info.plist */,
@@ -1081,10 +1112,6 @@
 			children = (
 				86F1B82A2D5CDE6100AF923D /* Audiowide-Regular.ttf */,
 				86F1B8242D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf */,
-				FF9A50CE2D4B8FBA001F1697 /* f1-bold.ttf */,
-				FF9A50CF2D4B8FBA001F1697 /* f1-numbers-regular.ttf */,
-				FF9A50D02D4B8FBA001F1697 /* f1-regular.ttf */,
-				FF9A50CB2D4B8CBA001F1697 /* f1.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -1252,11 +1279,9 @@
 			);
 			mainGroup = FF75D3412D232BD700160331;
 			packageReferences = (
-				FF9A50BB2D499282001F1697 /* XCLocalSwiftPackageReference "../PersistenceManager" */,
-				FF9A51032D4CE32A001F1697 /* XCRemoteSwiftPackageReference "FeedKit" */,
 				FF9A51122D4CED52001F1697 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				86A9F0D82DAEB376006BE8A9 /* XCRemoteSwiftPackageReference "PitlapKit" */,
+				86A173E72DBA9649005D2E6B /* XCRemoteSwiftPackageReference "PitlapKit" */,
 			);
 			productRefGroup = FF75D34B2D232BD700160331 /* Products */;
 			projectDirPath = "";
@@ -1282,7 +1307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				86F1B8262D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf in Resources */,
-				FF9A50CC2D4B8CBA001F1697 /* f1.ttf in Resources */,
 				FF75D3552D232BDA00160331 /* Preview Assets.xcassets in Resources */,
 				86645A1E2D5E0BC1004BAB44 /* 10.png in Resources */,
 				86645A1F2D5E0BC1004BAB44 /* 7.png in Resources */,
@@ -1295,10 +1319,7 @@
 				86645A262D5E0BC1004BAB44 /* 11.png in Resources */,
 				86645A272D5E0BC1004BAB44 /* 9.png in Resources */,
 				FF75D3522D232BDA00160331 /* Assets.xcassets in Resources */,
-				FF9A50D42D4B8FBA001F1697 /* f1-bold.ttf in Resources */,
-				FF9A50D52D4B8FBA001F1697 /* f1-numbers-regular.ttf in Resources */,
 				86645B192D6BCD97004BAB44 /* GoogleService-Info.plist in Resources */,
-				FF9A50D62D4B8FBA001F1697 /* f1-regular.ttf in Resources */,
 				86645B292D6BCF17004BAB44 /* PrivacyInfo.xcprivacy in Resources */,
 				86F1B82B2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */,
 			);
@@ -1308,14 +1329,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF9A50D12D4B8FBA001F1697 /* f1-bold.ttf in Resources */,
-				FF9A50D22D4B8FBA001F1697 /* f1-numbers-regular.ttf in Resources */,
-				FF9A50D32D4B8FBA001F1697 /* f1-regular.ttf in Resources */,
 				86F1B82C2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */,
 				86F1B8252D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf in Resources */,
-				FF9799BD2D35DFBD00CCF203 /* Assets.xcassets in Resources */,
 				86645B282D6BCF17004BAB44 /* PrivacyInfo.xcprivacy in Resources */,
 				86645B182D6BCD97004BAB44 /* GoogleService-Info.plist in Resources */,
+				864F8ED22DB7F44900D2542E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1378,7 +1396,6 @@
 				FF75D3872D23668900160331 /* HeadingView.swift in Sources */,
 				86645AE72D696138004BAB44 /* VideoListView.swift in Sources */,
 				FF9A50C22D499620001F1697 /* DriverStandingEntity.swift in Sources */,
-				FF75D3622D232D5200160331 /* RaceWeekendModel.swift in Sources */,
 				FF52D1812D3FE7D500DF2573 /* LeadChangeView.swift in Sources */,
 				FF52D16C2D3F2FA400DF2573 /* StandingsViewModel.swift in Sources */,
 				865618FE2D5C1B9700567D38 /* StandingPickerView.swift in Sources */,
@@ -1388,6 +1405,7 @@
 				FF9A51162D4CF088001F1697 /* ArticleFeedItemView.swift in Sources */,
 				86645AD52D652233004BAB44 /* WeatherDataLogic.swift in Sources */,
 				FF75D34E2D232BD700160331 /* PitLap.swift in Sources */,
+				86CDDBCE2DBA8DF40090452C /* Typography.swift in Sources */,
 				86645AB72D648EE3004BAB44 /* AppIconService.swift in Sources */,
 				86645A362D5E2BD9004BAB44 /* QualifyingViewModel.swift in Sources */,
 				FF75D3722D23328D00160331 /* RaceCalendarView.swift in Sources */,
@@ -1406,6 +1424,7 @@
 				FF9A50FF2D4BE486001F1697 /* SettingsView.swift in Sources */,
 				86645ABA2D648F23004BAB44 /* SettingsViewModel.swift in Sources */,
 				86645A3D2D5EA661004BAB44 /* LapModel.swift in Sources */,
+				862752CC2DBA800C0078ECA0 /* WeatherEntryCard.swift in Sources */,
 				FF52D17D2D3FBF0000DF2573 /* DriverAnalysisView.swift in Sources */,
 				FF52D14F2D3F053900DF2573 /* SplashViewModel.swift in Sources */,
 				86645A382D5E2D63004BAB44 /* QualifyingResultRow.swift in Sources */,
@@ -1457,16 +1476,23 @@
 			files = (
 				86645A402D5EA742004BAB44 /* PracticeLapsModel.swift in Sources */,
 				FF9799B72D35DFAF00CCF203 /* PitThisLapWidgetBundle.swift in Sources */,
+				864F8EC82DB7E53600D2542E /* LargeScheduleEventWidget.swift in Sources */,
+				864F8ECB2DB7E6B300D2542E /* ScheduleWidgetEntry.swift in Sources */,
+				864F8ED82DB7FEF900D2542E /* ScheduleHeaderView.swift in Sources */,
 				86645A3E2D5EA661004BAB44 /* LapModel.swift in Sources */,
 				86645A2E2D5E28FB004BAB44 /* QualiResults.swift in Sources */,
 				FF9A50C32D499620001F1697 /* DriverStandingEntity.swift in Sources */,
-				FF9799B92D35DFAF00CCF203 /* PitThisLapWidget.swift in Sources */,
+				864F8ED42DB7FB2200D2542E /* MediumScheduleEventWidget.swift in Sources */,
+				86CDDBCF2DBA8DF40090452C /* Typography.swift in Sources */,
+				FF9799B92D35DFAF00CCF203 /* ScheduleWidget.swift in Sources */,
 				FF9799BB2D35DFAF00CCF203 /* AppIntent.swift in Sources */,
 				FF9799CA2D35E94D00CCF203 /* Extension.swift in Sources */,
 				8683B5992D9BF6B9000AD7BA /* RaceTrack.swift in Sources */,
-				FF9799C92D35E93900CCF203 /* RaceWeekendModel.swift in Sources */,
 				FF9799C62D35E90E00CCF203 /* Extensions.swift in Sources */,
 				86645A2A2D5E287C004BAB44 /* QualiResultModel.swift in Sources */,
+				864F8ECD2DB7E7DD00D2542E /* F1Team.swift in Sources */,
+				864F8ED62DB7FBDC00D2542E /* EventSession.swift in Sources */,
+				864F8ECC2DB7E7C300D2542E /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1586,6 +1612,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lsqlite3";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1642,6 +1669,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-lsqlite3";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -1656,7 +1684,7 @@
 				CODE_SIGN_ENTITLEMENTS = PitLap/PitLapDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"PitLap/Preview Content\"";
 				DEVELOPMENT_TEAM = 6HY2T876CG;
 				ENABLE_PREVIEWS = YES;
@@ -1674,7 +1702,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1692,7 +1720,7 @@
 				CODE_SIGN_ENTITLEMENTS = PitLap/PitLap.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"PitLap/Preview Content\"";
 				DEVELOPMENT_TEAM = 6HY2T876CG;
 				ENABLE_PREVIEWS = YES;
@@ -1710,7 +1738,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1727,7 +1755,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = PitThisLapWidgetExtensionDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 6HY2T876CG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PitThisLapWidget/Info.plist;
@@ -1738,7 +1766,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios.PitThisLapWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1754,7 +1782,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 6HY2T876CG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PitThisLapWidget/Info.plist;
@@ -1765,7 +1793,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios.PitThisLapWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1816,22 +1844,7 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		FF9A50BB2D499282001F1697 /* XCLocalSwiftPackageReference "../PersistenceManager" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../PersistenceManager;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
-		860B18EB2DAE9CFC00104413 /* XCRemoteSwiftPackageReference "PitlapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RabbiNash/PitlapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.1;
-			};
-		};
 		86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1840,20 +1853,12 @@
 				minimumVersion = 11.8.1;
 			};
 		};
-		86A9F0D82DAEB376006BE8A9 /* XCRemoteSwiftPackageReference "PitlapKit" */ = {
+		86A173E72DBA9649005D2E6B /* XCRemoteSwiftPackageReference "PitlapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RabbiNash/PitlapKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.2;
-			};
-		};
-		FF9A51032D4CE32A001F1697 /* XCRemoteSwiftPackageReference "FeedKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nmdias/FeedKit.git";
-			requirement = {
 				kind = exactVersion;
-				version = "10.0.0-rc.2";
+				version = 0.2.6;
 			};
 		};
 		FF9A51122D4CED52001F1697 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
@@ -1867,11 +1872,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		860B18EC2DAE9CFC00104413 /* PitlapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 860B18EB2DAE9CFC00104413 /* XCRemoteSwiftPackageReference "PitlapKit" */;
-			productName = PitlapKit;
-		};
 		86645B1B2D6BCDFE004BAB44 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -1892,28 +1892,15 @@
 			package = 86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
-		86A9F0D92DAEB376006BE8A9 /* PitlapKit */ = {
+		86A173E82DBA9649005D2E6B /* PitlapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 86A9F0D82DAEB376006BE8A9 /* XCRemoteSwiftPackageReference "PitlapKit" */;
+			package = 86A173E72DBA9649005D2E6B /* XCRemoteSwiftPackageReference "PitlapKit" */;
 			productName = PitlapKit;
 		};
-		FF9A50BC2D499282001F1697 /* PersistenceManager */ = {
+		86A173EA2DBA9670005D2E6B /* PitlapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = PersistenceManager;
-		};
-		FF9A50BE2D4992DC001F1697 /* PersistenceManager */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PersistenceManager;
-		};
-		FF9A51042D4CE32A001F1697 /* FeedKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FF9A51032D4CE32A001F1697 /* XCRemoteSwiftPackageReference "FeedKit" */;
-			productName = FeedKit;
-		};
-		FF9A51062D4CE32A001F1697 /* XMLKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FF9A51032D4CE32A001F1697 /* XCRemoteSwiftPackageReference "FeedKit" */;
-			productName = XMLKit;
+			package = 86A173E72DBA9649005D2E6B /* XCRemoteSwiftPackageReference "PitlapKit" */;
+			productName = PitlapKit;
 		};
 		FF9A51132D4CED52001F1697 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

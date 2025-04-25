@@ -6,16 +6,9 @@
 //
 
 import SwiftUI
-import PersistenceManager
-import SwiftData
 
 struct SettingsView: View {
     @StateObject private var viewModel = SettingsViewModel()
-    
-    @Query(filter: #Predicate<RaceWeekendEntity> { weekend in
-        weekend.year == "2025"
-    }, sort: \RaceWeekendEntity.round)
-    var model: [RaceWeekendEntity]
     
     @Environment(\.dismiss) var dismiss
     
@@ -87,7 +80,7 @@ struct SettingsView: View {
                 })
                 
                 Button {
-                    viewModel.didTapConfirm(raceWeekends: model)
+                    viewModel.didTapConfirm()
                     dismiss()
                 } label : {
                     Text("Confirm")

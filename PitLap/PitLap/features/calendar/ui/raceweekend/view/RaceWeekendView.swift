@@ -38,6 +38,7 @@ struct RaceWeekendView: View {
                     }
                     eventNameView
                     sessionTimesView
+                    sessionWeather
                     
                     Group {
                         raceSummaryView
@@ -75,12 +76,13 @@ struct RaceWeekendView: View {
         ForEach(SessionType.allCases, id: \.self) { sessionType in
             if let sessionTime = event.sessionTime(for: sessionType) {
                 if event.sessionName(for: sessionType) != "None" {
-                    SessionItemView(sessionName: event.sessionName(for: sessionType), sessionTime: sessionTime)
-                        .onTapGesture {
-                            if isPastEvent(sessionTime: event.session1DateUTC ?? "") {
-                                activeSheet = sessionType
-                            }
-                        }
+                    if isPastEvent(sessionTime: event.sessionTime(for: sessionType) ?? "") {
+                        NavigationLink(destination: sheetContent(for: sessionType)) {
+                            SessionItemView(sessionName: event.sessionName(for: sessionType), sessionTime: sessionTime)
+                        }.buttonStyle(.plain)
+                    } else {
+                        SessionItemView(sessionName: event.sessionName(for: sessionType), sessionTime: sessionTime)
+                    }
                 }
             }
         }
@@ -105,6 +107,27 @@ struct RaceWeekendView: View {
         if viewModel.isLoading {
             IndeterminateProgressView()
                 .foregroundStyle(ThemeManager.shared.selectedTeamColor)
+        }
+    }
+    
+    @ViewBuilder
+    private var sessionWeather: some View {
+        if let weather = viewModel.weather {
+            VStack(alignment: .leading) {
+                Text("Race Day Weather")
+                    .font(.custom("Audiowide", size: 24))
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .padding(.vertical, 8)
+                    .foregroundColor(.primary)
+                    .background(
+                        ThemeManager.shared.selectedTeamColor
+                            .frame(height: 6)
+                            .offset(y: 24)
+                    )
+                
+                WeatherEntryCard(weather: weather, event: event)
+            }
         }
     }
     
@@ -165,32 +188,3 @@ struct SummaryView: View {
     }
 }
 
-enum SessionType: String, CaseIterable, Identifiable {
-    case session1, session2, session3, session4, session5
-    
-    var id: Int {
-        hashValue
-    }
-}
-
-extension EventScheduleModel {
-    func sessionTime(for type: SessionType) -> String? {
-        switch type {
-        case .session1: return session1DateUTC
-        case .session2: return session2DateUTC
-        case .session3: return session3DateUTC
-        case .session4: return session4DateUTC
-        case .session5: return session5DateUTC
-        }
-    }
-    
-    func sessionName(for type: SessionType) -> String {
-        switch type {
-        case .session1: return session1
-        case .session2: return session2
-        case .session3: return session3
-        case .session4: return session4
-        case .session5: return session5
-        }
-    }
-}

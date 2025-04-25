@@ -1,6 +1,6 @@
 //
 //  SeasonCalendarViewModel.swift
-//  Box Box
+//  Pitlap
 //
 //  Created by Tinashe MAKUTI on 30/12/2024.
 //
@@ -24,11 +24,16 @@ final class RaceCalendarViewModel: ObservableObject {
         currentYear = Calendar.current.component(.year, from: Date())
         loadSeasonCalendar(year: currentYear, showPastEvents: showPastEvents)
     }
+    
+    func refresh(forceRefresh: Bool = false) {
+        currentYear = Calendar.current.component(.year, from: Date())
+        loadSeasonCalendar(year: currentYear, forceRefresh: true)
+    }
 
-    func loadSeasonCalendar(year: Int, showPastEvents: Bool = false) {
+    func loadSeasonCalendar(year: Int, showPastEvents: Bool = false, forceRefresh: Bool = false) {
         isLoading = true
         Task { @MainActor in
-            let calendar = await dataLogic.getRaceCalendar(for: year)
+            let calendar = await dataLogic.getRaceCalendar(for: year, forceRefresh: forceRefresh)
             let filtered = filterEvents(calendar, showPastEvents: showPastEvents)
             seasonCalendar = filtered
             nextSession = getNextEvent(from: filtered)
@@ -39,7 +44,7 @@ final class RaceCalendarViewModel: ObservableObject {
     private func filterEvents(_ events: [EventScheduleModel], showPastEvents: Bool) -> [EventScheduleModel] {
         let now = Date()
         let filtered = events.filter { event in
-            guard let eventDate = eventDate(for: event) else { return false }
+            guard let eventDate = eventCutoffDate(for: event) else { return false }
             return showPastEvents ? eventDate < now : eventDate > now
         }
         return showPastEvents ? filtered.reversed() : filtered
@@ -48,16 +53,25 @@ final class RaceCalendarViewModel: ObservableObject {
     private func getNextEvent(from events: [EventScheduleModel]) -> EventScheduleModel? {
         let now = Date()
         return events.first { event in
-            guard let eventDate = eventDate(for: event) else { return false }
+            guard let eventDate = eventCutoffDate(for: event) else { return false }
             return eventDate > now
         }
     }
 
-    private func eventDate(for event: EventScheduleModel) -> Date? {
-        if event.eventFormat == "convectional" {
-            return Date.getDateFromString(dateString: event.session5DateUTC ?? "")
+    private func eventCutoffDate(for event: EventScheduleModel) -> Date? {
+        let dateString: String?
+
+        if event.eventFormat == "testing" {
+            dateString = event.session3DateUTC
         } else {
-            return Date.getDateFromString(dateString: event.session3DateUTC ?? "")
+            dateString = event.session5DateUTC
         }
+
+        guard let baseDate = Date.getDateFromString(dateString: dateString ?? "") else {
+            return nil
+        }
+
+        return Calendar.current.date(byAdding: .day, value: 1, to: baseDate)
     }
+
 }

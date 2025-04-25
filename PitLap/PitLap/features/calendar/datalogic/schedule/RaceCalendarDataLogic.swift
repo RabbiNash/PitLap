@@ -7,11 +7,10 @@
 
 import Foundation
 import SwiftData
-import PersistenceManager
 import PitlapKit
 
 protocol RaceCalendarDataLogicType {
-    func getRaceCalendar(for year: Int) async -> [EventScheduleModel]
+    func getRaceCalendar(for year: Int, forceRefresh: Bool) async -> [EventScheduleModel]
     func isDataLoaded() async -> Bool
 }
 
@@ -22,13 +21,13 @@ final class RaceCalendarDataLogic: RaceCalendarDataLogicType {
         self.pitlapService = pitlapService
     }
 
-    func getRaceCalendar(for year: Int) async -> [EventScheduleModel] {
-        let events = try? await pitlapService.getSchedule(year: year.asInt32)
+    func getRaceCalendar(for year: Int, forceRefresh: Bool = false) async -> [EventScheduleModel] {
+        let events = try? await pitlapService.getSchedule(year: year.asInt32, forceRefresh: forceRefresh)
         return events ?? []
     }
 
     func isDataLoaded() async -> Bool {
-        let events = try? await pitlapService.getSchedule(year: 2025)
+        let events = try? await pitlapService.getSchedule(year: 2025, forceRefresh: false)
         return events != nil
     }
 }

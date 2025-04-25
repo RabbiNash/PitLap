@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import FeedKit
 import PitlapKit
 
 struct HomeView: View {
@@ -51,7 +50,7 @@ struct HomeView: View {
                     )
                     .padding(.leading, 16)
                 
-                articleHorizontalList(feedChannel: viewModel.autosportFeed)
+                articleHorizontalList(feeds: viewModel.feed)
                 
                 Text("Latest Videos")
                     .font(.custom("Audiowide", size: 20))
@@ -85,19 +84,17 @@ struct HomeView: View {
     }
     
     @ViewBuilder
-    func articleHorizontalList(feedChannel: RSSFeedChannel?) -> some View {
+    func articleHorizontalList(feeds: [RSSFeedItem]) -> some View {
         VStack(alignment: .center, spacing: 12) {
-            if let channel = feedChannel {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(spacing: 16) {
-                        ForEach(feedChannel?.items ?? [], id: \.guid) { item in
-                            NavigationLink(destination: ArticleView(feed: item, channelTitle: feedChannel?.title ?? "" )) {
-                                ArticleFeedItemView(feed: item, channel: channel)
-                            }.buttonStyle(.plain)
-                        }
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 16) {
+                    ForEach(feeds, id: \.id) { item in
+                        NavigationLink(destination: ArticleView(feed: item)) {
+                            ArticleFeedItemView(feed: item)
+                        }.buttonStyle(.plain)
                     }
-                }.contentMargins(.leading, 16)
-            }
+                }
+            }.contentMargins(.leading, 16)
         }
     }
     

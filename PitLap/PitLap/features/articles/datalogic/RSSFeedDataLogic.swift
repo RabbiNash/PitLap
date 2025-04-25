@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FeedKit
+import PitlapKit
 
 enum FeedSource: String, CaseIterable {
     case bbc = "https://feeds.bbci.co.uk/sport/formula1/rss.xml"
@@ -35,13 +35,23 @@ enum FeedSource: String, CaseIterable {
 }
 
 protocol RSSFeedDataLogicType {
-    func getRSSFeed(from feedSource: FeedSource) async -> RSSFeedChannel?
+    func getArticlesFeed(from feedSource: FeedSource, forceRefresh: Bool) async -> [RSSFeedItem]
+    func getArticle(by id: String) async -> RSSFeedItem?
 }
 
 final class RSSFeedDataLogic: RSSFeedDataLogicType {
+    private let service: PitlapService
+    
+    init(service: PitlapService = Pitlap.shared.getService()) {
+        self.service = service
+    }
 
-    func getRSSFeed(from feedSource: FeedSource) async -> RSSFeedChannel? {
-        let feed = try? await RSSFeed(urlString: feedSource.rawValue)
-        return feed?.channel
+    func getArticlesFeed(from feedSource: FeedSource, forceRefresh: Bool) async -> [RSSFeedItem] {
+        let feed = try? await service.getFeedArticles(feedUrl: feedSource.rawValue, forceRefresh: forceRefresh)
+        return feed ?? []
+    }
+    
+    func getArticle(by id: String) async -> RSSFeedItem? {
+        return try? await service.getArticleFeedById(id: id)
     }
 }

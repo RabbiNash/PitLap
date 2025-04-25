@@ -19,19 +19,19 @@ final class YoutubeViewModel: ObservableObject {
         self.dataLogic = dataLogic
     }
 
-    func fetchVideos(title: String) {
+    func fetchVideos(title: String, forceRefresh: Bool = false) {
         Task {
-            await fetchVideos(title: title)
+            await fetchVideos(title: title, forceRefresh: forceRefresh)
         }
     }
     
     @MainActor
-    private func fetchVideos(title: String) async {
+    private func fetchVideos(title: String, forceRefresh: Bool) async {
         isLoading = true
         defer {
             isLoading = false
         }
             
-        videos = await self.dataLogic.getVideos(title: title)
+        videos = await self.dataLogic.getVideos(title: title, forceRefresh: forceRefresh)
     }
 }
