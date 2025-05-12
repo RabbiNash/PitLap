@@ -28,12 +28,21 @@ struct ArticleFeedItemView: View {
                     .cornerRadius(16)
                     .overlay(
                         RoundedRectangle(cornerRadius: 16)
-                            .fill(.black.opacity(0.4))
+                            .fill(
+                                LinearGradient(
+                                    gradient: Gradient(
+                                        colors: [ThemeManager.shared.selectedTeamColor.opacity(0.4), Color.black.opacity(0.4)]),
+                                    startPoint: .top,
+                                    endPoint: .center
+                                )
+                            )
+                            .ignoresSafeArea(.all)
+                            .shadow(radius: 8)
                     )
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(feed.title)
-                        .font(.custom("Audiowide", size: 20))
+                        .styleAsDisplaySmall()
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .lineLimit(4)

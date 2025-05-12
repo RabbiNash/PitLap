@@ -93,8 +93,12 @@
 		8683B5E12D9E9F64000AD7BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5E02D9E9F64000AD7BA /* HomeView.swift */; };
 		86A173E92DBA9649005D2E6B /* PitlapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 86A173E82DBA9649005D2E6B /* PitlapKit */; };
 		86A173EB2DBA9670005D2E6B /* PitlapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 86A173EA2DBA9670005D2E6B /* PitlapKit */; };
+		86CB642E2DBBFA2A0013D0C3 /* AccessoryScheduleEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CB642D2DBBFA2A0013D0C3 /* AccessoryScheduleEventView.swift */; };
+		86CB64302DBC08F00013D0C3 /* DeterminateProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CB642F2DBC08F00013D0C3 /* DeterminateProgressView.swift */; };
+		86CB64312DBC09450013D0C3 /* DeterminateProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CB642F2DBC08F00013D0C3 /* DeterminateProgressView.swift */; };
 		86CDDBCE2DBA8DF40090452C /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CDDBCD2DBA8DF40090452C /* Typography.swift */; };
 		86CDDBCF2DBA8DF40090452C /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CDDBCD2DBA8DF40090452C /* Typography.swift */; };
+		86EB522E2DD26978007D4331 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 86EB522D2DD26978007D4331 /* SwiftfulRouting */; };
 		86F1B8062D5CC7D400AF923D /* StandingRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */; };
 		86F1B8082D5CCB5900AF923D /* StandingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8072D5CCB5500AF923D /* StandingRow.swift */; };
 		86F1B8252D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86F1B8242D5CDBD300AF923D /* NotoSans-VariableFont_wdth,wght.ttf */; };
@@ -105,6 +109,7 @@
 		86F1B8442D5D284D00AF923D /* ColorSchemeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8432D5D284A00AF923D /* ColorSchemeModifier.swift */; };
 		86F1B8472D5D297100AF923D /* RaceResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8462D5D295900AF923D /* RaceResultRow.swift */; };
 		86F1B8492D5D2A9600AF923D /* RaceResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1B8482D5D2A9600AF923D /* RaceResultView.swift */; };
+		86FF0CDF2DD2904500B05B47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FF0CDE2DD2904500B05B47 /* LaunchScreen.storyboard */; };
 		FF52D1462D3EDDF500DF2573 /* SeasonTabOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1452D3EDDF500DF2573 /* SeasonTabOption.swift */; };
 		FF52D14A2D3EFFD200DF2573 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D1492D3EFFD200DF2573 /* SplashView.swift */; };
 		FF52D14D2D3F04D100DF2573 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52D14C2D3F04D100DF2573 /* ViewCoordinator.swift */; };
@@ -266,6 +271,8 @@
 		8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionView.swift; sourceTree = "<group>"; };
 		8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionViewModel.swift; sourceTree = "<group>"; };
 		8683B5E02D9E9F64000AD7BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		86CB642D2DBBFA2A0013D0C3 /* AccessoryScheduleEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryScheduleEventView.swift; sourceTree = "<group>"; };
+		86CB642F2DBC08F00013D0C3 /* DeterminateProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterminateProgressView.swift; sourceTree = "<group>"; };
 		86CDDBCD2DBA8DF40090452C /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		86F1B8052D5CC7CF00AF923D /* StandingRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRowModel.swift; sourceTree = "<group>"; };
 		86F1B8072D5CCB5500AF923D /* StandingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingRow.swift; sourceTree = "<group>"; };
@@ -275,6 +282,7 @@
 		86F1B8432D5D284A00AF923D /* ColorSchemeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeModifier.swift; sourceTree = "<group>"; };
 		86F1B8462D5D295900AF923D /* RaceResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultRow.swift; sourceTree = "<group>"; };
 		86F1B8482D5D2A9600AF923D /* RaceResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultView.swift; sourceTree = "<group>"; };
+		86FF0CDE2DD2904500B05B47 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF52D1452D3EDDF500DF2573 /* SeasonTabOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTabOption.swift; sourceTree = "<group>"; };
 		FF52D1492D3EFFD200DF2573 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		FF52D14C2D3F04D100DF2573 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
@@ -344,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86645B222D6BCDFE004BAB44 /* FirebaseMessaging in Frameworks */,
+				86EB522E2DD26978007D4331 /* SwiftfulRouting in Frameworks */,
 				FF9A51142D4CED52001F1697 /* Kingfisher in Frameworks */,
 				86645B1C2D6BCDFE004BAB44 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				86A173E92DBA9649005D2E6B /* PitlapKit in Frameworks */,
@@ -425,12 +434,21 @@
 		864F8ED02DB7E89F00D2542E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				86CB642C2DBBFA260013D0C3 /* accessory */,
 				864F8ED52DB7FBDC00D2542E /* EventSession.swift */,
 				864F8EC72DB7E53600D2542E /* LargeScheduleEventWidget.swift */,
 				864F8ED32DB7FB2200D2542E /* MediumScheduleEventWidget.swift */,
 				864F8ED72DB7FEF900D2542E /* ScheduleHeaderView.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		865F088F2DD288B000B56A5D /* launch */ = {
+			isa = PBXGroup;
+			children = (
+				86FF0CDE2DD2904500B05B47 /* LaunchScreen.storyboard */,
+			);
+			path = launch;
 			sourceTree = "<group>";
 		};
 		86645A132D5E0BA5004BAB44 /* icons */ = {
@@ -739,6 +757,14 @@
 			path = home;
 			sourceTree = "<group>";
 		};
+		86CB642C2DBBFA260013D0C3 /* accessory */ = {
+			isa = PBXGroup;
+			children = (
+				86CB642D2DBBFA2A0013D0C3 /* AccessoryScheduleEventView.swift */,
+			);
+			path = accessory;
+			sourceTree = "<group>";
+		};
 		86F1B8042D5CC7B400AF923D /* ui */ = {
 			isa = PBXGroup;
 			children = (
@@ -924,6 +950,7 @@
 		FF75D34C2D232BD700160331 /* PitLap */ = {
 			isa = PBXGroup;
 			children = (
+				865F088F2DD288B000B56A5D /* launch */,
 				86645B2A2D6BD056004BAB44 /* PitLap.entitlements */,
 				86645B242D6BCE2C004BAB44 /* app */,
 				86645ACC2D64D53B004BAB44 /* features */,
@@ -1036,6 +1063,7 @@
 		FF75D3782D233FEE00160331 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				86CB642F2DBC08F00013D0C3 /* DeterminateProgressView.swift */,
 				860B18872DADE5FF00104413 /* RatingManager.swift */,
 				86645B3A2D6F92B6004BAB44 /* SafariView.swift */,
 				86F1B8432D5D284A00AF923D /* ColorSchemeModifier.swift */,
@@ -1282,6 +1310,7 @@
 				FF9A51122D4CED52001F1697 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				86A173E72DBA9649005D2E6B /* XCRemoteSwiftPackageReference "PitlapKit" */,
+				86EB522C2DD26978007D4331 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
 			);
 			productRefGroup = FF75D34B2D232BD700160331 /* Products */;
 			projectDirPath = "";
@@ -1313,6 +1342,7 @@
 				86645A202D5E0BC1004BAB44 /* 8.png in Resources */,
 				86645A212D5E0BC1004BAB44 /* 5.png in Resources */,
 				86645A222D5E0BC1004BAB44 /* 6.png in Resources */,
+				86FF0CDF2DD2904500B05B47 /* LaunchScreen.storyboard in Resources */,
 				86645A232D5E0BC1004BAB44 /* 2.png in Resources */,
 				86645A242D5E0BC1004BAB44 /* 3.png in Resources */,
 				86645A252D5E0BC1004BAB44 /* 4.png in Resources */,
@@ -1438,6 +1468,7 @@
 				86645AEC2D6967D1004BAB44 /* YouTubePlayerView.swift in Sources */,
 				FFBA36EA2D4D318E002D3245 /* IndeterminateProgressView.swift in Sources */,
 				FF9A510C2D4CE58E001F1697 /* ArticleFeedViewModel.swift in Sources */,
+				86CB64302DBC08F00013D0C3 /* DeterminateProgressView.swift in Sources */,
 				FF9A51112D4CEA09001F1697 /* RSSFeedDataLogic.swift in Sources */,
 				86645AEF2D69686A004BAB44 /* VideoPlayerView.swift in Sources */,
 				86645A532D5EAE23004BAB44 /* PracticeView.swift in Sources */,
@@ -1475,6 +1506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86645A402D5EA742004BAB44 /* PracticeLapsModel.swift in Sources */,
+				86CB642E2DBBFA2A0013D0C3 /* AccessoryScheduleEventView.swift in Sources */,
 				FF9799B72D35DFAF00CCF203 /* PitThisLapWidgetBundle.swift in Sources */,
 				864F8EC82DB7E53600D2542E /* LargeScheduleEventWidget.swift in Sources */,
 				864F8ECB2DB7E6B300D2542E /* ScheduleWidgetEntry.swift in Sources */,
@@ -1492,6 +1524,7 @@
 				86645A2A2D5E287C004BAB44 /* QualiResultModel.swift in Sources */,
 				864F8ECD2DB7E7DD00D2542E /* F1Team.swift in Sources */,
 				864F8ED62DB7FBDC00D2542E /* EventSession.swift in Sources */,
+				86CB64312DBC09450013D0C3 /* DeterminateProgressView.swift in Sources */,
 				864F8ECC2DB7E7C300D2542E /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1861,6 +1894,14 @@
 				version = 0.2.6;
 			};
 		};
+		86EB522C2DD26978007D4331 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.1;
+			};
+		};
 		FF9A51122D4CED52001F1697 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1901,6 +1942,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 86A173E72DBA9649005D2E6B /* XCRemoteSwiftPackageReference "PitlapKit" */;
 			productName = PitlapKit;
+		};
+		86EB522D2DD26978007D4331 /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86EB522C2DD26978007D4331 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
+			productName = SwiftfulRouting;
 		};
 		FF9A51132D4CED52001F1697 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

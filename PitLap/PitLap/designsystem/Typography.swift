@@ -10,6 +10,11 @@ import SwiftUI
 
 extension Text {
     // Display
+    func styleAsDisplayHero() -> some View {
+        self.font(.custom("AudioWide", size: 48))
+            .fontWeight(.regular)
+    }
+        
     func styleAsDisplayLarge() -> some View {
         self.font(.custom("AudioWide", size: 30))
             .fontWeight(.regular)
@@ -20,6 +25,11 @@ extension Text {
     }
     func styleAsDisplaySmall() -> some View {
         self.font(.custom("AudioWide", size: 20))
+            .fontWeight(.regular)
+    }
+    
+    func styleAsDisplaySmallest() -> some View {
+        self.font(.custom("AudioWide", size: 12))
             .fontWeight(.regular)
     }
 
@@ -39,7 +49,7 @@ extension Text {
 
     // Title
     func styleAsTitleLarge() -> some View {
-        self.font(.custom("NotoSans", size: 16))
+        self.font(.custom("Noto Sans", size: 16))
             .fontWeight(.regular)
     }
     func styleAsTitleMedium() -> some View {
@@ -79,7 +89,12 @@ extension Text {
     }
     
     func styleAsLabelSmall() -> some View {
-        self.font(.custom("NotoSans", size: 10))
+        self.font(.custom("Noto Sans", size: 10))
+            .fontWeight(.regular)
+    }
+    
+    func styleAsLabelMinimum() -> some View {
+        self.font(.custom("Noto Sans", size: 8))
             .fontWeight(.regular)
     }
 }

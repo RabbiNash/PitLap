@@ -41,7 +41,12 @@ struct BottomNavTabBar: View {
                     .background {
                         if activeTab == tab {
                             Capsule()
-                                .fill(activeBackkgroundColor.gradient)
+                                .fill( LinearGradient(
+                                    gradient: Gradient(
+                                        colors: [activeBackkgroundColor, activeBackkgroundColor.opacity(0.7)]),
+                                    startPoint: .top,
+                                    endPoint: .center
+                                ))
                                 .matchedGeometryEffect(id: "ACTIVETAB", in: animation)
                         }
                     }

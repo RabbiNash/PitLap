@@ -15,7 +15,19 @@ struct VideoListView: View {
     }
     
     var body: some View {
-        NavigationStack{
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), Color.clear]),
+                        startPoint: .top,
+                        endPoint: .center
+                    )
+                )
+                .ignoresSafeArea(.all)
+                .shadow(radius: 8)
+            
             ScrollView {
                 LazyVStack {
                     HStack {

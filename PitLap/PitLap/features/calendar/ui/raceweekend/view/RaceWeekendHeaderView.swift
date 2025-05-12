@@ -18,31 +18,12 @@ struct RaceWeekendHeaderView: View {
 
     var body: some View {
         ZStack {
-            if #available(iOS 18.0, *) {
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(
-                        MeshGradient(
-                            width: 3,
-                            height: 3,
-                            points: [
-                                [0.0, 0.0], [0.5, 0.0], [1.0, 0.0],
-                                [0.0, 0.5], [0.8, 0.2], [1.0, 0.5],
-                                [0.0, 1.0], [0.5, 1.0], [1.0, 1.0]
-                            ], colors: [
-                                ThemeManager.shared.selectedTeamColor, F1Team.haas.color, ThemeManager.shared.selectedTeamColor, ThemeManager.shared.selectedTeamColor,ThemeManager.shared.selectedTeamColor, F1Team.haas.color,
-                                ThemeManager.shared.selectedTeamColor, F1Team.haas.color, ThemeManager.shared.selectedTeamColor,
-                                F1Team.mercedes.color, F1Team.haas.color, F1Team.haas.color,
-                                ThemeManager.shared.selectedTeamColor, F1Team.ferrari.color, ThemeManager.shared.selectedTeamColor, ThemeManager.shared.selectedTeamColor
-                            ])
-                    )
-                    .shadow(radius: 8)
-            } else {
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(ThemeManager.shared.selectedTeamColor.gradient)
-                    .shadow(radius: 8)
-                
-            }
-
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: [Color.gray.opacity(0.6), Color.clear]), startPoint: .top, endPoint: .bottom)
+                )
+            
             VStack(alignment: .leading) {
                 (Text("Round ") + Text("\(event.round)"))
                     .font(.custom("Noto Sans",size: 20))
@@ -50,7 +31,7 @@ struct RaceWeekendHeaderView: View {
                     .fontWeight(.semibold)
 
                 Text(event.officialEventName)
-                    .font(.custom("Audiowide",size: 28))
+                    .styleAsDisplayMedium()
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
 

@@ -11,6 +11,7 @@ import Kingfisher
 struct ArticleFeedView: View {
     @StateObject private var viewModel = ArticleFeedViewModel()
     @AppStorage("newsSource") private var newsSource: String = FeedSource.autosport.rawValue
+    @Environment(\.router) var router
     
     init(viewModel: ArticleFeedViewModel = ArticleFeedViewModel()) {
         self._viewModel = StateObject(wrappedValue: viewModel)
@@ -27,7 +28,7 @@ struct ArticleFeedView: View {
                 ScrollView {
                     TabView {
                         ForEach(viewModel.articles, id: \.id) { item in
-                            ArticleView(feed: item)
+                            ArticleView(feed: item, router: router)
                         }
                     }
                     .frame(

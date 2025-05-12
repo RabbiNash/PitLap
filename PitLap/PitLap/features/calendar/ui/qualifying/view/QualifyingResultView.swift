@@ -20,16 +20,28 @@ struct QualifyingResultView: View {
     }
     
     var body: some View {
-        NavigationStack {
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), Color.clear]),
+                        startPoint: .top,
+                        endPoint: .center
+                    )
+                )
+                .ignoresSafeArea(.all)
+                .shadow(radius: 8)
+            
             content
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("Quali Result")
-                .onAppear {
-                    Task {
-                        viewModel.viewDidAppear(year: year, round: round)
-                    }
+                
+        }.navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Qualifying Result")
+            .onAppear {
+                Task {
+                    viewModel.viewDidAppear(year: year, round: round)
                 }
-        }
+            }
     }
 
     private var content: some View {

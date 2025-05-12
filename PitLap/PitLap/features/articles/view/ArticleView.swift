@@ -8,30 +8,47 @@
 import SwiftUI
 import Kingfisher
 import PitlapKit
+import SwiftfulRouting
 
 struct ArticleView: View {
     private let feed: RSSFeedItem
+    private let router: AnyRouter
 
-    init(feed: RSSFeedItem) {
+    init(feed: RSSFeedItem, router: AnyRouter) {
         self.feed = feed
+        self.router = router
     }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                headerImage
-                    .frame(height: UIScreen.main.bounds.height / 2)
-                    .clipped()
-
-                articleMeta
-
-                readMoreLink
-                    .padding(.bottom, 32)
-
-                Spacer()
-            }.onAppear {
-                Task {
-                    RatingManager.shared.requestAppStoreRating()
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.4), Color.black.opacity(0.4)]),
+                        startPoint: .top,
+                        endPoint: .center
+                    )
+                )
+                .ignoresSafeArea(.all)
+                .shadow(radius: 8)
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    headerImage
+                        .frame(height: UIScreen.main.bounds.height / 2)
+                        .clipped()
+                    
+                    articleMeta
+                    
+                    readMoreLink
+                        .padding(.bottom, 32)
+                    
+                    Spacer()
+                }.onAppear {
+                    Task {
+                        RatingManager.shared.requestAppStoreRating()
+                    }
                 }
             }
         }
@@ -47,7 +64,19 @@ struct ArticleView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                    .overlay(Color.black.opacity(0.5))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(
+                                LinearGradient(
+                                    gradient: Gradient(
+                                        colors: [ThemeManager.shared.selectedTeamColor.opacity(0.4), Color.black.opacity(0.4)]),
+                                    startPoint: .top,
+                                    endPoint: .center
+                                )
+                            )
+                            .ignoresSafeArea(.all)
+                            .shadow(radius: 8)
+                    }
                 
                 VStack(alignment: .leading, spacing: 6) {
                     Text(feed.title)
@@ -82,12 +111,20 @@ struct ArticleView: View {
     }
 
     private var readMoreLink: some View {
-        NavigationLink(destination: SafariView(url: articleURL)) {
-            Text("Read more...")
-                .styleAsBodyLarge()
-                .foregroundColor(.accentColor)
-                .padding(.horizontal)
-        }
+        Text("Read more...")
+            .styleAsBodyLarge()
+            .foregroundColor(.accentColor)
+            .padding(.horizontal)
+            .onTapGesture {
+                let destination = AnyDestination(
+                    segue: SegueOption.fullScreenCoverConfig(config: .init(background: .automatic)),
+                    destination: { router in
+                        SafariView(url: articleURL)
+                    }
+                )
+                
+                router.showScreen(destination)
+            }
     }
 
     // MARK: - Helpers

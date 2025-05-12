@@ -12,14 +12,28 @@ struct RaceReactionView: View {
     @StateObject private var viewModel = RaceReactionViewModel()
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack {
-                raceLights
-                jumpStartView
-                Spacer()
-                controlButton
-                Spacer()
-            }.padding(24)
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), Color.clear]),
+                        startPoint: .top,
+                        endPoint: .center
+                    )
+                )
+                .ignoresSafeArea(.all)
+                .shadow(radius: 8)
+            
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    raceLights
+                    jumpStartView
+                    Spacer()
+                    controlButton
+                    Spacer()
+                }.padding(24)
+            }
         }
     }
     

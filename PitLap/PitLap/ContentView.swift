@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Observation
+import SwiftfulRouting
 
 struct ContentView: View {
     @State private var activeTab: BottomNavTab = .home
@@ -17,28 +18,35 @@ struct ContentView: View {
         ZStack(alignment: .bottom) {
             Group {
                 TabView(selection: $activeTab) {
-                    HomeView()
-                        .tag(BottomNavTab.home)
-                        .background {
-                            if !isTabBarHidden {
-                                HideTabBar {
-                                    isTabBarHidden = true
+                    RouterView { _ in
+                        HomeView()
+                            .background {
+                                if !isTabBarHidden {
+                                    HideTabBar {
+                                        isTabBarHidden = true
+                                    }
                                 }
+                            }.sheet(isPresented: $viewModel.showOnboarding) {
+                                OnboardingView()
+                                    .interactiveDismissDisabled()
                             }
-                        }.sheet(isPresented: $viewModel.showOnboarding) {
-                            OnboardingView()
-                                .interactiveDismissDisabled()
-                        }
+                    }.tag(BottomNavTab.home)
+
                     
-                    RaceCalendarView()
-                        .tag(BottomNavTab.seasons)
+                    RouterView { _ in
+                        RaceCalendarView()
+                    }.tag(BottomNavTab.seasons)
+
                     
 
-                    StandingsView()
-                        .tag(BottomNavTab.standings)
+                    RouterView { _ in
+                        StandingsView()
+                    }.tag(BottomNavTab.standings)
+
                     
-                    TriviaView()
-                        .tag(BottomNavTab.trivia)
+                    RouterView { _ in
+                        TriviaView()
+                    }.tag(BottomNavTab.trivia)
                 }
             }
 

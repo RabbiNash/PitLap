@@ -84,6 +84,8 @@ struct PitThisLapWidgetEntryView : View {
             MediumScheduleEventWidget(event: entry.model)
         case .systemLarge:
             LargeScheduleEventWidget(event: entry.model)
+        case .accessoryRectangular:
+            AccessoryScheduleEventView(model: entry.model)
         default:
             EmptyView()
         }
@@ -94,10 +96,10 @@ struct ScheduleWidget: Widget {
     let kind: String = "PitThisLapWidget"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: ScheduleWidgetProvider()) { entry in
+        AppIntentConfiguration(kind: kind, provider: ScheduleWidgetProvider()) { entry in
             PitThisLapWidgetEntryView(entry: entry)
         }
-        .supportedFamilies([.systemMedium, .systemLarge])
+        .supportedFamilies([.systemMedium, .systemLarge, .accessoryRectangular])
     }
 }
 
@@ -122,65 +124,6 @@ struct InlineWidgetView: View {
         Text("🤷🏻‍♂️ View size not available 🤷🏻‍♀️")
     }
 }
-
-/// Widget view for `accessoryRectangular`
-struct RectangularWidgetView: View {
-
-    var entry: ScheduleWidgetProvider.Entry
-
-//    var model: EventScheduleModel
-
-    init(entry: ScheduleWidgetProvider.Entry) {
-        self.entry = entry
-    }
-
-    var body: some View {
-        HStack {
-            Divider()
-                .frame(maxHeight: .infinity)
-                .overlay(Rectangle().frame(width: 1).foregroundColor(.primary))
-
-//            VStack(alignment: .leading) {
-////                let race = getNextEvent(from: model)
-//
-//                Text(model.eventName ?? " ")
-//                    .font(.caption2)
-//                    .fontWeight(.bold)
-//                    .lineLimit(2)
-//                    .multilineTextAlignment(.leading)
-//
-//                Text(model?.eventFormat.rawValue.capitalized ?? " ")
-//                    .font(.caption2)
-//                    .fontWeight(.bold)
-//                    .lineLimit(2)
-//                    .multilineTextAlignment(.leading)
-//
-//                Text(model.getCustomFormattedDate(apiDate: model?.session1DateUTC ?? "") ?? " ")
-//                    .font(.caption2)
-//                    .fontWeight(.light)
-//
-//                Spacer()
-//
-//                HStack {
-//                    Text(model?.country ?? " ")
-//                        .font(.caption2)
-//                        .fontWeight(.bold)
-//                        .lineLimit(2)
-//                        .multilineTextAlignment(.leading)
-//
-//                    Spacer()
-//
-//                }
-            }
-            .padding(8)
-
-            Spacer()
-
-            Divider()
-                .frame(maxHeight: .infinity)
-                .overlay(Rectangle().frame(width: 1).foregroundColor(.primary))
-        }
-    }
 
 //    private func getNextEvent(from races: [RaceWeekendEntity]) -> RaceWeekendEntity? {
 //        let currentDate = Date()

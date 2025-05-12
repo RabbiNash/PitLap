@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct ViewCoordinator: View {
     @StateObject private var viewModel = SplashViewModel()
@@ -18,7 +19,9 @@ struct ViewCoordinator: View {
         ZStack {
             Group {
                 if viewModel.isDataLoaded {
-                    ContentView()
+                    RouterView(addNavigationStack: false, addModuleSupport: true) { _ in
+                        ContentView()
+                    }
                 } else {
                     SplashView()
                 }

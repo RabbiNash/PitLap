@@ -67,6 +67,14 @@ extension Date {
 
         return date?.formatted(date: .abbreviated, time: .standard)
     }
+    
+    static func getHumanisedAbbreviatedDate(apiDate: String) -> String? {
+        let trimmedDate = apiDate.prefix(18) + "Z"
+        let newFormatter = ISO8601DateFormatter()
+        let date = newFormatter.date(from: String(trimmedDate))
+
+        return date?.formatted(date: .abbreviated, time: .shortened)
+    }
 
     static func getHumanisedShortDate(apiDate: String) -> String? {
         let trimmedDate = apiDate.prefix(18) + "Z"

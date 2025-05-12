@@ -7,7 +7,6 @@
 
 
 enum F1YoutubeChannels: String, CaseIterable {
-    case formula1 = "Formula 1"
     case p1 = "P1 with Matt & Tommy"
     case highperfomance = "High Performance"
     case therace = "The Race"

@@ -7,19 +7,34 @@
 
 import SwiftUI
 import WidgetKit
+import SwiftfulRouting
 
 struct RaceCalendarView: View {
     @StateObject private var viewModel: RaceCalendarViewModel
     @State private var showOldRacesSheet: Bool = false
+    @Environment(\.router) var router
     
     init(viewModel: RaceCalendarViewModel = RaceCalendarViewModel()) {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var body: some View {
-        NavigationStack {
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), Color.clear]),
+                        startPoint: .top,
+                        endPoint: .center
+                    )
+                )
+                .ignoresSafeArea(.all)
+                .shadow(radius: 8)
+            
             currentSeasonView
-        }.onAppear {
+
+        } .onAppear {
             WidgetCenter.shared.reloadAllTimelines()
         }
     }
@@ -30,9 +45,17 @@ struct RaceCalendarView: View {
             LazyVStack(alignment: .leading) {
                 HStack {
                     if let event = viewModel.nextSession {
-                        NavigationLink(destination: RaceWeekendView(event: event)) {
-                            RaceWeekendHeaderView(event: event)
-                        }.buttonStyle(PlainButtonStyle())
+                        RaceWeekendHeaderView(event: event)
+                            .onTapGesture {
+                                let destination = AnyDestination(
+                                    segue: .push,
+                                    destination: { router in
+                                        RaceWeekendView(event: event, router: router)
+                                    }
+                                )
+                                
+                                router.showScreen(destination)
+                            }
                     }
                 }
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -48,7 +71,14 @@ struct RaceCalendarView: View {
                     Text("View Past Events")
                         .foregroundStyle(ThemeManager.shared.selectedTeamColor.gradient)
                         .onTapGesture {
-                            showOldRacesSheet = true
+                            let destination = AnyDestination(
+                                segue: .push,
+                                destination: { router in
+                                    OldRacesView(router: router)
+                                }
+                            )
+                            
+                            router.showScreen(destination)
                         }
                 }
                 .frame(alignment: .center)
@@ -61,7 +91,7 @@ struct RaceCalendarView: View {
                         viewModel.loadSeasonCalendar(year: viewModel.currentYear)
                     }
             }.sheet(isPresented: $showOldRacesSheet) {
-                OldRacesView()
+                OldRacesView(router: router)
                     .presentationDetents([.fraction(0.7), .large])
                     .presentationBackgroundInteraction(.disabled)
             }
@@ -76,7 +106,7 @@ struct RaceCalendarView: View {
     private var seasonView: some View {
         VStack {
             ForEach(viewModel.seasonCalendar, id: \.self) { event in
-                NavigationLink(destination: RaceWeekendView(event: event)) {
+                NavigationLink(destination: RaceWeekendView(event: event, router: router)) {
                     RaceWeekendListItemView(event: event)
                 }.buttonStyle(PlainButtonStyle())
             }

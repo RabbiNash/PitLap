@@ -7,13 +7,29 @@
 
 import SwiftUI
 import PitlapKit
+import SwiftfulRouting
 
 struct HomeView: View {
+    @Environment(\.router) var router
+    @Namespace private var namespace
+    
     @StateObject private var viewModel: HomeViewModel = HomeViewModel()
     @State private var hasFetchedData = false
     
     var body: some View {
-        NavigationStack {
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), Color.clear]),
+                        startPoint: .top,
+                        endPoint: .center
+                    )
+                )
+                .ignoresSafeArea(.all)
+                .shadow(radius: 8)
+            
             switch viewModel.fetchStatus {
             case .nonStarted:
                 progressView
@@ -39,9 +55,7 @@ struct HomeView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 24) {
                 Text("Trending News")
-                    .font(.custom("Audiowide", size: 20))
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.leading)
+                    .styleAsDisplaySmall()
                     .foregroundColor(.primary)
                     .background(
                         ThemeManager.shared.selectedTeamColor
@@ -89,9 +103,16 @@ struct HomeView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 16) {
                     ForEach(feeds, id: \.id) { item in
-                        NavigationLink(destination: ArticleView(feed: item)) {
-                            ArticleFeedItemView(feed: item)
-                        }.buttonStyle(.plain)
+                        ArticleFeedItemView(feed: item).onTapGesture {
+                            let destination = AnyDestination(
+                                segue: .push,
+                                destination: { router in
+                                    ArticleView(feed: item, router: router)
+                                }
+                            )
+                            
+                            router.showScreen(destination)
+                        }
                     }
                 }
             }.contentMargins(.leading, 16)

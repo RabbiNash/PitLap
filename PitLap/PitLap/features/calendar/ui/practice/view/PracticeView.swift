@@ -23,16 +23,29 @@ struct PracticeView: View {
     }
     
     var body: some View {
-        NavigationStack {
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), Color.clear]),
+                        startPoint: .top,
+                        endPoint: .center
+                    )
+                )
+                .ignoresSafeArea(.all)
+                .shadow(radius: 8)
+            
             content
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle(sessionName)
-                .onAppear {
-                    Task {
-                        viewModel.viewDidAppear(year: year, round: round, sessionName: sessionName)
-                    }
-                }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(sessionName)
+        .onAppear {
+            Task {
+                viewModel.viewDidAppear(year: year, round: round, sessionName: sessionName)
+            }
+        }
+         
     }
 
     private var content: some View {
@@ -43,7 +56,6 @@ struct PracticeView: View {
             .padding(24)
         }
     }
-
     
     private var resultList: some View {
         ForEach(viewModel.results, id: \.driver) { row in

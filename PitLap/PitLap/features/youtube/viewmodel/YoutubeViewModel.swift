@@ -13,7 +13,7 @@ final class YoutubeViewModel: ObservableObject {
     
     @Published var isLoading: Bool = false
     @Published var videos: [YoutubeVideoModel] = []
-    @Published var selectedChannel: F1YoutubeChannels = .formula1
+    @Published var selectedChannel: F1YoutubeChannels = .p1
 
     init(dataLogic: YoutubeDataLogicType = YoutubeDataLogic()) {
         self.dataLogic = dataLogic

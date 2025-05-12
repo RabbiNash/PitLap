@@ -13,7 +13,19 @@ struct TriviaView: View {
     @State private var showWebView = false
 
     var body: some View {
-        NavigationStack {
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), Color.clear]),
+                        startPoint: .top,
+                        endPoint: .center
+                    )
+                )
+                .ignoresSafeArea(.all)
+                .shadow(radius: 8)
+            
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     header
@@ -23,19 +35,20 @@ struct TriviaView: View {
                 }
                 .padding(.bottom, 32)
             }
-            .navigationTitle("")
-            .navigationBarHidden(true)
-        }
-        .sheet(isPresented: $showSettings) {
-            SettingsView()
-                .presentationDetents([.fraction(0.9)])
-                .presentationBackgroundInteraction(.enabled)
-        }
-        .fullScreenCover(isPresented: $showWebView) {
-            SafariView(url: URL(string: "https://f1-tempo.com")!) {
-                showWebView = false
+            .sheet(isPresented: $showSettings) {
+                SettingsView()
+                    .presentationDetents([.fraction(0.9)])
+                    .presentationBackgroundInteraction(.enabled)
+            }
+            .fullScreenCover(isPresented: $showWebView) {
+                SafariView(url: URL(string: "https://f1-tempo.com")!) {
+                    showWebView = false
+                }
             }
         }
+        .navigationTitle("")
+        .navigationBarHidden(true)
+        
     }
 
     private var header: some View {

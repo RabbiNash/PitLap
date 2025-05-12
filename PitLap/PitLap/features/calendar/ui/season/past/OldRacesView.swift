@@ -6,17 +6,33 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct OldRacesView: View {
     @State var selectedTab: SeasonTabOption = .current
     @StateObject private var viewModel = RaceCalendarViewModel()
     
-    init(viewModel: RaceCalendarViewModel = RaceCalendarViewModel()) {
+    private let router: AnyRouter
+    
+    init(viewModel: RaceCalendarViewModel = RaceCalendarViewModel(), router: AnyRouter) {
         self._viewModel = StateObject(wrappedValue: viewModel)
+        self.router = router
     }
 
     var body: some View {
-        NavigationStack {
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), Color.clear]),
+                        startPoint: .top,
+                        endPoint: .center
+                    )
+                )
+                .ignoresSafeArea(.all)
+                .shadow(radius: 8)
+            
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                     SeasonPicker(selectedOption: $selectedTab)
@@ -45,9 +61,16 @@ struct OldRacesView: View {
     private var seasonView: some View {
         VStack {
             ForEach(viewModel.seasonCalendar, id: \.self) { event in
-                NavigationLink(destination: RaceWeekendView(event: event)) {
-                    RaceWeekendListItemView(event: event)
-                }.buttonStyle(PlainButtonStyle())
+                RaceWeekendListItemView(event: event)
+                    .onTapGesture {
+                        let destination = AnyDestination(
+                            segue: .push,
+                            destination: { router in
+                                RaceWeekendView(event: event, router: router)                                  }
+                        )
+                        
+                        router.showScreen(destination)
+                    }
             }
         }
     }

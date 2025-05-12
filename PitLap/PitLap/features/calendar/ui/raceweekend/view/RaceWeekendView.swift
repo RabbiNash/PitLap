@@ -7,9 +7,11 @@
 
 import SwiftUI
 import PitlapKit
+import SwiftfulRouting
 
 struct RaceWeekendView: View {
     private let event: EventScheduleModel
+    private let router: AnyRouter
     
     @StateObject private var viewModel: RaceWeekendViewModel
     @Namespace private var namespace
@@ -17,23 +19,44 @@ struct RaceWeekendView: View {
     @State var activeSheet: SessionType?
     @State var showSheet: Bool = false
 
-    init(event: EventScheduleModel, viewModel: RaceWeekendViewModel = RaceWeekendViewModel()) {
+    init(event: EventScheduleModel, viewModel: RaceWeekendViewModel = RaceWeekendViewModel(), router: AnyRouter) {
         self.event = event
         self._viewModel = StateObject(wrappedValue: viewModel)
+        self.router = router
     }
 
     var body: some View {
-        NavigationStack {
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), Color.clear]),
+                        startPoint: .top,
+                        endPoint: .center
+                    )
+                )
+                .ignoresSafeArea(.all)
+                .shadow(radius: 8)
+            
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 20) {
                     RaceWeekendHeaderView(event: event)
                     if !isPastEvent(sessionTime: event.session5DateUTC ?? "") {
                         HStack {
                             Spacer()
-                            NavigationLink(destination: SessionWeatherView(round: Int(event.round), year: Int(event.year) ?? 0)) {
-                                Text("Session Weather")
-                                    .foregroundStyle(ThemeManager.shared.selectedTeamColor)
-                            }.buttonStyle(.plain)
+                            Text("Session Weather")
+                                .foregroundStyle(ThemeManager.shared.selectedTeamColor)
+                                .onTapGesture {
+                                    let destination = AnyDestination(
+                                        segue: .push,
+                                        destination: { router in
+                                            SessionWeatherView(round: Int(event.round), year: Int(event.year) ?? 0)
+                                        }
+                                    )
+                                    
+                                    router.showScreen(destination)
+                                }
                         }
                     }
                     eventNameView
@@ -77,9 +100,16 @@ struct RaceWeekendView: View {
             if let sessionTime = event.sessionTime(for: sessionType) {
                 if event.sessionName(for: sessionType) != "None" {
                     if isPastEvent(sessionTime: event.sessionTime(for: sessionType) ?? "") {
-                        NavigationLink(destination: sheetContent(for: sessionType)) {
-                            SessionItemView(sessionName: event.sessionName(for: sessionType), sessionTime: sessionTime)
-                        }.buttonStyle(.plain)
+                        SessionItemView(sessionName: event.sessionName(for: sessionType), sessionTime: sessionTime)
+                            .onTapGesture {
+                                let destination = AnyDestination(
+                                    segue: .push,
+                                    destination: { router in
+                                        sheetContent(for: sessionType)                                     }
+                                )
+                                
+                                router.showScreen(destination)
+                            }
                     } else {
                         SessionItemView(sessionName: event.sessionName(for: sessionType), sessionTime: sessionTime)
                     }
