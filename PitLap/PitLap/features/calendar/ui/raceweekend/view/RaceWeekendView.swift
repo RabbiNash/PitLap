@@ -69,11 +69,6 @@ struct RaceWeekendView: View {
                         Spacer()
                     }.padding(.bottom, 24)
                 }
-                .sheet(item: $activeSheet) { sessionType in
-                    sheetContent(for: sessionType)
-                        .presentationBackgroundInteraction(.disabled)
-                        .presentationDetents([.medium, .large])
-                }
                 .padding(24)
                 .overlay(progressView, alignment: .top)
             }
@@ -105,7 +100,8 @@ struct RaceWeekendView: View {
                                 let destination = AnyDestination(
                                     segue: .push,
                                     destination: { router in
-                                        sheetContent(for: sessionType)                                     }
+                                        sheetContent(for: sessionType, router: router)
+                                    }
                                 )
                                 
                                 router.showScreen(destination)
@@ -162,7 +158,7 @@ struct RaceWeekendView: View {
     }
     
     @ViewBuilder
-    private func sheetContent(for sessionType: SessionType) -> some View {
+    private func sheetContent(for sessionType: SessionType, router: AnyRouter) -> some View {
         if let year = Int(event.year) {
             let round = event.round
             
@@ -172,10 +168,10 @@ struct RaceWeekendView: View {
             case .session4:
                 QualifyingResultView(year: year, round: Int(round))
             case .session1:
-                PracticeView(year: year, round: Int(round), sessionName: event.session1)
+                PracticeView(year: year, round: Int(round), sessionName: event.session1, router: router)
             case .session2 where event.session2 == "Practice 2",
                  .session3 where event.session3 == "Practice 3":
-                PracticeView(year: year, round: Int(round), sessionName: sessionType == .session2 ? event.session2 : event.session3)
+                PracticeView(year: year, round: Int(round), sessionName: sessionType == .session2 ? event.session2 : event.session3, router: router)
             default:
                 Text("Coming Soon")
             }

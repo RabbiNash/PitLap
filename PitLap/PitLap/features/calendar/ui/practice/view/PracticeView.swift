@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PitlapKit
+import SwiftfulRouting
 
 struct PracticeView: View {
     @StateObject var viewModel: PracticeViewModel
@@ -14,12 +14,19 @@ struct PracticeView: View {
     private let year: Int
     private let round: Int
     private let sessionName: String
+    private let router: AnyRouter
     
-    init(viewModel: PracticeViewModel = PracticeViewModel(), year: Int, round: Int, sessionName: String) {
+    init(viewModel: PracticeViewModel = PracticeViewModel(),
+         year: Int,
+         round: Int,
+         sessionName: String,
+         router: AnyRouter
+    ) {
         self._viewModel = StateObject(wrappedValue: viewModel)
         self.year = year
         self.round = round
         self.sessionName = sessionName
+        self.router = router
     }
     
     var body: some View {
@@ -40,6 +47,22 @@ struct PracticeView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(sessionName)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    let destination = AnyDestination(
+                        segue: .push,
+                        destination: { router in
+                            SessionTopSpeedView(year: year, round: round, sessionName: sessionName)
+                        }
+                    )
+                    
+                    router.showScreen(destination)
+                }) {
+                    Image(systemName: "speedometer")
+                }
+            }
+        }
         .onAppear {
             Task {
                 viewModel.viewDidAppear(year: year, round: round, sessionName: sessionName)

@@ -22,6 +22,8 @@
 		864F8ED42DB7FB2200D2542E /* MediumScheduleEventWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F8ED32DB7FB2200D2542E /* MediumScheduleEventWidget.swift */; };
 		864F8ED62DB7FBDC00D2542E /* EventSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F8ED52DB7FBDC00D2542E /* EventSession.swift */; };
 		864F8ED82DB7FEF900D2542E /* ScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F8ED72DB7FEF900D2542E /* ScheduleHeaderView.swift */; };
+		8652A5DD2DD79C1600EA45D7 /* SessionTopSpeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652A5DC2DD79C0500EA45D7 /* SessionTopSpeedViewModel.swift */; };
+		8652A5DF2DD79DD800EA45D7 /* SessionTopSpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652A5DE2DD79DD800EA45D7 /* SessionTopSpeedView.swift */; };
 		865618FB2D5C184800567D38 /* PitlapPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618F92D5C184700567D38 /* PitlapPicker.swift */; };
 		865618FE2D5C1B9700567D38 /* StandingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865618FD2D5C1B9700567D38 /* StandingPickerView.swift */; };
 		8657214F2DA5205300AB15E9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657214E2DA5205300AB15E9 /* HomeViewModel.swift */; };
@@ -211,6 +213,8 @@
 		864F8ED32DB7FB2200D2542E /* MediumScheduleEventWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumScheduleEventWidget.swift; sourceTree = "<group>"; };
 		864F8ED52DB7FBDC00D2542E /* EventSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSession.swift; sourceTree = "<group>"; };
 		864F8ED72DB7FEF900D2542E /* ScheduleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHeaderView.swift; sourceTree = "<group>"; };
+		8652A5DC2DD79C0500EA45D7 /* SessionTopSpeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTopSpeedViewModel.swift; sourceTree = "<group>"; };
+		8652A5DE2DD79DD800EA45D7 /* SessionTopSpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTopSpeedView.swift; sourceTree = "<group>"; };
 		865618F92D5C184700567D38 /* PitlapPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitlapPicker.swift; sourceTree = "<group>"; };
 		865618FD2D5C1B9700567D38 /* StandingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingPickerView.swift; sourceTree = "<group>"; };
 		8657214E2DA5205300AB15E9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -441,6 +445,31 @@
 				864F8ED72DB7FEF900D2542E /* ScheduleHeaderView.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		8652A5D92DD79BE300EA45D7 /* speed */ = {
+			isa = PBXGroup;
+			children = (
+				8652A5DB2DD79BFE00EA45D7 /* viewmodel */,
+				8652A5DA2DD79BF200EA45D7 /* view */,
+			);
+			path = speed;
+			sourceTree = "<group>";
+		};
+		8652A5DA2DD79BF200EA45D7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8652A5DE2DD79DD800EA45D7 /* SessionTopSpeedView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8652A5DB2DD79BFE00EA45D7 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				8652A5DC2DD79C0500EA45D7 /* SessionTopSpeedViewModel.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 		865F088F2DD288B000B56A5D /* launch */ = {
@@ -993,6 +1022,7 @@
 		FF75D35E2D232CAF00160331 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				8652A5D92DD79BE300EA45D7 /* speed */,
 				86645A4B2D5EAD66004BAB44 /* practice */,
 				86645A2F2D5E29EB004BAB44 /* qualifying */,
 				FF75D3732D233B2400160331 /* raceweekend */,
@@ -1428,6 +1458,7 @@
 				FF9A50C22D499620001F1697 /* DriverStandingEntity.swift in Sources */,
 				FF52D1812D3FE7D500DF2573 /* LeadChangeView.swift in Sources */,
 				FF52D16C2D3F2FA400DF2573 /* StandingsViewModel.swift in Sources */,
+				8652A5DD2DD79C1600EA45D7 /* SessionTopSpeedViewModel.swift in Sources */,
 				865618FE2D5C1B9700567D38 /* StandingPickerView.swift in Sources */,
 				86645AE92D6965B4004BAB44 /* F1YoutubeChannels.swift in Sources */,
 				86645B3B2D6F92B6004BAB44 /* SafariView.swift in Sources */,
@@ -1490,6 +1521,7 @@
 				FF75D37A2D233FF900160331 /* Extension.swift in Sources */,
 				86645A3A2D5E2F3E004BAB44 /* QualifyingResultView.swift in Sources */,
 				86645B262D6BCE3E004BAB44 /* AppDelegate.swift in Sources */,
+				8652A5DF2DD79DD800EA45D7 /* SessionTopSpeedView.swift in Sources */,
 				FF52D14A2D3EFFD200DF2573 /* SplashView.swift in Sources */,
 				FF52D1832D40026F00DF2573 /* TriviaView.swift in Sources */,
 				8683B59A2D9BF6B9000AD7BA /* RaceTrack.swift in Sources */,
