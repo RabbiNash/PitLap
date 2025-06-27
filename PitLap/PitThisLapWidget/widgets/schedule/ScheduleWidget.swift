@@ -67,7 +67,7 @@ struct ScheduleWidgetProvider: AppIntentTimelineProvider {
             return nil
         }
 
-        return Calendar.current.date(byAdding: .day, value: 1, to: baseDate)
+        return Calendar.current.date(byAdding: .hour, value: 1, to: baseDate)
     }
         
 }
