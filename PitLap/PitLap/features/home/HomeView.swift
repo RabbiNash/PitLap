@@ -54,7 +54,7 @@ struct HomeView: View {
     var content: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: UIDevice.isIPad ? 32 : 24) {
-                Text("Trending News")
+                Text(LocalizedStrings.trendingNews)
                     .styleAsDisplaySmall()
                     .foregroundColor(.primary)
                     .background(
@@ -66,7 +66,7 @@ struct HomeView: View {
                 
                 articleHorizontalList(feeds: viewModel.feed)
                 
-                Text("Latest Videos")
+                Text(LocalizedStrings.latestVideos)
                     .font(.custom("Audiowide", size: UIDevice.isIPad ? 24 : 20))
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
@@ -116,7 +116,7 @@ struct HomeView: View {
                 LazyHStack(spacing: UIDevice.isIPad ? 20 : 16) {
                     ForEach(feeds, id: \.id) { item in
                         ArticleFeedItemView(feed: item)
-                            .frame(width: UIDevice.isIPad ? 300 : 250)
+                            .frame(maxWidth: UIDevice.isIPad ? .infinity : 250)
                             .onTapGesture {
                                 let destination = AnyDestination(
                                     segue: .push,
@@ -153,7 +153,7 @@ struct HomeView: View {
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Pos")
+                        Text(LocalizedStrings.position)
                             .foregroundColor(.white.opacity(0.7))
                         Text(driver.positionText)
                             .foregroundColor(.white)
@@ -162,7 +162,7 @@ struct HomeView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Pts")
+                        Text(LocalizedStrings.points)
                             .foregroundColor(.white.opacity(0.7))
                         Text("\(driver.points)")
                             .foregroundColor(.white)

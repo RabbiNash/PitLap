@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct iPadNavigationView: View {
     @Binding var activeTab: BottomNavTab
@@ -16,7 +17,7 @@ struct iPadNavigationView: View {
             // Sidebar
             VStack(alignment: .leading, spacing: 0) {
                 // App Header
-                Text("Pitlap")
+                Text(LocalizedStrings.appName)
                     .styleAsDisplayHero()
                     .foregroundColor(.primary)
                     .padding(.horizontal, 20)
@@ -43,7 +44,7 @@ struct iPadNavigationView: View {
                     HStack {
                         Image(systemName: "gear")
                             .font(.caption)
-                        Text("Settings")
+                        Text(LocalizedStrings.settings)
                             .font(.caption)
                     }
                     .foregroundColor(.secondary)
@@ -55,18 +56,26 @@ struct iPadNavigationView: View {
             .navigationSplitViewColumnWidth(min: 200, ideal: 250, max: 300)
         } detail: {
             // Main Content
-            Group {
-                switch activeTab {
-                case .home:
-                    HomeView()
-                case .seasons:
-                    RaceCalendarView()
-                case .standings:
-                    StandingsView()
-                case .trivia:
-                    TriviaView()
+            
+            
+                Group {
+                    switch activeTab {
+                    case .home:
+                        RouterView { _ in
+                            HomeView()
+                        }
+                    case .seasons:
+                            RaceCalendarView()
+                    case .standings:
+                        StandingsView()
+                    case .trivia:
+                        RouterView { _ in
+                            TriviaView()
+                        }
                 }
             }
+            .navigationTitle("")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .navigationSplitViewStyle(.balanced)
         .onAppear {
@@ -85,12 +94,11 @@ struct iPadNavigationItem: View {
         Button(action: action) {
             HStack(spacing: 12) {
                 Image(systemName: tab.icon)
-                    .font(.title3)
                     .frame(width: 24, height: 24)
                     .foregroundColor(isSelected ? .white : .primary)
                 
                 Text(tab.title)
-                    .font(.body)
+                    .styleAsDisplaySmall()
                     .fontWeight(isSelected ? .semibold : .regular)
                     .foregroundColor(isSelected ? .white : .primary)
                 

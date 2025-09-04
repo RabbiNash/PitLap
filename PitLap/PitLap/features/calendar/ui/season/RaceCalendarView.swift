@@ -61,14 +61,14 @@ struct RaceCalendarView: View {
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
 
                 HStack {
-                    Text("Calendar")
+                    Text(LocalizedStrings.calendar)
                         .font(.custom("Audiowide",size: 28))
                         .fontWeight(.bold)
                         .padding(.horizontal, 16)
                     
                     Spacer()
                     
-                    Text("View Past Events")
+                    Text(LocalizedStrings.viewPastEvents)
                         .foregroundStyle(ThemeManager.shared.selectedTeamColor.gradient)
                         .onTapGesture {
                             let destination = AnyDestination(

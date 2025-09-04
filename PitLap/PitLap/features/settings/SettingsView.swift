@@ -16,7 +16,7 @@ struct SettingsView: View {
         NavigationStack {
             VStack {
                 List {
-                    Picker("Team", selection: $viewModel.team) {
+                    Picker(LocalizedStrings.team, selection: $viewModel.team) {
                         ForEach(F1Team.allCases, id: \.self) { team in
                             Text(team.rawValue.capitalized)
                                 .tag(team.rawValue)
@@ -24,7 +24,7 @@ struct SettingsView: View {
                     }
                     .pickerStyle(.navigationLink)
                     
-                    Picker("News Source", selection: $viewModel.source) {
+                    Picker(LocalizedStrings.newsSource, selection: $viewModel.source) {
                         ForEach(FeedSource.allCases, id: \.self) { source in
                             Text(source.title)
                                 .tag(source.rawValue)
@@ -32,10 +32,10 @@ struct SettingsView: View {
                     }
                     .pickerStyle(.navigationLink)
                     
-                    Toggle("Enable Dark Mode", isOn: $viewModel.darkMode)
+                    Toggle(LocalizedStrings.darkMode, isOn: $viewModel.darkMode)
                     
-                    Section("Notifications") {
-                        Toggle("Enable Notifications", isOn: $viewModel.notifications)
+                    Section(LocalizedStrings.notifications) {
+                        Toggle(LocalizedStrings.enableNotifications, isOn: $viewModel.notifications)
                     }
                     
                     if viewModel.notifications {
@@ -83,21 +83,21 @@ struct SettingsView: View {
                     viewModel.didTapConfirm()
                     dismiss()
                 } label : {
-                    Text("Confirm")
+                    Text(LocalizedStrings.confirm)
                 }
                 .padding()
                 .buttonStyle(PrimaryButtonStyle())
                 
-                Text("Version: \(viewModel.appVersion) (\(viewModel.appBuild))")
+                Text(LocalizedStrings.version(viewModel.appVersion, viewModel.appBuild))
                     .font(.caption)
                     .foregroundColor(.gray)
                 
-                Text("This app is not affiliated with the FIA or with Formula 1, or any other news source and teams mentioned in anywhere in the app")
+                Text(LocalizedStrings.disclaimer)
                     .font(.caption)
                     .foregroundColor(.gray)
                     .padding()
             }
-            .navigationTitle("Preferences")
+            .navigationTitle(LocalizedStrings.preferences)
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 requestNotificationPermission()

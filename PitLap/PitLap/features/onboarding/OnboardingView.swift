@@ -13,14 +13,14 @@ struct OnboardingView: View {
 
     var body: some View {
             VStack(alignment: .center) {
-                Text("PITLAP")
+                Text(LocalizedStrings.onboardingTitle)
                     .fontWeight(.bold)
                     .font(.custom("Audiowide", size: 48))
                 
-                Text("Customize your app to match your favorite team")
+                Text(LocalizedStrings.onboardingSubtitle)
                     .multilineTextAlignment(.center)
                 
-                Picker("Team", selection: $viewModel.team) {
+                Picker(LocalizedStrings.team, selection: $viewModel.team) {
                     ForEach(F1Team.allCases, id: \.self) { team in
                         Text(team.rawValue.capitalized)
                             .tag(team.rawValue)
@@ -32,7 +32,7 @@ struct OnboardingView: View {
                     viewModel.completeOnboarding()
                     dismiss()
                 } label : {
-                    Text("Confirm")
+                    Text(LocalizedStrings.confirm)
                 }
                 .padding()
                 .buttonStyle(PrimaryButtonStyle())

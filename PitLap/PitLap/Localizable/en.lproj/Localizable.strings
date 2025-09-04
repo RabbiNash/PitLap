@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  PitLap
+
+  Created by Tinashe MAKUTI on 30/12/2024.
+*/
+
+// MARK: - App Name
+"app.name" = "Pitlap";
+
+// MARK: - Tab Navigation
+"tab.home" = "Home";
+"tab.seasons" = "Season";
+"tab.standings" = "Standings";
+"tab.trivia" = "Trivia";
+
+// MARK: - Settings
+"settings.title" = "Preferences";
+"settings.team" = "Team";
+"settings.news_source" = "News Source";
+"settings.dark_mode" = "Enable Dark Mode";
+"settings.notifications" = "Notifications";
+"settings.enable_notifications" = "Enable Notifications";
+"settings.settings" = "Settings";
+"settings.confirm" = "Confirm";
+"settings.version" = "Version: %@ (%@)";
+"settings.disclaimer" = "This app is not affiliated with the FIA or with Formula 1, or any other news source and teams mentioned in anywhere in the app";
+
+// MARK: - Onboarding
+"onboarding.title" = "PITLAP";
+"onboarding.subtitle" = "Customize your app to match your favorite team";
+
+// MARK: - Home
+"home.trending_news" = "Trending News";
+"home.latest_videos" = "Latest Videos";
+"home.position" = "Pos";
+"home.points" = "Pts";
+
+// MARK: - Calendar
+"calendar.title" = "Calendar";
+"calendar.view_past_events" = "View Past Events";
+"calendar.round" = "Round %d";
+"calendar.session_weather" = "Session Weather";
+"calendar.race_day_weather" = "Race Day Weather";
+"calendar.race_summary" = "Race Summary";
+"calendar.track_facts" = "Track Facts";
+"calendar.coming_soon" = "Coming Soon";
+"calendar.invalid_year" = "Invalid Year";
+
+// MARK: - Race Results
+"race.qualifying_result" = "Qualifying Result";
+"race.race_result" = "Race Result";
+
+// MARK: - YouTube
+"youtube.select_channel" = "Select Preferred Channel";
+
+// MARK: - Trivia
+"trivia.title" = "Trivia";
+
+// MARK: - Common
+"common.link" = "Link";
+"common.none" = "None";

@@ -17,23 +17,27 @@ struct VideoPlayerDescriptionView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 12) {
+                
                 PlayerView(videoId: video.videoId)
-                    .frame(height: 300)
-                    .cornerRadius(8)
-
+                    .aspectRatio(16.0/9.0, contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                
                 Text(video.title)
-                    .font(.custom("Audiowide",size: 16))
+                    .font(.custom("Audiowide", size: 18))
                     .fontWeight(.bold)
-                    .bold()
-                    .padding(.top, 10)
-
+                    .lineLimit(nil)
+                
                 Text(video.description_)
+                    .font(.body)
                     .foregroundColor(.secondary)
-                    .padding(.top, 5)
+                    .fixedSize(horizontal: false, vertical: true)
             }
-            .padding()
+            .padding(.horizontal)
+            .padding(.top)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .background(Color(UIColor.systemBackground))
         .navigationTitle("Formula 1")
         .navigationBarTitleDisplayMode(.inline)
     }

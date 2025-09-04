@@ -31,7 +31,7 @@ struct VideoListView: View {
             ScrollView {
                 LazyVStack {
                     HStack {
-                        Picker(selection: $viewModel.selectedChannel, label: Text("Select Preferred Channel")) {
+                        Picker(selection: $viewModel.selectedChannel, label: Text(LocalizedStrings.selectChannel)) {
                             ForEach(F1YoutubeChannels.allCases, id: \.self) { channel in
                                 Text(channel.rawValue)
                             }

@@ -16,13 +16,13 @@ enum BottomNavTab: String, CaseIterable {
     var title: String {
         switch self {
         case .seasons:
-            return "Season"
+            return LocalizedStrings.seasons
         case .standings:
-            return "Standings"
+            return LocalizedStrings.standings
         case .trivia:
-            return "Trivia"
+            return LocalizedStrings.trivia
         case .home:
-            return "Home"
+            return LocalizedStrings.home
         }
     }
 

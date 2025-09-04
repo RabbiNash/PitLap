@@ -44,7 +44,7 @@ struct RaceResultView: View {
             
             content
         }.navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Race Result")
+        .navigationTitle(LocalizedStrings.raceResult)
     }
 
     private var content: some View {

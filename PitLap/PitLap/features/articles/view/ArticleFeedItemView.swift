@@ -40,28 +40,54 @@ struct ArticleFeedItemView: View {
                             .shadow(radius: 8)
                     )
 
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(feed.title)
-                        .styleAsDisplaySmall()
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .lineLimit(4)
+                if UIDevice.isIPad {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(feed.title)
+                            .styleAsDisplayLarge()
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .lineLimit(4)
 
+                            HStack {
+                                Image(systemName: "link")
+                                Text(feed.channelTitle)
+                                    .styleAsBodyLarge()
+                                    .lineLimit(1)
+
+                            }
+                            .foregroundColor(.white)
+                            
+                        Text(feed.pubDate)
+                                .foregroundColor(.white)
+                                .styleAsBodyMedium()
+
+                    }
+                    .padding(12)
+                } else {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(feed.title)
+                            .styleAsDisplaySmall()
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .lineLimit(4)
+                        
                         HStack {
                             Image(systemName: "link")
                             Text(feed.channelTitle)
                                 .lineLimit(1)
                                 .font(.custom("Noto Sans", size: 12))
-
+                            
                         }
                         .foregroundColor(.white)
                         
-                    Text(feed.pubDate)
+                        Text(feed.pubDate)
                             .foregroundColor(.white)
                             .font(.custom("Noto Sans", size: 12))
-
+                        
+                    }
+                    .padding(12)
                 }
-                .padding(12)
+                
             }
         }
         .frame(width: width, height: UIScreen.main.bounds.height / 2)

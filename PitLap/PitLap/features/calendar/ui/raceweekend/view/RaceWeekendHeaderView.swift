@@ -25,7 +25,7 @@ struct RaceWeekendHeaderView: View {
                 )
             
             VStack(alignment: .leading) {
-                (Text("Round ") + Text("\(event.round)"))
+                (Text(LocalizedStrings.round(Int(event.round))))
                     .font(.custom("Noto Sans",size: 20))
                     .foregroundStyle(.white)
                     .fontWeight(.semibold)

@@ -102,6 +102,10 @@
 		8683B59F2D9C3F95000AD7BA /* RaceReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */; };
 		8683B5A12D9D3D28000AD7BA /* RaceReactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */; };
 		8683B5E12D9E9F64000AD7BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5E02D9E9F64000AD7BA /* HomeView.swift */; };
+		868627632E6A42A600642550 /* LocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868627622E6A42A500642550 /* LocalizationHelper.swift */; };
+		8686276E2E6A42F600642550 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 868627692E6A42F600642550 /* Localizable.strings */; };
+		8686276F2E6A42F600642550 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8686276C2E6A42F600642550 /* Localizable.strings */; };
+		868627702E6A42F600642550 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 868627662E6A42F600642550 /* Localizable.strings */; };
 		868B2DC12E1DACE400CB1D7B /* PitlapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 868B2DC02E1DACE400CB1D7B /* PitlapKit */; };
 		868B2DC42E1DADF900CB1D7B /* TeamRadioDataLogicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B2DC32E1DADF900CB1D7B /* TeamRadioDataLogicType.swift */; };
 		868B2DCA2E1DAEC500CB1D7B /* RadioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B2DC92E1DAEC500CB1D7B /* RadioViewModel.swift */; };
@@ -308,6 +312,10 @@
 		8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionView.swift; sourceTree = "<group>"; };
 		8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionViewModel.swift; sourceTree = "<group>"; };
 		8683B5E02D9E9F64000AD7BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		868627622E6A42A500642550 /* LocalizationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationHelper.swift; sourceTree = "<group>"; };
+		868627652E6A42F600642550 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		868627682E6A42F600642550 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Localizable.strings; sourceTree = "<group>"; };
+		8686276B2E6A42F600642550 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		868B2DC32E1DADF900CB1D7B /* TeamRadioDataLogicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRadioDataLogicType.swift; sourceTree = "<group>"; };
 		868B2DC92E1DAEC500CB1D7B /* RadioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewModel.swift; sourceTree = "<group>"; };
 		868B2DCB2E1DAFC200CB1D7B /* RaceInfoDataLogicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceInfoDataLogicType.swift; sourceTree = "<group>"; };
@@ -866,6 +874,40 @@
 			path = home;
 			sourceTree = "<group>";
 		};
+		868627642E6A42B200642550 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				868627672E6A42F600642550 /* en.lproj */,
+				8686276A2E6A42F600642550 /* es.lproj */,
+				8686276D2E6A42F600642550 /* fr.lproj */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		868627672E6A42F600642550 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				868627662E6A42F600642550 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		8686276A2E6A42F600642550 /* es.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				868627692E6A42F600642550 /* Localizable.strings */,
+			);
+			path = es.lproj;
+			sourceTree = "<group>";
+		};
+		8686276D2E6A42F600642550 /* fr.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				8686276C2E6A42F600642550 /* Localizable.strings */,
+			);
+			path = fr.lproj;
+			sourceTree = "<group>";
+		};
 		868B2DC22E1DADE300CB1D7B /* radio */ = {
 			isa = PBXGroup;
 			children = (
@@ -1142,6 +1184,7 @@
 		FF75D34C2D232BD700160331 /* PitLap */ = {
 			isa = PBXGroup;
 			children = (
+				868627642E6A42B200642550 /* Localizable */,
 				865F088F2DD288B000B56A5D /* launch */,
 				86645B2A2D6BD056004BAB44 /* PitLap.entitlements */,
 				86645B242D6BCE2C004BAB44 /* app */,
@@ -1267,6 +1310,7 @@
 				865618F92D5C184700567D38 /* PitlapPicker.swift */,
 				86645AAD2D6433D7004BAB44 /* MultiSelectionPickerView.swift */,
 				8652FDC22E6A3156007018B8 /* iPadAdaptiveModifiers.swift */,
+				868627622E6A42A500642550 /* LocalizationHelper.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1500,6 +1544,8 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				fr,
 			);
 			mainGroup = FF75D3412D232BD700160331;
 			packageReferences = (
@@ -1548,6 +1594,9 @@
 				86645A272D5E0BC1004BAB44 /* 9.png in Resources */,
 				FF75D3522D232BDA00160331 /* Assets.xcassets in Resources */,
 				86645B192D6BCD97004BAB44 /* GoogleService-Info.plist in Resources */,
+				8686276E2E6A42F600642550 /* Localizable.strings in Resources */,
+				8686276F2E6A42F600642550 /* Localizable.strings in Resources */,
+				868627702E6A42F600642550 /* Localizable.strings in Resources */,
 				86645B292D6BCF17004BAB44 /* PrivacyInfo.xcprivacy in Resources */,
 				86F1B82B2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */,
 			);
@@ -1703,6 +1752,7 @@
 				FF75D37A2D233FF900160331 /* Extension.swift in Sources */,
 				86645A3A2D5E2F3E004BAB44 /* QualifyingResultView.swift in Sources */,
 				86645B262D6BCE3E004BAB44 /* AppDelegate.swift in Sources */,
+				868627632E6A42A600642550 /* LocalizationHelper.swift in Sources */,
 				8652A5DF2DD79DD800EA45D7 /* SessionTopSpeedView.swift in Sources */,
 				FF52D14A2D3EFFD200DF2573 /* SplashView.swift in Sources */,
 				FF52D1832D40026F00DF2573 /* TriviaView.swift in Sources */,
@@ -1774,6 +1824,33 @@
 			targetProxy = FF9A50C82D499D3B001F1697 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		868627662E6A42F600642550 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				868627652E6A42F600642550 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		868627692E6A42F600642550 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				868627682E6A42F600642550 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		8686276C2E6A42F600642550 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8686276B2E6A42F600642550 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		86645AA32D642CD0004BAB44 /* Debug */ = {
@@ -1953,9 +2030,9 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1990,9 +2067,9 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (

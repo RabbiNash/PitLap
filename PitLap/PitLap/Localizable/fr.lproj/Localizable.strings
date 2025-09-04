@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  PitLap
+
+  Created by Tinashe MAKUTI on 30/12/2024.
+*/
+
+// MARK: - App Name
+"app.name" = "Pitlap";
+
+// MARK: - Tab Navigation
+"tab.home" = "Accueil";
+"tab.seasons" = "Saison";
+"tab.standings" = "Classement";
+"tab.trivia" = "Trivia";
+
+// MARK: - Settings
+"settings.title" = "Préférences";
+"settings.team" = "Équipe";
+"settings.news_source" = "Source d'Actualités";
+"settings.dark_mode" = "Activer le Mode Sombre";
+"settings.notifications" = "Notifications";
+"settings.enable_notifications" = "Activer les Notifications";
+"settings.settings" = "Paramètres";
+"settings.confirm" = "Confirmer";
+"settings.version" = "Version: %@ (%@)";
+"settings.disclaimer" = "Cette application n'est pas affiliée à la FIA ou à la Formule 1, ni à aucune autre source d'actualités et équipes mentionnées n'importe où dans l'application";
+
+// MARK: - Onboarding
+"onboarding.title" = "PITLAP";
+"onboarding.subtitle" = "Personnalisez votre application pour qu'elle corresponde à votre équipe favorite";
+
+// MARK: - Home
+"home.trending_news" = "Actualités Tendance";
+"home.latest_videos" = "Dernières Vidéos";
+"home.position" = "Pos";
+"home.points" = "Pts";
+
+// MARK: - Calendar
+"calendar.title" = "Calendrier";
+"calendar.view_past_events" = "Voir les Événements Passés";
+"calendar.round" = "Ronde %d";
+"calendar.session_weather" = "Météo de la Session";
+"calendar.race_day_weather" = "Météo du Jour de Course";
+"calendar.race_summary" = "Résumé de la Course";
+"calendar.track_facts" = "Faits sur le Circuit";
+"calendar.coming_soon" = "Bientôt";
+"calendar.invalid_year" = "Année Invalide";
+
+// MARK: - Race Results
+"race.qualifying_result" = "Résultat des Qualifications";
+"race.race_result" = "Résultat de la Course";
+
+// MARK: - YouTube
+"youtube.select_channel" = "Sélectionner le Canal Préféré";
+
+// MARK: - Trivia
+"trivia.title" = "Trivia";
+
+// MARK: - Common
+"common.link" = "Lien";
+"common.none" = "Aucun";

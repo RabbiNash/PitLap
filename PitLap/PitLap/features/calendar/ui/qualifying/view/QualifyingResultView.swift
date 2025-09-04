@@ -36,7 +36,7 @@ struct QualifyingResultView: View {
             content
                 
         }.navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Qualifying Result")
+            .navigationTitle(LocalizedStrings.qualifyingResult)
             .onAppear {
                 Task {
                     viewModel.viewDidAppear(year: year, round: round)

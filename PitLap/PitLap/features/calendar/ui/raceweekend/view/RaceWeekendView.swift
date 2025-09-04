@@ -45,7 +45,7 @@ struct RaceWeekendView: View {
                     if !isPastEvent(sessionTime: event.session5DateUTC ?? "") {
                         HStack {
                             Spacer()
-                            Text("Session Weather")
+                            Text(LocalizedStrings.sessionWeather)
                                 .foregroundStyle(ThemeManager.shared.selectedTeamColor)
                                 .onTapGesture {
                                     let destination = AnyDestination(
@@ -117,14 +117,14 @@ struct RaceWeekendView: View {
     @ViewBuilder
     private var raceSummaryView: some View {
         if let raceSummary = viewModel.raceSummary {
-            SummaryView(title: "Race Summary", content: raceSummary.summary)
+            SummaryView(title: LocalizedStrings.raceSummary, content: raceSummary.summary)
         }
     }
 
     @ViewBuilder
     private var trackFactsView: some View {
         if let trackSummary = viewModel.trackSummary {
-            SummaryView(title: "Track Facts", content: trackSummary.fact)
+            SummaryView(title: LocalizedStrings.trackFacts, content: trackSummary.fact)
         }
     }
 
@@ -140,7 +140,7 @@ struct RaceWeekendView: View {
     private var sessionWeather: some View {
         if let weather = viewModel.weather {
             VStack(alignment: .leading) {
-                Text("Race Day Weather")
+                Text(LocalizedStrings.raceDayWeather)
                     .font(.custom("Audiowide", size: 24))
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
@@ -173,10 +173,10 @@ struct RaceWeekendView: View {
                  .session3 where event.session3 == "Practice 3":
                 PracticeView(year: year, round: Int(round), sessionName: sessionType == .session2 ? event.session2 : event.session3, router: router)
             default:
-                Text("Coming Soon")
+                Text(LocalizedStrings.comingSoon)
             }
         } else {
-            Text("Invalid Year")
+            Text(LocalizedStrings.invalidYear)
         }
     }
 
