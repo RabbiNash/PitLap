@@ -1,5 +1,5 @@
 {
-  "originHash" : "00835e436e766ca561865ec7d3e3db2ffa80ef866c0eb9f22bae04639b5f4578",
+  "originHash" : "8a91ac0415be380caa1f64b9e8bc0a3bc289d85fb94787de8ca4ba4cf8a6e243",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -17,6 +17,33 @@
       "state" : {
         "revision" : "61b85103a1aeed8218f17c794687781505fbbef5",
         "version" : "11.2.0"
+      }
+    },
+    {
+      "identity" : "audiokit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/AudioKit",
+      "state" : {
+        "revision" : "5b3fd238ef8ee95c9842ca4ea83ca58ee151e630",
+        "version" : "5.6.5"
+      }
+    },
+    {
+      "identity" : "audiokitui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/AudioKitUI",
+      "state" : {
+        "revision" : "1a61e8a96c7ee24c3e5abe06dc3334a31fd7571d",
+        "version" : "0.3.7"
+      }
+    },
+    {
+      "identity" : "controls",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/Controls.git",
+      "state" : {
+        "revision" : "4dd10370125af7f1e26d7a71b2c5929bb3c95087",
+        "version" : "1.1.4"
       }
     },
     {
@@ -114,8 +141,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RabbiNash/PitlapKit",
       "state" : {
-        "revision" : "aff41ae5bee8d7da700aaf307cb515421a64d37c",
-        "version" : "0.2.6"
+        "revision" : "beba726025018d482acbf37d161eb5e3207ae2e4",
+        "version" : "0.2.8"
       }
     },
     {

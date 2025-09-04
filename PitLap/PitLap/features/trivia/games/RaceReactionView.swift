@@ -13,7 +13,7 @@ struct RaceReactionView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 16)
+            Rectangle()
                 .fill(
                     LinearGradient(
                         gradient: Gradient(

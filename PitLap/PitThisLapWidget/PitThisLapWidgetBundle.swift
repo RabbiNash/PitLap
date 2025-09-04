@@ -12,5 +12,7 @@ import SwiftUI
 struct PitThisLapWidgetBundle: WidgetBundle {
     var body: some Widget {
         ScheduleWidget()
+        DriverStatsWidget()
+        ConstructorStatsWidget()
     }
 }

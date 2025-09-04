@@ -13,44 +13,57 @@ struct ContentView: View {
     @State private var activeTab: BottomNavTab = .home
     @State private var isTabBarHidden: Bool = false
     @StateObject private var viewModel: ViewModel = ViewModel()
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            Group {
-                TabView(selection: $activeTab) {
-                    RouterView { _ in
-                        HomeView()
-                            .background {
-                                if !isTabBarHidden {
-                                    HideTabBar {
-                                        isTabBarHidden = true
+        Group {
+            if UIDevice.isIPad && horizontalSizeClass == .regular {
+                // iPad with regular horizontal size class - use split view
+                iPadNavigationView(activeTab: $activeTab)
+                    .sheet(isPresented: $viewModel.showOnboarding) {
+                        OnboardingView()
+                            .interactiveDismissDisabled()
+                    }
+            } else {
+                // iPhone or iPad in compact mode - use traditional tab view
+                ZStack(alignment: .bottom) {
+                    Group {
+                        TabView(selection: $activeTab) {
+                            RouterView { _ in
+                                HomeView()
+                                    .background {
+                                        if !isTabBarHidden {
+                                            HideTabBar {
+                                                isTabBarHidden = true
+                                            }
+                                        }
+                                    }.sheet(isPresented: $viewModel.showOnboarding) {
+                                        OnboardingView()
+                                            .interactiveDismissDisabled()
                                     }
-                                }
-                            }.sheet(isPresented: $viewModel.showOnboarding) {
-                                OnboardingView()
-                                    .interactiveDismissDisabled()
-                            }
-                    }.tag(BottomNavTab.home)
+                            }.tag(BottomNavTab.home)
 
-                    
-                    RouterView { _ in
-                        RaceCalendarView()
-                    }.tag(BottomNavTab.seasons)
+                            
+                            RouterView { _ in
+                                RaceCalendarView()
+                            }.tag(BottomNavTab.seasons)
 
-                    
+                            
 
-                    RouterView { _ in
-                        StandingsView()
-                    }.tag(BottomNavTab.standings)
+                            RouterView { _ in
+                                StandingsView()
+                            }.tag(BottomNavTab.standings)
 
-                    
-                    RouterView { _ in
-                        TriviaView()
-                    }.tag(BottomNavTab.trivia)
+                            
+                            RouterView { _ in
+                                TriviaView()
+                            }.tag(BottomNavTab.trivia)
+                        }
+                    }
+
+                    BottomNavTabBar(activeTab: $activeTab)
                 }
             }
-
-            BottomNavTabBar(activeTab: $activeTab)
         }
     }
 }

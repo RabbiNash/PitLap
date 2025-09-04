@@ -19,14 +19,22 @@ extension Text {
         self.font(.custom("AudioWide", size: 30))
             .fontWeight(.regular)
     }
+    
     func styleAsDisplayMedium() -> some View {
         self.font(.custom("AudioWide", size: 24))
             .fontWeight(.regular)
     }
+    
     func styleAsDisplaySmall() -> some View {
         self.font(.custom("AudioWide", size: 20))
             .fontWeight(.regular)
     }
+    
+    func styleAsDisplaySmaller() -> some View {
+        self.font(.custom("AudioWide", size: 18))
+            .fontWeight(.regular)
+    }
+    
     
     func styleAsDisplaySmallest() -> some View {
         self.font(.custom("AudioWide", size: 12))

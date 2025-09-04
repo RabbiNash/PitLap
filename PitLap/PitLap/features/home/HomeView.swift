@@ -18,7 +18,7 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 16)
+            Rectangle()
                 .fill(
                     LinearGradient(
                         gradient: Gradient(
@@ -53,7 +53,7 @@ struct HomeView: View {
     @ViewBuilder
     var content: some View {
         ScrollView(showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: UIDevice.isIPad ? 32 : 24) {
                 Text("Trending News")
                     .styleAsDisplaySmall()
                     .foregroundColor(.primary)
@@ -62,12 +62,12 @@ struct HomeView: View {
                             .frame(height: 2)
                             .offset(y: 20)
                     )
-                    .padding(.leading, 16)
+                    .padding(.leading, UIDevice.isIPad ? 24 : 16)
                 
                 articleHorizontalList(feeds: viewModel.feed)
                 
                 Text("Latest Videos")
-                    .font(.custom("Audiowide", size: 20))
+                    .font(.custom("Audiowide", size: UIDevice.isIPad ? 24 : 20))
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.primary)
@@ -76,15 +76,27 @@ struct HomeView: View {
                             .frame(height: 2)
                             .offset(y: 20)
                     )
-                    .padding(.leading, 16)
+                    .padding(.leading, UIDevice.isIPad ? 24 : 16)
                 
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 2)) {
-                    ForEach(viewModel.videos, id: \.videoId) { item in
-                        NavigationLink(destination: VideoPlayerDescriptionView(video: item)) {
-                            VideoItem(video: item)
-                        }.buttonStyle(.plain)
+                // iPad-optimized grid layout
+                if UIDevice.isIPad {
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 3)) {
+                        ForEach(viewModel.videos, id: \.videoId) { item in
+                            NavigationLink(destination: VideoPlayerDescriptionView(video: item)) {
+                                VideoItem(video: item)
+                            }.buttonStyle(.plain)
+                        }
                     }
-                }.padding(.horizontal)
+                    .padding(.horizontal, 24)
+                } else {
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 2)) {
+                        ForEach(viewModel.videos, id: \.videoId) { item in
+                            NavigationLink(destination: VideoPlayerDescriptionView(video: item)) {
+                                VideoItem(video: item)
+                            }.buttonStyle(.plain)
+                        }
+                    }.padding(.horizontal)
+                }
                 
             }
             .padding(.vertical)
@@ -99,23 +111,25 @@ struct HomeView: View {
     
     @ViewBuilder
     func articleHorizontalList(feeds: [RSSFeedItem]) -> some View {
-        VStack(alignment: .center, spacing: 12) {
+        VStack(alignment: .center, spacing: UIDevice.isIPad ? 16 : 12) {
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(spacing: 16) {
+                LazyHStack(spacing: UIDevice.isIPad ? 20 : 16) {
                     ForEach(feeds, id: \.id) { item in
-                        ArticleFeedItemView(feed: item).onTapGesture {
-                            let destination = AnyDestination(
-                                segue: .push,
-                                destination: { router in
-                                    ArticleView(feed: item, router: router)
-                                }
-                            )
-                            
-                            router.showScreen(destination)
-                        }
+                        ArticleFeedItemView(feed: item)
+                            .frame(width: UIDevice.isIPad ? 300 : 250)
+                            .onTapGesture {
+                                let destination = AnyDestination(
+                                    segue: .push,
+                                    destination: { router in
+                                        ArticleView(feed: item, router: router)
+                                    }
+                                )
+                                
+                                router.showScreen(destination)
+                            }
                     }
                 }
-            }.contentMargins(.leading, 16)
+            }.contentMargins(.leading, UIDevice.isIPad ? 24 : 16)
         }
     }
     

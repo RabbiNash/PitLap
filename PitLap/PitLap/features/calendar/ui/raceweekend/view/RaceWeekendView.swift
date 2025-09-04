@@ -27,7 +27,7 @@ struct RaceWeekendView: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 16)
+            Rectangle()
                 .fill(
                     LinearGradient(
                         gradient: Gradient(
@@ -164,7 +164,7 @@ struct RaceWeekendView: View {
             
             switch sessionType {
             case .session5:
-                RaceResultView(year: year, round: Int(round))
+                RaceResultView(year: year, round: Int(round), router: router)
             case .session4:
                 QualifyingResultView(year: year, round: Int(round))
             case .session1:
