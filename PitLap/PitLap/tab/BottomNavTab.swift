@@ -12,6 +12,7 @@ enum BottomNavTab: String, CaseIterable {
     case seasons = "Seasons"
     case standings = "Standings"
     case trivia = "Trivia"
+    case insights = "Insights"
 
     var title: String {
         switch self {
@@ -23,6 +24,8 @@ enum BottomNavTab: String, CaseIterable {
             return LocalizedStrings.trivia
         case .home:
             return LocalizedStrings.home
+        case .insights:
+            return LocalizedStrings.insights
         }
     }
 
@@ -36,6 +39,8 @@ enum BottomNavTab: String, CaseIterable {
             return "questionmark.circle"
         case .home:
             return "house"
+        case .insights:
+            return "brain"
         }
     }
 }

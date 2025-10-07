@@ -71,7 +71,7 @@ extension Text {
 
     // Body
     func styleAsBodyLarge() -> some View {
-        self.font(.custom("NotoSans", size: 16))
+        self.font(.custom("Noto Sans", size: 16))
             .fontWeight(.regular)
     }
     

@@ -34,7 +34,7 @@ struct RaceCalendarView: View {
             
             currentSeasonView
 
-        } .onAppear {
+        }.onAppear {
             WidgetCenter.shared.reloadAllTimelines()
         }
     }

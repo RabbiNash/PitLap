@@ -6,25 +6,40 @@
 //
 
 import SwiftUI
-import SwiftfulRouting
 
 struct iPadNavigationView: View {
     @Binding var activeTab: BottomNavTab
-    @State private var columnVisibility = NavigationSplitViewVisibility.all
+    @State private var isSidebarVisible: Bool = true
     
     var body: some View {
-        NavigationSplitView(columnVisibility: $columnVisibility) {
+        NavigationSplitView {
             // Sidebar
             VStack(alignment: .leading, spacing: 0) {
                 // App Header
-                Text(LocalizedStrings.appName)
-                    .styleAsDisplayHero()
-                    .foregroundColor(.primary)
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Image(systemName: "car.fill")
+                            .font(.title2)
+                            .foregroundColor(ThemeManager.shared.selectedTeamColor)
+                        
+                        Text("PitLap")
+                            .font(.title2.bold())
+                            .foregroundColor(.primary)
+                    }
                     .padding(.horizontal, 20)
                     .padding(.top, 10)
-        
+                    
+                    Text("F1 Racing Companion")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 20)
+                }
+                .background(Color(.systemBackground))
+                
                 Divider()
                 
+                // Navigation Items
                 VStack(spacing: 4) {
                     ForEach(BottomNavTab.allCases, id: \.self) { tab in
                         iPadNavigationItem(
@@ -44,7 +59,7 @@ struct iPadNavigationView: View {
                     HStack {
                         Image(systemName: "gear")
                             .font(.caption)
-                        Text(LocalizedStrings.settings)
+                        Text("Settings")
                             .font(.caption)
                     }
                     .foregroundColor(.secondary)
@@ -56,32 +71,24 @@ struct iPadNavigationView: View {
             .navigationSplitViewColumnWidth(min: 200, ideal: 250, max: 300)
         } detail: {
             // Main Content
-            
-            
-                Group {
-                    switch activeTab {
-                    case .home:
-                        RouterView { _ in
-                            HomeView()
-                        }
-                    case .seasons:
-                            RaceCalendarView()
-                    case .standings:
-                        StandingsView()
-                    case .trivia:
-                        RouterView { _ in
-                            TriviaView()
-                        }
+            Group {
+                switch activeTab {
+                case .home:
+                    HomeView()
+                case .seasons:
+                    RaceCalendarView()
+                case .standings:
+                    StandingsView()
+                case .trivia:
+                    TriviaView()
+                case .insights:
+                    TriviaView()
                 }
             }
-            .navigationTitle("")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(activeTab.title)
+            .navigationBarTitleDisplayMode(.large)
         }
         .navigationSplitViewStyle(.balanced)
-        .onAppear {
-            // Ensure sidebar is visible on appear
-            columnVisibility = .all
-        }
     }
 }
 
@@ -94,11 +101,12 @@ struct iPadNavigationItem: View {
         Button(action: action) {
             HStack(spacing: 12) {
                 Image(systemName: tab.icon)
+                    .font(.title3)
                     .frame(width: 24, height: 24)
                     .foregroundColor(isSelected ? .white : .primary)
                 
                 Text(tab.title)
-                    .styleAsDisplaySmall()
+                    .font(.body)
                     .fontWeight(isSelected ? .semibold : .regular)
                     .foregroundColor(isSelected ? .white : .primary)
                 
@@ -133,6 +141,9 @@ struct CompactNavigationView: View {
                     StandingsView()
                 case .trivia:
                     TriviaView()
+                case .insights:
+                    TriviaView()
+                    
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

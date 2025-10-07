@@ -13,6 +13,7 @@
 "tab.seasons" = "Season";
 "tab.standings" = "Standings";
 "tab.trivia" = "Trivia";
+"tab.insights" = "Insights";
 
 // MARK: - Settings
 "settings.title" = "Preferences";

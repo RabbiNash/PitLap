@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860022882E9479260098F384 /* LocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860022872E9479260098F384 /* LocalizationHelper.swift */; };
+		860022962E947A1A0098F384 /* AppIconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860022942E947A1A0098F384 /* AppIconService.swift */; };
+		860022972E947A1A0098F384 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860022932E947A1A0098F384 /* AIService.swift */; };
+		860022DD2E9595900098F384 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 860022DB2E9595900098F384 /* Localizable.strings */; };
+		860023212E95C4590098F384 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 860023202E95C4590098F384 /* MarkdownUI */; };
 		860B18882DADE5FF00104413 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B18872DADE5FF00104413 /* RatingManager.swift */; };
 		860B188A2DADE85C00104413 /* TriviaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B18892DADE85C00104413 /* TriviaCard.swift */; };
 		860B18C62DAE904800104413 /* RaceSummaryDataLogicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B18C52DAE904800104413 /* RaceSummaryDataLogicType.swift */; };
@@ -102,10 +107,6 @@
 		8683B59F2D9C3F95000AD7BA /* RaceReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */; };
 		8683B5A12D9D3D28000AD7BA /* RaceReactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */; };
 		8683B5E12D9E9F64000AD7BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683B5E02D9E9F64000AD7BA /* HomeView.swift */; };
-		868627632E6A42A600642550 /* LocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868627622E6A42A500642550 /* LocalizationHelper.swift */; };
-		8686276E2E6A42F600642550 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 868627692E6A42F600642550 /* Localizable.strings */; };
-		8686276F2E6A42F600642550 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8686276C2E6A42F600642550 /* Localizable.strings */; };
-		868627702E6A42F600642550 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 868627662E6A42F600642550 /* Localizable.strings */; };
 		868B2DC12E1DACE400CB1D7B /* PitlapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 868B2DC02E1DACE400CB1D7B /* PitlapKit */; };
 		868B2DC42E1DADF900CB1D7B /* TeamRadioDataLogicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B2DC32E1DADF900CB1D7B /* TeamRadioDataLogicType.swift */; };
 		868B2DCA2E1DAEC500CB1D7B /* RadioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B2DC92E1DAEC500CB1D7B /* RadioViewModel.swift */; };
@@ -233,6 +234,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		860022872E9479260098F384 /* LocalizationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationHelper.swift; sourceTree = "<group>"; };
+		860022932E947A1A0098F384 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		860022942E947A1A0098F384 /* AppIconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconService.swift; sourceTree = "<group>"; };
+		860022D82E9595900098F384 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		860022D92E9595900098F384 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		860022DA2E9595900098F384 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		860B18872DADE5FF00104413 /* RatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingManager.swift; sourceTree = "<group>"; };
 		860B18892DADE85C00104413 /* TriviaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaCard.swift; sourceTree = "<group>"; };
 		860B18C52DAE904800104413 /* RaceSummaryDataLogicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceSummaryDataLogicType.swift; sourceTree = "<group>"; };
@@ -312,10 +319,6 @@
 		8683B59E2D9C3F95000AD7BA /* RaceReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionView.swift; sourceTree = "<group>"; };
 		8683B5A02D9D3D28000AD7BA /* RaceReactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReactionViewModel.swift; sourceTree = "<group>"; };
 		8683B5E02D9E9F64000AD7BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		868627622E6A42A500642550 /* LocalizationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationHelper.swift; sourceTree = "<group>"; };
-		868627652E6A42F600642550 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
-		868627682E6A42F600642550 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Localizable.strings; sourceTree = "<group>"; };
-		8686276B2E6A42F600642550 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		868B2DC32E1DADF900CB1D7B /* TeamRadioDataLogicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRadioDataLogicType.swift; sourceTree = "<group>"; };
 		868B2DC92E1DAEC500CB1D7B /* RadioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewModel.swift; sourceTree = "<group>"; };
 		868B2DCB2E1DAFC200CB1D7B /* RaceInfoDataLogicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceInfoDataLogicType.swift; sourceTree = "<group>"; };
@@ -396,6 +399,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		860023152E95A48D0098F384 /* analysis */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = analysis; sourceTree = "<group>"; };
 		86645A9D2D642CD0004BAB44 /* PitLapTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PitLapTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -420,6 +424,7 @@
 				86645B202D6BCDFE004BAB44 /* FirebaseCrashlytics in Frameworks */,
 				86645B1E2D6BCDFE004BAB44 /* FirebaseCore in Frameworks */,
 				868B2DC12E1DACE400CB1D7B /* PitlapKit in Frameworks */,
+				860023212E95C4590098F384 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +441,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		860022952E947A1A0098F384 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				860022932E947A1A0098F384 /* AIService.swift */,
+				860022942E947A1A0098F384 /* AppIconService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		860022DC2E9595900098F384 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				860022DB2E9595900098F384 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		861745B92D7F3916008171A0 /* starlights */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,40 +896,6 @@
 			path = home;
 			sourceTree = "<group>";
 		};
-		868627642E6A42B200642550 /* Localizable */ = {
-			isa = PBXGroup;
-			children = (
-				868627672E6A42F600642550 /* en.lproj */,
-				8686276A2E6A42F600642550 /* es.lproj */,
-				8686276D2E6A42F600642550 /* fr.lproj */,
-			);
-			path = Localizable;
-			sourceTree = "<group>";
-		};
-		868627672E6A42F600642550 /* en.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				868627662E6A42F600642550 /* Localizable.strings */,
-			);
-			path = en.lproj;
-			sourceTree = "<group>";
-		};
-		8686276A2E6A42F600642550 /* es.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				868627692E6A42F600642550 /* Localizable.strings */,
-			);
-			path = es.lproj;
-			sourceTree = "<group>";
-		};
-		8686276D2E6A42F600642550 /* fr.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				8686276C2E6A42F600642550 /* Localizable.strings */,
-			);
-			path = fr.lproj;
-			sourceTree = "<group>";
-		};
 		868B2DC22E1DADE300CB1D7B /* radio */ = {
 			isa = PBXGroup;
 			children = (
@@ -1087,6 +1075,7 @@
 		FF52D1682D3F2F5500DF2573 /* standings */ = {
 			isa = PBXGroup;
 			children = (
+				860023152E95A48D0098F384 /* analysis */,
 				FF52D15D2D3F26FC00DF2573 /* models */,
 				FF9A50D72D4BA705001F1697 /* ui */,
 				FF52D1712D3FB9BA00DF2573 /* datalogic */,
@@ -1184,7 +1173,7 @@
 		FF75D34C2D232BD700160331 /* PitLap */ = {
 			isa = PBXGroup;
 			children = (
-				868627642E6A42B200642550 /* Localizable */,
+				860022952E947A1A0098F384 /* services */,
 				865F088F2DD288B000B56A5D /* launch */,
 				86645B2A2D6BD056004BAB44 /* PitLap.entitlements */,
 				86645B242D6BCE2C004BAB44 /* app */,
@@ -1203,6 +1192,7 @@
 				FF75D34F2D232BD700160331 /* ContentView.swift */,
 				FF75D3512D232BDA00160331 /* Assets.xcassets */,
 				FF75D3532D232BDA00160331 /* Preview Content */,
+				860022DC2E9595900098F384 /* Localizable */,
 			);
 			path = PitLap;
 			sourceTree = "<group>";
@@ -1301,6 +1291,7 @@
 		FF75D3782D233FEE00160331 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				860022872E9479260098F384 /* LocalizationHelper.swift */,
 				86CB642F2DBC08F00013D0C3 /* DeterminateProgressView.swift */,
 				860B18872DADE5FF00104413 /* RatingManager.swift */,
 				86645B3A2D6F92B6004BAB44 /* SafariView.swift */,
@@ -1310,7 +1301,6 @@
 				865618F92D5C184700567D38 /* PitlapPicker.swift */,
 				86645AAD2D6433D7004BAB44 /* MultiSelectionPickerView.swift */,
 				8652FDC22E6A3156007018B8 /* iPadAdaptiveModifiers.swift */,
-				868627622E6A42A500642550 /* LocalizationHelper.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1493,6 +1483,9 @@
 				FF9A50C62D499D27001F1697 /* PBXTargetDependency */,
 				FF9A50C92D499D3B001F1697 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				860023152E95A48D0098F384 /* analysis */,
+			);
 			name = PitLap;
 			productName = "Box Box";
 			productReference = FF75D34A2D232BD700160331 /* PitLap.app */;
@@ -1555,6 +1548,7 @@
 				868B2DBF2E1DACE400CB1D7B /* XCRemoteSwiftPackageReference "PitlapKit" */,
 				868B2DD12E1DB37800CB1D7B /* XCRemoteSwiftPackageReference "AudioKit" */,
 				868B2DDA2E1DB4B600CB1D7B /* XCRemoteSwiftPackageReference "AudioKitUI" */,
+				8600231F2E95C4590098F384 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
 			);
 			productRefGroup = FF75D34B2D232BD700160331 /* Products */;
 			projectDirPath = "";
@@ -1592,11 +1586,9 @@
 				86645A252D5E0BC1004BAB44 /* 4.png in Resources */,
 				86645A262D5E0BC1004BAB44 /* 11.png in Resources */,
 				86645A272D5E0BC1004BAB44 /* 9.png in Resources */,
+				860022DD2E9595900098F384 /* Localizable.strings in Resources */,
 				FF75D3522D232BDA00160331 /* Assets.xcassets in Resources */,
 				86645B192D6BCD97004BAB44 /* GoogleService-Info.plist in Resources */,
-				8686276E2E6A42F600642550 /* Localizable.strings in Resources */,
-				8686276F2E6A42F600642550 /* Localizable.strings in Resources */,
-				868627702E6A42F600642550 /* Localizable.strings in Resources */,
 				86645B292D6BCF17004BAB44 /* PrivacyInfo.xcprivacy in Resources */,
 				86F1B82B2D5CDE6100AF923D /* Audiowide-Regular.ttf in Resources */,
 			);
@@ -1752,7 +1744,7 @@
 				FF75D37A2D233FF900160331 /* Extension.swift in Sources */,
 				86645A3A2D5E2F3E004BAB44 /* QualifyingResultView.swift in Sources */,
 				86645B262D6BCE3E004BAB44 /* AppDelegate.swift in Sources */,
-				868627632E6A42A600642550 /* LocalizationHelper.swift in Sources */,
+				860022882E9479260098F384 /* LocalizationHelper.swift in Sources */,
 				8652A5DF2DD79DD800EA45D7 /* SessionTopSpeedView.swift in Sources */,
 				FF52D14A2D3EFFD200DF2573 /* SplashView.swift in Sources */,
 				FF52D1832D40026F00DF2573 /* TriviaView.swift in Sources */,
@@ -1762,6 +1754,8 @@
 				86645A2B2D5E287C004BAB44 /* QualiResultModel.swift in Sources */,
 				FF75D3652D232DE100160331 /* Extensions.swift in Sources */,
 				861745BE2D8AC6BA008171A0 /* OnboardingView.swift in Sources */,
+				860022962E947A1A0098F384 /* AppIconService.swift in Sources */,
+				860022972E947A1A0098F384 /* AIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1826,26 +1820,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		868627662E6A42F600642550 /* Localizable.strings */ = {
+		860022DB2E9595900098F384 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				868627652E6A42F600642550 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		868627692E6A42F600642550 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				868627682E6A42F600642550 /* es */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		8686276C2E6A42F600642550 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8686276B2E6A42F600642550 /* fr */,
+				860022D82E9595900098F384 /* en */,
+				860022D92E9595900098F384 /* es */,
+				860022DA2E9595900098F384 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2030,7 +2010,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -2045,7 +2024,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2067,7 +2046,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -2082,7 +2060,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -2183,6 +2161,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8600231F2E95C4590098F384 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
 		86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -2242,6 +2228,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		860023202E95C4590098F384 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8600231F2E95C4590098F384 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
 		86645B1B2D6BCDFE004BAB44 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 86645B1A2D6BCDFE004BAB44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

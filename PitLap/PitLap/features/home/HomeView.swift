@@ -64,7 +64,7 @@ struct HomeView: View {
                     )
                     .padding(.leading, UIDevice.isIPad ? 24 : 16)
                 
-                articleHorizontalList(feeds: viewModel.feed)
+                articleHorizontalList(router, feeds: viewModel.feed)
                 
                 Text(LocalizedStrings.latestVideos)
                     .font(.custom("Audiowide", size: UIDevice.isIPad ? 24 : 20))
@@ -110,13 +110,13 @@ struct HomeView: View {
     }
     
     @ViewBuilder
-    func articleHorizontalList(feeds: [RSSFeedItem]) -> some View {
+    func articleHorizontalList(_ router: AnyRouter, feeds: [RSSFeedItem]) -> some View {
         VStack(alignment: .center, spacing: UIDevice.isIPad ? 16 : 12) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: UIDevice.isIPad ? 20 : 16) {
                     ForEach(feeds, id: \.id) { item in
                         ArticleFeedItemView(feed: item)
-                            .frame(maxWidth: UIDevice.isIPad ? .infinity : 250)
+                            .frame(maxWidth: .infinity)
                             .onTapGesture {
                                 let destination = AnyDestination(
                                     segue: .push,
@@ -132,6 +132,33 @@ struct HomeView: View {
             }.contentMargins(.leading, UIDevice.isIPad ? 24 : 16)
         }
     }
+    
+//    @ViewBuilder
+//    func articleHorizontalList(_ router: AnyRouter, feeds: [RSSFeedItem]) -> some View {
+//        VStack(alignment: .center, spacing: UIDevice.isIPad ? 16 : 12) {
+//            TabView {
+//                ForEach(feeds, id: \.id) { item in
+//                    ArticleFeedItemView(feed: item)
+//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                        .padding(.horizontal, UIDevice.isIPad ? 24 : 16)
+//                        .onTapGesture {
+//                            let destination = AnyDestination(
+//                                segue: .push,
+//                                destination: { router in
+//                                    ArticleView(feed: item, router: router)
+//                                }
+//                            )
+//                            
+//                            router.showScreen(destination)
+//                        }
+//                }
+//            }
+//            .tabViewStyle(.page(indexDisplayMode: .never))
+//            .frame(height: UIDevice.isIPad ? 500 : 300)
+//            .clipped()
+//            .scrollIndicators(.hidden)
+//        }
+//    }
     
     @ViewBuilder
     func standingsHeader(driver: DriverStandingModel) -> some View {

@@ -18,5 +18,5 @@ struct DriverStatsAppIntent: WidgetConfigurationIntent {
         description: "Choose your favorite F1 driver",
         query: DriverQuery()
     )
-    var driver: DriverEntity
+    var driver: DriverEntity?
 }

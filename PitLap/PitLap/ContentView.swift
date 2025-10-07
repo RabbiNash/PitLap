@@ -11,58 +11,76 @@ import SwiftfulRouting
 
 struct ContentView: View {
     @State private var activeTab: BottomNavTab = .home
-    @State private var isTabBarHidden: Bool = false
-    @StateObject private var viewModel: ViewModel = ViewModel()
+    @StateObject private var viewModel = ViewModel()
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     var body: some View {
         Group {
             if UIDevice.isIPad && horizontalSizeClass == .regular {
-                // iPad with regular horizontal size class - use split view
+                // iPad split view path (unchanged)
                 iPadNavigationView(activeTab: $activeTab)
                     .sheet(isPresented: $viewModel.showOnboarding) {
                         OnboardingView()
                             .interactiveDismissDisabled()
                     }
             } else {
-                // iPhone or iPad in compact mode - use traditional tab view
-                ZStack(alignment: .bottom) {
-                    Group {
-                        TabView(selection: $activeTab) {
-                            RouterView { _ in
-                                HomeView()
-                                    .background {
-                                        if !isTabBarHidden {
-                                            HideTabBar {
-                                                isTabBarHidden = true
-                                            }
-                                        }
-                                    }.sheet(isPresented: $viewModel.showOnboarding) {
-                                        OnboardingView()
-                                            .interactiveDismissDisabled()
-                                    }
-                            }.tag(BottomNavTab.home)
-
-                            
-                            RouterView { _ in
-                                RaceCalendarView()
-                            }.tag(BottomNavTab.seasons)
-
-                            
-
-                            RouterView { _ in
-                                StandingsView()
-                            }.tag(BottomNavTab.standings)
-
-                            
-                            RouterView { _ in
-                                TriviaView()
-                            }.tag(BottomNavTab.trivia)
-                        }
+                // phone / compact iPad
+                mainTabView
+                    .sheet(isPresented: $viewModel.showOnboarding) {
+                        OnboardingView()
+                            .interactiveDismissDisabled()
                     }
+            }
+        }
+    }
+}
 
-                    BottomNavTabBar(activeTab: $activeTab)
+private extension ContentView {
+    @ViewBuilder
+    var mainTabView: some View {
+        if #available(iOS 26, *) {
+            TabView(selection: $activeTab) {
+//                Tab("Home", systemImage: "house.fill", value: BottomNavTab.home) {
+//                    RouterView { _ in HomeView() }
+//                }
+
+                Tab("Seasons", systemImage: "calendar", value: BottomNavTab.seasons) {
+                    RouterView { _ in RaceCalendarView() }
                 }
+
+                Tab("Standings", systemImage: "list.number", value: BottomNavTab.standings) {
+                    RouterView { _ in StandingsView() }
+                }
+
+                Tab("Trivia", systemImage: "lightbulb.fill", value: BottomNavTab.trivia) {
+                    RouterView { _ in TriviaView() }
+                }
+                
+                Tab("Search", systemImage: "magnifyingglass", value: BottomNavTab.insights, role: .search) {
+                    RouterView { _ in
+                        AnalysisView()
+                    }
+                }
+            }
+            .tabBarMinimizeBehavior(.onScrollDown)
+        } else {
+            // Fallback for earlier iOS: classic tabItem + tag
+            TabView(selection: $activeTab) {
+                RouterView { _ in HomeView() }
+                    .tabItem { Label("Home", systemImage: "house.fill") }
+                    .tag(BottomNavTab.home)
+
+                RouterView { _ in RaceCalendarView() }
+                    .tabItem { Label("Seasons", systemImage: "calendar") }
+                    .tag(BottomNavTab.seasons)
+
+                RouterView { _ in StandingsView() }
+                    .tabItem { Label("Standings", systemImage: "list.number") }
+                    .tag(BottomNavTab.standings)
+
+                RouterView { _ in TriviaView() }
+                    .tabItem { Label("Trivia", systemImage: "lightbulb.fill") }
+                    .tag(BottomNavTab.trivia)
             }
         }
     }
@@ -70,24 +88,22 @@ struct ContentView: View {
 
 extension ContentView {
     final class ViewModel: ObservableObject {
-        
-        @AppStorage("onboardingCompleted")
-        private var onboardingCompleted: Bool = false
-        
-        @Published var showOnboarding: Bool = false
-        
+        @AppStorage("onboardingCompleted") private var onboardingCompleted = false
+        @Published var showOnboarding = false
+
         init() {
             checkOnboardingStatus()
         }
-        
-        var shouldShowOnboarding: Bool {
-            !onboardingCompleted
-        }
-        
-        func checkOnboardingStatus() {
+
+        private func checkOnboardingStatus() {
             showOnboarding = !onboardingCompleted
         }
-           
+
+        // call this when onboarding finishes:
+        func markOnboardingCompleted() {
+            onboardingCompleted = true
+            showOnboarding = false
+        }
     }
 }
 

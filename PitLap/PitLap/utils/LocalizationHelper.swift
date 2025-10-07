@@ -29,6 +29,7 @@ struct LocalizedStrings {
     static let seasons = "tab.seasons".localized
     static let standings = "tab.standings".localized
     static let trivia = "tab.trivia".localized
+    static let insights = "tab.insights".localized
     
     // MARK: - Settings
     static let preferences = "settings.title".localized

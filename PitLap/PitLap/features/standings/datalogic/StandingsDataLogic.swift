@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import PitlapKit
+@preconcurrency import PitlapKit
 
-protocol StandingsDataLogicType {
+protocol StandingsDataLogicType: Sendable {
     func getDriverStandings(forceRefresh: Bool) async -> [DriverStandingModel]
     func getConstructorStandings(forceRefresh: Bool) async -> [ConstructorStandingModel]
 }

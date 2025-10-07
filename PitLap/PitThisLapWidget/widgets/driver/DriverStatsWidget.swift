@@ -32,7 +32,7 @@ struct DriverStatsWidgetProvider: AppIntentTimelineProvider {
     
     func timeline(for configuration: DriverStatsAppIntent, in context: Context) async -> Timeline<DriverStatsWidgetEntry> {
         let models = (try? await pitlapService.getDriverStandings(forceRefresh: true)) ?? []
-        let selected = models.first { $0.driverId == configuration.driver.id } ?? models.first
+        let selected = models.first { $0.driverId == configuration.driver?.id } ?? models.first
         
         let entry = DriverStatsWidgetEntry(
             date: Date(),

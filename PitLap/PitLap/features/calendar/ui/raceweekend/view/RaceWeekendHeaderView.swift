@@ -18,7 +18,7 @@ struct RaceWeekendHeaderView: View {
 
     var body: some View {
         ZStack {
-            Rectangle()
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .fill(
                     LinearGradient(
                         gradient: Gradient(colors: [Color.gray.opacity(0.6), Color.clear]), startPoint: .top, endPoint: .bottom)

@@ -55,6 +55,7 @@ struct OldRacesView: View {
                 }
             }.padding(24)
         }
+        .navigationTitle("Race Calendar")
     }
     
     @ViewBuilder

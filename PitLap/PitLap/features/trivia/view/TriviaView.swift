@@ -53,7 +53,7 @@ struct TriviaView: View {
 
     private var header: some View {
         HStack {
-            Text(LocalizedStrings.triviaTitle)
+            Text("Trivia")
                 .font(.largeTitle)
                 .fontWeight(.bold)
 
