@@ -73,6 +73,26 @@ struct RaceWeekendView: View {
                 .overlay(progressView, alignment: .top)
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    withAnimation {
+                        let destination = AnyDestination(
+                            segue: .fullScreenCoverConfig(config: .init()),
+                            destination: { router in
+                                TrackMapView(eventScheduleModel: event)
+                            }
+                        )
+                        
+                        router.showScreen(destination)
+                    }
+                }, label: {
+                    Image(systemName: "map")
+                        .font(.system(size: 24))
+                        .foregroundColor(.primary)
+                })
+            }
+        }
         .onAppear(perform: loadData)
     }
 

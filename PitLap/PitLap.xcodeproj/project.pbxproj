@@ -400,6 +400,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		860023152E95A48D0098F384 /* analysis */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = analysis; sourceTree = "<group>"; };
+		860023262E9700EB0098F384 /* map */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = map; sourceTree = "<group>"; };
 		86645A9D2D642CD0004BAB44 /* PitLapTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PitLapTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -1308,6 +1309,7 @@
 		FF75D37D2D23478300160331 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				860023262E9700EB0098F384 /* map */,
 				FF52D1432D3EDD8500DF2573 /* home */,
 				FF75D3742D233B3800160331 /* RaceWeekendListItemView.swift */,
 				FF75D3762D233B5000160331 /* RaceWeekendView.swift */,
@@ -1485,6 +1487,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				860023152E95A48D0098F384 /* analysis */,
+				860023262E9700EB0098F384 /* map */,
 			);
 			name = PitLap;
 			productName = "Box Box";
@@ -2000,7 +2003,7 @@
 				CODE_SIGN_ENTITLEMENTS = PitLap/PitLapDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"PitLap/Preview Content\"";
 				DEVELOPMENT_TEAM = 6HY2T876CG;
 				ENABLE_PREVIEWS = YES;
@@ -2018,7 +2021,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2036,7 +2039,7 @@
 				CODE_SIGN_ENTITLEMENTS = PitLap/PitLap.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"PitLap/Preview Content\"";
 				DEVELOPMENT_TEAM = 6HY2T876CG;
 				ENABLE_PREVIEWS = YES;
@@ -2054,7 +2057,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.pitlap.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

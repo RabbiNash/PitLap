@@ -39,7 +39,7 @@
 
 // MARK: - Calendar
 "calendar.title" = "Calendar";
-"calendar.view_past_events" = "View Past Events";
+"calendar.view_past_events" = "Past Races";
 "calendar.round" = "Round %d";
 "calendar.session_weather" = "Session Weather";
 "calendar.race_day_weather" = "Race Day Weather";

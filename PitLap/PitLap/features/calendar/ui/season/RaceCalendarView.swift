@@ -8,6 +8,7 @@
 import SwiftUI
 import WidgetKit
 import SwiftfulRouting
+import MapKit
 
 struct RaceCalendarView: View {
     @StateObject private var viewModel: RaceCalendarViewModel
@@ -68,18 +69,19 @@ struct RaceCalendarView: View {
                     
                     Spacer()
                     
-                    Text(LocalizedStrings.viewPastEvents)
-                        .foregroundStyle(ThemeManager.shared.selectedTeamColor.gradient)
-                        .onTapGesture {
-                            let destination = AnyDestination(
-                                segue: .push,
-                                destination: { router in
-                                    OldRacesView(router: router)
-                                }
-                            )
-                            
-                            router.showScreen(destination)
-                        }
+                    Button {
+                        let destination = AnyDestination(
+                            segue: .push,
+                            destination: { router in
+                                OldRacesView(router: router)
+                            }
+                        )
+                        
+                        router.showScreen(destination)
+                    } label: {
+                        Text(LocalizedStrings.viewPastEvents)
+                            .foregroundStyle(ThemeManager.shared.selectedTeamColor.gradient)
+                    }
                 }
                 .frame(alignment: .center)
                 .padding(.top)
@@ -150,4 +152,3 @@ struct SeasonPicker: View {
 #Preview {
     RaceCalendarView()
 }
-
