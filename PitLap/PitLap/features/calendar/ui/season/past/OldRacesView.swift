@@ -53,7 +53,7 @@ struct OldRacesView: View {
                         }
                     }
                 }
-            }.padding(24)
+            }.padding(.horizontal, 24)
         }
         .navigationTitle("Race Calendar")
     }

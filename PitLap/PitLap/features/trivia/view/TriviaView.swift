@@ -28,7 +28,6 @@ struct TriviaView: View {
             
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
-                    header
                     cardSection(items: contentCards)
                     cardSection(items: starLightsCards)
                     cardSection(items: analysisCards)
@@ -46,17 +45,10 @@ struct TriviaView: View {
                 }
             }
         }
-        .navigationTitle("")
-        .navigationBarHidden(true)
-        
     }
 
     private var header: some View {
         HStack {
-            Text("Trivia")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-
             Spacer()
 
             Image(systemName: "gear.circle.fill")

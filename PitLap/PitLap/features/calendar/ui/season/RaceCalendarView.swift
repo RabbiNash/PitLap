@@ -35,8 +35,42 @@ struct RaceCalendarView: View {
             
             currentSeasonView
 
-        }.onAppear {
+        }
+        .onAppear {
             WidgetCenter.shared.reloadAllTimelines()
+        }.toolbarRole(.browser)
+        .toolbar {
+            ToolbarItem {
+                Button("trending", systemImage: "newspaper") {
+                    let destination = AnyDestination(
+                        segue: .push,
+                        destination: { router in
+                            HomeView()
+                        }
+                    )
+                    
+                    router.showScreen(destination)
+                }.foregroundStyle(.primary)
+                    .buttonStyle(.plain)
+            }
+            
+                ToolbarItem {
+                    Image(systemName: "gear")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
+                        .tint(.primary)
+                        .onTapGesture {
+                            let destination = AnyDestination(
+                                segue: .sheetConfig(config: .init(detents: [.medium, .large])),
+                                destination: { router in
+                                    SettingsView()
+                                }
+                            )
+                            
+                            router.showScreen(destination)
+                        }
+                }
         }
     }
 
@@ -101,7 +135,7 @@ struct RaceCalendarView: View {
         .refreshable {
             viewModel.refresh(forceRefresh: true)
         }
-        .padding(24)
+        .padding(.horizontal, 24)
     }
 
     @ViewBuilder

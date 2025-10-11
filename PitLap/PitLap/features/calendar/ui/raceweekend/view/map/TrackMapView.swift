@@ -19,28 +19,32 @@ struct TrackMapView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            mapView
-                .sheet(isPresented:.constant(true)) {
-                    RaceWeekendHeaderView(event: eventScheduleModel)
-                        .padding(24)
-                        .presentationDetents([.fraction(0.3), .fraction(0.4)])
-                        .presentationBackgroundInteraction(.enabled)
-                        .interactiveDismissDisabled()
-                }
-        }.toolbar {
-            ToolbarItem {
-                Button("Close", systemImage: "arrow.down.right.and.arrow.up.left") {
-                    dismiss()
-                }
-            }
-        }
-
-    }
+         ZStack(alignment: .topTrailing) {
+             mapView
+                 .ignoresSafeArea()
+             
+             Button(action: { dismiss() }) {
+                 Image(systemName: "xmark.circle")
+                     .resizable()
+                     .frame(width: 30, height: 30)
+                     .tint(.primary)
+                     .padding(8)
+                     .background(.ultraThinMaterial, in: Circle())
+             }
+             .padding(.trailing, 16)
+             .padding(.top, 16)
+         }
+         .sheet(isPresented: .constant(true)) {
+             RaceWeekendHeaderView(event: eventScheduleModel, showMap: false)
+                 .padding(24)
+                 .presentationDetents([.fraction(0.3), .fraction(0.4)])
+                 .presentationBackgroundInteraction(.enabled)
+                 .interactiveDismissDisabled()
+         }
+     }
     
     @ViewBuilder
     private var mapView: some View {
-        
         Map(initialPosition: .region(getTrackCoordinateRegion(round: Int(eventScheduleModel.round))))
             .mapStyle(.standard)
             .safeAreaInset(edge: .bottom, spacing: 0) {

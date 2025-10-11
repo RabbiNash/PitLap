@@ -7,13 +7,17 @@
 
 import SwiftUI
 import PitlapKit
+import SwiftfulRouting
 
 struct RaceWeekendHeaderView: View {
     @AppStorage("selectedTeam") private var selectedTeam: String = F1Team.ferrari.rawValue
     private let event: EventScheduleModel
+    @State private var showLocationMap: Bool = false
+    private let showMap: Bool
 
-    init(event: EventScheduleModel) {
+    init(event: EventScheduleModel, showMap: Bool = true) {
         self.event = event
+        self.showMap = showMap
     }
 
     var body: some View {
@@ -21,31 +25,48 @@ struct RaceWeekendHeaderView: View {
             RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .fill(
                     LinearGradient(
-                        gradient: Gradient(colors: [Color.gray.opacity(0.6), Color.clear]), startPoint: .top, endPoint: .bottom)
+                        gradient: Gradient(colors: [ThemeManager.shared.selectedTeamColor.opacity(0.3), Color.clear, Color.clear, ThemeManager.shared.selectedTeamColor.opacity(0.5)]), startPoint: .top, endPoint: .bottomTrailing)
                 )
+                .shadow(radius: 8)
             
             VStack(alignment: .leading) {
-                (Text(LocalizedStrings.round(Int(event.round))))
-                    .font(.custom("Noto Sans",size: 20))
-                    .foregroundStyle(.white)
-                    .fontWeight(.semibold)
+                HStack {
+                    (Text(LocalizedStrings.round(Int(event.round))))
+                        .font(.custom("Noto Sans",size: 16))
+                        .foregroundStyle(.primary)
+                    
+                    Spacer()
+                    
+                    if showMap {
+                        Image(systemName: "mappin.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                            .tint(.primary)
+                            .onTapGesture {
+                                showLocationMap = true
+                            }
+                    }
+                    
+                }
+               
 
                 Text(event.officialEventName)
-                    .styleAsDisplayMedium()
+                    .styleAsDisplaySmall()
                     .fontWeight(.bold)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.primary)
 
                 HStack {
                     VStack(alignment: .leading) {
                         Text(event.country)
-                            .font(.custom("Noto Sans",size: 20))
+                            .font(.custom("Noto Sans",size: 16))
                             .fontWeight(.regular)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                         
                         Text(Date.getHumanisedDate(dateString: event.session1DateUTC ?? " ") ?? " ")
-                            .font(.custom("Noto Sans",size: 20))
+                            .font(.custom("Noto Sans",size: 16))
                             .fontWeight(.regular)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                     }
                     
                     Spacer()
@@ -58,6 +79,8 @@ struct RaceWeekendHeaderView: View {
                 }
             }
             .padding()
+        }.fullScreenCover(isPresented: $showLocationMap) {
+            TrackMapView(eventScheduleModel: event)
         }
     }
 }
