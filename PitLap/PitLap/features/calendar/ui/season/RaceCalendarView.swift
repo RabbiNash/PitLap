@@ -23,12 +23,11 @@ struct RaceCalendarView: View {
         ZStack {
             Rectangle()
                 .fill(
-                    LinearGradient(
-                        gradient: Gradient(
-                            colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), Color.clear]),
-                        startPoint: .top,
-                        endPoint: .center
-                    )
+                    MeshGradient(width: 2, height: 2, points: [
+                        [0, 0], [0.5, 0], [1, 0],
+                        [0, 1], [0.5, 1], [1, 1]
+                    ], colors: [ThemeManager.shared.selectedTeamColor.opacity(0.5), .clear, .clear,
+                                .clear,ThemeManager.shared.selectedTeamColor.opacity(0.5), .clear])
                 )
                 .ignoresSafeArea(.all)
                 .shadow(radius: 8)

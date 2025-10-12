@@ -32,7 +32,7 @@ struct ConstructorStatsWidgetProvider: AppIntentTimelineProvider {
     
     func timeline(for configuration: ConstructorStatsAppIntent, in context: Context) async -> Timeline<ConstructorStatsWidgetEntry> {
         let models = (try? await pitlapService.getConstructorStandings(forceRefresh: true)) ?? []
-        let selected = models.first { $0.constructorId == configuration.constructor.id } ?? models.first
+        let selected = models.first { $0.constructorId == configuration.constructor?.id } ?? models.first
         
         let entry = ConstructorStatsWidgetEntry(
             date: Date(),

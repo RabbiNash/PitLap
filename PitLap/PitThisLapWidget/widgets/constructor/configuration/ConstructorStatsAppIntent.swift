@@ -18,5 +18,5 @@ struct ConstructorStatsAppIntent: WidgetConfigurationIntent {
         description: "Choose your favorite Constructor",
         query: ConstructorQuery()
     )
-    var constructor: ConstructorEntity
+    var constructor: ConstructorEntity?
 }
